@@ -1,0 +1,82 @@
+<p>
+    JavaScript FileSystem
+</p>
+
+<hr>
+
+<h4>General</h4>
+<p>
+    <code>fs</code> is commonly used to:
+    <ul>
+        <li>Read files</li>
+        <li>Create files</li>
+        <li>Update files</li>
+        <li>Delete files</li>
+        <li>Rename files</li>
+    </ul>
+    It is imported via the <code>require()</code> function. <br>
+    <code>fs</code> is built into Node.JS, so there is no need to install it separately (via npm).
+</p>
+
+<hr>
+
+<h4>Read Files</h4>
+<p>
+    The <code>fs.readFile()</code> function is used to read files from a computer. <br>
+    You can also use the <code>fs.readFileSync()</code> to synchronously read the file. <br>
+    The <code>fs.readFile()</code> reads the file asynchronously.
+</p>
+
+<hr>
+
+<h4>Create Files</h4>
+<p>
+    <code>fs</code> has three functions for creating new files:
+    <ul>
+        <li><code>fs.appendFile()</code></li>
+        <li><code>fs.open()</code></li>
+        <li><code>fs.writeFile()</code></li>
+    </ul>
+</p>
+<p>
+    <code>fs.appendFile()</code> appends content to a file. If that file does not exist, it will be created.
+</p>
+<p>
+    <code>fs.open()</code> takes a flag as second argument, if that flag is set to 'w', the file will be opened for writing.
+    If the file does not exist, an empty file will be created.
+</p>
+<p>
+    <code>fs.writeFile()</code> replaces the specified file and contents, if it exists. If it does not a new file with the
+    specified content will be created.
+</p>
+
+<hr>
+
+<h4>Update Files</h4>
+<p>
+    <code>fs</code> has three functions for updating files:
+    <ul>
+        <li><code>fs.appendFile()</code></li>
+        <li><code>fs.writeFile()</code></li>
+    </ul>
+</p>
+<p>
+    <code>fs.appendFile()</code> appends the specified content at the end of the file.
+</p>
+<p>
+    <code>fs.writeFile()</code> replaces the specified file and contents.
+</p>
+
+<hr>
+
+<h4>Delete Files</h4>
+<p>
+    To delete files with <code>fs</code> we can use <code>fs.unlink()</code>. <br>
+</p>
+
+<hr>
+
+<h4>Rename Files</h4>
+<p>
+    To rename files with <code>fs</code> we can use <code>fs.rename()</code>. <br>
+</p>
