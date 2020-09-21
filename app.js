@@ -9,7 +9,7 @@ app.use(express.static('public'));
 app.set('view engine', 'ejs');
 
 const wisdoms = sortWisdoms(require('./wisdoms.json'));
-const wisdomsMap = instantiateWisdomsMap();
+const wisdomsMap = makeWisdomsMap();
 
 const ip = 'localhost:8080';
 const port = 8080;
@@ -20,7 +20,7 @@ function sortWisdoms(wisdoms){
     });
 }
 
-function instantiateWisdomsMap(){
+function makeWisdomsMap(){
     let wisdomsMap = {};
     for(let i = 0; i < wisdoms.length; i++){
         wisdomsMap[wisdoms[i].title] = wisdoms[i];
@@ -49,6 +49,16 @@ app.get('/api/wisdoms/:title', (req, res) => {
     if(wisdom === undefined){
         return res.status(404).send({ error: 'No wisdom with that id.' });
     }
+    let body = '';
+
+    try{
+        const file = fs.readFileSync('./wisdomsHtml/' + wisdom.fileName);
+        body = file.toString();
+    }catch (error){
+        body = 'Internal error reading this file.';
+    }
+    wisdom.body = body;
+
     return res.send(wisdom);
 });
 

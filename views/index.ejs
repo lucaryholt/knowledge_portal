@@ -9,17 +9,24 @@
 </head>
 <body>
     <div class="container">
-        <h1>Get ready to receive WISDOM!</h1>
+        <div class="row" style="padding: 30px">
+            <img src="https://nodejs.org/static/images/logos/nodejs-new-pantone-black.svg" alt="Node JS logo" style="width: 100px; padding-right: 10px">
+            <h1>   Wisdom</h1>
+        </p>
+
+        <br>
         <br>
 
-        <div class="row">
+        <div class="row" style="padding-top: 15px">
             <div class="col-4">
                 <ul class="list-group list-group-flush" id="wisdomsList"></ul>
             </div>
             <div class="col-8">
                 <h3 id="wisdomTitle"></h3>
-                <a id="wisdomLink"></a>
                 <p id="wisdomBody"></p>
+                <br>
+                <br>
+                <a target="_blank" id="wisdomLink"></a>
             </div>
         </div>
     </div>
@@ -53,10 +60,10 @@
 
                 title.text(data.title);
 
-                link.text('Link');
+                link.text('Link to further information');
                 link.attr('href', data.link);
 
-                body.text(data.body);
+                body.html(data.body);
             });
         }
 
