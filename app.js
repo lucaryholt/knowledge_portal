@@ -1,39 +1,39 @@
 const express = require('express');
 const path = require('path');
 const fs = require('fs');
+const ejs = require('ejs');
 
 const app = express();
 
-const sendFileOptions = {
-    root: path.join(__dirname, 'public')
-};
+app.use(express.static('public'));
+app.set('view engine', 'ejs');
 
 const wisdoms = require('./wisdoms.json');
 const wisdomsMap = instantiateWisdomsMap();
 
+const ip = 'localhost:8080';
+const port = 8080;
+
 function instantiateWisdomsMap(){
     let wisdomsMap = {};
-    for(let i = 0; i < wisdoms.wisdoms.length; i++){
-        wisdomsMap[wisdoms.wisdoms[i].id] = wisdoms.wisdoms[i];
+    for(let i = 0; i < wisdoms.length; i++){
+        wisdomsMap[wisdoms[i].id] = wisdoms[i];
     }
 
     return wisdomsMap;
 }
 
 app.get('/', (req, res) => {
-    res.sendFile('index.html' , sendFileOptions, (error) => {
-        if(error){
-            console.log('Error sending index file.');
-            console.log(error);
-        }
+    res.render('index', {
+        ip
     });
 });
 
 app.get('/api/wisdoms', (req, res) => {
-    if(wisdoms.wisdoms.length === 0){
+    if(wisdoms.lenght === 0){
         return res.status(404).send({ error: 'No wisdoms. Come back later.' });
     }
-    return res.status(200).send(wisdoms.wisdoms);
+    return res.status(200).send(wisdoms);
 });
 
 app.get('/api/wisdoms/:id', (req, res) => {
@@ -46,11 +46,11 @@ app.get('/api/wisdoms/:id', (req, res) => {
     return res.send(wisdom);
 });
 
-app.listen(8080, (error) => {
+app.listen(port, (error) => {
     if(error){
         console.log(error);
         console.log('Error starting server.');
     } else {
-        console.log('Server started on port', 8080);
+        console.log('Server started on port', port);
     }
 });

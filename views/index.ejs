@@ -29,7 +29,7 @@
         function getWisdoms(){
             $.ajax({
                 method: "GET",
-                url: "http://localhost:8080/api/wisdoms"
+                url: "http://<%= ip %>/api/wisdoms"
             }).done(function (data){
                 for(let i = 0; i < data.length; i++){
                     appendWisdom(data[i]);
@@ -45,7 +45,7 @@
         function specificWisdom(id){
             $.ajax({
                 method: "GET",
-                url: "http://localhost:8080/api/wisdoms/" + id
+                url: "http://<%= ip %>/api/wisdoms/" + id
             }).done(function (data){
                 const title = $("#wisdomTitle");
                 const link = $("#wisdomLink");

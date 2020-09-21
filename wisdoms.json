@@ -1,16 +1,14 @@
-{
-  "wisdoms" : [
-    {
-      "title" : "Arrays in JS",
-      "body" : "Arrays provide a lot of useful functionality in JS. Immutable.",
-      "link" : "https://www.w3schools.com/js/js_arrays.asp",
-      "id" : "arrays.json"
-    },
-    {
-      "title" : "Express",
-      "body" : "Node JS library to make webapps and/or REST-APIS",
-      "link" : "http://expressjs.com/",
-      "id" : "express.json"
-    }
-  ]
-}
+[
+  {
+    "title" : "Arrays in JS",
+    "body" : "Arrays provide a lot of useful functionality in JS. Immutable.",
+    "link" : "https://www.w3schools.com/js/js_arrays.asp",
+    "id" : "arrays.json"
+  },
+  {
+    "title" : "Express",
+    "body" : "Node JS library to make webapps and/or REST-APIS",
+    "link" : "http://expressjs.com/",
+    "id" : "express.json"
+  }
+]
