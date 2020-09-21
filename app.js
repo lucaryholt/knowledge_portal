@@ -8,30 +8,41 @@ const sendFileOptions = {
     root: path.join(__dirname, 'public')
 };
 
+const wisdoms = require('./wisdoms.json');
+const wisdomsMap = instantiateWisdomsMap();
+
+function instantiateWisdomsMap(){
+    let wisdomsMap = {};
+    for(let i = 0; i < wisdoms.wisdoms.length; i++){
+        wisdomsMap[wisdoms.wisdoms[i].id] = wisdoms.wisdoms[i];
+    }
+
+    return wisdomsMap;
+}
+
 app.get('/', (req, res) => {
     res.sendFile('index.html' , sendFileOptions, (error) => {
         if(error){
-            console.log('Error sending file');
+            console.log('Error sending index file.');
             console.log(error);
         }
     });
 });
 
 app.get('/api/wisdoms', (req, res) => {
-    let wisdomArray = [];
-    const wisdoms = fs.readdirSync('./wisdoms');
-
-    for(let i = 0; i < wisdoms.length; i++){
-        const wisdom = require('./wisdoms/' + wisdoms[i]);
-        wisdomArray.push(wisdom);
+    if(wisdoms.wisdoms.length === 0){
+        return res.status(404).send({ error: 'No wisdoms. Come back later.' });
     }
-
-    return res.send(wisdomArray);
+    return res.status(200).send(wisdoms.wisdoms);
 });
 
 app.get('/api/wisdoms/:id', (req, res) => {
     const id = req.params.id;
-    const wisdom = require('./wisdoms/' + id);
+    const wisdom = wisdomsMap[id];
+
+    if(wisdom === undefined){
+        return res.status(404).send({ error: 'No wisdom with that id.' });
+    }
     return res.send(wisdom);
 });
 
