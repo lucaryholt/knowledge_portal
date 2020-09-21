@@ -1,104 +1,100 @@
-<div>
-    <p>Stores multiple values. Can be different types.</p>
-    <p>Can be used if you want to loop through a collection of variables.</p>
+<p>Collection that stores multiple values.</p>
 
+<br>
+
+<h4>General syntax</h4>
+<p>
+    Instantiate array: <br>
+    <code>const array = ['Item one', 'Item two', 'Item three']</code>.
+</p>
+<p>
+    You can also instantiate an array using the JS 'new' keyword: <br>
+    <code>const array = new Array('Item one', 'Item two', 'Item three')</code>.
+</p>
+<p>
+    Getting item from array: <br> <code>array[1]</code> returns <code>'Item two'</code> as arrays are zero indexed.
     <br>
+    You can access the last element in an array with: <code>array[-1]</code>.
+</p>
+<p>
+    Updating item in array: <br>
+    We can change 'Item three' to 'Item 3' with: <code>array[2] = 'Item 3'</code>.
+</p>
+<p>
+    Adding item to array: <br>
+    <code>array.push('Item four')</code>.
+</p>
+<p>
+    Removing last item in array: <br>
+    <code>array.pop()</code>.
+</p>
 
-    <h4>General syntax</h4>
-    <p>
-        Instantiate array: <br>
-        <code>const array = ['Item one', 'Item two', 'Item three']</code>.
-    </p>
-    <p>
-        You can also instantiate an array using the JS 'new' keyword: <br>
-        <code>const array = new Array('Item one', 'Item two', 'Item three')</code>.
-    </p>
-    <p>
-        Getting item from array: <br> <code>array[1]</code> returns <code>'Item two'</code> as arrays are zero indexed.
-        <br>
-        You can access the last element in an array with: <code>array[-1]</code>.
-    </p>
-    <p>
-        Updating item in array: <br>
-        We can change 'Item three' to 'Item 3' with: <code>array[2] = 'Item 3'</code>.
-    </p>
-    <p>
-        Adding item to array: <br>
-        <code>array.push('Item four')</code>.
-    </p>
-    <p>
-        Removing last item in array: <br>
-        <code>array.pop()</code>.
-    </p>
+<br>
 
+<h4>Types</h4>
+<p>
+    As said earlier, arrays can contain different types, so you could have an array like this: <br>
+    <code>const misc = ['this is a string', 80, function(){console.log('Print statement')}]</code>.
+</p>
+<p>
+    You could then call <code>misc[2]()</code> and 'Print statement' would be printed to the console.
+</p>
+<p>
+    This is not good coding standard, but it is possible. <br>
+    Normally you would declare the function elsewhere and then reference it in the array.
+</p>
+
+<br>
+
+<h4>Properties and methods</h4>
+<p>
+    Arrays have built in properties and methods:
+</p>
+<p>
+    Get the length of an array (useful in for loops): <br>
+    <code>array.length</code>.
+</p>
+<p>
+    Sort an array: <br>
+    <code>array.sort()</code> (See also 'Sorting JSON by specific value'). <br>
+    The sort method sorts the original array.
+</p>
+<p>
+    Get index of specific element in array: <br>
+    <code>array.indexOf('Item two')</code> would return 1.
+</p>
+<p>
+    Splice method: <br>
+    You can add items to an array at an index you choose with <code>array.splice(start, deleteCount, items)</code>.
     <br>
-
-    <h4>Types</h4>
-    <p>
-        As said earlier, arrays can contain different types, so you could have an array like this: <br>
-        <code>const misc = ['this is a string', 80, function(){console.log('Print statement')}]</code>.
-    </p>
-    <p>
-        You could then call <code>misc[2]()</code> and 'Print statement' would be printed to the console.
-    </p>
-    <p>
-        This is not good coding standard, but it is possible. <br>
-        Normally you would declare the function elsewhere and then reference it in the array.
-    </p>
-
+    The 'start' parameter indicates where in the array you want to start the operation.
     <br>
-
-    <h4>Properties and methods</h4>
-    <p>
-        Arrays have built in properties and methods:
-    </p>
-    <p>
-        Get the length of an array (useful in for loops): <br>
-        <code>array.length</code>.
-    </p>
-    <p>
-        Sort an array: <br>
-        <code>array.sort()</code> (See also 'Sorting JSON by specific value'). <br>
-        The sort method sorts the original array.
-    </p>
-    <p>
-        Get index of specific element in array: <br>
-        <code>array.indexOf('Item two')</code> would return 1.
-    </p>
-    <p>
-        Splice method: <br>
-        You can add items to an array at an index you choose with <code>array.splice(start, deleteCount, items)</code>.
-        <br>
-        The 'start' parameter indicates where in the array you want to start the operation.
-        <br>
-        'deleteCount' is how many items you want to delete (0 if you just want to insert). Can be used to overwrite items in array.
-        <br>
-        'items' is the items you want to insert. <br>
-        Example: <br>
-        <code>array.splice(1, 0, 'Inserted item', 'Another')</code> would return an empty array, but 'array' would now look like this: <code>['Item one', 'Inserted item', 'Another', 'Item two', 'Item three']</code>.
-        <br>
-        This can also be used to delete items. <br>
-        This method returns the deleted items.
-    </p>
-
+    'deleteCount' is how many items you want to delete (0 if you just want to insert). Can be used to overwrite items in array.
     <br>
-
-    <h4>Looping through array elements</h4>
-    <p>
-        Syntax for a for-loop that prints out all elements in <code>array</code>:<br>
-        <code>for(let i = 0; i < array.length; i++){</code> <br>
-        <code>&nbsp;&nbsp;&nbsp;&nbsp;console.log(array[i]);</code> <br>
-        <code>}</code> <br>
-    </p>
-
+    'items' is the items you want to insert. <br>
+    Example: <br>
+    <code>array.splice(1, 0, 'Inserted item', 'Another')</code> would return an empty array, but 'array' would now look like this: <code>['Item one', 'Inserted item', 'Another', 'Item two', 'Item three']</code>.
     <br>
+    This can also be used to delete items. <br>
+    This method returns the deleted items.
+</p>
 
-    <h4>Copying array</h4>
-    <p>
-        If you want to copy an array, you can not just do <code>copyArray = array</code>,
-        as this will copy the reference and both 'copyArray' and 'array' will point to the same array. <br>
-        Here you can use the slice() method, as this copies the value of the array instead of the reference: <br>
-        <code>copyArray = array.slice()</code>.
-    </p>
+<br>
 
-</div>
+<h4>Looping through array elements</h4>
+<p>
+    Syntax for a for-loop that prints out all elements in <code>array</code>:<br>
+    <code>for(let i = 0; i < array.length; i++){ <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;console.log(array[i]); <br>
+    }</code> <br>
+</p>
+
+<br>
+
+<h4>Copying array</h4>
+<p>
+    If you want to copy an array, you can not just do <code>copyArray = array</code>,
+    as this will copy the reference and both 'copyArray' and 'array' will point to the same array. <br>
+    Here you can use the slice() method, as this copies the value of the array instead of the reference: <br>
+    <code>copyArray = array.slice()</code>.
+</p>

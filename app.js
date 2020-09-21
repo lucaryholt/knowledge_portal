@@ -8,7 +8,7 @@ const app = express();
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
 
-const wisdoms = sortWisdoms(require('./wisdoms.json'));
+const wisdoms = sortWisdoms(require('./wisdoms/wisdoms.json'));
 const wisdomsMap = makeWisdomsMap();
 
 const ip = 'localhost:8080';
@@ -63,6 +63,10 @@ app.get('/api/wisdoms/:title', (req, res) => {
         body: body,
         link: wisdom.link
     });
+});
+
+app.get('*', (req, res) => {
+    return res.redirect('/');
 });
 
 app.listen(port, (error) => {
