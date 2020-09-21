@@ -12,7 +12,7 @@
     <div class="container">
         <div class="row" style="padding: 20px">
             <img src="https://nodejs.org/static/images/logos/nodejs-new-pantone-black.svg" alt="Node JS logo" style="width: 100px; padding-right: 10px">
-            <h1>Wisdom</h1>
+            <h1 class="font-weight-bold">Wisdom</h1>
         </div>
 
         <div class="row">
@@ -20,7 +20,7 @@
                 <ul class="list-group list-group-flush" id="wisdomsList"></ul>
             </div>
             <div class="col-8">
-                <h3 id="wisdomTitle"></h3>
+                <h2 id="wisdomTitle"></h2>
                 <p id="wisdomBody"></p>
                 <br>
                 <a target="_blank" id="wisdomLink" style="padding-bottom: 50px"></a>
@@ -38,7 +38,7 @@
                 for(let i = 0; i < data.length; i++){
                     appendWisdom(data[i]);
                 }
-                specificWisdom(data[5].title);
+                specificWisdom(data[8].title);
             });
         }
 

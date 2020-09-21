@@ -1,0 +1,64 @@
+<p>
+    JSON: JavaScript Object Notation. <br>
+    Used to send and store data.
+</p>
+
+<br>
+
+<h4>Syntax</h4>
+<p>
+    A JSON file is a text file written in JavaScript object notation. <br>
+    To define a JSON object we use square brackets <code>{}</code>. <br>
+    A JSON object consists of KeyValuePairs and is written: <br>
+    <code>
+        { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;"key" : "value", <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;"anotherKey" : "anotherValue" <br>
+        }
+    </code> <br>
+    A JSON file can also be a list of JSON objects: <br>
+    <code>
+        [ <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;{ <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"key" : "value" <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;}, <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;{ <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"key" : "value" <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;} <br>
+        ]
+    </code> <br>
+</p>
+<p>
+    In 'pure' JSON we use double quotation marks (<code>""</code>) to define a key and values
+    (if they are strings, we just write numbers). <br>
+    In JS the rules are a bit different (see section 'JSON in JS').
+</p>
+
+<br>
+
+<h4>JSON in JS</h4>
+<p>
+    As the name 'JavaScript Object Notation' suggests, JSON and JS are related. <br>
+    JS objects are built like JSON objects - namely: KeyValuePairs. <br>
+    In the two subsections following we look at using JS object and JSON files in JS.
+</p>
+
+<h5>JS objects</h5>
+<p>
+    When we write JS objects, we do it almost exactly like writing JSON objects. <br>
+    But in JS objects the double quotation marks around keys are optional, only String values need quotation marks (single or double).
+</p>
+
+<h5>JSON files in JS</h5>
+<p>
+    To use an '.json' file in JS, we need to import/include (or whatever you want to call it) in the JS script. <br>
+    In Node.JS we use the function <code>require()</code> (see 'require()'): <br>
+    <code>
+        const jsonObject = require('./object.json');
+    </code> <br>
+    This looks for a JSON file in the same folder as the script called 'object.json'.
+    It then saves the file in the 'jsonObject' constant. <br>
+    This enables us to use dot notation to access the KeyValuePairs in the file (just like JS objects).
+</p>
+
+<h4></h4>
