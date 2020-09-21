@@ -23,7 +23,7 @@ function sortWisdoms(wisdoms){
 function instantiateWisdomsMap(){
     let wisdomsMap = {};
     for(let i = 0; i < wisdoms.length; i++){
-        wisdomsMap[wisdoms[i].id] = wisdoms[i];
+        wisdomsMap[wisdoms[i].title] = wisdoms[i];
     }
 
     return wisdomsMap;
@@ -42,9 +42,9 @@ app.get('/api/wisdoms', (req, res) => {
     return res.status(200).send(wisdoms);
 });
 
-app.get('/api/wisdoms/:id', (req, res) => {
-    const id = req.params.id;
-    const wisdom = wisdomsMap[id];
+app.get('/api/wisdoms/:title', (req, res) => {
+    const title = req.params.title;
+    const wisdom = wisdomsMap[title];
 
     if(wisdom === undefined){
         return res.status(404).send({ error: 'No wisdom with that id.' });
