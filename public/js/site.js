@@ -8,7 +8,7 @@ function getWisdoms() {
         for (let i = 0; i < data.length; i++) {
             appendWisdom(data[i]);
         }
-        specificWisdom(data[3].title);
+        specificWisdom(data[9].title);
     });
 }
 

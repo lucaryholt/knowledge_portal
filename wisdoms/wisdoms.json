@@ -42,7 +42,7 @@
     "fileName" : "nodejs.html",
     "links" : [
       {
-        "description" : "Official Node.JS site",
+        "description" : "Node.JS - Homepage",
         "link" : "https://nodejs.org/en/"
       },
       {
@@ -54,7 +54,7 @@
         "link" : "https://v8.dev/"
       },
       {
-        "description" : "npm Offical site",
+        "description" : "npm official site",
         "link" : "https://www.npmjs.com/"
       },
       {
@@ -62,16 +62,20 @@
         "link" : "https://www.w3schools.com/nodejs/nodejs_npm.asp"
       },
       {
-        "description" : "npm official site - package.json",
+        "description" : "npm - package.json",
         "link" : "https://docs.npmjs.com/files/package.json"
       },
       {
-        "description" : "npm official site - npm CLI Commands",
+        "description" : "npm - npm CLI Commands",
         "link" : "https://docs.npmjs.com/cli-documentation/cli"
       },
       {
-        "description" : "npm site for nodemon",
+        "description" : "npm - nodemon",
         "link" : "https://www.npmjs.com/package/nodemon"
+      },
+      {
+        "description" : "Node.JS - What is require?",
+        "link" : "https://nodejs.org/en/knowledge/getting-started/what-is-require/"
       }
     ]
   },
@@ -150,22 +154,16 @@
     ]
   },
   {
-    "title" : "require()",
-    "fileName" : "",
-    "links" : [
-      {
-        "description" : "Node.JS knowledge page",
-        "link" : "https://nodejs.org/en/knowledge/getting-started/what-is-require/"
-      }
-    ]
-  },
-  {
     "title" : "Sorting JSON by specific value",
-    "fileName" : "",
+    "fileName" : "sortingjson.html",
     "links" : [
       {
         "description" : "StackOverFlow question",
         "link" : "https://stackoverflow.com/questions/51165/how-to-sort-strings-in-javascript"
+      },
+      {
+        "description" : "W3 Schools - JavaScript String localeCompare() method",
+        "link" : "https://www.w3schools.com/jsref/jsref_localecompare.asp"
       }
     ]
   },
