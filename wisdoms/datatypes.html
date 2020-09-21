@@ -1,0 +1,105 @@
+<p>
+    JavaScript variables can hold many data types.
+</p>
+
+<hr>
+
+<h4>Types</h4>
+<p>
+    <ul>
+        <li>Number</li>
+        <li>BigInt</li>
+        <li>String</li>
+        <li>Boolean</li>
+        <li>null</li>
+        <li>undefined</li>
+        <li>Objects</li>
+    </ul>
+</p>
+
+<hr>
+
+<h4>Number</h4>
+<p>
+    The <code>number</code> type represents both integer and floating point numbers.
+</p>
+<p>
+    There are <code>special numeric values</code>: <code>Infinity</code>, <code>-Infinity</code> and <code>NaN</code>.
+    <br>
+    <code>Infinity</code> represents the mathematical Infinity ∞. It is higher than any number. <br>
+    <code>NaN</code> is short for 'Not a Number' and represents a computational error. It is the result of an incorrect
+    or undefined mathematical operation:
+    <code>'a string' / 2</code> will result in <code>NaN</code>.
+</p>
+
+<hr>
+
+<h4>BigInt</h4>
+<p>
+    The <code>number</code> type cannot hold values larger than <code>9007199254740991</code> or smaller than <code>-9007199254740991</code>.
+    <br>
+    It is a technical limitation. <br>
+</p>
+<p>
+    Therefore we have the <code>BigInt</code> type.
+</p>
+<p>
+    To mark that a variable is a <code>BigInt</code> you put an <code>n</code> at the end: <br>
+    <code>
+        const bigInt = 1234567890123456789012345678901234567890n;
+    </code>
+</p>
+
+<hr>
+
+<h4>String</h4>
+<p>
+    Must be surrounded by quotes. In JS there are three choices for quotes: <br>
+    <ul>
+        <li>Double quotes: <code>"Hello"</code></li>
+        <li>Single quotes: <code>'Hello'</code></li>
+        <li>Backticks: <code>`Hello`</code></li>
+    </ul>
+    Double and single quotes are simple quotes and there are no practical difference between them in JS. <br>
+    Backticks provide extended functionality, they allow for embedding variables and expressions into a string by wrapping them in
+    <code>${...}</code>.
+</p>
+<p>
+    String are immutable, which means they cant be changed. They can be copied and replaced, but not altered.
+</p>
+
+<hr>
+
+<h4>Boolean</h4>
+<p>
+    The <code>boolean</code> type only has two values: <code>true</code> and <code>false</code>.
+</p>
+
+<hr>
+
+<h4>null</h4>
+<p>
+    Contains only the <code>null</code> value.
+</p>
+<p>
+    In JS <code>null</code> does not mean "reference to non-existing object" or "null pointer". <br>
+    It represents "nothing", "empty" or "value unknown".
+</p>
+
+<hr>
+
+<h4>undefined</h4>
+<p>
+    The <code>undefined</code> type means "value is not assigned".
+</p>
+<p>
+    If you try to access a property that does not exist in an object, it will return <code>undefined</code>.
+</p>
+
+<hr>
+
+<h4>Objects</h4>
+<p>
+    Other values are "primitive", as they can only contain a single thing. <br>
+    Objects can be used to store collections of "things"/data/functions.
+</p>

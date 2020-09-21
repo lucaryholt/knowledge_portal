@@ -169,25 +169,15 @@
   },
   {
     "title" : "Data types",
-    "fileName" : "",
+    "fileName" : "datatypes.html",
     "links" : [
       {
         "description" : "W3 Schools - Data Types",
         "link" : "https://www.w3schools.com/js/js_datatypes.asp"
-      }
-    ]
-  },
-  {
-    "title" : "Z",
-    "fileName" : "",
-    "links" : [
-      {
-        "description" : "",
-        "link" : ""
       },
       {
-        "description" : "",
-        "link" : ""
+        "description" : "JavaScript.info - Data types",
+        "link" : "https://javascript.info/types"
       }
     ]
   }
