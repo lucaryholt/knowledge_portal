@@ -1,0 +1,44 @@
+<p>
+    In JS variables are containers for data. JS Objects are also variables, but can contain many values.
+</p>
+
+<hr>
+
+<h4>General</h4>
+<p>
+    Syntax for defining a JS object: <br>
+    <code>
+        const objectDemo = { type : 'Demo', isThisEnoughDemoData : true, demoFunc : function () { console.log('404') } };
+    </code> <br>
+    Spaces and line breaks are not important, the above example, could also be written like this: <br>
+    <code>
+        const objectDemo = { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;type : 'Demo', <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;isThisEnoughDemoData : true <br>
+        };
+    </code> <br>
+</p>
+<p>
+    The KeyValuePairs in JS objects are called properties. You can save every data type as a property in an object. <br>
+</p>
+<hr>
+
+<h4>Accessing Object Properties</h4>
+<p>
+    There are two methods for accessing a JS Object property. <br>
+    The dot-notation: <br>
+    <code>
+        objectDemo.type;
+    </code> <br>
+    and the square brackets-notation: <br>
+    <code>
+        objectDemo["isThisEnoughDemoData"];
+    </code> <br>
+    The norm is to use dot-notation.
+</p>
+<p>
+    If you need to call a method in an object, you can do the following:
+    <code>
+        objectDemo.demoFunc();
+    </code>
+</p>
