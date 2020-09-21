@@ -8,11 +8,17 @@ const app = express();
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
 
-const wisdoms = require('./wisdoms.json');
+const wisdoms = sortWisdoms(require('./wisdoms.json'));
 const wisdomsMap = instantiateWisdomsMap();
 
 const ip = 'localhost:8080';
 const port = 8080;
+
+function sortWisdoms(wisdoms){
+    return wisdoms.sort(function (a, b){
+        return a.title.localeCompare(b.title);
+    });
+}
 
 function instantiateWisdomsMap(){
     let wisdomsMap = {};
