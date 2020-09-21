@@ -52,14 +52,17 @@ app.get('/api/wisdoms/:title', (req, res) => {
     let body = '';
 
     try{
-        const file = fs.readFileSync('./wisdomsHtml/' + wisdom.fileName);
+        const file = fs.readFileSync('./wisdoms/' + wisdom.fileName);
         body = file.toString();
     }catch (error){
         body = 'Internal error reading this file.';
     }
-    wisdom.body = body;
 
-    return res.send(wisdom);
+    return res.send({
+        title: wisdom.title,
+        body: body,
+        link: wisdom.link
+    });
 });
 
 app.listen(port, (error) => {

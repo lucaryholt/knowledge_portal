@@ -60,13 +60,19 @@
     "link" : "https://stackoverflow.com/questions/51165/how-to-sort-strings-in-javascript"
   },
   {
-    "title" : "NaN, null & undefined",
+    "title" : "Data types",
     "fileName"  : "",
-    "link" : ""
+    "link" : "https://www.w3schools.com/js/js_datatypes.asp"
   },
   {
     "title" : "Z",
     "fileName"  : "",
     "link" : ""
+  },
+  {
+    "title" : "Callbacks",
+    "fileName"  : "",
+    "link" : "https://javascript.info/callbacks"
   }
+
 ]
