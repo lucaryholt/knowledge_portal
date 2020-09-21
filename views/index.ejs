@@ -23,7 +23,8 @@
                 <h2 id="wisdomTitle"></h2>
                 <p id="wisdomBody"></p>
                 <br>
-                <a target="_blank" id="wisdomLink" style="padding-bottom: 50px"></a>
+                <h5>Links:</h5>
+                <ul id="wisdomLinkList" style="padding-bottom: 50px"></ul>
             </div>
         </div>
     </div>
@@ -38,7 +39,7 @@
                 for(let i = 0; i < data.length; i++){
                     appendWisdom(data[i]);
                 }
-                specificWisdom(data[8].title);
+                specificWisdom(data[9].title);
             });
         }
 
@@ -52,13 +53,16 @@
                 url: "http://<%= ip %>/api/wisdoms/" + id
             }).done(function (data){
                 const title = $("#wisdomTitle");
-                const link = $("#wisdomLink");
+                const linkList = $("#wisdomLinkList");
                 const body = $("#wisdomBody");
 
                 title.text(data.title);
 
-                link.text('Link to further information');
-                link.attr('href', data.link);
+                linkList.html('');
+                for(let i = 0; i < data.links.length; i++){
+                    const link = data.links[i];
+                    linkList.append('<li><a target="_blank" href="' + link.link + '">' + link.description + '</a></li>');
+                }
 
                 body.html(data.body);
             });

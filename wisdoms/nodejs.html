@@ -1,0 +1,90 @@
+<p>JavaScript runtime built on <a target="_blank" href="https://v8.dev/">Chrome's V8 Javascript engine</a>.</p>
+
+<br>
+
+<h4>General</h4>
+<p>
+    You used to only be able to run JavaScript in the browser, making JavaScript an almost only front-end language. <br>
+    Node.JS changed that by enabling people to run JavaScript directly on the their machine through V8. <br>
+    Now JavaScript can be used to make full-stack applications.
+</p>
+
+<br>
+
+<h4>npm</h4>
+<p>
+    npm is short for Node Package Manager and is a package manager for node. <br>
+    There are other package managers for node,
+    like <a target="_blank" href="https://yarnpkg.com/">yarn</a>, but npm is the largest and most used.
+</p>
+<p>
+    npm consists of different parts, the ones we use the most are: the website and the CLI tool. <br>
+    The website is mostly used to lookup npm packages and find documentation. <br>
+    The CLI tool is used to actually install packages. <br>
+</p>
+<p>
+    To install npm packages you need to have a <code>package.json</code> file (see following section). <br>
+    Then you can run <code>npm install express</code> to install the 'express' package (and any package this depends on).
+    <br>
+    These packages will be placed in a folder called <code>node_modules</code>.
+    This folder can get quite big and it is recommended you add it to <code>.gitignore</code>.
+</p>
+<p>
+    The above install command (<code>npm install</code>) install the package in the <code>node_modules</code> folder
+    and if you want to use that package (in the terminal) you have to point to the specific file. <br>
+    But if want to be able to use an package in any project/directory without calling the specific file,
+    you can use the <code>-g</code> flag. <br>
+    As an example there is the <code>nodemon</code> package. A tool that automatically restarts the node application,
+    when it detects an file change. Installing that by running <code>npm install -g nodemon</code>
+    insures that you can use it in every project and without pointing to specific nodemon file.
+</p>
+
+<br>
+
+<h4>package.json</h4>
+<p>
+    This JSON file is the file that tells NPM which packages and what versions to install (among other things). <br>
+</p>
+<p>
+    Syntax: <br>
+    <code>
+        { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;"dependencies" : { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"express" : "^4.17.1", <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"ejs": "^3.1.5" <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;} <br>
+        }
+    </code> <br>
+    The file is built as an JSON object, where the key we use here <code>"dependencies"</code>
+    refers to a list of KeyValuePairs noting the package and version number:
+    the key being the package name and value being the version number
+    (you can find both of these information on the packages npm page).
+</p>
+<p>
+    When you run <code>npm install *package*</code>, that package gets added to the <code>package.json</code> file. <br>
+    This makes it easy to share a project (via git for example), as you don't need to share the <code>node_modules</code> folder,
+    but just the js files and package.json. Then another developer (or whomever) can clone the project,
+    run <code>npm install</code> and then run the app.
+</p>
+
+<br>
+
+<h4>REPL</h4>
+<p>
+    REPL: Read Evaluate Print Loop <br>
+    REPL is a programming language environment, that takes a single expression and prints the result. <br>
+</p>
+<p>
+    When Node.JS is installed on a computer you can run <code>node app.js</code> to run a JS file called app.js. <br>
+    If you omit the name and just run <code>node</code> you enter the REPL. <br>
+    This is the same as using the JavaScript console available in most browsers.
+</p>
+<p>
+    In the REPL you can instantiate variables, functions and object. You can use different methods and see the results.
+    <br>
+    It can be used as a quick way to test things out in JavaScript.
+</p>
+
+<br>
+
+<h4></h4>

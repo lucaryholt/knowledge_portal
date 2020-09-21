@@ -61,7 +61,9 @@ app.get('/api/wisdoms/:title', (req, res) => {
     return res.send({
         title: wisdom.title,
         body: body,
-        link: wisdom.link
+        links: wisdom.links.sort(function (a, b){
+            return a.description.localeCompare(b.description);
+        })
     });
 });
 
