@@ -1,0 +1,87 @@
+<p>
+    A block of code designed to perform a particular task.
+</p>
+
+<br>
+
+<h4>General</h4>
+<p>
+    Functions are first class citizens in JS. You can pass functions as parameters or save them as variables.
+</p>
+
+<br>
+
+<h4>Syntax</h4>
+<p>
+    To define a method the basic syntax is: <br>
+    <code>
+        function helloWorld(){ <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;console.log('Hello world'); <br>
+        }
+    </code> <br>
+    To define a anonymous function as a variable: <br>
+    <code>
+        const helloWorld = function (){ <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;console.log('Hello world'); <br>
+        }
+    </code> <br>
+    Another quicker way to define a function is the <code>arrow syntax</code>: <br>
+    <code>
+        const helloWorld = () => { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;console.log('Hello world'); <br>
+        }
+    </code> <br>
+</p>
+<p>
+    To have a function return a value, you type in <code>return</code> and then the value: <br>
+    <code>
+        function multiplyBy2(number){ <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;return number * 2; <br>
+        }
+    </code> <br>
+</p>
+
+<br>
+
+<h4>Passing a function</h4>
+<p>
+    Functions can be passed like a variable. To pass a function you simply write it without the parentheses:
+    <code>
+        executeOtherFunction(helloWorld); <br>
+        <br>
+        function executeOtherFunction(function){ <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;function(); <br>
+        }
+    </code> <br>
+    This would pass the <code>helloWorld</code> function and then the <code>executeOtherFunction</code> function
+    would execute it, resulting in <code>Hello World</code> being printet to the console.
+</p>
+
+<br>
+
+<h4>Callbacks</h4>
+<p>
+    Callbacks make it easy to perform actions asynchronous. <br>
+</p>
+<p>
+    Syntax: <br>
+    <code>
+        const poke = (name) => "poke " + name; <br>
+        function interact(name, interactingFunction){ <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;console.log(interactingFunction(name)); <br>
+        }
+    </code> <br>
+    You could then call this: <br>
+    <code>
+        interact("Bob", poke);
+    </code> <br>
+    This would print <code>poke Bob</code> <br>
+    But you could also define another function when calling <code>interact</code>: <br>
+    <code>
+        interact("Jens", (name) => "hug " + name);
+    </code> <br>
+    Which would print <code>hug Jens</code>.
+</p>
+<p>
+    Callbacks are used a lot in frameworks like Express for error, request and response handling.
+</p>

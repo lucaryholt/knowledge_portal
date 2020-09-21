@@ -99,11 +99,19 @@
   },
   {
     "title" : "Functions",
-    "fileName" : "",
+    "fileName" : "functions.html",
     "links" : [
       {
         "description" : "W3 Schools",
         "link" : "https://www.w3schools.com/js/js_functions.asp"
+      },
+      {
+        "description" : "W3 Schools - Arrow functions",
+        "link" : "https://www.w3schools.com/Js/js_arrow_function.asp"
+      },
+      {
+        "description" : "JavaScript.info - Callbacks",
+        "link" : "https://javascript.info/callbacks"
       }
     ]
   },
@@ -174,26 +182,6 @@
       {
         "description" : "W3 Schools",
         "link" : "https://www.w3schools.com/js/js_datatypes.asp"
-      }
-    ]
-  },
-  {
-    "title" : "Callbacks",
-    "fileName" : "",
-    "links" : [
-      {
-        "description" : "JavaScript.info page",
-        "link" : "https://javascript.info/callbacks"
-      }
-    ]
-  },
-  {
-    "title" : "Arrow functions",
-    "fileName" : "",
-    "links" : [
-      {
-        "description" : "",
-        "link" : ""
       }
     ]
   },
