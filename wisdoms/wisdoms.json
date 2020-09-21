@@ -18,7 +18,7 @@
     "fileName" : "arrays.html",
     "links" : [
       {
-        "description" : "W3 Schools",
+        "description" : "W3 Schools - JS Arrays",
         "link" : "https://www.w3schools.com/js/js_arrays.asp"
       }
     ]
@@ -28,7 +28,7 @@
     "fileName" : "json.html",
     "links" : [
       {
-        "description" : "W3 Schools",
+        "description" : "W3 Schools - JS JSON Intro",
         "link" : "https://www.w3schools.com/js/js_json_intro.asp"
       },
       {
@@ -46,7 +46,7 @@
         "link" : "https://nodejs.org/en/"
       },
       {
-        "description" : "REPL",
+        "description" : "Node.JS - REPL",
         "link" : "https://nodejs.dev/learn/how-to-use-the-nodejs-repl"
       },
       {
@@ -102,7 +102,7 @@
     "fileName" : "functions.html",
     "links" : [
       {
-        "description" : "W3 Schools",
+        "description" : "W3 Schools - Functions",
         "link" : "https://www.w3schools.com/js/js_functions.asp"
       },
       {
@@ -117,11 +117,15 @@
   },
   {
     "title" : "Variables",
-    "fileName" : "",
+    "fileName" : "variables.html",
     "links" : [
       {
-        "description" : "W3 Schools",
+        "description" : "W3 Schools - Variables",
         "link" : "https://www.w3schools.com/js/js_variables.asp"
+      },
+      {
+        "description" : "Hackernoon - Why You Shouldn't Use 'var' Anymore",
+        "link" : "https://hackernoon.com/why-you-shouldnt-use-var-anymore-f109a58b9b70"
       }
     ]
   },
@@ -130,18 +134,8 @@
     "fileName" : "",
     "links" : [
       {
-        "description" : "W3 Schools",
+        "description" : "W3 Schools - Objects",
         "link" : "https://www.w3schools.com/js/js_objects.asp"
-      }
-    ]
-  },
-  {
-    "title" : "ejs",
-    "fileName" : "",
-    "links" : [
-      {
-        "description" : "NPM page for ejs",
-        "link" : "https://www.npmjs.com/package/ejs"
       }
     ]
   },
@@ -150,7 +144,7 @@
     "fileName" : "",
     "links" : [
       {
-        "description" : "W3 Schools",
+        "description" : "W3 Schools - Node.JS Filesystem",
         "link" : "https://www.w3schools.com/nodejs/nodejs_filesystem.asp"
       }
     ]
@@ -180,7 +174,7 @@
     "fileName" : "",
     "links" : [
       {
-        "description" : "W3 Schools",
+        "description" : "W3 Schools - Data Types",
         "link" : "https://www.w3schools.com/js/js_datatypes.asp"
       }
     ]

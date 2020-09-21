@@ -1,13 +1,13 @@
 const express = require('express');
 const path = require('path');
 const fs = require('fs');
-const ejs = require('ejs');
 
 const app = express();
+const publicPath = path.join(__dirname, 'public');
 
-app.use(express.static(path.join(__dirname, 'public')));
-app.set('view engine', 'ejs');
+app.use(express.static(publicPath));
 
+const sendFileOptions = { root: publicPath };
 const wisdoms = sortWisdoms(require('./wisdoms/wisdoms.json'));
 const wisdomsMap = makeWisdomsMap();
 
@@ -30,13 +30,11 @@ function makeWisdomsMap(){
 }
 
 app.get('/', (req, res) => {
-    res.render('index', {
-        ip
-    });
+    res.sendFile('./html/index.html', sendFileOptions);
 });
 
 app.get('/api/wisdoms', (req, res) => {
-    if(wisdoms.lenght === 0){
+    if(wisdoms.length === 0){
         return res.status(404).send({ error: 'No wisdoms. Come back later.' });
     }
     return res.status(200).send(wisdoms);
