@@ -76,12 +76,24 @@
     ]
   },
   {
-    "title" : "REST",
-    "fileName" : "",
+    "title" : "RESTful Web services",
+    "fileName" : "rest.html",
     "links" : [
       {
         "description" : "Wikipedia - Representational state transfer",
         "link" : "https://en.wikipedia.org/wiki/Representational_state_transfer"
+      },
+      {
+        "description" : "Insomnia",
+        "link" : "https://insomnia.rest/"
+      },
+      {
+        "description" : "Postman",
+        "link" : "https://www.postman.com/"
+      },
+      {
+        "description" : "MDN - HTTP request methods",
+        "link" : "https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods"
       }
     ]
   },
@@ -189,6 +201,10 @@
     "title" : "Z",
     "fileName" : "",
     "links" : [
+      {
+        "description" : "",
+        "link" : ""
+      },
       {
         "description" : "",
         "link" : ""

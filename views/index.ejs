@@ -11,7 +11,7 @@
 <body>
     <div class="container">
         <div class="row" style="padding: 20px">
-            <img src="https://nodejs.org/static/images/logos/nodejs-new-pantone-black.svg" alt="Node JS logo" style="width: 100px; padding-right: 10px">
+            <img src="images/nodejs.svg" alt="Node JS logo" style="width: 100px; padding-right: 10px">
             <h1 class="font-weight-bold">Wisdom</h1>
         </div>
 
@@ -39,7 +39,7 @@
                 for(let i = 0; i < data.length; i++){
                     appendWisdom(data[i]);
                 }
-                specificWisdom(data[9].title);
+                specificWisdom(data[12].title);
             });
         }
 
@@ -55,6 +55,8 @@
                 const title = $("#wisdomTitle");
                 const linkList = $("#wisdomLinkList");
                 const body = $("#wisdomBody");
+
+                $(document).prop('title', 'Node.JS Wisdom - ' + data.title);
 
                 title.text(data.title);
 
