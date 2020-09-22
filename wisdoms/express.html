@@ -13,15 +13,19 @@
 <p>
     Add 'express' to package.json (see 'Node.JS') and include in file (see 'require()'). <br>
     Now we can call the <code>app.listen(port, callback)</code> function: <br>
-    <code>
-        app.listen(8080, (error) => { <br>
-        &nbsp;&nbsp;&nbsp;&nbsp;if(error){ <br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(error); <br>
-        &nbsp;&nbsp;&nbsp;&nbsp;} else { <br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log('Server started on port', 8080); <br>
-        &nbsp;&nbsp;&nbsp;&nbsp;} <br>
-        });
-    </code> <br>
+    <!-- TODO make all 'code blocks' use similar styling (choose other color) -->
+    <!-- TODO move styling to external stylesheet .css -->
+    <div class="rounded" style="background: aquamarine; padding: 10px">
+        <code>
+            app.listen(8080, (error) => { <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;if(error){ <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(error); <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;} else { <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log('Server started on port', 8080); <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;} <br>
+            });
+        </code> <br>
+    </div>
     This function sets up the webserver and listens for requests on port 8080. <br>
     The callback parameter is filled out by an arrow function,
     that takes an error as argument and prints whether or not the server was successfully started.
