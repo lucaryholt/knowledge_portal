@@ -89,16 +89,104 @@
 <hr>
 
 <h4>Lambda</h4>
-<!-- TODO -->
+<p>
+    Lambda expressions are not functions, but I choose to mention them here as they are expressions that create
+    functions. <br>
+    This is very important in JS, where functions are first-class citizens
+    and are passed as arguments to other functions etc. <br>
+</p>
+<p>
+    To make an lambda expression (and create a function) we use the arrow notation from before.
+</p>
+
 <hr>
 
 <h4>Ternary</h4>
-<!-- TODO -->
+<p>
+    The <code>ternary</code> conditional operator is not a function either (like lambda expressions),
+    but I felt this was the best place to mention it. <br>
+</p>
+<p>
+    It can be compared to a quick way of writing a <code>for else</code> with return values. <br>
+    You set a condition and return one value if true and another if false.
+</p>
+<p>
+    Syntax: <br>
+    <code>
+        const umbrellaMessage = isRaining ? 'Bring it!' : 'Nah, leave it.';
+    </code> <br>
+    The above expression evaluates if <code>isRaining</code> is true or false and returns one of the two strings.
+</p>
+
 <hr>
 
-<h4>Built-in functions</h4>
-<!-- TODO -->
+<h4>Global functions</h4>
+<p>
+    JS has a number of global functions
+    (a list can be found in the link: 'W3 Schools - JavaScript Global Reference').
+    I will mention a few of them here.
+</p>
+<p>
+    <code>Number()</code> is a function that converts an objects value to a number.
+    An identical function exists for strings: <code>String()</code>. <br>
+    Similarly functions exist to parse a string to floating point number and integer, <code>parseFloat()</code>
+    and <code>parseInt()</code>.
+</p>
+<p>
+    Global functions can be called from anywhere in JS.
+</p>
+
 <hr>
 
 <h4>filter(), find() & map()</h4>
-<!-- TODO -->
+<p>
+    The <code>filter()</code>, <code>find()</code> and <code>map()</code> functions are array functions. <br>
+</p>
+<h5>filter()</h5>
+<p>
+    <code>filter()</code> returns an array filled with elements that pass a test. This test is provided to
+    <code>filter()</code> as a function. It calls said function once for each element in the array. Example: <br>
+    <code>
+        const ages = [32, 33, 16, 40]; <br>
+        function checkAdult(age) { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;return age >= 18; <br>
+        } <br>
+        const adults = ages.filter(checkAdult);
+    </code> <br>
+    In the above code we have an array of ages, then a function that returns true if age is equal or greater than 18.
+    Then we instantiate an adults constant with the value, from <code>filter()</code> called on the ages array,
+    with <code>checkAdult(age)</code> as parameter. <br>
+    The above code can be written shorter using an lambda expression: <br>
+    <code>
+        const ages = [32, 33, 16, 40]; <br>
+        const adults = ages.filter(age => { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;return age >= 18; <br>
+        });
+    </code> <br>
+</p>
+<p>
+    <code>filter()</code> does not change the original array, but returns a new array. <br>
+    <code>filter()</code> does not run the test for elements without value.
+</p>
+<h5>find()</h5>
+<p>
+    Like <code>filter()</code>, <code>find()</code> checks elements in an array with a test provided by a function.
+    Unlike <code>filter()</code> it only returns the first value it finds.
+    It it written in the exact same way ('find' instead of 'filter'). <br>
+</p>
+<p>
+    <code>find()</code> does not change the original array. <br>
+    If it does not find a value, that passes the test, it returns <code>undefined</code>.
+</p>
+
+<h5>map()</h5>
+<p>
+    <code>map()</code> also creates a new array based on a function, but unlike <code>filter()</code>
+    and <code>find()</code>, the elements do not need to pass a test. <code>map()</code> runs the function
+    for each element and returns the value. <br>
+    It is written in the same way as <code>filter()</code> and <code>find()</code>.
+</p>
+<p>
+    <code>map()</code> does not run the function for elements without values. <br>
+    <code>map()</code> does not change the original array.
+</p>

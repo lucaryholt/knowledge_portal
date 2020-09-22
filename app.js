@@ -49,8 +49,8 @@ app.get('/api/wisdoms/:title', (req, res) => {
     if(wisdom === undefined){
         return res.status(404).send({ error: 'No wisdom with that id.' });
     }
-    let body;
 
+    let body;
     try{
         const file = fs.readFileSync('./wisdoms/' + wisdom.fileName);
         body = file.toString();

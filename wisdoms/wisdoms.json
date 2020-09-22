@@ -169,9 +169,13 @@
       {
         "description" : "W3 Schools - JavaScript Array map()",
         "link" : "https://www.w3schools.com/jsref/jsref_map.asp"
+      },
+      {
+        "description" : "W3 Schools - JavaScript Global Reference",
+        "link" : "https://www.w3schools.com/jsref/jsref_obj_global.asp"
       }
     ],
-    "searchTerms": ["arrow functions", "callbacks", "lambda", "ternary", "built-in functions", "filter()", "find()", "map()"]
+    "searchTerms": ["arrow functions", "callbacks", "lambda", "ternary", "global functions", "filter()", "find()", "map()"]
   },
   {
     "title" : "Variables",
