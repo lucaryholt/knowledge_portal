@@ -25,15 +25,24 @@ function getSearchTerms(){
 function searchUpdate(){
     const term = $('#searchBox').val();
     const searchResults = $('#searchResults');
-    searchResults.html('');
     let foundPages = [];
+    let $div = $("<div>", {
+        class: "list-group-item list-group-item-action",
+        style: "z-index: 1; position: absolute",
+        id: "searchResults"
+    });
+
+    searchResults.html('');
+    $div.html('');
+
     if(term !== ''){
         for(let i = 0; i < searchTerms.length; i++){
             if(searchTerms[i].term.toLowerCase().includes(term.toLowerCase()) && foundPages.indexOf(searchTerms[i].page) === -1){
-                searchResults.append('<div><span class="list-group-item list-group-item-action" onclick="specificWisdom(' + "'" + searchTerms[i].page + "'" + ')">' + searchTerms[i].page + '</span></div>');
+                $div.append('<div><span class="list-group-item list-group-item-action" onclick="specificWisdom(' + "'" + searchTerms[i].page + "'" + ')">' + searchTerms[i].page + '</span></div>');
                 foundPages.push(searchTerms[i].page);
             }
         }
+        if(foundPages.length !== 0) searchResults.append($div);
     }
 }
 
@@ -49,11 +58,13 @@ function specificWisdom(id){
         const title = $("#wisdomTitle");
         const linkList = $("#wisdomLinkList");
         const body = $("#wisdomBody");
+        const searchBox = $("#searchResults");
 
         $(document).prop('title', 'Node.JS Wisdom - ' + data.title);
 
         title.text(data.title);
 
+        searchBox.html('');
         linkList.html('');
         for(let i = 0; i < data.links.length; i++){
             const link = data.links[i];
@@ -63,3 +74,6 @@ function specificWisdom(id){
         body.html(data.body);
     });
 }
+
+getWisdoms();
+getSearchTerms();

@@ -15,9 +15,6 @@ const wisdoms = sortWisdoms(require('./wisdoms/wisdoms.json'));
 const wisdomsMap = makeWisdomsMap();
 const searchTerms = makeSearchTerms();
 
-const ip = 'localhost:8080';
-const port = 8080;
-
 function sortWisdoms(wisdoms){
     return wisdoms.sort(function (a, b){
         return a.title.localeCompare(b.title);
@@ -48,7 +45,7 @@ function makeSearchTerms(){
 }
 
 app.get('/', (req, res) => {
-    res.sendFile('./html/index.html', sendFileOptions);
+    res.sendFile('./index.html', sendFileOptions);
 });
 
 app.get('/api/wisdoms', (req, res) => {
@@ -91,11 +88,13 @@ app.get('*', (req, res) => {
     return res.redirect('/');
 });
 
+const port = process.env.PORT ? process.env.PORT : 80;
+
 app.listen(port, (error) => {
     if(error){
         console.log(error);
         console.log('Error starting server.');
     } else {
-        console.log('Server started on port', port);
+        console.log('Server started on port', Number(port));
     }
 });
