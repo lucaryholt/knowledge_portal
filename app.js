@@ -7,6 +7,9 @@ const publicPath = path.join(__dirname, 'public');
 
 app.use(express.static(publicPath));
 
+//TODO subjects: jQuery, cross-env (and environment variables "PORT=3000 & process.env.PORT"), scripts in package.json (see package.json in car api)
+//lambda (car.api), turnery expressions, built-in functions, budo npm, cdn, where to put jquery in html (head or body), dom html life cycles
+
 const sendFileOptions = { root: publicPath };
 const wisdoms = sortWisdoms(require('./wisdoms/wisdoms.json'));
 const wisdomsMap = makeWisdomsMap();
@@ -31,6 +34,7 @@ function makeWisdomsMap(){
 }
 
 function makeSearchTerms(){
+    //TODO try to make it not use for loop but (term => term.term === whatever)
     const terms = [];
     for(let i = 0; i < wisdoms.length; i++){
         for(let j = 0; j < wisdoms[i].searchTerms.length; j++){
