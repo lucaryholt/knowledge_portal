@@ -2,24 +2,16 @@ const express = require('express');
 const path = require('path');
 const fs = require('fs');
 
-const app = express();
 const publicPath = path.join(__dirname, 'public');
-
-app.use(express.static(publicPath));
-
-//TODO subjects: jQuery, cross-env (and environment variables "PORT=3000 & process.env.PORT"), scripts in package.json (see package.json in car api)
-//lambda (car.api), turnery expressions, built-in functions, budo npm, cdn, where to put jquery in html (head or body), dom html life cycles
-
 const sendFileOptions = { root: publicPath };
-const wisdoms = sortWisdoms(require('./wisdoms/wisdoms.json'));
+const wisdoms = require('./wisdoms/wisdoms.json').sort(function (a, b){
+    return a.title.localeCompare(b.title);
+});
 const wisdomsMap = makeWisdomsMap();
 const searchTerms = makeSearchTerms();
 
-function sortWisdoms(wisdoms){
-    return wisdoms.sort(function (a, b){
-        return a.title.localeCompare(b.title);
-    });
-}
+const app = express();
+app.use(express.static(publicPath));
 
 function makeWisdomsMap(){
     let wisdomsMap = {};
@@ -31,17 +23,12 @@ function makeWisdomsMap(){
 }
 
 function makeSearchTerms(){
-    //TODO try to make it not use for loop but (term => term.term === whatever)
-    const terms = [];
-    for(let i = 0; i < wisdoms.length; i++){
-        for(let j = 0; j < wisdoms[i].searchTerms.length; j++){
-            terms.push({
-                term : wisdoms[i].searchTerms[j].term,
-                page : wisdoms[i].title
-            });
-        }
-    }
-    return terms;
+    return wisdoms.map(wisdom => {
+        const terms = wisdom.searchTerms.map(term => {
+            return term;
+        });
+        return { page : wisdom.title, terms: terms };
+    });
 }
 
 app.get('/', (req, res) => {
@@ -62,7 +49,7 @@ app.get('/api/wisdoms/:title', (req, res) => {
     if(wisdom === undefined){
         return res.status(404).send({ error: 'No wisdom with that id.' });
     }
-    let body = '';
+    let body;
 
     try{
         const file = fs.readFileSync('./wisdoms/' + wisdom.fileName);

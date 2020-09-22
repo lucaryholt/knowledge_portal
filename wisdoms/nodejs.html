@@ -41,6 +41,33 @@
 
 <hr>
 
+<h4>Noteworthy npm modules</h4>
+<p>
+    A couple of noteworthy npm modules are (more will be added):
+    <ul>
+        <li>cross-env</li>
+        <li>budo</li>
+        <li>nodemon</li>
+    </ul>
+</p>
+<p>
+    The <code>cross-env</code> module handles environmental variables and makes cross-platform uniformity possible. <br>
+    As an example this project can take an <code>PORT</code> environmental variable and change the port on which the server
+    listens for requests (see section about scripts under). <br>
+    To access an environmental variable in code, if you for example wanted to read the <code>PORT</code> variable, you would
+    write: <code>process.env.PORT</code>. <code>process</code> is built into Node and provides various information about the
+    current running node process. <code>env</code> contains all environmental variables and <code>PORT</code> is what we called
+    the variable when running the app. If we look for a variable in code, but do not declare it when running the app, it will result
+    in <code>undefined</code>.
+</p>
+<p>
+    <code>budo</code> is a module that provides a webserver with live reloading, useful when writing HTML, CSS + JS.
+    <br>
+    It is commonly installed as a global package (like <code>nodemon</code> above).
+</p>
+
+<hr>
+
 <h4>package.json</h4>
 <p>
     This JSON file is the file that tells NPM which packages and what versions to install (among other things). <br>
@@ -65,6 +92,29 @@
     This makes it easy to share a project (via git for example), as you don't need to share the <code>node_modules</code> folder,
     but just the js files and package.json. Then another developer (or whomever) can clone the project,
     run <code>npm install</code> and then run the app.
+</p>
+<p>
+    Another functionality we can define in <code>package.json</code> is <code>scripts</code>. <br>
+    Scripts make it possibly to define commands (typically) for running the app in various environments. <br>
+    This could make it easy for developers and end users to use the same project, without worrying about <br>
+    changing the variables needed in development or production.
+</p>
+<p>
+    An example of this can be seen here: <br>
+    <code>
+        "scripts": { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;"start-dev": "cross-env PORT=8080 nodemon app.js", <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;"start-prod": "node app.js" <br>
+        }
+    </code> <br>
+    In these lines of JSON we define two different scripts: <code>start-dev</code> and <code>start-prod</code>. <br>
+    The <code>start-dev</code> script uses the two npm modules <code>cross-env</code> and <code>nodemon</code>,
+    to provide a development port number and to continuously restart the app when changes have been made. <br>
+    The <code>start-prod</code> script simply uses node to launch the app, as we have set a default port in the app
+    and we don't want to restart the app on changes when it is in production.
+</p>
+<p>
+    To run a script, you need to be in the same directory as <code>package.json</code> and then run <code>npm run start-dev</code>.
 </p>
 
 <hr>

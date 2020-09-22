@@ -8,15 +8,19 @@
         "link" : "http://expressjs.com/en/4x/api.html"
       },
       {
-        "description" : "NPM page for Express",
+        "description" : "npm - express",
         "link" : "https://www.npmjs.com/package/express"
+      },
+      {
+        "description" : "npm - express-fileupload",
+        "link" : "https://www.npmjs.com/package/express-fileupload"
+      },
+      {
+        "description" : "npm - ejs",
+        "link" : "https://www.npmjs.com/package/ejs"
       }
     ],
-    "searchTerms": [
-      {
-        "term" : "Express"
-      }
-    ]
+    "searchTerms": ["express", "ejs", "express-fileupload", "express fileupload"]
   },
   {
     "title" : "Arrays",
@@ -27,14 +31,7 @@
         "link" : "https://www.w3schools.com/js/js_arrays.asp"
       }
     ],
-    "searchTerms": [
-      {
-        "term" : "arrays"
-      },
-      {
-        "term" : "list"
-      }
-    ]
+    "searchTerms": ["arrays", "list"]
   },
   {
     "title" : "JSON",
@@ -49,14 +46,7 @@
         "link" : "https://www.codementor.io/@codementorteam/how-to-use-json-files-in-node-js-85hndqt32#automatically-reading-a-json-file"
       }
     ],
-    "searchTerms": [
-      {
-        "term" : "json objects"
-      },
-      {
-        "term" : "javascript object notation"
-      }
-    ]
+    "searchTerms": ["json objects", "javascript object notation"]
   },
   {
     "title" : "Node.JS",
@@ -97,28 +87,25 @@
       {
         "description" : "Node.JS - What is require?",
         "link" : "https://nodejs.org/en/knowledge/getting-started/what-is-require/"
+      },
+      {
+        "description" : "Node.JS - Process",
+        "link" : "https://nodejs.org/api/process.html"
+      },
+      {
+        "description" : "npm - budo",
+        "link" : "https://www.npmjs.com/package/budo"
+      },
+      {
+        "description" : "npm - nodemon",
+        "link" : "https://www.npmjs.com/package/nodemon"
+      },
+      {
+        "description" : "npm - cross-env",
+        "link" : "https://www.npmjs.com/package/cross-env"
       }
     ],
-    "searchTerms": [
-      {
-        "term" : "node js"
-      },
-      {
-        "term" : "nodejs"
-      },
-      {
-        "term" : "npm"
-      },
-      {
-        "term" : "v8"
-      },
-      {
-        "term" : "chrome v8"
-      },
-      {
-        "term" : "repl"
-      }
-    ]
+    "searchTerms": ["node js", "nodejs", "npm", "v8", "chrome v8", "repl", "nodemon", "budo", "cross-env", "environmental variables", "scripts", "dev prod"]
   },
   {
     "title" : "RESTful Web services",
@@ -141,20 +128,7 @@
         "link" : "https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods"
       }
     ],
-    "searchTerms": [
-      {
-        "term" : "restful web services"
-      },
-      {
-        "term" : "insomnia"
-      },
-      {
-        "term" : "postman"
-      },
-      {
-        "term" : "http request methods"
-      }
-    ]
+    "searchTerms": ["restful web services", "insomnia", "postman", "http request methods"]
   },
   {
     "title" : "Functions",
@@ -171,16 +145,33 @@
       {
         "description" : "JavaScript.info - Callbacks",
         "link" : "https://javascript.info/callbacks"
-      }
-    ],
-    "searchTerms": [
-      {
-        "term" : "arrow functions"
       },
       {
-        "term" : "callbacks"
+        "description" : "MDN - Map - JavaScript",
+        "link" : "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map"
+      },
+      {
+        "description" : "Vinta.com - JavaScript's Lambda and Arrow Functions",
+        "link" : "https://www.vinta.com.br/blog/2015/javascript-lambda-and-arrow-functions/"
+      },
+      {
+        "description" : "MDN - Conditional (ternary) operator",
+        "link" : "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator"
+      },
+      {
+        "description" : "W3 Schools - JavaScript Array filter()",
+        "link" : "https://www.w3schools.com/jsref/jsref_filter.asp"
+      },
+      {
+        "description" : "W3 Schools - JavaScript Array find()",
+        "link" : "https://www.w3schools.com/jsref/jsref_find.asp"
+      },
+      {
+        "description" : "W3 Schools - JavaScript Array map()",
+        "link" : "https://www.w3schools.com/jsref/jsref_map.asp"
       }
-    ]
+    ],
+    "searchTerms": ["arrow functions", "callbacks", "lambda", "ternary", "built-in functions", "filter()", "find()", "map()"]
   },
   {
     "title" : "Variables",
@@ -195,14 +186,7 @@
         "link" : "https://hackernoon.com/why-you-shouldnt-use-var-anymore-f109a58b9b70"
       }
     ],
-    "searchTerms": [
-      {
-        "term" : "variables"
-      },
-      {
-        "term" : "const let var"
-      }
-    ]
+    "searchTerms": ["variables", "const", "let", "var"]
   },
   {
     "title" : "Objects",
@@ -213,11 +197,7 @@
         "link" : "https://www.w3schools.com/js/js_objects.asp"
       }
     ],
-    "searchTerms": [
-      {
-        "term" : "javascript objects"
-      }
-    ]
+    "searchTerms": ["javascript objects"]
   },
   {
     "title" : "FS",
@@ -228,14 +208,7 @@
         "link" : "https://www.w3schools.com/nodejs/nodejs_filesystem.asp"
       }
     ],
-    "searchTerms": [
-      {
-        "term" : "fs"
-      },
-      {
-        "term" : "filesystem"
-      }
-    ]
+    "searchTerms": ["fs", "filesystem"]
   },
   {
     "title" : "Sorting JSON by specific value",
@@ -250,14 +223,7 @@
         "link" : "https://www.w3schools.com/jsref/jsref_localecompare.asp"
       }
     ],
-    "searchTerms": [
-      {
-        "term" : "sorting json by specific value"
-      },
-      {
-        "term" : "localeCompare"
-      }
-    ]
+    "searchTerms": ["sorting json by specific value", "localeCompare"]
   },
   {
     "title" : "Data types",
@@ -272,10 +238,56 @@
         "link" : "https://javascript.info/types"
       }
     ],
-    "searchTerms": [
+    "searchTerms": ["data types"]
+  },
+  {
+    "title" : "jQuery !done",
+    "fileName" : "jquery.html",
+    "links" : [
       {
-        "term" : "data types"
+        "description" : "jQuery",
+        "link" : "https://jquery.com/"
+      },
+      {
+        "description" : "W3 Schools - jQuery Tutorial",
+        "link" : "https://www.w3schools.com/jquery/"
+      },
+      {
+        "description" : "W3 Schools - jQuery Get Started",
+        "link" : "https://www.w3schools.com/jquery/jquery_get_started.asp"
+      },
+      {
+        "description" : "Hosted Libraries | Google Developers",
+        "link" : "https://developers.google.com/speed/libraries/#jquery"
+      },
+      {
+        "description" : "jQuery.ajax() | jQuery API Documentation",
+        "link" : "https://api.jquery.com/Jquery.ajax/"
+      },
+      {
+        "description" : "W3 Schools - jQuery.ajax() Method",
+        "link" : "https://www.w3schools.com/jquery/ajax_ajax.asp"
       }
-    ]
+    ],
+    "searchTerms": ["jquery", "cdn", "ajax"]
+  },
+  {
+    "title" : "HTML !done",
+    "fileName" : "html.html",
+    "links" : [
+      {
+        "description" : "W3 Schools - HTML Tutorial",
+        "link" : "https://www.w3schools.com/html/"
+      },
+      {
+        "description" : "Wikipedia - HTML",
+        "link" : "https://en.wikipedia.org/wiki/HTML"
+      },
+      {
+        "description" : "JavaScript HTML DOM",
+        "link" : "https://www.w3schools.com/js/js_htmldom.asp"
+      }
+    ],
+    "searchTerms": ["html", "dom", "domain object model"]
   }
 ]

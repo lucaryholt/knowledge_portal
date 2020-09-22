@@ -1,10 +1,12 @@
-const ip = 'localhost:8080';
+const ip = window.location.origin;
 let searchTerms = null;
+
+console.log(window.location);
 
 function getWisdoms() {
     $.ajax({
         method: "GET",
-        url: "http://" + ip + "/api/wisdoms"
+        url: ip + "/api/wisdoms"
     }).done(function (data) {
         for (let i = 0; i < data.length; i++) {
             appendWisdom(data[i]);
@@ -16,7 +18,7 @@ function getWisdoms() {
 function getSearchTerms(){
     $.ajax({
         method: "GET",
-        url: "http://" + ip + "/api/searchTerms"
+        url: ip + "/api/searchTerms"
     }).done(function (data){
         searchTerms = data.data;
     });
@@ -25,10 +27,9 @@ function getSearchTerms(){
 function searchUpdate(){
     const term = $('#searchBox').val();
     const searchResults = $('#searchResults');
-    let foundPages = [];
     let $div = $("<div>", {
         class: "list-group-item list-group-item-action",
-        style: "z-index: 1; position: absolute",
+        style: "z-index: 1; position: absolute; background: darkgray; width: 350px",
         id: "searchResults"
     });
 
@@ -36,13 +37,21 @@ function searchUpdate(){
     $div.html('');
 
     if(term !== ''){
-        for(let i = 0; i < searchTerms.length; i++){
-            if(searchTerms[i].term.toLowerCase().includes(term.toLowerCase()) && foundPages.indexOf(searchTerms[i].page) === -1){
-                $div.append('<div><span class="list-group-item list-group-item-action" onclick="specificWisdom(' + "'" + searchTerms[i].page + "'" + ')">' + searchTerms[i].page + '</span></div>');
-                foundPages.push(searchTerms[i].page);
+        const pageResults = searchTerms.filter(pageResult => {
+            const termResults = pageResult.terms.filter(termResult => {
+                if(termResult.toLowerCase().includes(term.toLowerCase())){
+                    console.log('match');
+                    return termResult;
+                }
+            });
+            if(termResults.length !== 0){
+                return pageResult;
             }
+        });
+        for(let i = 0; i < pageResults.length; i++){
+            $div.append('<div><span class="list-group-item list-group-item-action" onclick="specificWisdom(' + "'" + pageResults[i].page + "'" + ')">' + pageResults[i].page + '</span></div>');
         }
-        if(foundPages.length !== 0) searchResults.append($div);
+        if(pageResults.length !== 0) searchResults.append($div);
     }
 }
 
@@ -53,7 +62,7 @@ function appendWisdom(wisdom){
 function specificWisdom(id){
     $.ajax({
         method: "GET",
-        url: "http://" + ip + "/api/wisdoms/" + id
+        url: ip + "/api/wisdoms/" + id
     }).done(function (data){
         const title = $("#wisdomTitle");
         const linkList = $("#wisdomLinkList");
