@@ -1,4 +1,5 @@
 const ip = 'localhost:8080';
+let searchTerms = null;
 
 function getWisdoms() {
     $.ajax({
@@ -8,8 +9,32 @@ function getWisdoms() {
         for (let i = 0; i < data.length; i++) {
             appendWisdom(data[i]);
         }
-        specificWisdom(data[1].title);
+        specificWisdom(data[0].title);
     });
+}
+
+function getSearchTerms(){
+    $.ajax({
+        method: "GET",
+        url: "http://" + ip + "/api/searchTerms"
+    }).done(function (data){
+        searchTerms = data.data;
+    });
+}
+
+function searchUpdate(){
+    const term = $('#searchBox').val();
+    const searchResults = $('#searchResults');
+    searchResults.html('');
+    let foundPages = [];
+    if(term !== ''){
+        for(let i = 0; i < searchTerms.length; i++){
+            if(searchTerms[i].term.toLowerCase().includes(term.toLowerCase()) && foundPages.indexOf(searchTerms[i].page) === -1){
+                searchResults.append('<div><span class="list-group-item list-group-item-action" onclick="specificWisdom(' + "'" + searchTerms[i].page + "'" + ')">' + searchTerms[i].page + '</span></div>');
+                foundPages.push(searchTerms[i].page);
+            }
+        }
+    }
 }
 
 function appendWisdom(wisdom){

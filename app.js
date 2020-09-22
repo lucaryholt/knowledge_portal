@@ -10,6 +10,7 @@ app.use(express.static(publicPath));
 const sendFileOptions = { root: publicPath };
 const wisdoms = sortWisdoms(require('./wisdoms/wisdoms.json'));
 const wisdomsMap = makeWisdomsMap();
+const searchTerms = makeSearchTerms();
 
 const ip = 'localhost:8080';
 const port = 8080;
@@ -27,6 +28,19 @@ function makeWisdomsMap(){
     }
 
     return wisdomsMap;
+}
+
+function makeSearchTerms(){
+    const terms = [];
+    for(let i = 0; i < wisdoms.length; i++){
+        for(let j = 0; j < wisdoms[i].searchTerms.length; j++){
+            terms.push({
+                term : wisdoms[i].searchTerms[j].term,
+                page : wisdoms[i].title
+            });
+        }
+    }
+    return terms;
 }
 
 app.get('/', (req, res) => {
@@ -63,6 +77,10 @@ app.get('/api/wisdoms/:title', (req, res) => {
             return a.description.localeCompare(b.description);
         })
     });
+});
+
+app.get('/api/searchTerms', (req, res) => {
+    return res.send( { data : searchTerms});
 });
 
 app.get('*', (req, res) => {

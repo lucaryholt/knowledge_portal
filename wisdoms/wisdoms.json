@@ -11,6 +11,11 @@
         "description" : "NPM page for Express",
         "link" : "https://www.npmjs.com/package/express"
       }
+    ],
+    "searchTerms": [
+      {
+        "term" : "Express"
+      }
     ]
   },
   {
@@ -20,6 +25,14 @@
       {
         "description" : "W3 Schools - JS Arrays",
         "link" : "https://www.w3schools.com/js/js_arrays.asp"
+      }
+    ],
+    "searchTerms": [
+      {
+        "term" : "arrays"
+      },
+      {
+        "term" : "list"
       }
     ]
   },
@@ -34,6 +47,14 @@
       {
         "description" : "Codementor.io",
         "link" : "https://www.codementor.io/@codementorteam/how-to-use-json-files-in-node-js-85hndqt32#automatically-reading-a-json-file"
+      }
+    ],
+    "searchTerms": [
+      {
+        "term" : "json objects"
+      },
+      {
+        "term" : "javascript object notation"
       }
     ]
   },
@@ -77,6 +98,26 @@
         "description" : "Node.JS - What is require?",
         "link" : "https://nodejs.org/en/knowledge/getting-started/what-is-require/"
       }
+    ],
+    "searchTerms": [
+      {
+        "term" : "node js"
+      },
+      {
+        "term" : "nodejs"
+      },
+      {
+        "term" : "npm"
+      },
+      {
+        "term" : "v8"
+      },
+      {
+        "term" : "chrome v8"
+      },
+      {
+        "term" : "repl"
+      }
     ]
   },
   {
@@ -99,6 +140,20 @@
         "description" : "MDN - HTTP request methods",
         "link" : "https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods"
       }
+    ],
+    "searchTerms": [
+      {
+        "term" : "restful web services"
+      },
+      {
+        "term" : "insomnia"
+      },
+      {
+        "term" : "postman"
+      },
+      {
+        "term" : "http request methods"
+      }
     ]
   },
   {
@@ -117,6 +172,14 @@
         "description" : "JavaScript.info - Callbacks",
         "link" : "https://javascript.info/callbacks"
       }
+    ],
+    "searchTerms": [
+      {
+        "term" : "arrow functions"
+      },
+      {
+        "term" : "callbacks"
+      }
     ]
   },
   {
@@ -131,6 +194,14 @@
         "description" : "Hackernoon - Why You Shouldn't Use 'var' Anymore",
         "link" : "https://hackernoon.com/why-you-shouldnt-use-var-anymore-f109a58b9b70"
       }
+    ],
+    "searchTerms": [
+      {
+        "term" : "variables"
+      },
+      {
+        "term" : "const let var"
+      }
     ]
   },
   {
@@ -141,6 +212,11 @@
         "description" : "W3 Schools - Objects",
         "link" : "https://www.w3schools.com/js/js_objects.asp"
       }
+    ],
+    "searchTerms": [
+      {
+        "term" : "javascript objects"
+      }
     ]
   },
   {
@@ -150,6 +226,14 @@
       {
         "description" : "W3 Schools - Node.JS Filesystem",
         "link" : "https://www.w3schools.com/nodejs/nodejs_filesystem.asp"
+      }
+    ],
+    "searchTerms": [
+      {
+        "term" : "fs"
+      },
+      {
+        "term" : "filesystem"
       }
     ]
   },
@@ -165,6 +249,14 @@
         "description" : "W3 Schools - JavaScript String localeCompare() method",
         "link" : "https://www.w3schools.com/jsref/jsref_localecompare.asp"
       }
+    ],
+    "searchTerms": [
+      {
+        "term" : "sorting json by specific value"
+      },
+      {
+        "term" : "localeCompare"
+      }
     ]
   },
   {
@@ -178,6 +270,11 @@
       {
         "description" : "JavaScript.info - Data types",
         "link" : "https://javascript.info/types"
+      }
+    ],
+    "searchTerms": [
+      {
+        "term" : "data types"
       }
     ]
   }

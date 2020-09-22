@@ -11,13 +11,27 @@
 <body>
     <div class="container">
         <div class="row" style="padding: 20px">
-            <img src="images/nodejs.svg" alt="Node JS logo" style="width: 100px; padding-right: 10px">
-            <h1 class="font-weight-bold">Wisdom</h1>
+            <div class="col-9">
+                <img src="images/nodejs.svg" alt="Node JS logo" style="width: 100px; padding-right: 10px">
+                <h1 class="font-weight-bold">Wisdom</h1>
+            </div>
+            <div class="col-3">
+
+            </div>
         </div>
 
         <div class="row">
             <div class="col-4">
-                <ul class="list-group list-group-flush" id="wisdomsList"></ul>
+                <div class="card">
+                    <div class="card-body">
+                        <div style="padding-bottom: 10px">
+                            <input id="searchBox" type="text" placeholder="Search" class="form-control" oninput="searchUpdate()">
+                        </div>
+                        <ul class="list-group" id="searchResults"></ul>
+                    </div>
+                </div>
+
+                <ul class="list-group" id="wisdomsList" style="padding-top: 25px"></ul>
             </div>
             <div class="col-8">
                 <h2 id="wisdomTitle"></h2>
@@ -35,6 +49,9 @@
     </div>
 
     <script src="js/site.js"></script>
-    <script>getWisdoms()</script>
+    <script>
+        getWisdoms();
+        getSearchTerms();
+    </script>
 </body>
 </html>
