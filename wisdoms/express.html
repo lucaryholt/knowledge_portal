@@ -14,7 +14,7 @@
     Add 'express' to package.json (see 'Node.JS') and include in file (see 'require()'). <br>
     Now we can call the <code>app.listen(port, callback)</code> function: <br>
     <div class="code-block rounded">
-        <code>
+        <code class="code-block-code">
             app.listen(8080, (error) => { <br>
             &nbsp;&nbsp;&nbsp;&nbsp;if(error){ <br>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(error); <br>
@@ -35,7 +35,7 @@
 <div class="text-section">
     To handle a request we can use the <code>app.get(path, callback)</code> function: <br>
     <div class="code-block rounded">
-        <code>
+        <code class="code-block-code">
             app.get('/notes', (req, res) => { <br>
             &nbsp;&nbsp;&nbsp;&nbsp;return res.send(notes); <br>
             });
@@ -47,7 +47,7 @@
 <div class="text-section">
     Express also handles dynamic parameters, to fx return a specific note by id. <br>
     <div class="code-block rounded">
-        <code>
+        <code class="code-block-code">
             app.get('/notes/:id', (req, res) => { <br>
             &nbsp;&nbsp;&nbsp;&nbsp;const id = Number(req.params.id); <br>
             &nbsp;&nbsp;&nbsp;&nbsp;const note = getNote(id); <br>
@@ -100,7 +100,7 @@
     you are not handling, as an example: '/pathnothandled', they will get an error page. Not a good experience. <br>
     To prevent this you can set up a 'catch all' handler and redirect them to '/' (or wherever else you want): <br>
     <div class="code-block rounded">
-        <code>
+        <code class="code-block-code">
             app.get('*', (req, res) => { <br>
             &nbsp;&nbsp;&nbsp;&nbsp;return res.redirect('/'); <br>
             });

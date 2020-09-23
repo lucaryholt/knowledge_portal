@@ -27,7 +27,6 @@ function searchUpdate(){
     const searchResults = $('#searchResults');
     let $div = $("<div>", {
         class: "list-group-item list-group-item-action",
-        style: "z-index: 1; position: absolute; background: darkgray; width: 350px",
         id: "searchResults"
     });
 

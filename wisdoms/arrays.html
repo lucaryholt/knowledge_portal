@@ -6,7 +6,7 @@
 <div class="text-section">
     Instantiate array: <br>
     <div class="code-block rounded">
-        <code>
+        <code class="code-block-code">
             const array = ['Item one', 'Item two', 'Item three']
         </code>
     </div>
@@ -15,7 +15,7 @@
 <div class="text-section">
     You can also instantiate an array using the JS 'new' keyword: <br>
     <div class="code-block rounded">
-        <code>
+        <code class="code-block-code">
             const array = new Array('Item one', 'Item two', 'Item three')
         </code>
     </div>
@@ -24,7 +24,9 @@
 <div class="text-section">
     Getting item from array: <br>
     <div class="code-block rounded">
-        <code>array[1]</code>
+        <code class="code-block-code">
+            array[1]
+        </code>
     </div>
     returns <code>'Item two'</code> as arrays are zero indexed.
     <br>
@@ -35,7 +37,7 @@
     Updating item in array: <br>
     We can change 'Item three' to 'Item 3' with: <br>
     <div class="code-block rounded">
-        <code>
+        <code class="code-block-code">
             array[2] = 'Item 3'
         </code>
     </div>
@@ -44,14 +46,18 @@
 <div class="text-section">
     Adding item to array: <br>
     <div class="code-block rounded">
-        <code>array.push('Item four')</code>
+        <code class="code-block-code">
+            array.push('Item four')
+        </code>
     </div>
 </div>
 
 <div class="text-section">
     Removing last item in array: <br>
     <div class="code-block rounded">
-        <code>array.pop()</code>
+        <code class="code-block-code">
+            array.pop()
+        </code>
     </div>
 </div>
 
@@ -61,7 +67,9 @@
 
 As said earlier, arrays can contain different types, so you could have an array like this: <br>
 <div class="code-block rounded">
-    <code>const misc = ['this is a string', 80, function(){console.log('Print statement')}]</code>
+    <code class="code-block-code">
+        const misc = ['this is a string', 80, function(){console.log('Print statement')}]
+    </code>
 </div>
 
 You could then call <code>misc[2]()</code> and 'Print statement' would be printed to the console.
@@ -81,11 +89,15 @@ Normally you would declare the function elsewhere and then reference it in the a
 <div class="text-section">
     Get the length of an array (useful in for loops): <br>
     <div class="code-block rounded">
-        <code>array.length</code>
+        <code class="code-block-code">
+            array.length
+        </code>
     </div>
     Sort an array: <br>
     <div class="code-block rounded">
-        <code>array.sort()</code> <br>
+        <code class="code-block-code">
+            array.sort()
+        </code> <br>
     </div>
     (See also 'Sorting JSON by specific value'). <br>
     The sort method sorts the original array.
@@ -93,7 +105,9 @@ Normally you would declare the function elsewhere and then reference it in the a
 <div class="text-section">
     Get index of specific element in array: <br>
     <div class="code-block rounded">
-        <code>array.indexOf('Item two')</code> <br>
+        <code class="code-block-code">
+            array.indexOf('Item two')
+        </code> <br>
     </div>
     would return 1.
 </div>
@@ -108,7 +122,9 @@ Normally you would declare the function elsewhere and then reference it in the a
     'items' is the items you want to insert. <br>
     Example: <br>
     <div class="code-block rounded">
-        <code>array.splice(1, 0, 'Inserted item', 'Another')</code>
+        <code class="code-block-code">
+            array.splice(1, 0, 'Inserted item', 'Another')
+        </code>
     </div>
     would return an empty array, but 'array' would now look like this: <code>['Item one', 'Inserted item', 'Another', 'Item two', 'Item three']</code>.
     <br>
@@ -122,7 +138,8 @@ Normally you would declare the function elsewhere and then reference it in the a
 <div class="text-section">
     Syntax for a for-loop that prints out all elements in <code>array</code>:<br>
     <div class="code-block rounded">
-        <code>for(let i = 0; i < array.length; i++){ <br>
+        <code class="code-block-code">
+            for(let i = 0; i < array.length; i++){ <br>
             &nbsp;&nbsp;&nbsp;&nbsp;console.log(array[i]); <br>
             }
         </code> <br>
@@ -137,6 +154,8 @@ Normally you would declare the function elsewhere and then reference it in the a
     as this will copy the reference and both 'copyArray' and 'array' will point to the same array. <br>
     Here you can use the slice() method, as this copies the value of the array instead of the reference: <br>
     <div class="code-block rounded">
-        <code>copyArray = array.slice()</code>
+        <code class="code-block-code">
+            copyArray = array.slice()
+        </code>
     </div>
 </div>
