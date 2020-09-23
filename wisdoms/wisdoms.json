@@ -276,7 +276,7 @@
     "searchTerms": ["jquery", "cdn", "ajax"]
   },
   {
-    "title" : "HTML !done",
+    "title" : "HTML",
     "fileName" : "html.html",
     "links" : [
       {
@@ -288,10 +288,14 @@
         "link" : "https://en.wikipedia.org/wiki/HTML"
       },
       {
-        "description" : "JavaScript HTML DOM",
+        "description" : "Wikipedia - CSS",
+        "link" : "https://en.wikipedia.org/wiki/CSS"
+      },
+      {
+        "description" : "W3 Schools - JavaScript HTML DOM",
         "link" : "https://www.w3schools.com/js/js_htmldom.asp"
       }
     ],
-    "searchTerms": ["html", "dom", "domain object model"]
+    "searchTerms": ["html", "dom", "document object model", "css"]
   }
 ]

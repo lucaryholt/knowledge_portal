@@ -1,4 +1,6 @@
-<div class="text-section">JavaScript runtime built on <a target="_blank" href="https://v8.dev/">Chrome's V8 Javascript engine</a>.</div>
+<div class="text-section sub-title">
+    JavaScript runtime built on <a target="_blank" href="https://v8.dev/">Chrome's V8 Javascript engine</a>.
+</div>
 
 <hr>
 
@@ -56,7 +58,8 @@
     listens for requests (see section about scripts under). <br>
     To access an environmental variable in code, if you for example wanted to read the <code>PORT</code> variable, you would
     write: <code>process.env.PORT</code>. <code>process</code> is built into Node and provides various information about the
-    current running node process. <code>env</code> contains all environmental variables and <code>PORT</code> is what we called
+    current running node process. <br>
+    <code>env</code> contains all environmental variables and <code>PORT</code> is what we called
     the variable when running the app. If we look for a variable in code, but do not declare it when running the app, it will result
     in <code>undefined</code>.
 </div>
@@ -146,7 +149,7 @@
 <div class="text-section">
     <code>require()</code> is a way in Node.JS to include modules from separate files. <br>
     This includes built in Node.JS modules, third-party modules (from fx <code>npm</code> or <code>yarn</code>) or
-    JS scripts you have written yourself.
+    <code>JS</code> scripts you have written yourself.
 </div>
 <div class="text-section">
     The syntax to import a Node.JS, third-party and self written module is as follows in that order: <br>
@@ -155,14 +158,17 @@
             const fs = require('fs');
         </code> <br>
     </div>
+    <br>
     <div class="code-block rounded">
         <code>
             const express = require('express');
         </code> <br>
     </div>
+    <br>
     <div class="code-block rounded">
         <code>
             const selfWrittenModule = ('./path/to/script');
         </code> <br>
     </div>
+    <br>
 </div>

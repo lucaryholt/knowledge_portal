@@ -1,20 +1,94 @@
-<!-- TODO html, dom, html dom life cycle -->
-<div class="text-section">
+<div class="text-section sub-title">
     Hypertext Markup Language.
 </div>
 
 <hr>
 
 <h4>General HTML</h4>
+<div class="text-section">
+    The standard language for documents designed to be displayed in a web browser. <br>
+    <code>HTML</code> is usually styled with <code>CSS</code> (Cascading Style Sheets) and scripted with
+    JS.
+</div>
+<div class="text-section">
+    <div class="row">
+        <div class="col-10">
+            <code>HTML</code> files have the file extension <code>.html</code> (or <code>.htm</code>). <br>
+            The latest version of the language is <code>HTML5</code>. <br>
+        </div>
+        <div class="col-2">
+            <img src="./images/html5.png" class="image-small" alt="HTML5">
+        </div>
+    </div>
+    In <code>HTML</code> you can place various elements.
+    The elements generally have an start <code>&lt;script&gt;</code> and end <code>&lt;/script&gt;</code> tag.
+    The elements can be placed within each other and thereby create a hierarchy of elements.
+</div>
+<div class="text-section">
+    A normal <code>HTML5</code> page has the following syntax: <br>
+    <div class="code-block rounded">
+        <code>
+            &lt;!DOCTYPE html&gt; <br>
+            &lt;html lang="en"&gt; <br>
+            &lt;head&gt; <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&lt;meta charset="UTF-8"&gt; <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;Title&lt;/title&gt; <br>
+            &lt;/head&gt; <br>
+            &lt;body&gt; <br>
+            <br>
+            &lt;/body&gt; <br>
+            &lt;/html&gt;
+        </code>
+    </div>
+    The document starts with the <code>&lt;!DOCTYPE html&gt;</code> declaration. All <code>HTML</code> documents
+    must have this. This is a message to the browser about what kind of document to expect. <br>
+    Under this declaration we see a number of different elements. The <code>&lt;html lang="en"&gt;</code> encloses
+    the content of the document. Inside that we have the <code>&lt;head&gt;</code> and <code>&lt;body&gt;</code> elements.
+    <br>
+    The <code>&lt;head&gt;</code> element contains some information about the document, including <code>title</code>.
+    This title is what we see in the browser tab. You can also place <code>&lt;link&gt;</code> and <code>&lt;script&gt;</code>
+    elements here to import, as an example, <code>CSS</code> and <code>JS</code> files. If placed in the <code>&lt;head&gt;</code> element
+    the browser will load these files, before showing the content.
+</div>
+<div class="text-section">
+    The <code>&lt;body&gt;</code> element is the content that is actually shown in the browser. This could be text, images and a lot more.
+    <br>
+    As you can in the <code>&lt;head&gt;</code>, you can also import <code>CSS</code> and <code>JS</code> here. If these are placed here,
+    the browser can show the <code>HTML</code> before actually downloading the files.
+</div>
+<div class="text-section">
+    When the browser downloads a <code>JS</code> file with the <code>&lt;script&gt;</code> element, it loads the script and runs it
+    like a normal <code>JavaScript</code> file. If there are declared functions in the script, these can now be called by the
+    <code>onClick</code> property (among others) on an <code>HTML</code> element.
+</div>
+<div class="text-section">
+    Usually when using <code>JS</code> in a browser, it is to dynamically updating the <code>HTML</code>. The most used
+    library for this is <code>jQuery</code>.
+</div>
 
 <hr>
 
 <h4>DOM</h4>
-
-<hr>
-
-<h4>CSS</h4>
-
-<hr>
-
-<h4>JS in HTML</h4>
+<div class="text-section">
+    <code>DOM</code> is short for <code>Document Object Model</code>. <br>
+    We use this when updating <code>HTML</code> with <code>jQuery</code>. <br>
+    The <code>HTML DOM</code> is constructed as a tree of Objects (image below).
+    <img src="./images/pic_htmltree.gif" class="image-xl" alt="HTML tree"> <br>
+    When the browser loads a webpage it creates a <code>Document Object Model</code>.
+</div>
+<div class="text-section">
+    When we use <code>jQuery</code> we use this to select which element(s) to manipulate (or read information from).
+</div>
+<div class="text-section">
+    The <code>HTML DOM</code> defines:
+    <ul>
+        <li><code>HTML</code> elements as objects</li>
+        <li>Properties of all <code>HTML</code> elements</li>
+        <li>Methods to access all <code>HTML</code> elements</li>
+        <li>Events for all <code>HTML</code> elements</li>
+    </ul>
+</div>
+<div class="text-section text-info">
+    "The HTML DOM is a standard for how to get, change, add, or delete HTML elements." <br>
+    (quote from 'W3 Schools - JavaScript HTML DOM').
+</div>

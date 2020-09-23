@@ -14,16 +14,23 @@
 
 #logo{
     width: 100px;
-    padding-right: 10px;
 }
 
 #logo-holder{
     padding: 20px;
+    margin: auto;
+    display: block;
+    text-align: center;
 }
 
 #bottom{
     padding-bottom: 50px;
     padding-top: 50px;
+}
+
+.image-xl{
+    height: 250px;
+    border-style: solid;
 }
 
 .image-large{
@@ -40,4 +47,14 @@
 
 .text-section{
     padding-bottom: 10px;
+}
+
+.title{
+    font-weight: bold;
+    padding-top: 5px;
+}
+
+.sub-title{
+    font-weight: lighter;
+    font-size: 20px;
 }
