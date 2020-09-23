@@ -3,26 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <title>Node.JS Wisdom</title>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <div class="row" style="padding: 20px">
-            <img src="images/nodejs.svg" alt="Node JS logo" style="width: 100px; padding-right: 10px">
+        <div id="logo-holder" class="row">
+            <img id="logo" src="images/nodejs.svg" alt="Node JS logo">
             <h1 class="font-weight-bold">Wisdom</h1>
         </div>
 
         <div class="row">
             <div class="col-4">
-                <div style="padding-bottom: 10px">
+                <div id="searchBoxHolder">
                     <input id="searchBox" type="text" placeholder="Search" class="form-control" oninput="searchUpdate()">
                 </div>
                 <ul class="list-group" id="searchResults"></ul>
 
-                <ul class="list-group" id="wisdomsList" style="padding-top: 25px"></ul>
+                <ul class="list-group" id="wisdomsList"></ul>
             </div>
             <div style="background: ghostwhite" class="col-8 rounded">
                 <h2 id="wisdomTitle"></h2>
@@ -34,11 +31,14 @@
             </div>
         </div>
 
-        <div class="text-center" style="padding-bottom: 50px; padding-top: 50px">
+        <div class="text-center" id="bottom">
             <h5><a target="_blank" href="https://github.com/lucaryholt/node_js_wisdom">GitHub Repository</a></h5>
         </div>
     </div>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
     <script src="index.js"></script>
 </body>
 </html>

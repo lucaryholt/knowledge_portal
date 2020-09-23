@@ -74,14 +74,16 @@
 </p>
 <p>
     Syntax: <br>
-    <code>
-        { <br>
-        &nbsp;&nbsp;&nbsp;&nbsp;"dependencies" : { <br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"express" : "^4.17.1", <br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"ejs": "^3.1.5" <br>
-        &nbsp;&nbsp;&nbsp;&nbsp;} <br>
-        }
-    </code> <br>
+    <div class="code-block rounded">
+        <code>
+            { <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;"dependencies" : { <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"express" : "^4.17.1", <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"ejs": "^3.1.5" <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;} <br>
+            }
+        </code> <br>
+    </div>
     The file is built as an JSON object, where the key we use here <code>"dependencies"</code>
     refers to a list of KeyValuePairs noting the package and version number:
     the key being the package name and value being the version number
@@ -101,12 +103,14 @@
 </p>
 <p>
     An example of this can be seen here: <br>
-    <code>
-        "scripts": { <br>
-        &nbsp;&nbsp;&nbsp;&nbsp;"start-dev": "cross-env PORT=8080 nodemon app.js", <br>
-        &nbsp;&nbsp;&nbsp;&nbsp;"start-prod": "node app.js" <br>
-        }
-    </code> <br>
+    <div class="code-block rounded">
+        <code>
+            "scripts": { <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;"start-dev": "cross-env PORT=8080 nodemon app.js", <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;"start-prod": "node app.js" <br>
+            }
+        </code> <br>
+    </div>
     In these lines of JSON we define two different scripts: <code>start-dev</code> and <code>start-prod</code>. <br>
     The <code>start-dev</code> script uses the two npm modules <code>cross-env</code> and <code>nodemon</code>,
     to provide a development port number and to continuously restart the app when changes have been made. <br>
@@ -145,13 +149,19 @@
 </p>
 <p>
     The syntax to import a Node.JS, third-party and self written module is as follows in that order: <br>
-    <code>
-        const fs = require('fs');
-    </code> <br>
-    <code>
-        const express = require('express');
-    </code> <br>
-    <code>
-        const selfWrittenModule = ('./path/to/script');
-    </code> <br>
+    <div class="code-block rounded">
+        <code>
+            const fs = require('fs');
+        </code> <br>
+    </div>
+    <div class="code-block rounded">
+        <code>
+            const express = require('express');
+        </code> <br>
+    </div>
+    <div class="code-block rounded">
+        <code>
+            const selfWrittenModule = ('./path/to/script');
+        </code> <br>
+    </div>
 </p>

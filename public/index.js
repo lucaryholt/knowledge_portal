@@ -1,8 +1,6 @@
 const ip = window.location.origin;
 let searchTerms = null;
 
-console.log(window.location);
-
 function getWisdoms() {
     $.ajax({
         method: "GET",
@@ -40,7 +38,6 @@ function searchUpdate(){
         const pageResults = searchTerms.filter(pageResult => {
             const termResults = pageResult.terms.filter(termResult => {
                 if(termResult.toLowerCase().includes(term.toLowerCase())){
-                    console.log('match');
                     return termResult;
                 }
             });
@@ -69,7 +66,7 @@ function specificWisdom(id){
         const body = $("#wisdomBody");
         const searchBox = $("#searchResults");
 
-        $(document).prop('title', 'Node.JS Wisdom - ' + data.title);
+        $(document).prop('title', data.title + ' - Node.JS Wisdom');
 
         title.text(data.title);
 

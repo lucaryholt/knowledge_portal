@@ -14,31 +14,39 @@
 <h4>Syntax</h4>
 <p>
     To define a method the basic syntax is: <br>
-    <code>
-        function helloWorld(){ <br>
-        &nbsp;&nbsp;&nbsp;&nbsp;console.log('Hello world'); <br>
-        }
-    </code> <br>
+    <div class="code-block rounded">
+        <code>
+            function helloWorld(){ <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;console.log('Hello world'); <br>
+            }
+        </code> <br>
+    </div>
     To define a anonymous function as a variable: <br>
-    <code>
-        const helloWorld = function (){ <br>
-        &nbsp;&nbsp;&nbsp;&nbsp;console.log('Hello world'); <br>
-        }
-    </code> <br>
+    <div class="code-block rounded">
+        <code>
+            const helloWorld = function (){ <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;console.log('Hello world'); <br>
+            }
+        </code> <br>
+    </div>
     Another quicker way to define a function is the <code>arrow syntax</code>: <br>
-    <code>
-        const helloWorld = () => { <br>
-        &nbsp;&nbsp;&nbsp;&nbsp;console.log('Hello world'); <br>
-        }
-    </code> <br>
+    <div class="code-block rounded">
+        <code>
+            const helloWorld = () => { <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;console.log('Hello world'); <br>
+            }
+        </code> <br>
+    </div>
 </p>
 <p>
-    To have a function return a value, you type in <code>return</code> and then the value: <br>
-    <code>
-        function multiplyBy2(number){ <br>
-        &nbsp;&nbsp;&nbsp;&nbsp;return number * 2; <br>
-        }
-    </code> <br>
+  To have a function return a value, you type in <code>return</code> and then the value: <br>
+    <div class="code-block rounded">
+        <code>
+            function multiplyBy2(number){ <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;return number * 2; <br>
+            }
+        </code> <br>
+    </div>
 </p>
 
 <hr>
@@ -46,13 +54,15 @@
 <h4>Passing a function</h4>
 <p>
     Functions can be passed like a variable. To pass a function you simply write it without the parentheses:
-    <code>
-        executeOtherFunction(helloWorld); <br>
-        <br>
-        function executeOtherFunction(function){ <br>
-        &nbsp;&nbsp;&nbsp;&nbsp;function(); <br>
-        }
-    </code> <br>
+    <div class="code-block rounded">
+        <code>
+            executeOtherFunction(helloWorld); <br>
+            <br>
+            function executeOtherFunction(function){ <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;function(); <br>
+            }
+        </code> <br>
+    </div>
     This would pass the <code>helloWorld</code> function and then the <code>executeOtherFunction</code> function
     would execute it, resulting in <code>Hello World</code> being printet to the console.
 </p>
@@ -65,21 +75,27 @@
 </p>
 <p>
     Syntax: <br>
-    <code>
-        const poke = (name) => "poke " + name; <br>
-        function interact(name, interactingFunction){ <br>
-        &nbsp;&nbsp;&nbsp;&nbsp;console.log(interactingFunction(name)); <br>
-        }
-    </code> <br>
+    <div class="code-block rounded">
+        <code>
+            const poke = (name) => "poke " + name; <br>
+            function interact(name, interactingFunction){ <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;console.log(interactingFunction(name)); <br>
+            }
+        </code> <br>
+    </div>
     You could then call this: <br>
-    <code>
-        interact("Bob", poke);
-    </code> <br>
+    <div class="code-block rounded">
+        <code>
+            interact("Bob", poke);
+        </code> <br>
+    </div>
     This would print <code>poke Bob</code> <br>
     But you could also define another function when calling <code>interact</code>: <br>
-    <code>
-        interact("Jens", (name) => "hug " + name);
-    </code> <br>
+    <div class="code-block rounded">
+        <code>
+            interact("Jens", (name) => "hug " + name);
+        </code> <br>
+    </div>
     Which would print <code>hug Jens</code>.
 </p>
 <p>
@@ -112,9 +128,11 @@
 </p>
 <p>
     Syntax: <br>
-    <code>
-        const umbrellaMessage = isRaining ? 'Bring it!' : 'Nah, leave it.';
-    </code> <br>
+    <div class="code-block rounded">
+        <code>
+            const umbrellaMessage = isRaining ? 'Bring it!' : 'Nah, leave it.';
+        </code> <br>
+    </div>
     The above expression evaluates if <code>isRaining</code> is true or false and returns one of the two strings.
 </p>
 
@@ -146,23 +164,27 @@
 <p>
     <code>filter()</code> returns an array filled with elements that pass a test. This test is provided to
     <code>filter()</code> as a function. It calls said function once for each element in the array. Example: <br>
-    <code>
-        const ages = [32, 33, 16, 40]; <br>
-        function checkAdult(age) { <br>
-        &nbsp;&nbsp;&nbsp;&nbsp;return age >= 18; <br>
-        } <br>
-        const adults = ages.filter(checkAdult);
-    </code> <br>
+    <div class="code-block rounded">
+        <code>
+            const ages = [32, 33, 16, 40]; <br>
+            function checkAdult(age) { <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;return age >= 18; <br>
+            } <br>
+            const adults = ages.filter(checkAdult);
+        </code> <br>
+    </div>
     In the above code we have an array of ages, then a function that returns true if age is equal or greater than 18.
     Then we instantiate an adults constant with the value, from <code>filter()</code> called on the ages array,
     with <code>checkAdult(age)</code> as parameter. <br>
     The above code can be written shorter using an lambda expression: <br>
-    <code>
-        const ages = [32, 33, 16, 40]; <br>
-        const adults = ages.filter(age => { <br>
-        &nbsp;&nbsp;&nbsp;&nbsp;return age >= 18; <br>
-        });
-    </code> <br>
+    <div class="code-block rounded">
+        <code>
+            const ages = [32, 33, 16, 40]; <br>
+            const adults = ages.filter(age => { <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;return age >= 18; <br>
+            });
+        </code> <br>
+    </div>
 </p>
 <p>
     <code>filter()</code> does not change the original array, but returns a new array. <br>
