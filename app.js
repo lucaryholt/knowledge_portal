@@ -31,10 +31,6 @@ function makeSearchTerms(){
     });
 }
 
-app.get('/', (req, res) => {
-    res.sendFile('./index.html', sendFileOptions);
-});
-
 app.get('/api/wisdoms', (req, res) => {
     if(wisdoms.length === 0){
         return res.status(404).send({ error: 'No wisdoms. Come back later.' });
