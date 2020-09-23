@@ -1,18 +1,18 @@
-<p>
+<div class="text-section">
     A block of code designed to perform a particular task.
-</p>
+</div>
 
 <hr>
 
 <h4>General</h4>
-<p>
+<div class="text-section">
     Functions are first class citizens in JS. You can pass functions as parameters or save them as variables.
-</p>
+</div>
 
 <hr>
 
 <h4>Syntax</h4>
-<p>
+<div class="text-section">
     To define a method the basic syntax is: <br>
     <div class="code-block rounded">
         <code>
@@ -37,8 +37,8 @@
             }
         </code> <br>
     </div>
-</p>
-<p>
+</div>
+<div class="text-section">
   To have a function return a value, you type in <code>return</code> and then the value: <br>
     <div class="code-block rounded">
         <code>
@@ -47,12 +47,12 @@
             }
         </code> <br>
     </div>
-</p>
+</div>
 
 <hr>
 
 <h4>Passing a function</h4>
-<p>
+<div class="text-section">
     Functions can be passed like a variable. To pass a function you simply write it without the parentheses:
     <div class="code-block rounded">
         <code>
@@ -65,15 +65,15 @@
     </div>
     This would pass the <code>helloWorld</code> function and then the <code>executeOtherFunction</code> function
     would execute it, resulting in <code>Hello World</code> being printet to the console.
-</p>
+</div>
 
 <hr>
 
 <h4>Callbacks</h4>
-<p>
+<div class="text-section">
     Callbacks make it easy to perform actions asynchronous. <br>
-</p>
-<p>
+</div>
+<div class="text-section">
     Syntax: <br>
     <div class="code-block rounded">
         <code>
@@ -97,36 +97,36 @@
         </code> <br>
     </div>
     Which would print <code>hug Jens</code>.
-</p>
-<p>
+</div>
+<div class="text-section">
     Callbacks are used a lot in frameworks like Express for error, request and response handling.
-</p>
+</div>
 
 <hr>
 
 <h4>Lambda</h4>
-<p>
+<div class="text-section">
     Lambda expressions are not functions, but I choose to mention them here as they are expressions that create
     functions. <br>
     This is very important in JS, where functions are first-class citizens
     and are passed as arguments to other functions etc. <br>
-</p>
-<p>
+</div>
+<div class="text-section">
     To make an lambda expression (and create a function) we use the arrow notation from before.
-</p>
+</div>
 
 <hr>
 
 <h4>Ternary</h4>
-<p>
+<div class="text-section">
     The <code>ternary</code> conditional operator is not a function either (like lambda expressions),
     but I felt this was the best place to mention it. <br>
-</p>
-<p>
+</div>
+<div class="text-section">
     It can be compared to a quick way of writing a <code>for else</code> with return values. <br>
     You set a condition and return one value if true and another if false.
-</p>
-<p>
+</div>
+<div class="text-section">
     Syntax: <br>
     <div class="code-block rounded">
         <code>
@@ -134,34 +134,34 @@
         </code> <br>
     </div>
     The above expression evaluates if <code>isRaining</code> is true or false and returns one of the two strings.
-</p>
+</div>
 
 <hr>
 
 <h4>Global functions</h4>
-<p>
+<div class="text-section">
     JS has a number of global functions
     (a list can be found in the link: 'W3 Schools - JavaScript Global Reference').
     I will mention a few of them here.
-</p>
-<p>
+</div>
+<div class="text-section">
     <code>Number()</code> is a function that converts an objects value to a number.
     An identical function exists for strings: <code>String()</code>. <br>
     Similarly functions exist to parse a string to floating point number and integer, <code>parseFloat()</code>
     and <code>parseInt()</code>.
-</p>
-<p>
+</div>
+<div class="text-section">
     Global functions can be called from anywhere in JS.
-</p>
+</div>
 
 <hr>
 
 <h4>filter(), find() & map()</h4>
-<p>
+<div class="text-section">
     The <code>filter()</code>, <code>find()</code> and <code>map()</code> functions are array functions. <br>
-</p>
+</div>
 <h5>filter()</h5>
-<p>
+<div class="text-section">
     <code>filter()</code> returns an array filled with elements that pass a test. This test is provided to
     <code>filter()</code> as a function. It calls said function once for each element in the array. Example: <br>
     <div class="code-block rounded">
@@ -185,30 +185,30 @@
             });
         </code> <br>
     </div>
-</p>
-<p>
+</div>
+<div class="text-section">
     <code>filter()</code> does not change the original array, but returns a new array. <br>
     <code>filter()</code> does not run the test for elements without value.
-</p>
+</div>
 <h5>find()</h5>
-<p>
+<div class="text-section">
     Like <code>filter()</code>, <code>find()</code> checks elements in an array with a test provided by a function.
     Unlike <code>filter()</code> it only returns the first value it finds.
     It it written in the exact same way ('find' instead of 'filter'). <br>
-</p>
-<p>
+</div>
+<div class="text-section">
     <code>find()</code> does not change the original array. <br>
     If it does not find a value, that passes the test, it returns <code>undefined</code>.
-</p>
+</div>
 
 <h5>map()</h5>
-<p>
+<div class="text-section">
     <code>map()</code> also creates a new array based on a function, but unlike <code>filter()</code>
     and <code>find()</code>, the elements do not need to pass a test. <code>map()</code> runs the function
     for each element and returns the value. <br>
     It is written in the same way as <code>filter()</code> and <code>find()</code>.
-</p>
-<p>
+</div>
+<div class="text-section">
     <code>map()</code> does not run the function for elements without values. <br>
     <code>map()</code> does not change the original array.
-</p>
+</div>

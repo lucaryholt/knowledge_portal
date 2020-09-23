@@ -1,24 +1,24 @@
-<p>
+<div class="text-section">
     jQuery is a JS library for dynamically updating HTML pages.
-</p>
+</div>
 
 <hr>
 
 <h4>General jQuery</h4>
-<p>
+<div class="text-section">
     <code>jQuery</code> makes it easier to use the <code>DOM API</code>, and thereby easier to manipulate the <code>DOM</code>.
     You access <code>jQuery</code> by using the <code>$</code> selector.
-</p>
+</div>
 
 <hr>
 
 <h4>Selecting with jQuery</h4>
-<p>
+<div class="text-section">
     To manipulate the <code>DOM</code> with <code>jQuery</code> you need to select which element you want to manipulate.
     <br>
     This is done with the selector and then finding multiple via class or a single element via id (as id's are unique).
-</p>
-<p>
+</div>
+<div class="text-section">
     Select elements via class:
     <div class="code-block rounded">
         <code>
@@ -26,8 +26,8 @@
         </code> <br>
     </div>
     This would select all elements with the class <code>classExample</code> and change their inner HTML to 'Marco'.
-</p>
-<p>
+</div>
+<div class="text-section">
     Select element via id: <br>
     <div class="code-block rounded">
         <code>
@@ -35,23 +35,23 @@
         </code> <br>
     </div>
     This would select the element with id <code>idExample</code> and change the inner HTML to 'Polo'.
-</p>
+</div>
 
 <hr>
 
 <h4>Ajax</h4>
-<p>
+<div class="text-section">
     <code>ajax</code> is a jQuery library that enables asynchronous HTTP requests. <br>
     It is commonly used to retrieve data from <code>REST-API's</code> and then dynamically update <code>HTML</code>
     via <code>jQuery</code>. <br>
     <code>ajax</code> is used to show the different pages in this web app. This is how I can serve changing HTML without
     refreshing the page.
-</p>
+</div>
 
 <hr>
 
 <h4>jQuery from a CDN</h4>
-<p>
+<div class="text-section">
     You import <code>jQuery</code> in a <code>HTML</code> document, just like you would any other JS file - with an
     <code>&lt;script&gt;</code> tag. <br>
     That means that you could download jQuery as a file and serve it from your server. This would also mean,
@@ -59,8 +59,8 @@
     As an alternative to hosting the file yourself, a lot of <code>CDN</code> servers offer the file.
     When a user then accesses your site, the browser will download the <code>jQuery</code> file from their browser,
     which in most cases will be closer to the user - resulting in quicker load time and better overall experience.
-</p>
-<p>
+</div>
+<div class="text-section">
     An example of how to import <code>jQuery</code>: <br>
     <div class="code-block rounded">
         <code>
@@ -69,19 +69,19 @@
     </div>
     This is retrieving a <code>jQuery</code> file from a Google <code>CDN</code>. <br>
     Look below for where to insert this in your <code>HTML</code>.
-</p>
+</div>
 
 <hr>
 
 <h4>Where to import jQuery (in the DOM)</h4>
-<p>
+<div class="text-section">
     The <code>&lt;script&gt;</code> tag importing the <code>jQuery</code> file can be inserted in the
     <code>&lt;head&gt;</code> or <code>&lt;body&gt;</code> part of the <code>DOM</code>. <br>
-</p>
-<p>
+</div>
+<div class="text-section">
     Where you should place it depends on what you use <code>jQuery</code> for in your project.
     If placed in the <code>&lt;head&gt;</code> part, the browser will need to download <code>jQuery</code>,
     before displaying any <code>HTML</code>. This makes sense in some applications, but if you don't need
     to load any <code>jQuery</code> immediately, you can place it in the <code>&lt;body&gt;</code>. This will
     result in the page loading quicker, though in reality (most cases), the difference will be unnoticeable.
-</p>
+</div>

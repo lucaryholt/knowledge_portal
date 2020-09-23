@@ -1,20 +1,18 @@
-<p>Web framework for Node.JS</p>
+<div class="text-section">Web framework for Node.JS</div>
 
 <hr>
 
 <h4>Usage</h4>
-<p>
+<div class="text-section">
     Express is a commonly used framework in Node.JS to make webapps and REST api's.
-</p>
+</div>
 
 <hr>
 
 <h4>Setting up server (listening for requests)</h4>
-<p>
+<div class="text-section">
     Add 'express' to package.json (see 'Node.JS') and include in file (see 'require()'). <br>
     Now we can call the <code>app.listen(port, callback)</code> function: <br>
-    <!-- TODO make all 'code blocks' use similar styling -->
-    <!-- TODO move styling to external stylesheet .css -->
     <div class="code-block rounded">
         <code>
             app.listen(8080, (error) => { <br>
@@ -29,12 +27,12 @@
     This function sets up the webserver and listens for requests on port 8080. <br>
     The callback parameter is filled out by an arrow function,
     that takes an error as argument and prints whether or not the server was successfully started.
-</p>
+</div>
 
 <hr>
 
 <h4>Receiving and handling request</h4>
-<p>
+<div class="text-section">
     To handle a request we can use the <code>app.get(path, callback)</code> function: <br>
     <div class="code-block rounded">
         <code>
@@ -45,8 +43,8 @@
     </div>    This is a very simple request handling where we get a request on (as an example, IP is wherever your server is)
     <code>localhost:8080/notes</code> and responds with 'notes',
     which in many cases would be a JSON object containing all notes.
-</p>
-<p>
+</div>
+<div class="text-section">
     Express also handles dynamic parameters, to fx return a specific note by id. <br>
     <div class="code-block rounded">
         <code>
@@ -61,12 +59,12 @@
     It is indicated by the colon in the path parameter of .get(). <br>
     To access the 'id' parameter, we access the 'params' collection of 'req' (request). <br>
     This is returned as a string, so we use Number(string), to convert it. <br>
-</p>
+</div>
 
 <hr>
 
 <h4>Middleware</h4>
-<p>
+<div class="text-section">
     Middleware functions have access to the request and response objects. <br>
     These functions can execute code, change the request and response objects, call other middleware functions and more.
     <br>
@@ -78,24 +76,24 @@
     </ul>
 
     <h5>express-fileupload</h5>
-    <p>
+    <div class="text-section">
         The express-fileupload middleware handles fileuploads in Express.
         I have used this in my <a target="_blank" href="https://github.com/lucaryholt/hadoc_file_sharing/blob/2a73ef84dcaedffdfad4dfffb379cb0d6d4d158f/app.js#L100"><code>hadoc_file_sharing</code></a> project.
-    </p>
+    </div>
     <h5>ejs</h5>
-    <p>
+    <div class="text-section">
         Embedded JavaScript Templates. This middleware provides functionality to pass variables (among other functions) to HTML files.
         <br>
         I have also used this in my <a target="_blank" href="https://github.com/lucaryholt/hadoc_file_sharing/blob/2a73ef84dcaedffdfad4dfffb379cb0d6d4d158f/app.js#L42"><code>hadoc_file_sharing</code></a> project.
-    </p>
+    </div>
 
     The third-party middleware functions are installed via npm (see 'Node.JS').
-</p>
+</div>
 
 <hr>
 
 <h4>'Catch all' handler and redirect</h4>
-<p>
+<div class="text-section">
     A user of your webserver could try to access any number of paths. We have had '/' (root), '/notes' and '/notes/:id'.
     <br>
     If a user tries to send a get request to a path,
@@ -110,4 +108,4 @@
     </div>
     We do this by setting the path to '*' and then returning <code>res.redirect('/')</code>.
     This redirects the users request to the handler, handling '/' requests. Thereby avoiding the ugly error page.
-</p>
+</div>

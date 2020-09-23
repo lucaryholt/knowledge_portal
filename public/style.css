@@ -33,3 +33,11 @@
 .image-small{
     width: 50px;
 }
+
+.info-holder{
+    background: ghostwhite;
+}
+
+.text-section{
+    padding-bottom: 10px;
+}
