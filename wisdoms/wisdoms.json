@@ -42,8 +42,12 @@
         "link" : "https://www.w3schools.com/js/js_json_intro.asp"
       },
       {
-        "description" : "Codementor.io",
+        "description" : "Codementor.io - Automatically Reading a JSON file",
         "link" : "https://www.codementor.io/@codementorteam/how-to-use-json-files-in-node-js-85hndqt32#automatically-reading-a-json-file"
+      },
+      {
+        "description" : "stackoverflow - Can JSON start with '['?",
+        "link" : "https://stackoverflow.com/questions/5034444/can-json-start-with"
       }
     ],
     "searchTerms": ["json objects", "javascript object notation"]
@@ -271,6 +275,10 @@
       {
         "description" : "W3 Schools - jQuery.ajax() Method",
         "link" : "https://www.w3schools.com/jquery/ajax_ajax.asp"
+      },
+      {
+        "description" : "W3 Schools - jQuery Selectors",
+        "link" : "https://www.w3schools.com/jquery/jquery_ref_selectors.asp"
       }
     ],
     "searchTerms": ["jquery", "cdn", "ajax"]

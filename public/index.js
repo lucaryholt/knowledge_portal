@@ -25,7 +25,7 @@ function getSearchTerms(){
 function searchUpdate(){
     const term = $('#searchBox').val();
     const searchResults = $('#searchResults');
-    let $div = $("<div>", {
+    const $div = $("<div>", {
         class: "list-group-item list-group-item-action",
         id: "searchResults"
     });
