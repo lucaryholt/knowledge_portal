@@ -1,6 +1,10 @@
 const ip = window.location.origin;
 let searchTerms = null;
 
+const locationString = window.location.toString();
+
+console.log(locationString.split('/')[3]); //Could be used to specify what notes to get. So that we can use same index.js on all pages
+
 function getWisdoms() {
     $.ajax({
         method: "GET",
