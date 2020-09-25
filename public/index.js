@@ -5,8 +5,6 @@ const pageId = window.location.toString().split('/')[3];
 
 const corIp = ip + '/api/wisdoms/' + pageId
 
- //Could be used to specify what notes to get. So that we can use same index.js on all pages
-
 function getWisdoms() {
     $.ajax({
         method: "GET",

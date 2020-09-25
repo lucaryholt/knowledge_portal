@@ -10,8 +10,6 @@ const app = express();
 app.use(express.static(publicPath));
 
 //TODO editing/adding wisdom page, with auto updating preview of body (jQuery get and insert in)
-//TODO section of node part of project and make it for all subjects (new name and frontpage)
-//TODO macro to surround in intellij
 
 function makeSearchTerms(collectionName){
     const collection = require('./notes/' + collectionName + '/collection.json');
