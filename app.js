@@ -9,7 +9,7 @@ const pages = require('./pages.json');
 const app = express();
 app.use(express.static(publicPath));
 
-//TODO editing/adding wisdom page, with auto updating preview of body (jQuery get and insert in)
+//TODO editing/adding notes page, with auto updating preview of body (jQuery get and insert in)
 
 function makeSearchTerms(collectionName){
     const collection = require('./notes/' + collectionName + '/collection.json');
@@ -29,19 +29,19 @@ function getNote(collection, name){
     });
 }
 
-app.get('/api/wisdoms/:id', (req, res) => {
+app.get('/api/notes/:id', (req, res) => {
     const collectionName = req.params.id;
     const collection = require('./notes/' + collectionName + '/collection.json').sort(function (a, b){
         return a.title.localeCompare(b.title);
     });
 
     if(collection.length === 0){
-        return res.status(404).send({ error: 'No wisdoms. Come back later.' });
+        return res.status(404).send({ error: 'No notes. Come back later.' });
     }
     return res.status(200).send(collection);
 });
 
-app.get('/api/wisdoms/:id/:file', (req, res) => {
+app.get('/api/notes/:id/:file', (req, res) => {
     const collectionName = req.params.id;
     const fileName = req.params.file;
 

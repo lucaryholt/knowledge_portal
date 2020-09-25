@@ -1,15 +1,13 @@
-# Node JS Wisdom
+# Note Knowledge
 A site containing documentation for things I have learned in Node JS Elective. Created as a mandatory assignment.
 
 ## Features
 
 The app uses jQuery to dynamically show content to the user. This content is served by Express via GET requests.
 
-## Note (wisdom) format
+## Note format
 
-Notes are throughout the code called **wisdoms** (one **wisdom**, more **wisdoms**). Not correct grammar, but it's domain language.
-
-Meta data about the wisdoms are stored as JSON objects in the **wisdoms.json** file. They follow the following syntax:
+Meta data about the notes are stored as JSON objects in the **collection.json** files. They follow the following syntax:
 
 ```json
 {
@@ -41,4 +39,4 @@ The JSON object contain 4 properties: **title**, **fileName**, **links** and **s
 **links** are a list of other JSON object, each containing 2 properties: **description** and **link**.
 **searchTerms** are a list of strings.
 
-The **fileName** property refers to an html file. This html file contains the **wisdom** body text and is written in html.
+The **fileName** property refers to an html file. This html file contains the **note** body text and is written in html.

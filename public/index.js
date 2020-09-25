@@ -3,17 +3,17 @@ let searchTerms = null;
 
 const pageId = window.location.toString().split('/')[3];
 
-const corIp = ip + '/api/wisdoms/' + pageId
+const corIp = ip + '/api/notes/' + pageId
 
-function getWisdoms() {
+function getNotes() {
     $.ajax({
         method: "GET",
         url: corIp
     }).done(function (data) {
         for (let i = 0; i < data.length; i++) {
-            appendWisdom(data[i]);
+            appendNote(data[i]);
         }
-        specificWisdom(data[0].fileName);
+        specificNote(data[0].fileName);
     });
 }
 
@@ -50,24 +50,24 @@ function searchUpdate(){
             }
         });
         for(let i = 0; i < pageResults.length; i++){
-            $div.append('<div><span class="list-group-item list-group-item-action" onclick="specificWisdom(' + "'" + pageResults[i].page + "'" + ')">' + pageResults[i].page + '</span></div>');
+            $div.append('<div><span class="list-group-item list-group-item-action" onclick="specificNote(' + "'" + pageResults[i].page + "'" + ')">' + pageResults[i].page + '</span></div>');
         }
         if(pageResults.length !== 0) searchResults.append($div);
     }
 }
 
-function appendWisdom(wisdom){
-    $("#wisdomsList").append('<div><span class="list-group-item list-group-item-action" onclick="specificWisdom(' + "'" + wisdom.fileName + "'" + ')">' + wisdom.title + '</span></div>');
+function appendNote(note){
+    $("#notesList").append('<div><span class="list-group-item list-group-item-action" onclick="specificNote(' + "'" + note.fileName + "'" + ')">' + note.title + '</span></div>');
 }
 
-function specificWisdom(id){
+function specificNote(id){
     $.ajax({
         method: "GET",
-        url: ip + "/api/wisdoms/" + pageId + "/" + id
+        url: ip + "/api/notes/" + pageId + "/" + id
     }).done(function (data){
-        const title = $("#wisdomTitle");
-        const linkList = $("#wisdomLinkList");
-        const body = $("#wisdomBody");
+        const title = $("#noteTitle");
+        const linkList = $("#noteLinkList");
+        const body = $("#noteBody");
         const searchBox = $("#searchResults");
 
         $(document).prop('title', data.title + ' - Knowledge');
@@ -110,5 +110,5 @@ function appendPage(data){
         '</a>');
 }
 
-getWisdoms();
+getNotes();
 getSearchTerms();
