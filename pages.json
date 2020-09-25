@@ -1,0 +1,20 @@
+[
+  {
+    "name" : "Node.JS",
+    "link" : "/nodejs",
+    "imageFile" : "/images/nodejs.svg",
+    "enabled" : true
+  },
+  {
+    "name" : "Python",
+    "link" : "/python",
+    "imageFile" : "/images/python-logo.png",
+    "enabled" : true
+  },
+  {
+    "name" : "Swift",
+    "link" : "/swift",
+    "imageFile" : "/images/swift-logo.png",
+    "enabled" : true
+  }
+]

@@ -1,0 +1,13 @@
+[
+  {
+    "title" : "Functions",
+    "fileName" : "functions.html",
+    "links" : [
+      {
+        "description" : "Swift.org - Swift Functions",
+        "link" : "https://docs.swift.org/swift-book/LanguageGuide/Functions.html"
+      }
+    ],
+    "searchTerms": ["Functions"]
+  }
+]

@@ -1,0 +1,13 @@
+[
+  {
+    "title" : "Functions",
+    "fileName" : "functions.html",
+    "links" : [
+      {
+        "description" : "W3 Schools - Python Functions",
+        "link" : "https://www.w3schools.com/python/python_functions.asp"
+      }
+    ],
+    "searchTerms": ["Functions"]
+  }
+]

@@ -1,27 +1,30 @@
 const ip = window.location.origin;
 let searchTerms = null;
 
-const locationString = window.location.toString();
+const pageId = window.location.toString().split('/')[3];
 
-console.log(locationString.split('/')[3]); //Could be used to specify what notes to get. So that we can use same index.js on all pages
+const corIp = ip + '/api/wisdoms/' + pageId
+
+ //Could be used to specify what notes to get. So that we can use same index.js on all pages
 
 function getWisdoms() {
     $.ajax({
         method: "GET",
-        url: ip + "/api/wisdoms"
+        url: corIp
     }).done(function (data) {
         for (let i = 0; i < data.length; i++) {
             appendWisdom(data[i]);
         }
-        specificWisdom(data[0].title);
+        specificWisdom(data[0].fileName);
     });
 }
 
 function getSearchTerms(){
     $.ajax({
         method: "GET",
-        url: ip + "/api/searchTerms"
+        url: ip + "/api/searchTerms/" + pageId
     }).done(function (data){
+        console.log(data);
         searchTerms = data.data;
     });
 }
@@ -56,20 +59,20 @@ function searchUpdate(){
 }
 
 function appendWisdom(wisdom){
-    $("#wisdomsList").append('<div><span class="list-group-item list-group-item-action" onclick="specificWisdom(' + "'" + wisdom.title + "'" + ')">' + wisdom.title + '</span></div>');
+    $("#wisdomsList").append('<div><span class="list-group-item list-group-item-action" onclick="specificWisdom(' + "'" + wisdom.fileName + "'" + ')">' + wisdom.title + '</span></div>');
 }
 
 function specificWisdom(id){
     $.ajax({
         method: "GET",
-        url: ip + "/api/wisdoms/" + id
+        url: ip + "/api/wisdoms/" + pageId + "/" + id
     }).done(function (data){
         const title = $("#wisdomTitle");
         const linkList = $("#wisdomLinkList");
         const body = $("#wisdomBody");
         const searchBox = $("#searchResults");
 
-        $(document).prop('title', data.title + ' - Node.JS Wisdom');
+        $(document).prop('title', data.title + ' - Knowledge');
 
         title.text(data.title);
 
@@ -82,6 +85,31 @@ function specificWisdom(id){
 
         body.html(data.body);
     });
+}
+
+$.ajax({
+    method: "GET",
+    url: ip + "/api/notebooks"
+}).done(function (data){
+    for(let i = 0; i < data.data.length; i++){
+        appendPage(data.data[i]);
+    }
+});
+
+function appendPage(data){
+    const pageHolder = $('#pages-holder');
+
+    pageHolder.append(
+        '<a href="' + ip + data.link + '" class="link-holder">' +
+            '<div class="page-holder">' +
+                '<div class="card page-card">' +
+                    '<div class="card-body page-card-body">' +
+                        '<img class="page-image" src="' + data.imageFile + '" alt="' + data.title + '">' +
+                        '<h3 class="title">' + data.name + '</h3>' +
+                    '</div>' +
+                '</div>' +
+            '</div>' +
+        '</a>');
 }
 
 getWisdoms();
