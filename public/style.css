@@ -72,3 +72,38 @@
     box-shadow: 1px 1px 3px grey;
     width: 350px;
 }
+
+.page-image{
+    padding-top: 10px;
+    height: 100px;
+}
+.page-card{
+    width: 300px;
+    text-align: center;
+}
+
+.page-card-body{
+    background: ghostwhite;
+}
+
+.title{
+    text-decoration: none;
+}
+
+.page-holder{
+    padding: 5px;
+}
+
+#pages-holder{
+    justify-content: center;
+}
+
+.title-holder{
+    justify-content: center;
+    padding: 30px;
+}
+
+.link-holder{
+    text-decoration: none!important;
+    color: black;
+}

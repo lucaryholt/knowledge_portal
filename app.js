@@ -3,68 +3,81 @@ const path = require('path');
 const fs = require('fs');
 
 const publicPath = path.join(__dirname, 'public');
-const sendFileOptions = { root: publicPath };
-const wisdoms = require('./wisdoms/wisdoms.json').sort(function (a, b){
-    return a.title.localeCompare(b.title);
-});
-const wisdomsMap = makeWisdomsMap();
-const searchTerms = makeSearchTerms();
+
+const pages = require('./pages.json');
 
 const app = express();
 app.use(express.static(publicPath));
 
-function makeWisdomsMap(){
-    let wisdomsMap = {};
-    for(let i = 0; i < wisdoms.length; i++){
-        wisdomsMap[wisdoms[i].title] = wisdoms[i];
-    }
+//TODO editing/adding wisdom page, with auto updating preview of body (jQuery get and insert in)
 
-    return wisdomsMap;
-}
-
-function makeSearchTerms(){
-    return wisdoms.map(wisdom => {
-        const terms = wisdom.searchTerms.map(term => {
+function makeSearchTerms(collectionName){
+    const collection = require('./notes/' + collectionName + '/collection.json');
+    return collection.map(item => {
+        const terms = item.searchTerms.map(term => {
             return term;
         });
-        return { page : wisdom.title, terms: terms };
+        return { page : item.title, terms: terms };
     });
 }
 
-app.get('/api/wisdoms', (req, res) => {
-    if(wisdoms.length === 0){
+function getNote(collection, name){
+    return collection.find(note => {
+        if(note.fileName === name){
+            return note;
+        }
+    });
+}
+
+app.get('/api/wisdoms/:id', (req, res) => {
+    const collectionName = req.params.id;
+    const collection = require('./notes/' + collectionName + '/collection.json').sort(function (a, b){
+        return a.title.localeCompare(b.title);
+    });
+
+    if(collection.length === 0){
         return res.status(404).send({ error: 'No wisdoms. Come back later.' });
     }
-    return res.status(200).send(wisdoms);
+    return res.status(200).send(collection);
 });
 
-app.get('/api/wisdoms/:title', (req, res) => {
-    const title = req.params.title;
-    const wisdom = wisdomsMap[title];
+app.get('/api/wisdoms/:id/:file', (req, res) => {
+    const collectionName = req.params.id;
+    const fileName = req.params.file;
 
-    if(wisdom === undefined){
-        return res.status(404).send({ error: 'No wisdom with that id.' });
-    }
+    const note = getNote(require('./notes/' + collectionName + '/collection.json'), fileName);
 
     let body;
     try{
-        const file = fs.readFileSync('./wisdoms/' + wisdom.fileName);
+        const file = fs.readFileSync('./notes/' + collectionName + '/' + fileName);
         body = file.toString();
     }catch (error){
+        console.log(error);
         body = 'Internal error reading this file.';
     }
 
     return res.send({
-        title: wisdom.title,
+        title: note.title,
         body: body,
-        links: wisdom.links.sort(function (a, b){
+        links: note.links.sort(function (a, b){
             return a.description.localeCompare(b.description);
         })
     });
 });
 
-app.get('/api/searchTerms', (req, res) => {
-    return res.send( { data : searchTerms});
+app.get('/api/searchTerms/:id', (req, res) => {
+    const id = req.params.id;
+
+    return res.send( { data : makeSearchTerms(id)});
+});
+
+app.get('/api/notebooks', (req, res) => {
+    const enabledPages = pages.filter(page => {
+        if(page.enabled === true){
+            return page;
+        }
+    });
+    res.send({ data: enabledPages });
 });
 
 app.get('*', (req, res) => {
