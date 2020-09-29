@@ -12,22 +12,35 @@
         </div>
         <hr>
         <div class="row">
-            <div class="col-6">
-                <h3>Edit note here</h3>
-                <a class="btn btn-primary" onclick="insertElement('body-input', 'code-block'); return false;">Code block</a>
-                <a class="btn btn-primary" onclick="insertElement('body-input', 'sub-title'); return false;">Sub title</a>
-                <a class="btn btn-primary" onclick="insertElement('body-input', 'subsection'); return false;">Subsection</a>
+            <div class="col-2 btn-col">
+                <div class="custom-btn-group">
+                    <a class="btn btn-primary insert-button" onclick="insertElement('body-input', 'code-block'); return false;">Code block</a>
+                    <a class="btn btn-primary insert-button" onclick="insertElement('body-input', 'sub-title'); return false;">Sub title</a>
+                    <a class="btn btn-primary insert-button" onclick="insertElement('body-input', 'subsection'); return false;">Subsection</a>
+                    <a class="btn btn-primary insert-button" onclick="insertElement('body-input', 'keyword'); return false;">Keyword</a>
+                    <a class="btn btn-primary insert-button" onclick="insertElement('body-input', 'command'); return false;">Command</a>
+                    <a class="btn btn-primary insert-button" onclick="insertElement('body-input', 'tab'); return false;">Tab</a>
+                </div>
             </div>
-            <div class="col-6">
-                <h3>Live Preview:</h3>
+            <div class="col-10">
+                <div class="row">
+                    <div class="col">
+                        <h3>Edit note here</h3>
+                        <textarea id="body-input" rows="30" class="form-control" type="text" oninput="livePreview()"></textarea>
+                    </div>
+                    <div class="col">
+                        <h3>Live Preview:</h3>
+                        <div id="body-tester"></div>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="row">
             <div class="col-6">
-                <textarea id="body-input" rows="30" class="form-control" type="text" oninput="livePreview()"></textarea>
+
             </div>
             <div class="col-6" style="border: #2d2d2d">
-                <div id="body-tester"></div>
+
             </div>
         </div>
     </div>

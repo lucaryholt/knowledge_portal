@@ -41,6 +41,18 @@ function insertElement(id, element){
                 '<hr>\n\n' +
                 '<h4>//subsection title here</h4>';
             break;
+        case 'keyword'      :
+            elementText =
+                '<code>//keyword here</code>';
+            break;
+        case 'command'      :
+            elementText =
+                '<kbd>//command here</kbd>';
+            break;
+        case 'tab'          :
+            elementText =
+                '&nbsp;&nbsp;&nbsp;&nbsp;';
+            break;
     }
     insertAtCaret(id, elementText);
     livePreview();

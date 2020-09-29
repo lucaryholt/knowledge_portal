@@ -108,3 +108,18 @@
     text-decoration: none!important;
     color: black;
 }
+
+.custom-btn-group{
+    display: block;
+    width: 10%;
+}
+
+.insert-button{
+    width: 100px;
+    font-size: 0.8em!important;
+    padding: 3px!important;
+}
+
+.btn-col{
+    justify-content: center;
+}
