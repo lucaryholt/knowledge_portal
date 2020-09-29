@@ -7,9 +7,6 @@ const pages = require('./notes/pages.json');
 const app = express();
 app.use(express.static(path.join(__dirname, 'public')));
 
-//TODO editing/adding notes page, with auto updating preview of body (jQuery get and insert in)
-//Needs to add more 'insert-buttons' and improve layout
-
 app.get('/api/notes/:id', (req, res) => {
     const collectionName = req.params.id;
     const collection = require('./notes/' + collectionName + '/collection.json').sort(function (a, b){

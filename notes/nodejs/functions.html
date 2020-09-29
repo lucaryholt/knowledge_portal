@@ -49,9 +49,33 @@
     </div>
 </div>
 
-<!-- TODO anonymous functions -->
-<!-- when the system reads them - at launch or when declared -->
-<!-- TODO methods vs functions -->
+<hr>
+
+<h4>Anonymous functions</h4>
+<div class="text-section">
+    An anonymous function is a function declared without a name. When a function is declared without a name, it is not
+    loaded in the memory at all times, allowing it to be called at any time. It is loaded when the code is run. That could be
+    when it is declared like a variable or passed as parameter to another function.
+</div>
+<div class="text-section">
+    To declare an anonymous function we can do it by referencing it from a variable:
+    <div class="code-block rounded">
+        <code class="code-block-code">
+            const anon-function = function () { <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;console.log('I am an anonymous functions'); <br>
+            }
+        </code> <br>
+    </div>
+    We could then call the function by using the variable name and <code>()</code>:
+    <div class="code-block rounded">
+        <code class="code-block-code">
+            anon-function();
+        </code> <br>
+    </div>
+</div>
+<div class="text-section">
+    You can also define an anonymous function with the <code>arrow syntax</code>.
+</div>
 
 <hr>
 
