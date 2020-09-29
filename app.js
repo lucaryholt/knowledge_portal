@@ -2,32 +2,13 @@ const express = require('express');
 const path = require('path');
 const fs = require('fs');
 
-const publicPath = path.join(__dirname, 'public');
-
-const pages = require('./pages.json');
+const pages = require('./notes/pages.json');
 
 const app = express();
-app.use(express.static(publicPath));
+app.use(express.static(path.join(__dirname, 'public')));
 
 //TODO editing/adding notes page, with auto updating preview of body (jQuery get and insert in)
-
-function makeSearchTerms(collectionName){
-    const collection = require('./notes/' + collectionName + '/collection.json');
-    return collection.map(item => {
-        const terms = item.searchTerms.map(term => {
-            return term;
-        });
-        return { page : item.title, terms: terms };
-    });
-}
-
-function getNote(collection, name){
-    return collection.find(note => {
-        if(note.fileName === name){
-            return note;
-        }
-    });
-}
+//Needs to add more 'insert-buttons' and improve layout
 
 app.get('/api/notes/:id', (req, res) => {
     const collectionName = req.params.id;
@@ -45,7 +26,11 @@ app.get('/api/notes/:id/:file', (req, res) => {
     const collectionName = req.params.id;
     const fileName = req.params.file;
 
-    const note = getNote(require('./notes/' + collectionName + '/collection.json'), fileName);
+    const note = require('./notes/' + collectionName + '/collection.json').find(note => {
+        if(note.fileName === fileName){
+            return note;
+        }
+    });
 
     let body;
     try{
@@ -68,7 +53,15 @@ app.get('/api/notes/:id/:file', (req, res) => {
 app.get('/api/searchTerms/:id', (req, res) => {
     const id = req.params.id;
 
-    return res.send( { data : makeSearchTerms(id)});
+    const collection = require('./notes/' + req.params.id + '/collection.json');
+    const terms = collection.map(item => {
+        const terms = item.searchTerms.map(term => {
+            return term;
+        });
+        return { page : item.title, terms: terms };
+    });
+
+    return res.send( { data : terms });
 });
 
 app.get('/api/notebooks', (req, res) => {
@@ -77,12 +70,28 @@ app.get('/api/notebooks', (req, res) => {
             return page;
         }
     });
-    res.send({ data: enabledPages });
+    return res.send({ data: enabledPages });
 });
 
-app.get('*', (req, res) => {
-    return res.redirect('/');
+app.get('/api/pages/:id', (req, res) => {
+    const id = req.params.id;
+
+    return res.send({
+        data : pages.find(page => {
+            if(page.link === '/' + id && page.enabled){
+                return page;
+            }
+        })
+    });
 });
+
+app.get(pages.map(page => { return page.link; }), (req, res) => {
+    return res.sendFile(__dirname + '/public/page-template.html');
+});
+
+/*app.get('*', (req, res) => {
+    return res.redirect('/');
+});*/
 
 const port = process.env.PORT ? process.env.PORT : 80;
 

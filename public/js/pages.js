@@ -3,7 +3,16 @@ let searchTerms = null;
 
 const pageId = window.location.toString().split('/')[3];
 
-const corIp = ip + '/api/notes/' + pageId
+const corIp = ip + '/api/notes/' + pageId;
+
+function getPageData(){
+    $.ajax({
+        method: "GET",
+        url: ip + "/api/pages/" + pageId
+    }).done(function (data) {
+        $('#logo').attr('src', '..' + data.data.imageFile);
+    });
+}
 
 function getNotes() {
     $.ajax({
@@ -93,5 +102,6 @@ function setPageTitle(title){
 }
 
 $('#front-page-link').prop('href', ip);
+getPageData();
 getNotes();
 getSearchTerms();
