@@ -1,5 +1,6 @@
 const ip = window.location.origin;
 let searchTerms = null;
+let currentNoteIndex = null;
 
 const pageId = window.location.toString().split('/')[3];
 
@@ -20,9 +21,9 @@ function getNotes() {
         url: corIp
     }).done(function (data) {
         for (let i = 0; i < data.length; i++) {
-            appendNote(data[i]);
+            appendNote(data[i], i);
         }
-        specificNote(data[0].fileName);
+        specificNote(data[0].fileName, 0);
     });
 }
 
@@ -64,11 +65,11 @@ function searchUpdate(){
     }
 }
 
-function appendNote(note){
-    $("#notesList").append('<div><span class="list-group-item list-group-item-action" onclick="specificNote(' + "'" + note.fileName + "'" + ')">' + note.title + '</span></div>');
+function appendNote(note, index){
+    $("#notesList").append('<div><span id="note-' + index + '" class="list-group-item list-group-item-action" onclick="specificNote(' + "'" + note.fileName + "'" + ', ' + index + ')">' + note.title + '</span></div>');
 }
 
-function specificNote(id){
+function specificNote(id, index){
     $.ajax({
         method: "GET",
         url: ip + "/api/notes/" + pageId + "/" + id
@@ -79,6 +80,12 @@ function specificNote(id){
         const searchBox = $("#searchResults");
 
         setPageTitle(data.title);
+
+        if(currentNoteIndex !== index){
+            $('#note-' + index).toggleClass('active');
+            $('#note-' + currentNoteIndex).toggleClass('active');
+            currentNoteIndex = index;
+        }
 
         title.text(data.title);
 

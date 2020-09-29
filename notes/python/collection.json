@@ -9,5 +9,86 @@
       }
     ],
     "searchTerms": ["Functions"]
+  },
+  {
+    "title" : "Lists and tuples",
+    "fileName" : "liststuples.html",
+    "links" : [
+      {
+        "description" : "Real Python - Lists and Tuples in Python",
+        "link" : "https://realpython.com/python-lists-tuples/"
+      }
+    ],
+    "searchTerms": ["lists", "tuples", "comprehensions"]
+  },
+  {
+    "title" : "Loops",
+    "fileName" : "loops.html",
+    "links" : [
+      {
+        "description" : "Real Python - Python 'for' loops",
+        "link" : "https://realpython.com/python-for-loop/"
+      },
+      {
+        "description" : "Real Python - Python 'while' loops",
+        "link" : "https://realpython.com/python-while-loop/"
+      }
+    ],
+    "searchTerms": ["for loops", "while loops"]
+  },
+  {
+    "title" : "sorted() and sort()",
+    "fileName" : "sort.html",
+    "links" : [
+      {
+        "description" : "Real Python - How to Use sorted() and sort() in Python",
+        "link" : "https://realpython.com/python-sort/"
+      }
+    ],
+    "searchTerms": ["sorted()", "sort()"]
+  },
+  {
+    "title" : "Files",
+    "fileName" : "files.html",
+    "links" : [
+      {
+        "description" : "Real Python - Working With Files in Python",
+        "link" : "https://realpython.com/working-with-files-in-python"
+      }
+    ],
+    "searchTerms": ["files"]
+  },
+  {
+    "title" : "Modules",
+    "fileName" : "modules.html",
+    "links" : [
+      {
+        "description" : "Real Python - Python Modules and Packages – An Introduction",
+        "link" : "https://realpython.com/python-modules-packages/"
+      }
+    ],
+    "searchTerms": ["Functions"]
+  },
+  {
+    "title" : "Requests",
+    "fileName" : "requests.html",
+    "links" : [
+      {
+        "description" : "Real Python - Python’s Requests Library (Guide)",
+        "link" : "https://realpython.com/python-requests/"
+      }
+    ],
+    "searchTerms": ["requests"]
+  },
+  {
+    "title" : "OOP in Python",
+    "fileName" : "oop.html",
+    "links" : [
+      {
+        "description" : "Real Python - Object-Oriented Programming (OOP) in Python 3",
+        "link" : "https://realpython.com/python3-object-oriented-programming/"
+      }
+    ],
+    "searchTerms": ["oop"]
   }
 ]

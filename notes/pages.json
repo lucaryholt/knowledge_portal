@@ -16,5 +16,11 @@
     "link" : "/swift",
     "imageFile" : "/images/swift-logo.png",
     "enabled" : true
+  },
+  {
+    "name" : "Android",
+    "link" : "/android",
+    "imageFile" : "/images/android-logo.png",
+    "enabled" : false
   }
 ]

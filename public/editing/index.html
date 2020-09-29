@@ -13,13 +13,15 @@
         <hr>
         <div class="row">
             <div class="col-2 btn-col">
-                <div class="custom-btn-group">
-                    <a class="btn btn-primary insert-button" onclick="insertElement('body-input', 'code-block'); return false;">Code block</a>
-                    <a class="btn btn-primary insert-button" onclick="insertElement('body-input', 'sub-title'); return false;">Sub title</a>
-                    <a class="btn btn-primary insert-button" onclick="insertElement('body-input', 'subsection'); return false;">Subsection</a>
-                    <a class="btn btn-primary insert-button" onclick="insertElement('body-input', 'keyword'); return false;">Keyword</a>
-                    <a class="btn btn-primary insert-button" onclick="insertElement('body-input', 'command'); return false;">Command</a>
-                    <a class="btn btn-primary insert-button" onclick="insertElement('body-input', 'tab'); return false;">Tab</a>
+                <p>Insert element:</p>
+                <div class="btn-group-vertical">
+                    <a class="btn btn-outline-primary btn-block" onclick="insertElement('body-input', 'code-block'); return false;">Code block</a>
+                    <a class="btn btn-outline-primary btn-block" onclick="insertElement('body-input', 'sub-title'); return false;">Sub title</a>
+                    <a class="btn btn-outline-primary btn-block" onclick="insertElement('body-input', 'subsection'); return false;">Subsection</a>
+                    <a class="btn btn-outline-primary btn-block" onclick="insertElement('body-input', 'keyword'); return false;">Keyword</a>
+                    <a class="btn btn-outline-primary btn-block" onclick="insertElement('body-input', 'command'); return false;">Command</a>
+                    <a class="btn btn-outline-primary btn-block" onclick="insertElement('body-input', 'tab'); return false;">Tab</a>
+                    <a class="btn btn-outline-danger btn-block" onclick="$('#body-input').val(''); livePreview();">Clear</a>
                 </div>
             </div>
             <div class="col-10">
@@ -29,23 +31,13 @@
                         <textarea id="body-input" rows="30" class="form-control" type="text" oninput="livePreview()"></textarea>
                     </div>
                     <div class="col">
-                        <h3>Live Preview:</h3>
-                        <div id="body-tester"></div>
+                        <h3>Live Preview</h3>
+                        <div class="info-holder rounded" id="body-tester"></div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-6">
-
-            </div>
-            <div class="col-6" style="border: #2d2d2d">
-
-            </div>
-        </div>
     </div>
-    <!--<textarea id="textareaid"></textarea>
-    <a href="#" onclick="insertAtCaret('textareaid', 'text to insert');return false;">Click Here to Insert</a> -->
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">

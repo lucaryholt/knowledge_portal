@@ -36,7 +36,61 @@
     </div>
     This would select the element with id <code>idExample</code> and change the inner HTML to 'Polo'.
 </div>
-<!-- more advanced selects  $('ul#mylist li:first').css("color", ) & //$("h1#firstHeading").hide(); & $('ul#mylist li:nth-child(3n)').css("backgroundColor", "Yellow"); & $('#mylist li:odd').css('backgroundColor', 'Orange'); -->
+<div class="text-section">
+    Selecting in <code>jQuery</code> also supports more advanced selections.
+</div>
+<div class="text-section">
+    Selecting the last child in an element:
+    <div class="code-block rounded">
+        <code class="code-block-code">
+            $('#first-list li:last-child').css('text-decoration', 'underline');
+        </code>
+    </div>
+    This will find the ID <code>first-list</code>, then select the last child with <code>li</code> tag.
+    To select children you can also use the method <code>.children()</code> and then <code>.last()</code>,
+    which would then select the last child no matter what tag it had.
+</div>
+<div class="text-section">
+    Select every third child:
+    <div class="code-block rounded">
+        <code class="code-block-code">
+            $('ul#first-list li:nth-child(3n)').css("backgroundColor", "Yellow");
+        </code>
+    </div>
+</div>
+<div class="text-section">
+    There are a lot more ways to select in <code>jQuery</code>, check the link <a href="https://www.w3schools.com/jquery/jquery_ref_selectors.asp">W3 Schools - jQuery Selectors</a>.
+    <br>
+    You can also watch following video:
+</div>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/3nrLc_JOF7k?start=582" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<hr>
+
+<h4>.css(), .append() and .prepend()</h4>
+<div class="text-section">
+    When using <code>jQuery</code> to manipulate <code>HTML</code> and styling we can use a lot of different jQuery functions.
+    <br>
+    You can achieve a lot of the same things, using different functions, but some hold clear advantages over others.
+</div>
+<div class="text-section">
+    <code>.attr()</code> can change different attributes of an element and can be very useful. One thing to keep in mind when
+    using it, is that it overwrites the current attribute value, with the new one specified.
+    So if you were to change styling with <code>.attr()</code> you would replace the current styling (though only the current inline styling).
+    <br>
+    If you instead used <code>.css()</code> you would just add to the styling or overwrite that one styling property.
+    <br>
+    There are usecases where they each have advantages.
+</div>
+<div class="text-section">
+    Similarly the two functions <code>.append()</code> & <code>.prepend()</code> could very easily be confused with
+    <code>.after()</code> & <code>.before()</code> and in some cases they would do the same. <br>
+    But it is useful to know the differences to avoid a lot of frustration. <br>
+    <code>.append()</code> & <code>.prepend()</code> adds the content within the element, at the start or end respectively.
+    <br>
+    <code>.after()</code> & <code>.before()</code> adds the content after or before the element respectively.
+</div>
 
 <hr>
 

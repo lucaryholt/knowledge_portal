@@ -40,7 +40,8 @@
             &nbsp;&nbsp;&nbsp;&nbsp;return res.send(notes); <br>
             });
         </code> <br>
-    </div>    This is a very simple request handling where we get a request on (as an example, IP is wherever your server is)
+    </div>
+    This is a very simple request handling where we get a request on (as an example, IP is wherever your server is)
     <code>localhost:8080/notes</code> and responds with 'notes',
     which in many cases would be a JSON object containing all notes.
 </div>
@@ -59,6 +60,48 @@
     It is indicated by the colon in the path parameter of .get(). <br>
     To access the 'id' parameter, we access the 'params' collection of 'req' (request). <br>
     This is returned as a string, so we use Number(string), to convert it. <br>
+</div>
+<div class="text-section">
+    The two above request handlers, sends back JSON data as response, but you can do so much more. <br>
+</div>
+<div class="text-section">
+    <div class="code-block rounded">
+        <code class="code-block-code">
+            app.get('/', (req, res) => { <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;return res.redirect('/frontpage'); <br>
+            });
+        </code> <br>
+    </div>
+    In this code snippet, we return <code>res.redirect('/frontpage')</code>. This means that the app
+    redirects any user trying to access '<code>/</code>' (root) to '<code>/frontpage</code>'. <br>
+</div>
+<div class="text-section">
+    You could also use the <code>res.sendFile()</code> function. This function is often used to deliver
+    <code>HTML</code> documents to the browser.
+    <div class="code-block rounded">
+        <code class="code-block-code">
+            app.get('/', (req, res) => { <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;return res.sendFile(__dirname + '/index.html'); <br>
+            });
+        </code> <br>
+    </div>
+    Here we call <code>res.sendFile()</code> with the string <code>__dirname + '/index.html'</code>. <br>
+    <code>__dirname</code> is feature of Node.JS and returns the absolute path where the <kbd>node</kbd> command was run as a string.
+    <br>
+    In the above example we concatenate that with the string <code>/index.html</code> to provide the absolute path for the <code>index.html</code> file.
+</div>
+<div class="text-section">
+    You can also have a single request handler respond to several paths. To do this you simply replace the string in the <code>app.get()</code> function
+    with an array of strings:
+    <div class="code-block rounded">
+        <code class="code-block-code">
+            app.get(['/', '/frontpage', '/index'], (req, res) => { <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;return res.sendFile(__dirname + '/index.html'); <br>
+            });
+        </code> <br>
+    </div>
+    This does the exact same thing as the previous code snippet, but not only when users access '<code>/</code>', but also
+    '<code>/frontpage</code>' and '<code>/index</code>'.
 </div>
 
 <hr>

@@ -95,6 +95,38 @@
 
 <hr>
 
+<h4>CSS Styling</h4>
+<div class="text-section">
+    There are three different approaches to styling <code>HTML</code> with <code>CSS</code>:
+    <ul>
+        <li>Inline</li>
+        <li>Internal</li>
+        <li>External</li>
+    </ul>
+</div>
+<div class="text-section">
+    Inline styling is when the styling is written as an attribute of the <code>HTML element</code>:
+    <div class="code-block rounded">
+        <code class="code-block-code">
+            &lt;h1 style="background: pink"&gt;Title&lt;/h1&gt;
+        </code>
+    </div>
+</div>
+<div class="text-section">
+    With internal styling, the <code>CSS</code> is written in a <code>&lt;style&gt;</code> tag in the <code>&lt;head&gt;</code> element.
+</div>
+<div class="text-section">
+    External styling is one of the more commonly used approaches. Here all the <code>CSS</code> styling is moved to
+    separate stylesheet. The stylesheet is then imported like an external <code>JS</code> script, but in a <code>&lt;style&gt;</code> tag instead:
+    <div class="code-block rounded">
+        <code class="code-block-code">
+            &lt;link rel="stylesheet" href="style/style.css"&gt;
+        </code>
+    </div>
+</div>
+
+<hr>
+
 <h4>Bootstrap</h4>
 <div class="text-section">
     <code>Bootstrap</code> is a HTML, CSS and JS library that provide easy styling and building of a website.

@@ -1,5 +1,6 @@
+/* TODO Put in alphabetical order */
+
 .code-block{
-    /* background: #cbf3f3; */
     padding-left: 10px;
     padding-bottom: 5px;
     background: #2d2d2d;
@@ -63,7 +64,7 @@
 
 .sub-title{
     font-weight: lighter;
-    font-size: 20px;
+    font-size: 1.3em;
 }
 
 #searchResults{
@@ -117,9 +118,13 @@
 .insert-button{
     width: 100px;
     font-size: 0.8em!important;
-    padding: 3px!important;
+    padding: 5px!important;
 }
 
 .btn-col{
     justify-content: center;
+}
+
+.active{
+    z-index: 0!important;
 }

@@ -9,5 +9,82 @@
       }
     ],
     "searchTerms": ["Functions"]
+  },
+  {
+    "title" : "SwiftUI",
+    "fileName" : "swiftui.html",
+    "links" : [
+      {
+        "description" : "Xcode - SwiftUI - Apple Developer",
+        "link" : "https://developer.apple.com/xcode/swiftui/"
+      }
+    ],
+    "searchTerms": ["swiftui"]
+  },
+  {
+    "title" : "Firebase",
+    "fileName" : "firebase.html",
+    "links" : [
+      {
+        "description" : "Firebase",
+        "link" : "https://firebase.google.com/"
+      }
+    ],
+    "searchTerms": ["firebase", "text", "images"]
+  },
+  {
+    "title" : "Data types",
+    "fileName" : "datatypes.html",
+    "links" : [
+      {
+        "description" : "Swift - Data Types - Tutorialspoint",
+        "link" : "https://www.tutorialspoint.com/swift/swift_data_types.htm"
+      }
+    ],
+    "searchTerms": ["data types"]
+  },
+  {
+    "title" : "Structures and Classes",
+    "fileName" : "structsclasses.html",
+    "links" : [
+      {
+        "description" : "Structures and Classes",
+        "link" : "https://docs.swift.org/swift-book/LanguageGuide/ClassesAndStructures.html"
+      }
+    ],
+    "searchTerms": ["structures", "classes", "structs"]
+  },
+  {
+    "title" : "Annotations",
+    "fileName" : "functions.html",
+    "links" : [
+      {
+        "description" : "Youtube - SwiftUI: @State and @Binding",
+        "link" : "https://www.youtube.com/watch?v=zsk-c_ySHYI"
+      }
+    ],
+    "searchTerms": ["@state", "@binding", "@published"]
+  },
+  {
+    "title" : "Navigation",
+    "fileName" : "navigation.html",
+    "links" : [
+      {
+        "description" : "The Complete Guide to NavigationView in SwiftUI",
+        "link" : "https://www.hackingwithswift.com/articles/216/complete-guide-to-navigationview-in-swiftui"
+      }
+    ],
+    "searchTerms": ["navigationview", "navigationlink"]
+  },
+  {
+    "title" : "Map",
+    "fileName" : "map.html",
+    "links" : [
+      {
+        "description" : "Medium - An Introduction to Map in SwiftUI",
+        "link" : "https://medium.com/better-programming/an-introduction-to-map-in-swiftui-ec3a310fcbbd"
+      }
+    ],
+    "searchTerms": ["map"]
   }
 ]

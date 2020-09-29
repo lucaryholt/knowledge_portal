@@ -20,7 +20,7 @@
         "link" : "https://www.npmjs.com/package/ejs"
       }
     ],
-    "searchTerms": ["express", "ejs", "express-fileupload", "express fileupload"]
+    "searchTerms": ["express", "ejs", "express-fileupload", "express fileupload", "__dirname", "sendFile()", "redirect()"]
   },
   {
     "title" : "Arrays",

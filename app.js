@@ -7,6 +7,8 @@ const pages = require('./notes/pages.json');
 const app = express();
 app.use(express.static(path.join(__dirname, 'public')));
 
+// TODO Comment complicated code areas
+
 app.get('/api/notes/:id', (req, res) => {
     const collectionName = req.params.id;
     const collection = require('./notes/' + collectionName + '/collection.json').sort(function (a, b){
@@ -86,9 +88,9 @@ app.get(pages.map(page => { return page.link; }), (req, res) => {
     return res.sendFile(__dirname + '/public/page-template.html');
 });
 
-/*app.get('*', (req, res) => {
+app.get('*', (req, res) => {
     return res.redirect('/');
-});*/
+});
 
 const port = process.env.PORT ? process.env.PORT : 80;
 
