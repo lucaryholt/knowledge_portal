@@ -1,0 +1,106 @@
+<div class="sub-title">
+    In <code>python</code> all attributes are public.
+    If there is need to encapsulate, you change it into a property.
+</div>
+
+<hr>
+
+<h4>Properties</h4>
+<div class="text-section">
+    In <code>python</code> there is a another way of encapsulating data than making a getter and setter method.
+    A way you could do it: <br>
+    <div class="code-block rounded">
+        <code>
+            class P: <br>
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;def __init__(self,x): <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.set_x(x) <br>
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;def get_x(self): <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return self.__x <br>
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;def set_x(self, x): <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if x < 0: <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.__x = 0 <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;elif x > 1000: <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.__x = 1000 <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else: <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.__x = x
+        </code> <br>
+    </div>
+    That would force us to access <code>x</code> like this:
+    <div class="code-block rounded">
+        <code>
+            p1 = P(1001) <br>
+            p1.get_x()
+        </code> <br>
+    </div>
+    That does not look very pythonic, but more Java-like.
+</div>
+<div class="text-section">
+    But <code>python</code> offers a way to do it with <code>properties</code>:
+    <div class="code-block rounded">
+        <code>
+            class P: <br>
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;def __init__(self,x): <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.x = x <br>
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;@property <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;def x(self): <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return self.__x <br>
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;@x.setter <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;def x(self, x): <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if x < 0: <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.__x = 0 <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;elif x > 1000: <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.__x = 1000 <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else: <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.__x = x
+        </code> <br>
+    </div>
+    This allows us to access <code>x</code> just the way we are used to in <code>python</code>:
+    <div class="code-block rounded">
+        <code>
+            p1 = P(1001) <br>
+            p1.x
+        </code> <br>
+    </div>
+</div>
+
+<hr>
+
+<h4>Private</h4>
+<div class="text-section">
+    In <code>python</code> we can define private attributes with double underscores <code>'__'</code>:
+    <div class="code-block rounded">
+        <code>
+            class C: <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;def __init__(self, name, alias): <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.name = name <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.__alias = alias <br>
+        </code>
+    </div>
+    This would make <code>name</code> a public attribute, that you could access with dot notation. <br>
+    <code>alias</code> on the other hand would be private and (in the above snippet) inaccessible outside the class.
+    <br>
+    To access it you would need to make it a <code>property</code>, as discussed above.
+</div>
+<div class="text-section">
+    Although that is not all true. You can access a private attribute outside a class: <br>
+    <div class="code-block rounded">
+        <code>
+            c = C('Bob', 'Pop') <br>
+            <br>
+            c._C__alias <br>
+        </code>
+    </div>
+    This would return <code>Pop</code> although it is a private attribute. <br>
+    So <code>private</code> does not really exist in <code>python</code>, but it is not recommended to use above method
+    on private attributes, only if absolutely necessary.
+</div>
+
+<hr>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/jCzT9XFZ5bw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

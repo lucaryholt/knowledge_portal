@@ -6,9 +6,12 @@
       {
         "description" : "W3 Schools - Python Functions",
         "link" : "https://www.w3schools.com/python/python_functions.asp"
+      },
+      {
+        "description" : "Code Maven - Plain function or Callback",
+        "link" : "https://code-maven.com/function-or-callback-in-python"
       }
-    ],
-    "searchTerms": ["Functions"]
+    ],    "searchTerms": ["Functions", "arguments", "*args", "keyword", "**kwargs"]
   },
   {
     "title" : "Lists and tuples",
@@ -56,7 +59,7 @@
         "link" : "https://realpython.com/working-with-files-in-python"
       }
     ],
-    "searchTerms": ["files"]
+    "searchTerms": ["files", "directory", "mkdir", "makedirs", "open", "read write"]
   },
   {
     "title" : "Modules",
@@ -90,5 +93,31 @@
       }
     ],
     "searchTerms": ["oop"]
+  },
+  {
+    "title" : "Encapsulation",
+    "fileName" : "encapsulation.html",
+    "links" : [
+      {
+        "description" : "Python Course - Properties vs. Getters and Setters",
+        "link" : "https://www.python-course.eu/python3_properties.php"
+      },
+      {
+        "description" : "BogoToBogo - Private attributes and methods 2020",
+        "link" : "https://www.bogotobogo.com/python/python_private_attributes_methods.php"
+      }
+    ],
+    "searchTerms": ["encapsulation", "getters", "setters"]
+  },
+  {
+    "title" : "PIP",
+    "fileName" : "pip.html",
+    "links" : [
+      {
+        "description" : "link",
+        "link" : ""
+      }
+    ],
+    "searchTerms": ["pip", "packages", "modules"]
   }
 ]

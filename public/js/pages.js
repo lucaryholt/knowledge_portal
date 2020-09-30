@@ -1,39 +1,58 @@
-const ip = window.location.origin;
 let searchTerms = null;
 let currentNoteIndex = null;
 
+const ip = window.location.origin;
 const pageId = window.location.toString().split('/')[3];
 
-const corIp = ip + '/api/notes/' + pageId;
+ajaxRequest("GET", ip + "/api/pages/" + pageId, (data) => {
+    $('#logo').attr('src', '..' + data.data.imageFile);
+});
 
-function getPageData(){
+ajaxRequest("GET", ip + '/api/notes/' + pageId, (data) => {
+    for (let i = 0; i < data.length; i++) {
+        appendNote(data[i], i);
+    }
+    getSpecificNote(data[0].fileName, 0);
+});
+
+ajaxRequest("GET", ip + "/api/searchTerms/" + pageId, (data) => {
+    searchTerms = data.data;
+});
+
+$('#front-page-link').prop('href', ip);
+
+function ajaxRequest(method, url, callback){
     $.ajax({
-        method: "GET",
-        url: ip + "/api/pages/" + pageId
+        method,
+        url
     }).done(function (data) {
-        $('#logo').attr('src', '..' + data.data.imageFile);
+        callback(data);
     });
 }
 
-function getNotes() {
-    $.ajax({
-        method: "GET",
-        url: corIp
-    }).done(function (data) {
-        for (let i = 0; i < data.length; i++) {
-            appendNote(data[i], i);
-        }
-        specificNote(data[0].fileName, 0);
-    });
-}
+function getSpecificNote(id, index){
+    if(currentNoteIndex !== index){
+        $('#note-' + index).toggleClass('active');
+        $('#note-' + currentNoteIndex).toggleClass('active');
+        currentNoteIndex = index;
 
-function getSearchTerms(){
-    $.ajax({
-        method: "GET",
-        url: ip + "/api/searchTerms/" + pageId
-    }).done(function (data){
-        searchTerms = data.data;
-    });
+        ajaxRequest("GET", ip + "/api/notes/" + pageId + "/" + id, (data) => {
+            $(document).prop('title', data.title + ' - Knowledge Portal');
+
+            $("#noteTitle").text(data.title);
+
+            $("#searchResults").html('');
+
+            const linkList = $("#noteLinkList");
+            linkList.html('');
+            for(let i = 0; i < data.links.length; i++){
+                const link = data.links[i];
+                linkList.append('<li><a target="_blank" href="' + link.link + '">' + link.description + '</a></li>');
+            }
+
+            $("#noteBody").html(data.body);
+        });
+    }
 }
 
 function searchUpdate(){
@@ -49,66 +68,24 @@ function searchUpdate(){
 
     if(term !== ''){
         const pageResults = searchTerms.filter(pageResult => {
-            const termResults = pageResult.terms.filter(termResult => {
+            const termResults = pageResult.terms.find(termResult => {
                 if(termResult.toLowerCase().includes(term.toLowerCase())){
                     return termResult;
                 }
             });
-            if(termResults.length !== 0){
+            if(termResults !== undefined){
                 return pageResult;
             }
         });
-        for(let i = 0; i < pageResults.length; i++){
-            $div.append('<div><span class="list-group-item list-group-item-action" onclick="specificNote(' + "'" + pageResults[i].page + "'" + ')">' + pageResults[i].page + '</span></div>');
+        if(pageResults.length !== 0){
+            for(let i = 0; i < pageResults.length; i++){
+                $div.append('<div><span class="list-group-item list-group-item-action" onclick="getSpecificNote(' + "'" + pageResults[i].page + "'" + ')">' + pageResults[i].page + '</span></div>');
+            }
+            searchResults.append($div);
         }
-        if(pageResults.length !== 0) searchResults.append($div);
     }
 }
 
 function appendNote(note, index){
-    $("#notesList").append('<div><span id="note-' + index + '" class="list-group-item list-group-item-action" onclick="specificNote(' + "'" + note.fileName + "'" + ', ' + index + ')">' + note.title + '</span></div>');
+    $("#notesList").append('<div><span id="note-' + index + '" class="list-group-item list-group-item-action" onclick="getSpecificNote(' + "'" + note.fileName + "'" + ', ' + index + ')">' + note.title + '</span></div>');
 }
-
-function specificNote(id, index){
-    $.ajax({
-        method: "GET",
-        url: ip + "/api/notes/" + pageId + "/" + id
-    }).done(function (data){
-        const title = $("#noteTitle");
-        const linkList = $("#noteLinkList");
-        const body = $("#noteBody");
-        const searchBox = $("#searchResults");
-
-        setPageTitle(data.title);
-
-        if(currentNoteIndex !== index){
-            $('#note-' + index).toggleClass('active');
-            $('#note-' + currentNoteIndex).toggleClass('active');
-            currentNoteIndex = index;
-        }
-
-        title.text(data.title);
-
-        searchBox.html('');
-        linkList.html('');
-        for(let i = 0; i < data.links.length; i++){
-            const link = data.links[i];
-            linkList.append('<li><a target="_blank" href="' + link.link + '">' + link.description + '</a></li>');
-        }
-
-        body.html(data.body);
-    });
-}
-
-function setPageTitle(title){
-    if(title !== undefined){
-        $(document).prop('title', title + ' - Knowledge');
-    } else {
-        $(document).prop('title', 'Front page - Knowledge');
-    }
-}
-
-$('#front-page-link').prop('href', ip);
-getPageData();
-getNotes();
-getSearchTerms();

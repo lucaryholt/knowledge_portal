@@ -14,7 +14,7 @@
     Add 'express' to package.json (see 'Node.JS') and include in file (see 'require()'). <br>
     Now we can call the <code>app.listen(port, callback)</code> function: <br>
     <div class="code-block rounded">
-        <code class="code-block-code">
+        <code>
             app.listen(8080, (error) => { <br>
             &nbsp;&nbsp;&nbsp;&nbsp;if(error){ <br>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(error); <br>
@@ -35,7 +35,7 @@
 <div class="text-section">
     To handle a request we can use the <code>app.get(path, callback)</code> function: <br>
     <div class="code-block rounded">
-        <code class="code-block-code">
+        <code>
             app.get('/notes', (req, res) => { <br>
             &nbsp;&nbsp;&nbsp;&nbsp;return res.send(notes); <br>
             });
@@ -48,7 +48,7 @@
 <div class="text-section">
     Express also handles dynamic parameters, to fx return a specific note by id. <br>
     <div class="code-block rounded">
-        <code class="code-block-code">
+        <code>
             app.get('/notes/:id', (req, res) => { <br>
             &nbsp;&nbsp;&nbsp;&nbsp;const id = Number(req.params.id); <br>
             &nbsp;&nbsp;&nbsp;&nbsp;const note = getNote(id); <br>
@@ -66,7 +66,7 @@
 </div>
 <div class="text-section">
     <div class="code-block rounded">
-        <code class="code-block-code">
+        <code>
             app.get('/', (req, res) => { <br>
             &nbsp;&nbsp;&nbsp;&nbsp;return res.redirect('/frontpage'); <br>
             });
@@ -79,7 +79,7 @@
     You could also use the <code>res.sendFile()</code> function. This function is often used to deliver
     <code>HTML</code> documents to the browser.
     <div class="code-block rounded">
-        <code class="code-block-code">
+        <code>
             app.get('/', (req, res) => { <br>
             &nbsp;&nbsp;&nbsp;&nbsp;return res.sendFile(__dirname + '/index.html'); <br>
             });
@@ -94,7 +94,7 @@
     You can also have a single request handler respond to several paths. To do this you simply replace the string in the <code>app.get()</code> function
     with an array of strings:
     <div class="code-block rounded">
-        <code class="code-block-code">
+        <code>
             app.get(['/', '/frontpage', '/index'], (req, res) => { <br>
             &nbsp;&nbsp;&nbsp;&nbsp;return res.sendFile(__dirname + '/index.html'); <br>
             });
@@ -143,7 +143,7 @@
     you are not handling, as an example: '/pathnothandled', they will get an error page. Not a good experience. <br>
     To prevent this you can set up a 'catch all' handler and redirect them to '/' (or wherever else you want): <br>
     <div class="code-block rounded">
-        <code class="code-block-code">
+        <code>
             app.get('*', (req, res) => { <br>
             &nbsp;&nbsp;&nbsp;&nbsp;return res.redirect('/'); <br>
             });

@@ -7,7 +7,7 @@
     box-shadow: 1px 1px 3px grey;
 }
 
-.code-block-code{
+.code-block code{
     color: lightgreen;
 }
 
@@ -127,4 +127,12 @@
 
 .active{
     z-index: 0!important;
+}
+
+.bottom-logo{
+    font-size: 3em;
+}
+
+.note-logo{
+    font-size: 2em;
 }

@@ -25,4 +25,4 @@ function appendPage(data){
         '</a>');
 }
 
-$('#editor-page-link').prop('href', ip + '/editing');
+$('#editor-page-link').attr('href', ip + '/editing');

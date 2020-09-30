@@ -25,7 +25,7 @@ function insertElement(id, element){
         case 'code-block'   :
             elementText =
                 '<div class="code-block rounded">\n' +
-                '\t<code class="code-block-code">\n' +
+                '\t<code>\n' +
                 '\t\t//code here\n' +
                 '\t</code>\n' +
                 '</div>';

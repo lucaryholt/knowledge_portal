@@ -1,3 +1,152 @@
 <div class="sub-title">
-    Python functions
+    A function is a block of code which only runs when it is called. <br>
+    You can pass data, known as parameters, into a function. <br>
+    A function can return data as a result.
 </div>
+
+<hr>
+
+<h4>Syntax</h4>
+<div class="text-section">
+    To define a function in <code>python</code> you use the <code>def</code> keyword:
+    <div class="code-block rounded">
+        <code>
+            def hello_world(): <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;print('Hello!!')
+        </code>
+    </div>
+    To call it you would then write:
+    <div class="code-block rounded">
+        <code>
+            hello_world()
+        </code>
+    </div>
+    which would print <code>Hello!!</code>.
+</div>
+
+<hr>
+
+<h4>Arguments</h4>
+<div class="text-section">
+    You can pass information to a function with <code>arguments</code>:
+    <div class="code-block rounded">
+        <code>
+            def hello(name): <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;print('Hello ' + name + '!!')
+        </code>
+    </div>
+    and then pass information to it:
+    <div class="code-block rounded">
+        <code>
+            hello('Bob')
+        </code>
+    </div>
+    which would print <code>Hello Bob!!</code>.
+</div>
+<div class="text-section">
+    You can only pass as many arguments as is specified in the function definition,
+    but you can specify an unknown number of arguments in the definition. <br>
+    To do this you add a <code>*</code> before the parameter name:
+    <div class="code-block rounded">
+        <code>
+            def hello(*names): <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;print('Hello ' + str(names) + '!!')
+        </code>
+    </div>
+    This would not produce a very pretty result as converting a <code>tuple</code> to <code>string</code>
+    does not come out clean. But now you can write an undefined number of parameters to the
+    <code>hello()</code> function.
+</div>
+<div class="text-section">
+    When passing arguments to a function you can also name the arguments.
+    So if we had a function as this:
+    <div class="code-block rounded">
+        <code>
+            def hello(name1, name2): <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;print('Hello ' + name1 + ' and ' + name2)
+        </code>
+    </div>
+    You could call it like this:
+    <div class="code-block rounded">
+        <code>
+            hello(name2 = 'Torp', name1 = 'Sko')
+        </code>
+    </div>
+    and it would print: <code>Hello Sko and Torp</code>.
+</div>
+<div class="text-section">
+    Just as you can define an unknown number of unnamed arguments, you can also define an unknows number
+    of named arguments. To do this we use <code>**</code>:
+    <div class="code-block rounded">
+        <code>
+            def hello(**names): <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;print('Hello ' + names["best_name"] + '!!')
+        </code>
+    </div>
+    This will pass a <code>dictionary</code> to the function, which then can be used to extract the named arguments:
+    <div class="code-block rounded">
+        <code>
+            hello(worst_name = 'Torp', best_name = 'Sko')
+        </code>
+    </div>
+    Here we pass two arguments called <code>worst_name</code> and <code>best_name</code>. In the function body we only
+    use the <code>best_name</code> argument, but as we defined <code>**names</code>, then we are allowed to do this and
+    as a result <code>Hello Sko!!</code> is printed.
+</div>
+<div class="text-section">
+    You can also define a function with an argument, but have that argument have an default value:
+    <div class="code-block rounded">
+        <code>
+            def hello(name = "Arnold"): <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;print('Hello ' + name + '!!')
+        </code>
+    </div>
+    This means that if someone where to call <code>hello()</code> without a name argument
+    <code>Arnold</code> will be used instead.
+</div>
+<div class="text-section">
+    In the above examples we have only passed <code>strings</code> to the functions, but you can pass almost
+    anything as an argument.
+</div>
+
+<hr>
+
+<h4>Return value</h4>
+<div class="text-section">
+    To define a return value you simply use the <code>return</code> keyword:
+    <div class="code-block rounded">
+        <code>
+            def hello(name): <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;return 'Hello ' + name + '!!'
+        </code>
+    </div>
+    This would now instead of printing the string, return it.
+</div>
+
+<hr>
+
+<h4>Pass</h4>
+<div class="text-section">
+    If you for some reason have a function without a body, <code>python</code> will not allow
+    your script to compile. To combat this, you can use the <code>pass</code> keyword:
+    <div class="code-block rounded">
+        <code>
+            def hello(name): <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;pass
+        </code>
+    </div>
+</div>
+
+<hr>
+
+<h4>Recursion</h4>
+<div class="text-section">
+    <code>Python</code> allows for recursive functions. To define a recursive function, you simply call
+    it from itself, just as you would have called it normally.
+</div>
+
+<hr>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/9Os0o3wzS_I"
+        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>

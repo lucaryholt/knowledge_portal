@@ -1,0 +1,97 @@
+<div class="sub-title">
+    Python has several built-in modules and functions for handling files.
+</div>
+
+<hr>
+
+<h4>Open files</h4>
+<div class="text-section">
+    Reading and writing data to files in <code>python</code> are quite easy to do.
+    You use the <code>open()</code> method. This method takes to arguments, a file name and a flag
+    specifying which mode to open the file in.
+    <div class="code-block rounded">
+        <code>
+            with open('data.txt', 'r') as f: <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;data = f.read()
+        </code>
+    </div>
+    Here we open the file <code>data.txt</code> and save the contents in the variable <code>data</code>. <br>
+    We passed the <code>r</code> flag to open the file in read only mode.
+    <div class="code-block rounded">
+        <code>
+            with open('data.txt', 'w') as f: <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;f.write(data)
+        </code>
+    </div>
+    Here we instead passed the <code>w</code> flag, which opens the file in write mode.
+</div>
+<div class="text-section">
+    In the two code snippets above we have used pythons <code>with open(...) as</code> pattern.
+</div>
+
+<hr>
+
+<h4>Directories</h4>
+<div class="text-section">
+    You can use the <code>os</code> module to scan directories and get the result returned:
+    <div class="code-block rounded">
+        <code>
+            import os <br>
+            <br>
+            with os.scandir('my_directory/') as entries: <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;for entry in entries: <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(entry.name)
+        </code>
+    </div>
+    There are different methods and modules that can scan directories, some are <code>os.scandir()</code>,
+    <code>os.listdir()</code> and <code>pathlib.Path.iterdir()</code>. They each do slightly different
+    things.
+</div>
+<div class="text-section">
+    You can create a directory with the <code>os.mkdir()</code> function. It takes a directory name as argument.
+    If the directory already exists, <code>os.mkdir()</code> raises <code>FileExistsError</code>.
+</div>
+<div class="text-section">
+    To make multiple directories you can use <code>os.makedirs()</code>, which can be used to make directory
+    trees.
+    <div class="code-block rounded">
+        <code>
+            os.makedirs('trunk/branch/leave')
+        </code>
+    </div>
+    This function call would make a <code>leave</code> directory, inside a <code>trunk</code> directory, inside
+    a <code>trunk</code> directory. <br>
+    This function also takes an optional <code>mode</code> argument,
+    which specifies the permissions of the directories.
+</div>
+
+<hr>
+
+<h4>Deleting files and directories</h4>
+<div class="text-section">
+    There are a number of different ways to delete files and directories in <code>python</code>.
+</div>
+<div class="text-section">
+    Two, used for deleting files, are <code>os.remove()</code> and <code>os.unlink()</code>.
+    Both functions take an path to a file and thereafter delete them.
+</div>
+<div class="text-section">
+    To delete a directory, you can use <code>os.rmdir()</code>.
+    This function takes a path to a directory and deletes it. <br>
+    This will throw an error if the directory is not empty.
+</div>
+<div class="text-section">
+    To delete an non-empty directory you can use the <code>rmtree()</code> function from the <code>shutil</code> module.
+</div>
+
+<hr>
+
+<div class="text-section">
+    In the 'Real Python - Working With Files in Python' there are also guides for copying,
+    renaming files and directories and working with zip files.
+</div>
+
+<hr>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Uh2ebFW8OYM" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

@@ -11,7 +11,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/api/notes/:id', (req, res) => {
     const collectionName = req.params.id;
-    const collection = require('./notes/' + collectionName + '/collection.json').sort(function (a, b){
+    const collection = require('./notes/' + collectionName + '/collection.json').sort( (a, b) => {
         return a.title.localeCompare(b.title);
     });
 
@@ -43,7 +43,7 @@ app.get('/api/notes/:id/:file', (req, res) => {
     return res.send({
         title: note.title,
         body: body,
-        links: note.links.sort(function (a, b){
+        links: note.links.sort( (a, b) =>{
             return a.description.localeCompare(b.description);
         })
     });
