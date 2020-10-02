@@ -39,4 +39,18 @@ The JSON object contain 4 properties: **title**, **fileName**, **links** and **s
 **links** are a list of other JSON object, each containing 2 properties: **description** and **link**.
 **searchTerms** are a list of strings.
 
-The **fileName** property refers to an html file. This html file contains the **note** body text and is written in html.
+The **fileName** property refers to a html file. This html file contains the **note** body text and is written in html.
+
+## Future development
+#### Remote storage of notes
+ 
+As it is now, the notes are stored in local **.json** and **.html** files. 
+It would be easy to implement an MySQL database or Firebase, but the problem is the html format of the notes.
+
+It is a lot easier to edit the notes in a dedicated IDE, with possibility for quick review of the formatting and autocomplete.
+Editing the files in an input field in the browser, takes away some convenience. 
+
+Some possible solutions for this could be:
+ - An embedded html IDE in the app (out of scope for this project).
+ - A html preview site, that you could point to a local html file and then edit that file in your IDE of choice (with jQuery updating the preview at intervals).
+ - Or using the already existing live-preview editor on **/editing** (the only drawback is that this does not have autocompletion).
