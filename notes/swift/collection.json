@@ -56,7 +56,7 @@
   },
   {
     "title" : "Annotations",
-    "fileName" : "functions.html",
+    "fileName" : "annotations.html",
     "links" : [
       {
         "description" : "Youtube - SwiftUI: @State and @Binding",
@@ -83,8 +83,12 @@
       {
         "description" : "Medium - An Introduction to Map in SwiftUI",
         "link" : "https://medium.com/better-programming/an-introduction-to-map-in-swiftui-ec3a310fcbbd"
+      },
+      {
+        "description" : "GitHub - Project Repo",
+        "link" : "https://github.com/lucaryholt/SwiftUIMapAndLocation"
       }
     ],
-    "searchTerms": ["map"]
+    "searchTerms": ["map", "annotations", "markings"]
   }
 ]

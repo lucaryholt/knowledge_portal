@@ -1,0 +1,91 @@
+<div class="sub-title">
+    Using <code>Map</code> element in <code>SwiftUI</code>. <br>
+</div>
+
+<hr>
+
+<h4>General</h4>
+<div class="text-section">
+    Combining location data from <code>GPS</code> sensor in the phone with Map data from Apple (or Google), creates
+    a useful information view.
+</div>
+<div class="text-section">
+    As <code>SwiftUI</code> is relatively new and doesn't have all the features yet,
+    we are going to use a <code>UIKit Map</code> element and adapting it to <code>SwiftUI</code>
+    using <code>UIViewRepresentable</code>.
+</div>
+<div class="text-section">
+    To make it easier we are going to add markers only in the center of the map, as getting the precise location
+    of a finger-touch is difficult. To do this we are going to use <code>@Binding</code> and <code>@State</code>.
+</div>
+
+<hr>
+
+<h4>Instantiate</h4>
+<div class="text-section">
+    We create a <code>MapView</code> struct, to "hold" the <code>UIKit</code> map element. To do this
+    we have to make it conform to <code>UIViewRepresentable</code>.
+</div>
+<div class="text-section">
+    To do this we have to implement various functions and classes.
+    See <a target="_blank" href="https://github.com/lucaryholt/SwiftUIMapAndLocation/blob/main/SwiftUIMapAndLocation/MapView.swift">GitHub</a>.
+</div>
+
+<hr>
+
+<h4>Inserting in SwiftUI</h4>
+<div class="text-section">
+    After the <code>MapView</code> struct has been made, we can add it like any other <code>SwiftUI</code> view.
+    To properly instantiate it, it needs a <code>centerCoordinate</code> of type <code>CLLocationCoordinate2D</code>.
+    I have done this here:
+    <div class="code-block rounded">
+        <code>
+            @State var centerCoordinate:CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 55.618024, longitude: 12.650763)
+        </code>
+    </div>
+    This is done in the view, where you would like to display the map. In my case <code>ContentView</code>. <br>
+    Then we can insert it like this:
+    <div class="code-block rounded">
+        <code>
+            MapView(centerCoordinate: $centerCoordinate)
+        </code>
+    </div>
+    And voila: <br>
+    <img class="image-large" src="/images/map_iphone_ss.png" alt="Map on iPhone Image"> <br>
+    We have a beautiful map in our view.
+</div>
+
+<hr>
+
+<h4>Annotations on map</h4>
+<div class="text-section">
+    A thing we can do it to enable the user to place <code>markers</code> (or <code>annotations</code>) on the map.
+    To do this we need a <code>@State</code> variable in <code>ContentView</code>.
+    This variable needs to be an array of the type <code>MKPointAnnotation</code> like so:
+    <div class="code-block rounded">
+        <code>
+            @State var annotations = [MKPointAnnotation]()
+        </code>
+    </div>
+    Then we need a <code>Button</code>, with the <code>action</code> of adding a <code>MKPointAnnotation</code>,
+    with the coordinates of our <code>centerCoordinate</code>.
+</div>
+<div class="text-section">
+    Then in the <code>MapView</code> struct in the <code>updateUIView</code> function, we check if the built-in
+    annotations <code>.count</code> is the same as the <code>.count</code> of our annotations.
+    If not we remove all the annotations of the built-in annotations, and replace them with our annotations:
+    <div class="code-block rounded">
+        <code>
+            if annotations.count != uiView.annotations.count { <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;uiView.removeAnnotations(uiView.annotations) <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;uiView.addAnnotations(self.annotations) <br>
+            }
+        </code>
+    </div>
+    <img class="image-large" src="/images/map_iphone_annotations_ss.png" alt="Map with Annotations on iPhone Image">
+</div>
+
+<hr>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ZqKs2XTCiMA" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

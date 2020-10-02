@@ -8,6 +8,7 @@ const app = express();
 app.use(express.static(path.join(__dirname, 'public')));
 
 // TODO Comment complicated code areas
+// TODO look into firebase implementation
 
 app.get('/api/notes/:id', (req, res) => {
     const collectionName = req.params.id;
@@ -36,7 +37,7 @@ app.get('/api/notes/:id/:file', (req, res) => {
         const file = fs.readFileSync('./notes/' + collectionName + '/' + fileName);
         body = file.toString();
     }catch (error){
-        console.log(error);
+        console.log('Error reading file:', fileName, 'in collection', collectionName);
         body = 'Internal error reading this file.';
     }
 
