@@ -31,7 +31,8 @@ Meta data about the notes are stored as JSON objects in the **collection.json** 
         "link" : "https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods"
       }
     ],
-    "searchTerms": ["restful web services", "insomnia", "postman", "http request methods"]
+    "searchTerms": ["restful web services", "insomnia", "postman", "http request methods"],
+    "enabled": true
   }
 ```
 
@@ -40,6 +41,8 @@ The JSON object contain 4 properties: **title**, **fileName**, **links** and **s
 **searchTerms** are a list of strings.
 
 The **fileName** property refers to a html file. This html file contains the **note** body text and is written in html.
+
+The **enabled** property is whether to show the note in the app. 
 
 ## Future development
 #### Remote storage of notes

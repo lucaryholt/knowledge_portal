@@ -11,7 +11,8 @@
         "description" : "Code Maven - Plain function or Callback",
         "link" : "https://code-maven.com/function-or-callback-in-python"
       }
-    ],    "searchTerms": ["Functions", "arguments", "*args", "keyword", "**kwargs"]
+    ],    "searchTerms": ["Functions", "arguments", "*args", "keyword", "**kwargs"],
+    "enabled": true
   },
   {
     "title" : "Lists and tuples",
@@ -22,7 +23,8 @@
         "link" : "https://realpython.com/python-lists-tuples/"
       }
     ],
-    "searchTerms": ["lists", "tuples", "comprehensions"]
+    "searchTerms": ["lists", "tuples", "comprehensions"],
+    "enabled": false
   },
   {
     "title" : "Loops",
@@ -37,7 +39,8 @@
         "link" : "https://realpython.com/python-while-loop/"
       }
     ],
-    "searchTerms": ["for loops", "while loops"]
+    "searchTerms": ["for loops", "while loops"],
+    "enabled": false
   },
   {
     "title" : "sorted() and sort()",
@@ -48,7 +51,8 @@
         "link" : "https://realpython.com/python-sort/"
       }
     ],
-    "searchTerms": ["sorted()", "sort()"]
+    "searchTerms": ["sorted()", "sort()"],
+    "enabled": false
   },
   {
     "title" : "Files",
@@ -59,7 +63,8 @@
         "link" : "https://realpython.com/working-with-files-in-python"
       }
     ],
-    "searchTerms": ["files", "directory", "mkdir", "makedirs", "open", "read write"]
+    "searchTerms": ["files", "directory", "mkdir", "makedirs", "open", "read write"],
+    "enabled": true
   },
   {
     "title" : "Modules",
@@ -70,7 +75,8 @@
         "link" : "https://realpython.com/python-modules-packages/"
       }
     ],
-    "searchTerms": ["Functions"]
+    "searchTerms": ["Functions"],
+    "enabled": false
   },
   {
     "title" : "Requests",
@@ -81,7 +87,8 @@
         "link" : "https://realpython.com/python-requests/"
       }
     ],
-    "searchTerms": ["requests"]
+    "searchTerms": ["requests"],
+    "enabled": false
   },
   {
     "title" : "OOP in Python",
@@ -92,7 +99,8 @@
         "link" : "https://realpython.com/python3-object-oriented-programming/"
       }
     ],
-    "searchTerms": ["oop"]
+    "searchTerms": ["oop"],
+    "enabled": false
   },
   {
     "title" : "Encapsulation",
@@ -107,7 +115,8 @@
         "link" : "https://www.bogotobogo.com/python/python_private_attributes_methods.php"
       }
     ],
-    "searchTerms": ["encapsulation", "getters", "setters"]
+    "searchTerms": ["encapsulation", "getters", "setters"],
+    "enabled": true
   },
   {
     "title" : "PIP",
@@ -118,6 +127,7 @@
         "link" : ""
       }
     ],
-    "searchTerms": ["pip", "packages", "modules"]
+    "searchTerms": ["pip", "packages", "modules"],
+    "enabled": false
   }
 ]

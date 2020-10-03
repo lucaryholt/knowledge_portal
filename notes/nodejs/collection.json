@@ -20,7 +20,8 @@
         "link" : "https://www.npmjs.com/package/ejs"
       }
     ],
-    "searchTerms": ["express", "ejs", "express-fileupload", "express fileupload", "__dirname", "sendFile()", "redirect()"]
+    "searchTerms": ["express", "ejs", "express-fileupload", "express fileupload", "__dirname", "sendFile()", "redirect()"],
+    "enabled": true
   },
   {
     "title" : "Arrays",
@@ -31,7 +32,8 @@
         "link" : "https://www.w3schools.com/js/js_arrays.asp"
       }
     ],
-    "searchTerms": ["arrays", "list"]
+    "searchTerms": ["arrays", "list"],
+    "enabled": true
   },
   {
     "title" : "JSON",
@@ -50,7 +52,8 @@
         "link" : "https://stackoverflow.com/questions/5034444/can-json-start-with"
       }
     ],
-    "searchTerms": ["json objects", "javascript object notation"]
+    "searchTerms": ["json objects", "javascript object notation"],
+    "enabled": true
   },
   {
     "title" : "Node.JS",
@@ -109,7 +112,8 @@
         "link" : "https://www.npmjs.com/package/cross-env"
       }
     ],
-    "searchTerms": ["node js", "nodejs", "npm", "v8", "chrome v8", "repl", "nodemon", "budo", "cross-env", "environmental variables", "scripts", "dev prod"]
+    "searchTerms": ["node js", "nodejs", "npm", "v8", "chrome v8", "repl", "nodemon", "budo", "cross-env", "environmental variables", "scripts", "dev prod"],
+    "enabled": true
   },
   {
     "title" : "RESTful Web services",
@@ -132,7 +136,8 @@
         "link" : "https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods"
       }
     ],
-    "searchTerms": ["restful web services", "insomnia", "postman", "http request methods"]
+    "searchTerms": ["restful web services", "insomnia", "postman", "http request methods"],
+    "enabled": true
   },
   {
     "title" : "Functions",
@@ -183,7 +188,8 @@
         "link" : "https://www.javascripttutorial.net/javascript-anonymous-functions/"
       }
     ],
-    "searchTerms": ["arrow functions", "callbacks", "lambda", "ternary", "global functions", "filter()", "find()", "map()", "anonymous functions"]
+    "searchTerms": ["arrow functions", "callbacks", "lambda", "ternary", "global functions", "filter()", "find()", "map()", "anonymous functions"],
+    "enabled": true
   },
   {
     "title" : "Variables",
@@ -198,7 +204,8 @@
         "link" : "https://hackernoon.com/why-you-shouldnt-use-var-anymore-f109a58b9b70"
       }
     ],
-    "searchTerms": ["variables", "const", "let", "var"]
+    "searchTerms": ["variables", "const", "let", "var"],
+    "enabled": true
   },
   {
     "title" : "Objects",
@@ -209,7 +216,8 @@
         "link" : "https://www.w3schools.com/js/js_objects.asp"
       }
     ],
-    "searchTerms": ["javascript objects"]
+    "searchTerms": ["javascript objects"],
+    "enabled": true
   },
   {
     "title" : "FS",
@@ -220,7 +228,8 @@
         "link" : "https://www.w3schools.com/nodejs/nodejs_filesystem.asp"
       }
     ],
-    "searchTerms": ["fs", "filesystem"]
+    "searchTerms": ["fs", "filesystem"],
+    "enabled": true
   },
   {
     "title" : "Sorting JSON by specific value",
@@ -235,7 +244,8 @@
         "link" : "https://www.w3schools.com/jsref/jsref_localecompare.asp"
       }
     ],
-    "searchTerms": ["sorting json by specific value", "localeCompare"]
+    "searchTerms": ["sorting json by specific value", "localeCompare"],
+    "enabled": true
   },
   {
     "title" : "Data types",
@@ -250,7 +260,8 @@
         "link" : "https://javascript.info/types"
       }
     ],
-    "searchTerms": ["data types"]
+    "searchTerms": ["data types"],
+    "enabled": true
   },
   {
     "title" : "jQuery",
@@ -285,7 +296,8 @@
         "link" : "https://www.w3schools.com/jquery/jquery_ref_selectors.asp"
       }
     ],
-    "searchTerms": ["jquery", "cdn", "ajax"]
+    "searchTerms": ["jquery", "cdn", "ajax"],
+    "enabled": true
   },
   {
     "title" : "HTML",
@@ -312,6 +324,7 @@
         "link" : "https://getbootstrap.com/"
       }
     ],
-    "searchTerms": ["html", "dom", "document object model", "css", "bootstrap"]
+    "searchTerms": ["html", "dom", "document object model", "css", "bootstrap"],
+    "enabled": true
   }
 ]
