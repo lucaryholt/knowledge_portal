@@ -8,7 +8,6 @@ const app = express();
 app.use(express.static(path.join(__dirname, 'public')));
 
 // TODO Comment complicated code areas
-// TODO look into firebase implementation
 
 app.get('/api/notes/:id', (req, res) => {
     const collectionName = req.params.id;
