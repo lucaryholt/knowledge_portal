@@ -1,7 +1,71 @@
 <div class="sub-title">
+    SwiftUI is a user interface toolkit that lets us design apps in a declarative way
+</div>
 
+<hr>
+
+<h4>General</h4>
+<div class="text-section">
+    <code>SwiftUI</code> is a toolkit that lets us design app UI in a declarative way.
+    That means that we tell <code>SwiftUI</code> how we want the UI to look and work,
+    and then it figures out how to make that happen. <br>
+    To understand <code>declarative UI</code>, we need to understand the difference to
+    <code>imperative UI</code>, which was what iOS developers were doing before <code>SwiftUI</code>.
+    <br>
+    In apps with user interaction we often have a lot of states - is the user logged in, is
+    the message unread and so on. In <code>imperative UI</code>, you would have to handle
+    all that yourself and write code to transition between the states. <br>
+    <code>Declarative UI</code> in <code>SwiftUI</code> handles that for us. We simply need
+    to declare that we want the login screen shown, when the user is not logged in and
+    <code>SwiftUI</code> makes it happen.
+</div>
+<div class="text-section text-info">
+    "That’s what it means by declarative: we aren’t making SwiftUI components show and hide by hand,
+    we’re just telling it all the rules we want it to follow and leaving SwiftUI to make sure those rules are enforced."
+    <br>
+    (Quote from 'Hacking With Swift - What is SwiftUI?').
+</div>
+<div class="text-section">
+    <code>SwiftUI</code> also works cross-platform with <code>MacOS</code> and other <code>Apple</code> platforms.
 </div>
 
 <hr>
 
 <h4>SwiftUI vs UIKit</h4>
+<div class="text-section">
+    When <code>iOS 13</code> launched it launched with a new toolkit/framework <code>SwiftUI</code>, before
+    that <code>iOS</code> apps where made with <code>UIKit</code>. <br>
+</div>
+<div class="text-section">
+    Drawbacks of <code>SwiftUI</code>:
+    <ul>
+        <li>It only works for <code>iOS 13</code> and older. Which means
+            barring a portion of users from using your app. But seeing as <code>iOS 13</code> is supported all the way back
+            to the iPhone 5, most people is able to update and use your app. <br>
+        </li>
+        <li>It is a very new framework and all elements are not yet implemented
+            in it. This means that you may need to use <code>UIKit</code> elements, that you then adapt to the new framework.
+            This can be a bit cumbersome, but over time, this should improve.
+        </li>
+    </ul>
+</div>
+<div class="text-section">
+    Benefits of <code>SwiftUI</code>:
+    <ul>
+        <li>
+            Easy to learn, code is simple and clean
+        </li>
+        <li>
+            You can mix it with <code>UIKit</code> as also described in drawbacks
+        </li>
+        <li>
+            Easy adaption of themes, such as light and dark mode
+        </li>
+        <li>
+            Live Preview
+        </li>
+        <li>
+            And more
+        </li>
+    </ul>
+</div>

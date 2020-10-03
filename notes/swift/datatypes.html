@@ -1,0 +1,79 @@
+<div class="sub-title">
+    Swift variables can hold many data types
+</div>
+
+<hr>
+
+<h4>Types</h4>
+<div class="text-section">
+    Basic data types:
+    <ul>
+        <li>Int & UInt</li>
+        <li>Float</li>
+        <li>Double</li>
+        <li>Bool</li>
+        <li>String</li>
+        <li>Character</li>
+        <li>Optional</li>
+        <li>Tuples</li>
+    </ul>
+    Most of these are self-explanatory and function much like most other programming languages.
+    A few of them will be explained more below.
+</div>
+
+<hr>
+
+<h4>Optional</h4>
+<div class="text-section">
+    This represents a variable that either holds a value or no value. <br>
+    When declaring a variable, you can make it optional by using the <code>?</code> symbol:
+    <div class="code-block rounded">
+        <code>
+            var perhapsInt:Int?
+        </code>
+    </div>
+    This essentially sets the variable to <code>nil</code>.
+</div>
+<div class="text-section">
+    This is used a lot when a class holds a variable, that is not used all the time.
+    Could be a document, where an image is attached optionally. Here you would enable
+    the user to instantiate a document without an image.
+</div>
+<div class="text-section">
+    When you need to use an optional variable, you need to unwrap it, as the optional
+    data type basically holds the value. There are different approaches to unwrapping. <br>
+    The most straight-forward unwrapping is the <code>force unwrapping</code> method:
+    <div class="code-block rounded">
+        <code>
+            perhapsInt!
+        </code>
+    </div>
+    When using this method, it is imperative that the optional has an value or it will
+    cause an exception being thrown or the app crashing. <br>
+    This method is not used unless there is an explicit reason to do so.
+</div>
+<div class="text-section">
+    Normally when unwrapping an optional value, you will test if there actually is an
+    value before using it. This can be done various ways. <br>
+    One way to do it:
+    <div class="code-block rounded">
+        <code>
+            if myString != nil { <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;print(myString) <br>
+            } else { <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;print("myString has nil value") <br>
+            }
+        </code>
+    </div>
+    Another:
+    <div class="code-block rounded">
+        <code>
+            if let int = perhapsInt { <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;int <br>
+            }
+        </code>
+    </div>
+    The first method checks if the optional is not <code>nil</code> and then does something
+    with it. The second checks if you can save the optional in another variable, meaning if
+    it has an value, if it can then you can use that new variable. <br>
+    They do basically the same, just use whatever suits you.</div>

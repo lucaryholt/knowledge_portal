@@ -1,0 +1,188 @@
+<div class="sub-title">
+    A comprehensive app development platform
+</div>
+
+<hr>
+
+<h4>General</h4>
+<div class="text-section">
+    <code>Firebase</code> is a platform that provide a lot of functionality when developing apps.
+    It supports a wide array of programming languages, meaning you could develop apps for <code>iOS</code>
+    in <code>Swift</code>, <code>Android</code> apps in <code>Kotlin</code> or <code>Java</code>, webapps
+    in <code>Node.JS</code> or <code>Python</code> and use the same data.
+</div>
+
+<h5>Initializing</h5>
+<div class="text-section">
+    To setup your project with <code>Firebase</code> you need to follow the
+    <a target="_blank" href="https://firebase.google.com/docs/ios/setup">setup guide</a>.
+</div>
+
+<hr>
+
+<h4>Firestore</h4>
+<div class="text-section">
+    <code>Firestore</code> is a <code>NoSQL</code> database and provides lightning fast realtime updates.
+    It also offers offline support, where the data is updated in database and device upon reconnection to
+    the internet. <br>
+    In <code>Firestore</code> you can have multiple collections.
+</div>
+
+<h5>Add data</h5>
+<div class="text-section">
+    Adding data to <code>Firestore</code> in <code>Swift</code> is quite easy:
+    <div class="code-block rounded">
+        <code>
+            db.collection("notes").document("New Note").setData([ <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;"title": note.title, <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;"text": note.text <br>
+            ])
+        </code>
+    </div>
+    Here we add a new document to the collection <code>notes</code>. We manually set the document ID,
+    in this case <code>New Note</code>. Then we set the actual data with a <code>JSON</code> like syntax. <br>
+    In most cases you wouldn't manually select the ID, but let the database give it an ID.
+    If we simply omit the <code>New Note</code> in the document, then <code>Firestore</code>, will
+    assign the document a automatically generated ID, but then we will not know the ID of the newly generated
+    ID, which we will need in some situations. <br>
+    There is a way to get the ID, when adding a new document. Instead of setting the data of the new document, in
+    the same call that saves it, we can instantiate new document as an variable and then set the data afterwards:
+    <div class="code-block rounded">
+        <code>
+            let newDocument = collection("notes").document() <br>
+            newDocument.setData([ <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;"title": note.title, <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;"text": note.text <br>
+            ])
+        </code>
+    </div>
+    Then we can access the ID of the newly added document with <code>newDocument.documentID</code>. <br>
+    You could also handle the ID manually with the built-in function in <code>Swift</code>: <code>UUID()</code>.
+</div>
+
+<h5>Read data</h5>
+<div class="text-section">
+    You can read data either one time or listen for realtime updates, which really is the reason to use
+    <code>Firestore</code>. To listen for realtime updates, you need to setup a <code>snapshot listener</code>.
+    You set it up one time in the code and then it runs asynchronously from your app. <br>
+    An example of this (from the Github project in the links):
+    <div class="code-block rounded">
+        <code>
+            func getNotes(){ <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;collection.addSnapshotListener { (snapshot, error) in <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(error != nil){ <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("error") <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}else{ <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var notes:[Note] = [] <br>
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if let documents = snapshot?.documents { <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let count = documents.count <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for i in 0...(count - 1){ <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let note = documents[i].data() <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if  let title = note["title"] as? String, <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let text = note["text"] as? String, <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let id = note["id"] as? String <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let note = Note(  title: title, <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text: text, <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id: id) <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;notes.append(note) <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} <br>
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.noteCollection = notes <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;} <br>
+            }
+        </code>
+    </div>
+    In this code snippet, we have the function <code>getNotes()</code>. <br>
+    Here we make a call to <code>collection.addSnapshotListener</code>
+    (I have pointed <code>collection</code> to <code>notes</code> further up in the code).
+    Then we define a closure with the parameters <code>snapshot</code> and <code>error</code>. <code>snapshot</code> holds the data
+    that we get from <code>Firestore</code> and <code>error</code> holds any error that might have occurred. <br>
+    Inside the <code>closure</code> we start with a check to see if an error has occurred and otherwise, we work with the data given.
+    <br>
+    Then we check if we actually have received any documents, if we have, we for-loop through them and unwrap the values.
+    Those values then get added to a Note object, which is itself added to a Note array. <br>
+    When the for-loop is done, we replace the class variable <code>noteCollection</code> with the new notes. <br>
+    That class variable has the wrapper <code>@Published</code>, which then updates the views with the notes.
+    Since the <code>snapshotListener</code> always listens for updates, we have an array that always is updated,
+    making the view always updated.
+</div>
+
+<h5>Update and delete data</h5>
+<div class="text-section">
+    Updating data can be done with the same <code>setData()</code> function as when we add data.
+    Then you simply need to point it to the correct document ID in the <code>document()</code> call.
+</div>
+<div class="text-section">
+    To delete data, you find a document (with <code>document()</code>) and call <code>delete()</code>
+    on it. It's that simple.
+</div>
+
+<hr>
+
+<h4>Storage</h4>
+<div class="text-section">
+    <code>Storage</code> is the part of <code>Firebase</code>, where you can store files, fx images.
+</div>
+
+<h5>Getting a file</h5>
+<div class="text-section">
+    To get a file, we use same kind of code, as when using <code>Firestore</code>:
+    <div class="code-block rounded">
+        <code>
+            func getFile(fileName:String, note:Note) { <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;let fileRef = storage.reference(withPath: fileName) <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;fileRef.getData(maxSize: 5000000) { (data, error) in <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if error == nil{ <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("file download ok") <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if let image = UIImage(data: data!){ <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;note.image = Image(uiImage: image) <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} else { <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("file download not ok. \(error.debugDescription)") <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;} <br>
+            } <br>
+        </code>
+    </div>
+    This function downloads and attaches an image to a Note object. <br>
+    Here we start by making a reference to the file we need to download.
+    Then we call the <code>getData()</code> and define a <code>maxSize</code>, so we don't
+    risk starting a download of a file with a size, that the device can't handle.
+    In this case 5 MB. <br>
+    In the <code>getData()</code> function, we pass a <code>closure</code>, with <code>data</code> and
+    <code>error</code> (much like getting data from <code>Firestore</code>). <br>
+    Again we check for error, and if <code>nil</code>, we process the data.
+    Then we unwrap the data by instantiating an <code>UIImage</code> object, with the data downloaded.
+    <code>UIImage</code> is an <code>UIKit</code> object, which means we have to convert it to the
+    <code>SwiftUI</code> class <code>Image</code>. This has an constructor, which takes an <code>UIImage</code>.
+    Now the file is downloaded.
+</div>
+
+<h5>Upload a file</h5>
+<div class="text-section">
+    Uploading a file (an image in this case):
+    <div class="code-block rounded">
+        <code>
+            func upload(fileName:String, image:UIImage){ <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;let data = image.jpegData(compressionQuality: 1.0) <br>
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;let imgRef = storage.reference(withPath: fileName) <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;let meta = StorageMetadata() <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;meta.contentType = "image/jpeg" <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;imgRef.putData(data!, metadata: meta) { (meta, error) in <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if error == nil{ <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("file upload ok") <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} else { <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("file upload not ok") <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;} <br>
+            }
+        </code>
+    </div>
+
+</div>

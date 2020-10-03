@@ -1,3 +1,146 @@
 <div class="sub-title">
-    Swift functions
+    <code>Functions</code> are self-contained chunks of code that perform a specific task
+</div>
+
+<hr>
+
+<h4>Syntax</h4>
+<div class="text-section">
+    The syntax for defining a function:
+    <div class="code-block rounded">
+        <code>
+            func greet(person: String) -> String { <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;return "Hello, " + person + "!" <br>
+            }
+        </code>
+    </div>
+    The keyword <code>func</code> is used to define a function.
+</div>
+<div class="text-section">
+    In the above code snippet we also see the syntax for defining a return value.
+    The return type is defined by the <code>-> String</code> after the parameters and before the function body.
+    The actual return value is then returned using the <code>return</code> keyword in the function body.
+</div>
+<div class="text-section">
+    A function does not need to return anything. Even if a function has a return type, the function can be called
+    without using that return value.
+</div>
+<div class="text-section">
+    If the entire body of a function is a single expression defining the return value, the <code>return</code>
+    keyword can be left out:
+    <div class="code-block rounded">
+        <code>
+            func greet(person: String) -> String { <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;"Hello, " + person + "!" <br>
+            }
+        </code>
+    </div>
+</div>
+<div class="text-section">
+    Additionally we have defined a parameter <code>person</code> with the type <code>String</code>. <br>
+    Multiple parameters can be defined using a comma to separate them:
+    <div class="code-block rounded">
+        <code>
+            func greet(personOne: String, personTwo: String) -> String { <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;return "Hello, " + personOne + " and " + personTwo + "!" <br>
+            }
+        </code>
+    </div>
+</div>
+<div class="text-section">
+    The syntax to call a function:
+    <div class="code-block rounded">
+        <code>
+            print(greet(person: "Bob"))
+        </code>
+    </div>
+    Here we call the function inside a call to the <code>print()</code> function. <br>
+    One thing to note, when calling functions, is that, unless defined otherwise, you need to name
+    the parameters.
+</div>
+<div class="text-section">
+    If you do not want to have an argument label you can state so with an <code>_</code>:
+    <div class="code-block rounded">
+        <code>
+            func greet(_ person: String) -> String { <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;"Hello, " + person + "!" <br>
+            }
+        </code>
+    </div>
+    Then you can call it:
+    <div class="code-block rounded">
+        <code>
+            print(greet("Bob"))
+        </code>
+    </div>
+</div>
+
+
+<hr>
+
+<h4>Closures</h4>
+<div class="text-section">
+    <code>Closures</code> in <code>Swift</code> are like <code>callbacks</code> in <code>JavaScript</code>.
+    <code>Closures</code> are like functions and can be defined just like a function, and then passed as an argument,
+    just be emitting the <code>()</code>.
+</div>
+<div class="text-section">
+    A common use-case for a <code>closure</code>, would be to define a way to sort an array with the
+    <code>sorted(by: )</code> function. <br>
+    We could define the function, that we would pass as an argument like this:
+    <div class="code-block rounded">
+        <code>
+            func backward(_ s1: String, _ s2: String) -> Bool { <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;return s1 > s2 <br>
+            }
+        </code>
+    </div>
+    And then pass it:
+    <div class="code-block rounded">
+        <code>
+            var reversedNames = names.sorted(by: backward)
+        </code>
+    </div>
+    A <code>closure</code> does not need to return anything, just like a function.
+</div>
+<div class="text-section">
+    You could also skip the step of defining the <code>backward</code> function beforehand and simply
+    defining it using the <code>Closure Expression Syntax</code> inside the call to <code>sorted(by: )</code>:
+    <div class="code-block rounded">
+        <code>
+            reversedNames = names.sorted(by: { (s1: String, s2: String) -> Bool in <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;return s1 > s2 <br>
+            })
+        </code>
+    </div>
+    This is comparable to the <code>arrow syntax</code> in <code>JavaScript</code>.
+</div>
+<div class="text-section">
+    <code>Swift</code> is actually able to help us out even more in this situation.
+    As <code>sorted(by: )</code> is being called on an array of strings, it can infer
+    type of arguments needed by the function and it needs a <code>Bool</code> returned,
+    so it knows that the function must be of type: <code>(String, String) -> Bool</code>. <br>
+    This allows us to write the above code snippet as:
+    <div class="code-block rounded">
+        <code>
+            reversedNames = names.sorted(by: { s1, s2 in return s1 > s2 } )
+        </code>
+    </div>
+    Here we only write the names of the two arguments <code>s1</code> and <code>s2</code> and
+    what is returned.
+</div>
+<div class="text-section">
+    There are even shorter ways to write the above closure. Check them out in the 'Swift.org - Closures' link.
+    The link also explains other ways to pass closures.
+</div>
+<div class="text-section">
+    <code>Closures</code> are also used a lot in <code>SwiftUI</code> elements.
+    Like the <code>.sheet</code> element, that can take a <code>onDismiss</code> argument.
+    This argument can be filled with a closure, that performs a certain action, when the <code>.sheet</code>
+    is dismissed.
+</div>
+<div class="text-section">
+    Another common use for <code>closures</code> are asynchronous actions, like pulling data from a server.
+    As there is no guarantee for download speed, we most times do not want code execution to wait for the
+    download. Here it is useful to define a <code>closure</code> which handles the received data.
 </div>

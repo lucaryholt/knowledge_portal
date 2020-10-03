@@ -6,9 +6,13 @@
       {
         "description" : "Swift.org - Swift Functions",
         "link" : "https://docs.swift.org/swift-book/LanguageGuide/Functions.html"
+      },
+      {
+        "description" : "Swift.org - Closures",
+        "link" : "https://docs.swift.org/swift-book/LanguageGuide/Closures.html"
       }
     ],
-    "searchTerms": ["Functions"]
+    "searchTerms": ["functions", "closures", "async", "return", "argument"]
   },
   {
     "title" : "SwiftUI",
@@ -17,9 +21,21 @@
       {
         "description" : "Xcode - SwiftUI - Apple Developer",
         "link" : "https://developer.apple.com/xcode/swiftui/"
+      },
+      {
+        "description" : "Fucking SwiftUI - Cheat Sheet",
+        "link" : "https://fuckingswiftui.com/"
+      },
+      {
+        "description" : "Hacking With Swift - What is SwiftUI?",
+        "link" : "https://www.hackingwithswift.com/quick-start/swiftui/what-is-swiftui"
+      },
+      {
+        "description" : "Steel Kiwi - SwiftUI vs UIKit: Benefits and Drawbacks",
+        "link" : "https://steelkiwi.com/blog/swiftui-vs-uikit/"
       }
     ],
-    "searchTerms": ["swiftui"]
+    "searchTerms": ["swiftui", "uikit", "declarative", "imperative"]
   },
   {
     "title" : "Firebase",
@@ -28,9 +44,17 @@
       {
         "description" : "Firebase",
         "link" : "https://firebase.google.com/"
+      },
+      {
+        "description" : "Cloud Firestore | Firebase",
+        "link" : "https://firebase.google.com/docs/firestore"
+      },
+      {
+        "description" : "Github - Project Repo",
+        "link" : "https://github.com/lucaryholt/MyNotes"
       }
     ],
-    "searchTerms": ["firebase", "text", "images"]
+    "searchTerms": ["firebase", "text", "images", "firestore"]
   },
   {
     "title" : "Data types",
@@ -39,9 +63,13 @@
       {
         "description" : "Swift - Data Types - Tutorialspoint",
         "link" : "https://www.tutorialspoint.com/swift/swift_data_types.htm"
+      },
+      {
+        "description" : "Swift - Optionals - Tutorialspoint",
+        "link" : "https://www.tutorialspoint.com/swift/swift_optionals.htm"
       }
     ],
-    "searchTerms": ["data types"]
+    "searchTerms": ["data types", "optionals"]
   },
   {
     "title" : "Structures and Classes",
@@ -55,15 +83,31 @@
     "searchTerms": ["structures", "classes", "structs"]
   },
   {
-    "title" : "Annotations",
-    "fileName" : "annotations.html",
+    "title" : "Property Wrappers",
+    "fileName" : "propertywrappers.html",
     "links" : [
       {
         "description" : "Youtube - SwiftUI: @State and @Binding",
         "link" : "https://www.youtube.com/watch?v=zsk-c_ySHYI"
+      },
+      {
+        "description" : "Medium - What is State in SwiftUI and How Do We Use It?",
+        "link" : "https://medium.com/better-programming/what-is-state-in-swiftui-and-how-to-use-it-cc672de85188"
+      },
+      {
+        "description" : "Hacking With Swift - What is the @Binding property wrapper?",
+        "link" : "https://www.hackingwithswift.com/quick-start/swiftui/what-is-the-binding-property-wrapper"
+      },
+      {
+        "description" : "Hacking With Swift - What is the @Published property wrapper?",
+        "link" : "https://www.hackingwithswift.com/quick-start/swiftui/what-is-the-published-property-wrapper"
+      },
+      {
+        "description" : "Hacking With Swift - What is the @ObservedObject property wrapper?",
+        "link" : "https://www.hackingwithswift.com/quick-start/swiftui/what-is-the-observedobject-property-wrapper"
       }
     ],
-    "searchTerms": ["@state", "@binding", "@published"]
+    "searchTerms": ["@state", "@binding", "@published", "wrappers", "@observedobject"]
   },
   {
     "title" : "Navigation",
