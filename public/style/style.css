@@ -6,6 +6,10 @@
     font-size: 3em;
 }
 
+.border{
+    border-style: solid;
+}
+
 .btn-col{
     justify-content: center;
 }
@@ -44,7 +48,10 @@
 
 .image-xl{
     height: 250px;
-    border-style: solid;
+}
+
+.image-xl-horizontal{
+    width: 100%;
 }
 
 .info-holder{

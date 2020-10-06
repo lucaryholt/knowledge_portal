@@ -12,7 +12,8 @@
         "link" : "https://docs.swift.org/swift-book/LanguageGuide/Closures.html"
       }
     ],
-    "searchTerms": ["functions", "closures", "async", "return", "argument"]
+    "searchTerms": ["functions", "closures", "async", "return", "argument"],
+    "enabled": true
   },
   {
     "title" : "SwiftUI",
@@ -35,7 +36,8 @@
         "link" : "https://steelkiwi.com/blog/swiftui-vs-uikit/"
       }
     ],
-    "searchTerms": ["swiftui", "uikit", "declarative", "imperative"]
+    "searchTerms": ["swiftui", "uikit", "declarative", "imperative"],
+    "enabled": true
   },
   {
     "title" : "Firebase",
@@ -54,7 +56,8 @@
         "link" : "https://github.com/lucaryholt/MyNotes"
       }
     ],
-    "searchTerms": ["firebase", "text", "images", "firestore"]
+    "searchTerms": ["firebase", "text", "images", "firestore"],
+    "enabled": true
   },
   {
     "title" : "Data types",
@@ -69,18 +72,20 @@
         "link" : "https://www.tutorialspoint.com/swift/swift_optionals.htm"
       }
     ],
-    "searchTerms": ["data types", "optionals"]
+    "searchTerms": ["data types", "optionals"],
+    "enabled": true
   },
   {
     "title" : "Structures and Classes",
     "fileName" : "structsclasses.html",
     "links" : [
       {
-        "description" : "Structures and Classes",
+        "description" : "Swift.org - Structures and Classes",
         "link" : "https://docs.swift.org/swift-book/LanguageGuide/ClassesAndStructures.html"
       }
     ],
-    "searchTerms": ["structures", "classes", "structs"]
+    "searchTerms": ["structures", "classes", "structs"],
+    "enabled": true
   },
   {
     "title" : "Property Wrappers",
@@ -107,18 +112,8 @@
         "link" : "https://www.hackingwithswift.com/quick-start/swiftui/what-is-the-observedobject-property-wrapper"
       }
     ],
-    "searchTerms": ["@state", "@binding", "@published", "wrappers", "@observedobject"]
-  },
-  {
-    "title" : "Navigation",
-    "fileName" : "navigation.html",
-    "links" : [
-      {
-        "description" : "The Complete Guide to NavigationView in SwiftUI",
-        "link" : "https://www.hackingwithswift.com/articles/216/complete-guide-to-navigationview-in-swiftui"
-      }
-    ],
-    "searchTerms": ["navigationview", "navigationlink"]
+    "searchTerms": ["@state", "@binding", "@published", "wrappers", "@observedobject"],
+    "enabled": true
   },
   {
     "title" : "Map",
@@ -133,6 +128,7 @@
         "link" : "https://github.com/lucaryholt/SwiftUIMapAndLocation"
       }
     ],
-    "searchTerms": ["map", "annotations", "markings"]
+    "searchTerms": ["map", "annotations", "markings"],
+    "enabled": true
   }
 ]

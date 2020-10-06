@@ -184,5 +184,10 @@
             }
         </code>
     </div>
-
-</div>
+    Here we start by getting the data, we want to upload to <code>Firestore</code> from the <code>Image</code>
+    object. Here we choose to use <code>jpeg</code> format. <br>
+    Then we make a reference to the file (essentially what we want the image to be called on <code>Firestore</code>).
+    For <code>Firestore</code> to properly see the file as an image, we need to tell it that it is an image,
+    we do this by setting the meta data <code>contentType</code> to <code>image/jpeg</code>. <br>
+    Then we call the <code>putData()</code> function on the reference, and pass the data and meta data, along with
+    a closure for error handling.</div>

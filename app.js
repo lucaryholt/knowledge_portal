@@ -18,7 +18,13 @@ app.get('/api/notes/:id', (req, res) => {
     if(collection.length === 0){
         return res.status(404).send({ error: 'No notes. Come back later.' });
     }
-    return res.status(200).send(collection);
+    return res.status(200).send({
+        data: collection.filter(note => {
+            if(note.enabled){
+                return note;
+            }
+        })
+    });
 });
 
 app.get('/api/notes/:id/:file', (req, res) => {

@@ -9,10 +9,10 @@ ajaxRequest("GET", ip + "/api/pages/" + pageId, (data) => {
 });
 
 ajaxRequest("GET", ip + '/api/notes/' + pageId, (data) => {
-    for (let i = 0; i < data.length; i++) {
-        appendNote(data[i], i);
+    for (let i = 0; i < data.data.length; i++) {
+        appendNote(data.data[i], i);
     }
-    getSpecificNote(data[0].fileName, 0);
+    getSpecificNote(data.data[0].fileName, 0);
 });
 
 ajaxRequest("GET", ip + "/api/searchTerms/" + pageId, (data) => {

@@ -1,0 +1,109 @@
+<div class="sub-title">
+    Structures and classes are general-purpose, flexible constructs
+</div>
+
+<hr>
+
+<h4>General</h4>
+<div class="text-section">
+    We know classes from other programming languages and the idea is the same in <code>Swift</code>.
+    They can have properties and methods, with just the same syntax as defining constants, variables
+    and functions. <br>
+    You don't need to import a file to use a class or structure you have made in another file, Swift
+    makes those classes and structures available automatically.
+</div>
+
+<hr>
+
+<h4>Comparing Structures and Classes</h4>
+<div class="text-section">
+    Both can:
+    <ul>
+        <li>
+            Define properties to store values
+        </li>
+        <li>
+            Define methods to provide functionality
+        </li>
+        <li>
+            Define initializers, to set up initial state
+        </li>
+        <li>
+            Be extended
+        </li>
+        <li>
+            Comform to protocols
+        </li>
+    </ul>
+    Classes have some additional capabilities:
+    <ul>
+        <li>
+            Inheritance
+        </li>
+        <li>
+            You can check and interpret type of class instance at runtime
+        </li>
+        <li>
+            Among others
+        </li>
+    </ul>
+</div>
+
+<hr>
+
+<h4>Syntax</h4>
+<div class="text-section">
+    You define classes and structures with the keywords <code>struct</code> and <code>class</code>:
+    <div class="code-block rounded">
+        <code>
+            struct SomeStructure { <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;//body<br>
+            }
+        </code>
+    </div>
+    And:
+    <div class="code-block rounded">
+        <code>
+            class SomeClass { <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;//body<br>
+            }
+        </code>
+    </div>
+    To instantiate a <code>class</code> or <code>struct</code> you use <code>()</code>:
+    <div class="code-block rounded">
+        <code>
+            let instance = StructOrClass()
+        </code>
+    </div>
+    This is very similar to how we do in other programming languages.
+</div>
+<div class="text-section">
+    To access a property you use <code>dot notation</code>:
+    <div class="code-block rounded">
+        <code>
+            instance.someProperty
+        </code>
+    </div>
+    This is both to get the property or to change it.
+</div>
+
+<hr>
+
+<h4>Types</h4>
+<h5>Structures are value types</h5>
+<div class="text-section">
+    A <code>struct</code> is a value type, which means that if it is copied to a constant or variable,
+    the value will be copied and not the reference. This is the same as when you copy an Int or a String.
+    You will have to instances of the <code>struct</code>. <br>
+    The image below is from the link 'Swift.org - Structures and Classes' and display an example on there: <br>
+    <img class="image-xl-horizontal border" src="/images/swift_struct_value_type.png" alt="Struct Value Type Image">
+</div>
+
+<h5>Classes are reference types</h5>
+<div class="text-section">
+    Unlike <code>structs</code> <code>classes</code> are reference types, which means that if copied to
+    a constant or variable or passed in function, only the reference will be copied, which means you will
+    still only have one instance of the <code>class</code>.
+    Image below is from same link as above:
+    <img class="image-xl-horizontal border" src="/images/swift_class_value_type.png" alt="Class Value Type Image">
+</div>
