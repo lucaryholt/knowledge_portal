@@ -4,31 +4,28 @@ let currentNoteIndex = null;
 const ip = window.location.origin;
 const pageId = window.location.toString().split('/')[3];
 
-ajaxRequest("GET", ip + "/api/pages/" + pageId, (data) => {
-    $('#logo').attr('src', '..' + data.data.imageFile);
-});
+fetch(ip + '/api/pages/' + pageId)
+    .then(response => response.json())
+    .then(response => {
+        $('#logo').attr('src', '..' + response.data.imageFile);
+    });
 
-ajaxRequest("GET", ip + '/api/notes/' + pageId, (data) => {
-    for (let i = 0; i < data.data.length; i++) {
-        appendNote(data.data[i], i);
-    }
-    getSpecificNote(data.data[0].fileName, 0);
-});
+fetch(ip + '/api/notes/' + pageId)
+    .then(response => response.json())
+    .then(response => {
+        for (let i = 0; i < response.data.length; i++) {
+            appendNote(response.data[i], i);
+        }
+        getSpecificNote(response.data[0].fileName, 0);
+    });
 
-ajaxRequest("GET", ip + "/api/searchTerms/" + pageId, (data) => {
-    searchTerms = data.data;
-});
+fetch(ip + "/api/searchTerms/" + pageId)
+    .then(response => response.json())
+    .then(response => {
+        searchTerms = response.data;
+    });
 
 $('#front-page-link').prop('href', ip);
-
-function ajaxRequest(method, url, callback){
-    $.ajax({
-        method,
-        url
-    }).done(function (data) {
-        callback(data);
-    });
-}
 
 function getSpecificNote(id, index){
     if(currentNoteIndex !== index){
@@ -36,28 +33,30 @@ function getSpecificNote(id, index){
         $('#note-' + currentNoteIndex).toggleClass('active');
         currentNoteIndex = index;
 
-        ajaxRequest("GET", ip + "/api/notes/" + pageId + "/" + id, (data) => {
-            $(document).prop('title', data.title + ' - Knowledge Portal');
+        fetch(ip + "/api/notes/" + pageId + "/" + id)
+            .then(response => response.json())
+            .then(response => {
+                $(document).prop('title', response.title + ' - Knowledge Portal');
 
-            $("#noteTitle").text(data.title);
+                $("#noteTitle").text(response.title);
 
-            $("#searchResults").html('');
+                $("#searchResults").html('');
 
-            const linkList = $("#noteLinkList");
-            linkList.html('');
-            for(let i = 0; i < data.links.length; i++){
-                const link = data.links[i];
-                linkList.append('<li><a target="_blank" href="' + link.link + '">' + link.description + '</a></li>');
-            }
+                const linkList = $("#noteLinkList");
+                linkList.html('');
+                for(let i = 0; i < response.links.length; i++){
+                    const link = response.links[i];
+                    linkList.append('<li><a target="_blank" href="' + link.link + '">' + link.description + '</a></li>');
+                }
 
-            const body = $("#noteBody");
-            body.html(data.body.replaceAll('&*', '&nbsp;&nbsp;&nbsp;&nbsp;'));
+                const body = $("#noteBody");
+                body.html(response.body.replaceAll('&*', '&nbsp;&nbsp;&nbsp;&nbsp;'));
 
-            const codeblocks = $('.code-block');
-            for(let i = 0; i < codeblocks.length; i++){
-                hljs.highlightBlock(codeblocks[i]);
-            }
-        });
+                const codeblocks = $('.code-block');
+                for(let i = 0; i < codeblocks.length; i++){
+                    hljs.highlightBlock(codeblocks[i]);
+                }
+            });
     }
 }
 

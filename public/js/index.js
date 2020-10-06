@@ -1,13 +1,12 @@
 const ip = window.location.origin;
 
-$.ajax({
-    method: "GET",
-    url: ip + "/api/notebooks"
-}).done(function (data){
-    for(let i = 0; i < data.data.length; i++){
-        appendPage(data.data[i]);
-    }
-});
+fetch('ip + "/api/notebooks')
+    .then(response => response.json())
+    .then(response => {
+        for(let i = 0; i < response.data.length; i++){
+            appendPage(response.data[i]);
+        }
+    });
 
 function appendPage(data){
     const pageHolder = $('#pages-holder');
