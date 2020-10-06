@@ -4,24 +4,24 @@
     <meta charset="UTF-8">
     <title>Knowledge Portal</title>
 
+    <link id="style" rel="stylesheet" href="style/style-light.css">
     <link rel="stylesheet" href="style/style.css">
 </head>
 <body>
     <div class="container">
+        <a id="color-mode" onclick="toggleDark()"><i class="fas fa-moon"></i></a>
+
         <div class="row title-holder">
             <h1 class="page-title">Notebooks</h1>
         </div>
-        <div class="row" id="pages-holder">
-
-        </div>
-        <!--<div class="text-center">
-            <a href="#" id="editor-page-link" class="h5 font-weight-bold link-holder">Try out the live preview Note Editor</a>
-        </div>-->
+        <div class="row" id="pages-holder"></div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/af932a1361.js" crossorigin="anonymous"></script>
     <script src="js/index.js"></script>
+    <script src="js/colorMode.js"></script>
 </body>
 </html>

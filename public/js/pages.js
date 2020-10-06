@@ -84,7 +84,7 @@ function searchUpdate(){
         });
         if (pageResults.length !== 0) {
             for(let i = 0; i < pageResults.length; i++){
-                $div.append('<div><span class="list-group-item list-group-item-action" onclick="getSpecificNote(' + "'" + pageResults[i].page + "'" + ')">' + pageResults[i].page + '</span></div>');
+                $div.append('<div><span class="list-group-item list-group-item-action search-result" onclick="getSpecificNote(' + "'" + pageResults[i].page + "'" + ')">' + pageResults[i].page + '</span></div>');
             }
             searchResults.append($div);
         }
@@ -92,5 +92,5 @@ function searchUpdate(){
 }
 
 function appendNote(note, index){
-    $("#notesList").append('<div><span id="note-' + index + '" class="list-group-item list-group-item-action" onclick="getSpecificNote(' + "'" + note.fileName + "'" + ', ' + index + ')">' + note.title + '</span></div>');
+    $("#notesList").append('<div><span id="note-' + index + '" class="list-group-item list-group-item-action note-item" onclick="getSpecificNote(' + "'" + note.fileName + "'" + ', ' + index + ')">' + note.title + '</span></div>');
 }

@@ -3,16 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <title>Knowledge</title>
+    <link id="style" rel="stylesheet" type="text/css" href="../style/style-light.css">
     <link rel="stylesheet" type="text/css" href="../style/style.css">
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/styles/solarized-dark.min.css">
+    <link id="code-style" rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/styles/gruvbox-dark.min.css">
 </head>
 <body>
     <div class="container">
+        <a id="color-mode" onclick="toggleDark()"><i class="fas fa-moon"></i></a>
+
+        <!-- TODO https://getbootstrap.com/docs/4.5/components/scrollspy -->
+
         <div id="logo-holder" class="row">
             <img id="logo" src="" alt="Page logo"> <br>
             <a href="#" id="front-page-link" class="h1 font-weight-bold link-holder">Knowledge</a>
         </div>
-
         <div class="row">
             <div class="col-4">
                 <div id="searchBoxHolder">
@@ -44,5 +48,6 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/af932a1361.js" crossorigin="anonymous"></script>
     <script src="../js/pages.js"></script>
+    <script src="js/colorMode.js"></script>
 </body>
 </html>

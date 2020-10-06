@@ -1,0 +1,38 @@
+body {
+    background-color: #121212!important;
+}
+
+#color-mode{
+    color: ghostwhite;
+}
+
+.note-item{
+    background: #4f4f4f!important;
+    color: ghostwhite!important;
+}
+
+.info-holder{
+    background: #4f4f4f;
+    color: ghostwhite;
+}
+
+.link-holder{
+    text-decoration: none!important;
+    color: ghostwhite;
+}
+
+#searchBox{
+    background: #121212;
+    color: ghostwhite;
+}
+
+.page-card-body{
+    background: #707070;
+    color: ghostwhite;
+}
+
+.title-holder{
+    justify-content: center;
+    padding: 30px;
+    color: ghostwhite;
+}

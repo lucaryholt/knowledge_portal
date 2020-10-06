@@ -1,0 +1,21 @@
+#color-mode{
+    color: black;
+}
+
+.info-holder{
+    background: ghostwhite;
+}
+
+.link-holder{
+    text-decoration: none!important;
+    color: black;
+}
+
+.page-card-body{
+    background: ghostwhite;
+}
+
+.title-holder{
+    justify-content: center;
+    padding: 30px;
+}
