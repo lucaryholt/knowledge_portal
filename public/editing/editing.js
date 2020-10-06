@@ -51,7 +51,7 @@ function insertElement(id, element){
             break;
         case 'tab'          :
             elementText =
-                '&nbsp;&nbsp;&nbsp;&nbsp;';
+                '&*';
             break;
     }
     insertAtCaret(id, elementText);

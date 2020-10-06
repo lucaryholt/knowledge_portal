@@ -13,17 +13,15 @@
 <div class="text-section">
     Add 'express' to package.json (see 'Node.JS') and include in file (see 'require()'). <br>
     Now we can call the <code>app.listen(port, callback)</code> function: <br>
-    <div class="code-block rounded">
-        <code>
+    <code class="code-block javascript rounded">
             app.listen(8080, (error) => { <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;if(error){ <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(error); <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;} else { <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log('Server started on port', 8080); <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;} <br>
+            &*if(error){ <br>
+            &*&*console.log(error); <br>
+            &*} else { <br>
+            &*&*console.log('Server started on port', 8080); <br>
+            &*} <br>
             });
-        </code> <br>
-    </div>
+    </code>
     This function sets up the webserver and listens for requests on port 8080. <br>
     The callback parameter is filled out by an arrow function,
     that takes an error as argument and prints whether or not the server was successfully started.
@@ -34,28 +32,24 @@
 <h4>Receiving and handling request</h4>
 <div class="text-section">
     To handle a request we can use the <code>app.get(path, callback)</code> function: <br>
-    <div class="code-block rounded">
-        <code>
+    <code class="code-block javascript rounded">
             app.get('/notes', (req, res) => { <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;return res.send(notes); <br>
+            &*return res.send(notes); <br>
             });
-        </code> <br>
-    </div>
+    </code>
     This is a very simple request handling where we get a request on (as an example, IP is wherever your server is)
     <code>localhost:8080/notes</code> and responds with 'notes',
     which in many cases would be a JSON object containing all notes.
 </div>
 <div class="text-section">
     Express also handles dynamic parameters, to fx return a specific note by id. <br>
-    <div class="code-block rounded">
-        <code>
+    <code class="code-block javascript rounded">
             app.get('/notes/:id', (req, res) => { <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;const id = Number(req.params.id); <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;const note = getNote(id); <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;return res.send(note); <br>
+            &*const id = Number(req.params.id); <br>
+            &*const note = getNote(id); <br>
+            &*return res.send(note); <br>
             });
-        </code> <br>
-    </div>
+    </code>
     In this example we have a dynamic parameter we have called 'id'. <br>
     It is indicated by the colon in the path parameter of .get(). <br>
     To access the 'id' parameter, we access the 'params' collection of 'req' (request). <br>
@@ -65,26 +59,22 @@
     The two above request handlers, sends back JSON data as response, but you can do so much more. <br>
 </div>
 <div class="text-section">
-    <div class="code-block rounded">
-        <code>
+    <code class="code-block javascript rounded">
             app.get('/', (req, res) => { <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;return res.redirect('/frontpage'); <br>
+            &*return res.redirect('/frontpage'); <br>
             });
-        </code> <br>
-    </div>
+    </code>
     In this code snippet, we return <code>res.redirect('/frontpage')</code>. This means that the app
     redirects any user trying to access '<code>/</code>' (root) to '<code>/frontpage</code>'. <br>
 </div>
 <div class="text-section">
     You could also use the <code>res.sendFile()</code> function. This function is often used to deliver
     <code>HTML</code> documents to the browser.
-    <div class="code-block rounded">
-        <code>
+    <code class="code-block javascript rounded">
             app.get('/', (req, res) => { <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;return res.sendFile(__dirname + '/index.html'); <br>
+            &*return res.sendFile(__dirname + '/index.html'); <br>
             });
-        </code> <br>
-    </div>
+    </code>
     Here we call <code>res.sendFile()</code> with the string <code>__dirname + '/index.html'</code>. <br>
     <code>__dirname</code> is feature of Node.JS and returns the absolute path where the <kbd>node</kbd> command was run as a string.
     <br>
@@ -93,13 +83,11 @@
 <div class="text-section">
     You can also have a single request handler respond to several paths. To do this you simply replace the string in the <code>app.get()</code> function
     with an array of strings:
-    <div class="code-block rounded">
-        <code>
+    <code class="code-block javascript rounded">
             app.get(['/', '/frontpage', '/index'], (req, res) => { <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;return res.sendFile(__dirname + '/index.html'); <br>
+            &*return res.sendFile(__dirname + '/index.html'); <br>
             });
-        </code> <br>
-    </div>
+    </code>
     This does the exact same thing as the previous code snippet, but not only when users access '<code>/</code>', but also
     '<code>/frontpage</code>' and '<code>/index</code>'.
 </div>
@@ -142,13 +130,11 @@
     If a user tries to send a get request to a path,
     you are not handling, as an example: '/pathnothandled', they will get an error page. Not a good experience. <br>
     To prevent this you can set up a 'catch all' handler and redirect them to '/' (or wherever else you want): <br>
-    <div class="code-block rounded">
-        <code>
+    <code class="code-block javascript rounded">
             app.get('*', (req, res) => { <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;return res.redirect('/'); <br>
+            &*return res.redirect('/'); <br>
             });
-        </code> <br>
-    </div>
+    </code>
     We do this by setting the path to '*' and then returning <code>res.redirect('/')</code>.
     This redirects the users request to the handler, handling '/' requests. Thereby avoiding the ugly error page.
 </div>

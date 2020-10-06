@@ -31,14 +31,12 @@
 <h5>Add data</h5>
 <div class="text-section">
     Adding data to <code>Firestore</code> in <code>Swift</code> is quite easy:
-    <div class="code-block rounded">
-        <code>
+    <code class="code-block swift rounded">
             db.collection("notes").document("New Note").setData([ <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;"title": note.title, <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;"text": note.text <br>
+            &*"title": note.title, <br>
+            &*"text": note.text <br>
             ])
-        </code>
-    </div>
+    </code>
     Here we add a new document to the collection <code>notes</code>. We manually set the document ID,
     in this case <code>New Note</code>. Then we set the actual data with a <code>JSON</code> like syntax. <br>
     In most cases you wouldn't manually select the ID, but let the database give it an ID.
@@ -47,15 +45,13 @@
     ID, which we will need in some situations. <br>
     There is a way to get the ID, when adding a new document. Instead of setting the data of the new document, in
     the same call that saves it, we can instantiate new document as an variable and then set the data afterwards:
-    <div class="code-block rounded">
-        <code>
+    <code class="code-block swift rounded">
             let newDocument = collection("notes").document() <br>
             newDocument.setData([ <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;"title": note.title, <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;"text": note.text <br>
+            &*"title": note.title, <br>
+            &*"text": note.text <br>
             ])
-        </code>
-    </div>
+    </code>
     Then we can access the ID of the newly added document with <code>newDocument.documentID</code>. <br>
     You could also handle the ID manually with the built-in function in <code>Swift</code>: <code>UUID()</code>.
 </div>
@@ -66,37 +62,35 @@
     <code>Firestore</code>. To listen for realtime updates, you need to setup a <code>snapshot listener</code>.
     You set it up one time in the code and then it runs asynchronously from your app. <br>
     An example of this (from the Github project in the links):
-    <div class="code-block rounded">
-        <code>
+    <code class="code-block swift rounded">
             func getNotes(){ <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;collection.addSnapshotListener { (snapshot, error) in <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(error != nil){ <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("error") <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}else{ <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var notes:[Note] = [] <br>
+            &*collection.addSnapshotListener { (snapshot, error) in <br>
+            &*&*if(error != nil){ <br>
+            &*&*&*print("error") <br>
+            &*&*}else{ <br>
+            &*&*&*var notes:[Note] = [] <br>
             <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if let documents = snapshot?.documents { <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let count = documents.count <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for i in 0...(count - 1){ <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let note = documents[i].data() <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if  let title = note["title"] as? String, <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let text = note["text"] as? String, <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let id = note["id"] as? String <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let note = Note(  title: title, <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text: text, <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id: id) <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;notes.append(note) <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} <br>
+            &*&*&*if let documents = snapshot?.documents { <br>
+            &*&*&*&*let count = documents.count <br>
+            &*&*&*&*for i in 0...(count - 1){ <br>
+            &*&*&*&*&*let note = documents[i].data() <br>
+            &*&*&*&*&*&*if  let title = note["title"] as? String, <br>
+            &*&*&*&*&*&*&*let text = note["text"] as? String, <br>
+            &*&*&*&*&*&*&*let id = note["id"] as? String <br>
+            &*&*&*&*&*&*{ <br>
+            &*&*&*&*&*&*&*let note = Note(  title: title, <br>
+            &*&*&*&*&*&*&*&*&*&*&*text: text, <br>
+            &*&*&*&*&*&*&*&*&*&*&*id: id) <br>
+            &*&*&*&*&*&*&*notes.append(note) <br>
+            &*&*&*&*&*&*} <br>
+            &*&*&*&*&*} <br>
+            &*&*&*} <br>
             <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.noteCollection = notes <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;} <br>
+            &*&*&*self.noteCollection = notes <br>
+            &*&*} <br>
+            &*} <br>
             }
-        </code>
-    </div>
+    </code>
     In this code snippet, we have the function <code>getNotes()</code>. <br>
     Here we make a call to <code>collection.addSnapshotListener</code>
     (I have pointed <code>collection</code> to <code>notes</code> further up in the code).
@@ -132,23 +126,21 @@
 <h5>Getting a file</h5>
 <div class="text-section">
     To get a file, we use same kind of code, as when using <code>Firestore</code>:
-    <div class="code-block rounded">
-        <code>
+    <code class="code-block swift rounded">
             func getFile(fileName:String, note:Note) { <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;let fileRef = storage.reference(withPath: fileName) <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;fileRef.getData(maxSize: 5000000) { (data, error) in <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if error == nil{ <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("file download ok") <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if let image = UIImage(data: data!){ <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;note.image = Image(uiImage: image) <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} else { <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("file download not ok. \(error.debugDescription)") <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;} <br>
+            &*let fileRef = storage.reference(withPath: fileName) <br>
+            &*fileRef.getData(maxSize: 5000000) { (data, error) in <br>
+            &*&*if error == nil{ <br>
+            &*&*&*print("file download ok") <br>
+            &*&*&*if let image = UIImage(data: data!){ <br>
+            &*&*&*&*note.image = Image(uiImage: image) <br>
+            &*&*&*} <br>
+            &*&*} else { <br>
+            &*&*&*print("file download not ok. \(error.debugDescription)") <br>
+            &*&*} <br>
+            &*} <br>
             } <br>
-        </code>
-    </div>
+    </code>
     This function downloads and attaches an image to a Note object. <br>
     Here we start by making a reference to the file we need to download.
     Then we call the <code>getData()</code> and define a <code>maxSize</code>, so we don't
@@ -166,28 +158,27 @@
 <h5>Upload a file</h5>
 <div class="text-section">
     Uploading a file (an image in this case):
-    <div class="code-block rounded">
-        <code>
+    <code class="code-block swift rounded">
             func upload(fileName:String, image:UIImage){ <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;let data = image.jpegData(compressionQuality: 1.0) <br>
+            &*let data = image.jpegData(compressionQuality: 1.0) <br>
             <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;let imgRef = storage.reference(withPath: fileName) <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;let meta = StorageMetadata() <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;meta.contentType = "image/jpeg" <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;imgRef.putData(data!, metadata: meta) { (meta, error) in <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if error == nil{ <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("file upload ok") <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} else { <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("file upload not ok") <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;} <br>
+            &*let imgRef = storage.reference(withPath: fileName) <br>
+            &*let meta = StorageMetadata() <br>
+            &*meta.contentType = "image/jpeg" <br>
+            &*imgRef.putData(data!, metadata: meta) { (meta, error) in <br>
+            &*&*if error == nil{ <br>
+            &*&*&*print("file upload ok") <br>
+            &*&*} else { <br>
+            &*&*&*print("file upload not ok") <br>
+            &*&*} <br>
+            &*} <br>
             }
-        </code>
-    </div>
+    </code>
     Here we start by getting the data, we want to upload to <code>Firestore</code> from the <code>Image</code>
     object. Here we choose to use <code>jpeg</code> format. <br>
     Then we make a reference to the file (essentially what we want the image to be called on <code>Firestore</code>).
     For <code>Firestore</code> to properly see the file as an image, we need to tell it that it is an image,
     we do this by setting the meta data <code>contentType</code> to <code>image/jpeg</code>. <br>
     Then we call the <code>putData()</code> function on the reference, and pass the data and meta data, along with
-    a closure for error handling.</div>
+    a closure for error handling.
+</div>

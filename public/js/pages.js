@@ -50,7 +50,13 @@ function getSpecificNote(id, index){
                 linkList.append('<li><a target="_blank" href="' + link.link + '">' + link.description + '</a></li>');
             }
 
-            $("#noteBody").html(data.body);
+            const body = $("#noteBody");
+            body.html(data.body.replaceAll('&*', '&nbsp;&nbsp;&nbsp;&nbsp;'));
+
+            const codeblocks = $('.code-block');
+            for(let i = 0; i < codeblocks.length; i++){
+                hljs.highlightBlock(codeblocks[i]);
+            }
         });
     }
 }

@@ -7,20 +7,16 @@
 <h4>Usage</h4>
 <div class="text-section">
     Let's say we have an array of <code>JS</code>/<code>JSON</code> object like this: <br>
-    <div class="code-block rounded">
-        <code>
+    <code class="code-block javascript rounded">
             const array = [{ title : 'Tenet', score : 7.8 }, { title : 'Interstellar', score : 8.6 }];
-        </code> <br>
-    </div>
+    </code>
     and we want to sort it by the <code>title</code> property. If we just call <code>array.sort()</code>, we get the
     exact same array. We have to modify the sort method a bit: <br>
-    <div class="code-block rounded">
-        <code>
+    <code class="code-block javascript rounded">
             array.sort(function (a, b){ <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;return a.title.localeCompare(b.title); <br>
+            &*return a.title.localeCompare(b.title); <br>
             });
-        </code> <br>
-    </div>
+    </code>
     Here we pass a function, that we define, as a parameter to sort.
     This function uses the string method <code>localeCompare()</code>.
     Now our array looks like this: <br>

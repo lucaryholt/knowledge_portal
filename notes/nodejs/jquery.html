@@ -20,20 +20,16 @@
 </div>
 <div class="text-section">
     Select elements via class:
-    <div class="code-block rounded">
-        <code>
+    <code class="code-block javascript rounded">
             $('.classExample').html('Marco');
-        </code> <br>
-    </div>
+    </code>
     This would select all elements with the class <code>classExample</code> and change their inner HTML to 'Marco'.
 </div>
 <div class="text-section">
     Select element via id: <br>
-    <div class="code-block rounded">
-        <code>
+    <code class="code-block javascript rounded">
             $('#idExample').html('Polo');
-        </code> <br>
-    </div>
+    </code>
     This would select the element with id <code>idExample</code> and change the inner HTML to 'Polo'.
 </div>
 <div class="text-section">
@@ -41,22 +37,18 @@
 </div>
 <div class="text-section">
     Selecting the last child in an element:
-    <div class="code-block rounded">
-        <code>
+    <code class="code-block javascript rounded">
             $('#first-list li:last-child').css('text-decoration', 'underline');
-        </code>
-    </div>
+    </code>
     This will find the ID <code>first-list</code>, then select the last child with <code>li</code> tag.
     To select children you can also use the method <code>.children()</code> and then <code>.last()</code>,
     which would then select the last child no matter what tag it had.
 </div>
 <div class="text-section">
     Select every third child:
-    <div class="code-block rounded">
-        <code>
+    <code class="code-block javascript rounded">
             $('ul#first-list li:nth-child(3n)').css("backgroundColor", "Yellow");
-        </code>
-    </div>
+    </code>
 </div>
 <div class="text-section">
     There are a lot more ways to select in <code>jQuery</code>, check the link <a href="https://www.w3schools.com/jquery/jquery_ref_selectors.asp">W3 Schools - jQuery Selectors</a>.
@@ -118,11 +110,9 @@
 </div>
 <div class="text-section">
     An example of how to import <code>jQuery</code>: <br>
-    <div class="code-block rounded">
-        <code>
+    <code class="code-block html rounded">
             &lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"&gt;&lt;/script&gt;
-        </code> <br>
-    </div>
+    </code>
     This is retrieving a <code>jQuery</code> file from a Google <code>CDN</code>. <br>
     Look below for where to insert this in your <code>HTML</code>.
 </div>

@@ -14,11 +14,9 @@
 <h5>Syntax</h5>
 <div class="text-section">
     You define a list with <code>[]</code>:
-    <div class="code-block rounded">
-        <code>
+    <code class="code-block python rounded">
             a = ['a value', 'another value', 'wait', 'also a value']
-        </code>
-    </div>
+    </code>
 </div>
 
 <h5>Characteristics</h5>
@@ -47,17 +45,13 @@
         </li>
     </ul>
     To access an element in a <code>list</code>, you use <code>[]</code>:
-    <div class="code-block rounded">
-        <code>
+    <code class="code-block python rounded">
             a[0] = 'now it is this value'
-        </code>
-    </div>
+    </code>
     You can also easily access the last value in a <code>list</code>:
-    <div class="code-block rounded">
-        <code>
+    <code class="code-block python rounded">
             a[-1] = 'last value'
-        </code>
-    </div>
+    </code>
     <br>
     <img class="image-xl-horizontal border" src="/images/python_lists_access.png" alt="Python Lists Access Image">
     <br>
@@ -66,20 +60,16 @@
 <h5>Slicing</h5>
 <div class="text-section">
     For this section we will work with a list that looks like this:
-    <div class="code-block rounded">
-        <code>
+    <code class="code-block python rounded">
             a = ['foo', 'bar', 'baz', 'qux', 'quux', 'corge']
-        </code>
-    </div>
+    </code>
     You can use <code>slicing</code> to manipulate lists and extract the parts of the <code>list</code>
     that you need. <br>
     The expression <code>a[m:n]</code> will return a portion of the <code>list</code>, from index
     <code>m</code> to, but not including, <code>n</code>. This means that
-    <div class="code-block rounded">
-        <code>
+    <code class="code-block python rounded">
             a[2:5]
-        </code>
-    </div>
+    </code>
     Returns <code>['baz', 'quz', 'quux']</code>.
 </div>
 <div class="text-section">
@@ -93,11 +83,9 @@
 <div class="text-section">
     You can use a number of <code>Python</code> operators and built-in function on <code>lists</code>.
     Like the <code>in</code> and <code>not in</code> operators:
-    <div class="code-block rounded">
-        <code>
+    <code class="code-block python rounded">
             'qux' in a
-        </code>
-    </div>
+    </code>
     Would return <code>True</code>. <br>
     You can also use the operators <code>+</code> and <code>*</code>, as well as the
     <code>len()</code>, <code>min()</code> and <code>max()</code> functions.
@@ -152,34 +140,26 @@
 </div>
 <div class="text-section">
     An example of this can be the following code for creating a list:
-    <div class="code-block rounded">
-        <code>
+    <code class="code-block python rounded">
             new_list = [] <br>
             for i in old_list: <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;if filter(i): <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;new_list.append(expressions(i))
-        </code>
-    </div>
+            &*if filter(i): <br>
+            &*&*new_list.append(expressions(i))
+    </code>
     This can be written with a <code>list comprehension</code>:
-    <div class="code-block rounded">
-        <code>
+    <code class="code-block python rounded">
             new_list = [expression(i) for i in old_list if filter(i)]
-        </code>
-    </div>
+    </code>
     Another example:
-    <div class="code-block rounded">
-        <code>
+    <code class="code-block python rounded">
             l = [] <br>
             for i in range(1, 10): <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;l.append(i)
-        </code>
-    </div>
+            &*l.append(i)
+    </code>
     Could be written:
-    <div class="code-block rounded">
-        <code>
+    <code class="code-block python rounded">
             [i for i in range(1, 10)]
-        </code>
-    </div>
+    </code>
 </div>
 <div class="text-section">
     More on <code>list comprehensions</code> can be found in the 'PythonForBeginners - List Comprehensions in Python' link.

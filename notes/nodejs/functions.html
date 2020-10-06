@@ -14,39 +14,31 @@
 <h4>Syntax</h4>
 <div class="text-section">
     To define a method the basic syntax is: <br>
-    <div class="code-block rounded">
-        <code>
+    <code class="code-block javascript rounded">
             function helloWorld(){ <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;console.log('Hello world'); <br>
+            &*console.log('Hello world'); <br>
             }
-        </code> <br>
-    </div>
+        </code>
     To define a anonymous function as a variable: <br>
-    <div class="code-block rounded">
-        <code>
+    <code class="code-block javascript rounded">
             const helloWorld = function (){ <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;console.log('Hello world'); <br>
+            &*console.log('Hello world'); <br>
             }
-        </code> <br>
-    </div>
+        </code>
     Another quicker way to define a function is the <code>arrow syntax</code>: <br>
-    <div class="code-block rounded">
-        <code>
+    <code class="code-block javascript rounded">
             const helloWorld = () => { <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;console.log('Hello world'); <br>
+            &*console.log('Hello world'); <br>
             }
-        </code> <br>
-    </div>
+        </code>
 </div>
 <div class="text-section">
   To have a function return a value, you type in <code>return</code> and then the value: <br>
-    <div class="code-block rounded">
-        <code>
+    <code class="code-block javascript rounded">
             function multiplyBy2(number){ <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;return number * 2; <br>
+            &*return number * 2; <br>
             }
-        </code> <br>
-    </div>
+        </code>
 </div>
 
 <hr>
@@ -59,19 +51,15 @@
 </div>
 <div class="text-section">
     To declare an anonymous function we can do it by referencing it from a variable:
-    <div class="code-block rounded">
-        <code>
+    <code class="code-block javascript rounded">
             const anon-function = function () { <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;console.log('I am an anonymous functions'); <br>
+            &*console.log('I am an anonymous functions'); <br>
             }
-        </code> <br>
-    </div>
+        </code>
     We could then call the function by using the variable name and <code>()</code>:
-    <div class="code-block rounded">
-        <code>
+    <code class="code-block javascript rounded">
             anon-function();
-        </code> <br>
-    </div>
+        </code>
 </div>
 <div class="text-section">
     You can also define an anonymous function with the <code>arrow syntax</code>.
@@ -82,15 +70,13 @@
 <h4>Passing a function</h4>
 <div class="text-section">
     Functions can be passed like a variable. To pass a function you simply write it without the parentheses:
-    <div class="code-block rounded">
-        <code>
+    <code class="code-block javascript rounded">
             executeOtherFunction(helloWorld); <br>
             <br>
             function executeOtherFunction(function){ <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;function(); <br>
+            &*function(); <br>
             }
-        </code> <br>
-    </div>
+        </code>
     This would pass the <code>helloWorld</code> function and then the <code>executeOtherFunction</code> function
     would execute it, resulting in <code>Hello World</code> being printet to the console.
 </div>
@@ -103,27 +89,21 @@
 </div>
 <div class="text-section">
     Syntax: <br>
-    <div class="code-block rounded">
-        <code>
+    <code class="code-block javascript rounded">
             const poke = (name) => "poke " + name; <br>
             function interact(name, interactingFunction){ <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;console.log(interactingFunction(name)); <br>
+            &*console.log(interactingFunction(name)); <br>
             }
-        </code> <br>
-    </div>
+        </code>
     You could then call this: <br>
-    <div class="code-block rounded">
-        <code>
+    <code class="code-block javascript rounded">
             interact("Bob", poke);
-        </code> <br>
-    </div>
+        </code>
     This would print <code>poke Bob</code> <br>
     But you could also define another function when calling <code>interact</code>: <br>
-    <div class="code-block rounded">
-        <code>
+    <code class="code-block javascript rounded">
             interact("Jens", (name) => "hug " + name);
-        </code> <br>
-    </div>
+        </code>
     Which would print <code>hug Jens</code>.
 </div>
 <div class="text-section">
@@ -156,11 +136,9 @@
 </div>
 <div class="text-section">
     Syntax: <br>
-    <div class="code-block rounded">
-        <code>
+    <code class="code-block javascript rounded">
             const umbrellaMessage = isRaining ? 'Bring it!' : 'Nah, leave it.';
-        </code> <br>
-    </div>
+        </code>
     The above expression evaluates if <code>isRaining</code> is true or false and returns one of the two strings.
 </div>
 
@@ -192,27 +170,23 @@
 <div class="text-section">
     <code>filter()</code> returns an array filled with elements that pass a test. This test is provided to
     <code>filter()</code> as a function. It calls said function once for each element in the array. Example: <br>
-    <div class="code-block rounded">
-        <code>
+    <code class="code-block javascript rounded">
             const ages = [32, 33, 16, 40]; <br>
             function checkAdult(age) { <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;return age >= 18; <br>
+            &*return age >= 18; <br>
             } <br>
             const adults = ages.filter(checkAdult);
-        </code> <br>
-    </div>
+        </code>
     In the above code we have an array of ages, then a function that returns true if age is equal or greater than 18.
     Then we instantiate an adults constant with the value, from <code>filter()</code> called on the ages array,
     with <code>checkAdult(age)</code> as parameter. <br>
     The above code can be written shorter using an lambda expression: <br>
-    <div class="code-block rounded">
-        <code>
+    <code class="code-block javascript rounded">
             const ages = [32, 33, 16, 40]; <br>
             const adults = ages.filter(age => { <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;return age >= 18; <br>
+            &*return age >= 18; <br>
             });
-        </code> <br>
-    </div>
+        </code>
 </div>
 <div class="text-section">
     <code>filter()</code> does not change the original array, but returns a new array. <br>

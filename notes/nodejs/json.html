@@ -10,27 +10,23 @@
     A JSON file is a text file written in JavaScript object notation. <br>
     To define a JSON object we use square brackets <code>{}</code>. <br>
     A JSON object consists of KeyValuePairs and is written: <br>
-    <div class="code-block rounded">
-        <code>
+    <code class="code-block json rounded">
             { <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;"key" : "value", <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;"anotherKey" : "anotherValue" <br>
+            &*"key" : "value", <br>
+            &*"anotherKey" : "anotherValue" <br>
             }
-        </code> <br>
-    </div>
+    </code>
     A JSON file can also be a list of JSON objects: <br>
-    <div class="code-block rounded">
-        <code>
+    <code class="code-block json rounded">
             [ <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;{ <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"key" : "value" <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;}, <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;{ <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"key" : "value" <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;} <br>
+            &*{ <br>
+            &*&*"key" : "value" <br>
+            &*}, <br>
+            &*{ <br>
+            &*&*"key" : "value" <br>
+            &*} <br>
             ]
-        </code> <br>
-    </div>
+    </code>
     In order for a <code>.json</code> file to actually be considered <code>JSON</code> it needs to start with either
     <code>{</code> or <code>[</code> and end with <code>}</code> or <code>]</code>.
 </div>
@@ -44,7 +40,7 @@
 
 <h4>JSON in JS</h4>
 <div class="text-section">
-    As the name 'JavaScript Object Notation' suggests, JSON and JS are related. <br>
+    As the name <code>JavaScript Object Notation</code> suggests, JSON and JS are related. <br>
     JS objects are built like JSON objects - namely: KeyValuePairs. <br>
     In the two subsections following we look at using JS object and JSON files in JS.
 </div>
@@ -58,12 +54,10 @@
 <h5>JSON files in JS</h5>
 <div class="text-section">
     To use an '.json' file in JS, we need to import/include (or whatever you want to call it) in the JS script. <br>
-    In Node.JS we use the function <code>require()</code> (see 'require()'): <br>
-    <div class="code-block rounded">
-        <code>
+    In Node.JS we use the function <code>require()</code>: <br>
+    <code class="code-block javascript rounded">
             const jsonObject = require('./object.json');
-        </code> <br>
-    </div>
+    </code>
     This looks for a JSON file in the same folder as the script called 'object.json'.
     It then saves the file in the 'jsonObject' constant. <br>
     This enables us to use dot notation to access the KeyValuePairs in the file (just like JS objects).
