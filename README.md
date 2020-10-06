@@ -54,3 +54,8 @@ Some possible solutions for this could be:
  - An embedded html IDE in the app (out of scope for this project).
  - A html preview site, that you could point to a local html file and then edit that file in your IDE of choice (with jQuery updating the preview at intervals).
  - Or using the already existing live-preview editor on **/editing** (the only drawback is that this does not have autocompletion).
+ 
+#### Own formatting
+
+Instead of writing the notes in HTML, which is cumbersome to do without an IDE with autocomplete, I could make a syntax (like Markdown).
+Then create a converter, to convert it to HTML before sending to user.
