@@ -14,10 +14,6 @@
     justify-content: center;
 }
 
-.code-block{
-    box-shadow: 1px 1px 3px grey;
-}
-
 #color-mode{
     position: fixed;
     top: 5px;
@@ -52,6 +48,10 @@
 
 .image-xl-horizontal{
     width: 100%;
+}
+
+.link-holder{
+    padding: 5px;
 }
 
 #logo{

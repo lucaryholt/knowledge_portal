@@ -6,13 +6,14 @@ fetch(ip + '/api/notebooks')
         for(let i = 0; i < response.data.length; i++){
             appendPage(response.data[i]);
         }
+        checkForMode();
     });
 
 function appendPage(data){
     const pageHolder = $('#pages-holder');
 
     pageHolder.append(
-        '<a href="' + ip + data.link + '" class="link-holder">' +
+        '<a href="' + ip + data.link + '" class="link-holder"' +
             '<div class="page-holder">' +
                 '<div class="card page-card">' +
                     '<div class="card-body page-card-body">' +

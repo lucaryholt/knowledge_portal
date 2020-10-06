@@ -2,6 +2,10 @@ body {
     background-color: #121212!important;
 }
 
+.code-block{
+    box-shadow: 1px 1px 3px #2f2f2f;
+}
+
 #color-mode{
     color: ghostwhite;
 }

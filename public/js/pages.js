@@ -2,7 +2,7 @@ let searchTerms = null;
 let currentNoteIndex = null;
 
 const ip = window.location.origin;
-const pageId = window.location.toString().split('/')[3];
+const pageId = window.location.toString().split('/')[3].split('#')[0];
 
 fetch(ip + '/api/pages/' + pageId)
     .then(response => response.json())
@@ -17,6 +17,7 @@ fetch(ip + '/api/notes/' + pageId)
             appendNote(response.data[i], i);
         }
         getSpecificNote(response.data[0].fileName, 0);
+        checkForMode();
     });
 
 fetch(ip + "/api/searchTerms/" + pageId)
@@ -24,8 +25,6 @@ fetch(ip + "/api/searchTerms/" + pageId)
     .then(response => {
         searchTerms = response.data;
     });
-
-$('#front-page-link').prop('href', ip);
 
 function getSpecificNote(id, index){
     if(currentNoteIndex !== index){
