@@ -1,6 +1,6 @@
 const ip = window.location.origin;
 
-fetch('ip + "/api/notebooks')
+fetch(ip + '/api/notebooks')
     .then(response => response.json())
     .then(response => {
         for(let i = 0; i < response.data.length; i++){
