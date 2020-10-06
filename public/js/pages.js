@@ -71,7 +71,7 @@ function searchUpdate(){
     searchResults.html('');
     $div.html('');
 
-    if(term !== ''){
+    if (term !== '') {
         const pageResults = searchTerms.filter(pageResult => {
             const termResults = pageResult.terms.find(termResult => {
                 if(termResult.toLowerCase().includes(term.toLowerCase())){
@@ -82,7 +82,7 @@ function searchUpdate(){
                 return pageResult;
             }
         });
-        if(pageResults.length !== 0){
+        if (pageResults.length !== 0) {
             for(let i = 0; i < pageResults.length; i++){
                 $div.append('<div><span class="list-group-item list-group-item-action" onclick="getSpecificNote(' + "'" + pageResults[i].page + "'" + ')">' + pageResults[i].page + '</span></div>');
             }

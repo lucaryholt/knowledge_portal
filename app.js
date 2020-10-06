@@ -19,7 +19,7 @@ app.get('/api/notes/:id', (req, res) => {
     }
     return res.status(200).send({
         data: collection.filter(note => {
-            if(note.enabled){
+            if (note.enabled) {
                 return note;
             }
         })
@@ -31,16 +31,16 @@ app.get('/api/notes/:id/:file', (req, res) => {
     const fileName = req.params.file;
 
     const note = require('./notes/' + collectionName + '/collection.json').find(note => {
-        if(note.fileName === fileName){
+        if (note.fileName === fileName) {
             return note;
         }
     });
 
     let body;
-    try{
+    try {
         const file = fs.readFileSync('./notes/' + collectionName + '/' + fileName);
         body = file.toString();
-    }catch (error){
+    } catch (error) {
         console.log('Error reading file:', fileName, 'in collection', collectionName);
         body = 'Internal error reading this file.';
     }
@@ -70,7 +70,7 @@ app.get('/api/searchTerms/:id', (req, res) => {
 
 app.get('/api/notebooks', (req, res) => {
     const enabledPages = pages.filter(page => {
-        if(page.enabled === true){
+        if (page.enabled === true) {
             return page;
         }
     });
@@ -82,7 +82,7 @@ app.get('/api/pages/:id', (req, res) => {
 
     return res.send({
         data : pages.find(page => {
-            if(page.link === '/' + id && page.enabled){
+            if (page.link === '/' + id && page.enabled) {
                 return page;
             }
         })
@@ -100,7 +100,7 @@ app.get('*', (req, res) => {
 const port = process.env.PORT ? process.env.PORT : 80;
 
 app.listen(port, (error) => {
-    if(error){
+    if (error) {
         console.log(error);
         console.log('Error starting server.');
     } else {
