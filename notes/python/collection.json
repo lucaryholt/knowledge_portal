@@ -21,10 +21,14 @@
       {
         "description" : "Real Python - Lists and Tuples in Python",
         "link" : "https://realpython.com/python-lists-tuples/"
+      },
+      {
+        "description" : "PythonForBeginners - List Comprehensions in Python",
+        "link" : "https://www.pythonforbeginners.com/basics/list-comprehensions-in-python"
       }
     ],
-    "searchTerms": ["lists", "tuples", "comprehensions"],
-    "enabled": false
+    "searchTerms": ["lists", "tuples", "comprehensions", "slice", "slicing"],
+    "enabled": true
   },
   {
     "title" : "Loops",
