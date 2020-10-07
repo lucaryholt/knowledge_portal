@@ -1,0 +1,278 @@
+<div class="sub-title">
+    //Needs sub-title
+</div>
+
+<hr>
+
+<h4>Magic methods</h4>
+<div class="text-section">
+    <code>Magic methods</code> are special methods that are surrounded by double underscores (<code>__</code>).
+    An example of this is our <code>__init__</code> method, that <code>Python</code> automatically calls
+    when we instantiate an object of our class.
+</div>
+
+<h5>Construction and initialization</h5>
+<div class="text-section">
+    As stated above <code>__init__</code> is called when we instantiate our class, but actually a method called
+    <code>__new__</code> is called before <code>__init__</code>. This method is rarely used.
+</div>
+<div class="text-section">
+    There also exists a <code>__del__</code> method, that can be called the <code>destructor</code> of the class.
+    This is used to define behavior for garbage collection of the object.
+</div>
+<div class="text-section">
+    An example from the '<code>Rafe Kettler - A Guide to Python's Magic Methods</code>' link:
+    <code class="code-block python rounded">
+        from os.path import join <br>
+        <br>
+        class FileObject: <br>
+        &*'''Wrapper for file objects to make sure the file gets closed on deletion.''' <br>
+        <br>
+        &*&*def __init__(self, filepath='~', filename='sample.txt'): <br>
+        &*&*&*# open a file filename in filepath in read and write mode <br>
+        &*&*&*self.file = open(join(filepath, filename), 'r+') <br>
+        <br>
+        &*&*def __del__(self): <br>
+        &*&*&*self.file.close() <br>
+        &*&*&*del self.file <br>
+    </code>
+    In this example we see a FileWrapper object, which holds a file. The <code>__init__</code> method
+    opens the file and the <code>__del__</code> closes the file and removes it from memory.
+</div>
+
+<h5>Operators on custom classes</h5>
+<div class="text-section">
+    In <code>Python</code> we can use methods like <code>.equals()</code>, to compare objects.
+    But they do not work of the box for custom objects, there you can use the following methods:
+    <ul>
+        <li><code>__cmp__(self, other)</code></li>
+        <li><code>__eq__(self, other)</code></li>
+        <li><code>__ne__(self, other)</code></li>
+        <li><code>__lt__(self, other)</code></li>
+        <li><code>__gt__(self, other)</code></li>
+        <li><code>__le__(self, other)</code></li>
+        <li><code>__ge__(self, other)</code></li>
+    </ul>
+    The <code>__cmp__</code> method, implements behavior for all comparison objects, while the rest
+    define behavior for separate operators. <br>
+    The full description is in the '<code>Rafe Kettler - A Guide to Python's Magic Methods</code>' link.
+</div>
+<div class="text-section">
+    Another example from the link:
+    <code class="code-block python rounded">
+        class Word(str): <br>
+        &*'''Class for words, defining comparison based on word length.''' <br>
+        <br>
+        &*def __new__(cls, word): <br>
+        &*&*# Note that we have to use __new__. This is because str is an immutable <br>
+        &*&*# type, so we have to initialize it early (at creation) <br>
+        &*&*if ' ' in word: <br>
+        &*&*&*print "Value contains spaces. Truncating to first space." <br>
+        &*&*&*word = word[:word.index(' ')] # Word is now all chars before first space <br>
+        &*&*return str.__new__(cls, word) <br>
+        <br>
+        &*def __gt__(self, other): <br>
+        &*&*return len(self) > len(other) <br>
+        &*def __lt__(self, other): <br>
+        &*&*return len(self) < len(other) <br>
+        &*def __ge__(self, other): <br>
+        &*&*return len(self) >= len(other) <br>
+        &*def __le__(self, other): <br>
+        &*&*return len(self) <= len(other) <br>
+    </code>
+</div>
+
+<h5>Numeric magic methods</h5>
+<div class="text-section">
+    There are a whole host of <code>numeric magic methods</code>, for numeric operators.
+    These are not being described here, but can be seen in the
+    '<code>Rafe Kettler - A Guide to Python's Magic Methods</code>' link.
+</div>
+
+<h5>Representing your class</h5>
+<div class="text-section">
+    In <code>Python</code> you can call <code>str()</code> on any class, to get a string
+    representation of that class. If you do this on a class that does not have <code>__str__</code>
+    implemented, you will get something like this:
+    <code class="code-block python rounded">
+        &lt;__main__.A object at 0x0000026D9F016E80&gt;
+    </code>
+    This does not help that much to figure out what this class/object is. <br>
+    But if you implemented <code>__str__(self)</code>, you can define what string is returned and
+    provide the user of your class with useful information. <br>
+    Another method, <code>__repr__</code>, with the same basic functionality, exists.
+    The main difference between the two, is that <code>__str__</code> is meant for human-readable output
+    and <code>__repr__</code> is meant for machine-readable output.
+</div>
+<div class="text-section">
+    A whole list of other representational magic methods exist:
+    <ul>
+        <li><code>__unicode__(self)</code></li>
+        <li><code>__format__(self, formatstr)</code></li>
+        <li><code>__hash__(self)</code></li>
+        <li><code>__nonzero__(self)</code></li>
+        <li><code>__dir__(self)</code></li>
+        <li><code>__sizeof__(self)</code></li>
+    </ul>
+</div>
+
+<h5>Controlling Attribute Access</h5>
+<div class="text-section">
+    It can be difficult to see where in <code>Python</code>, where true <code>encapsulation</code>
+    is possible. Especially if you come from another programming language. <br>
+    There are a set of magic methods, that help with this:
+    <ul>
+        <li><code>__getattr__(self, name)</code></li>
+        <li><code>__setattr__(self, name, value)</code></li>
+        <li><code>__delattr__(self, name)</code></li>
+        <li><code>__getattribute__(self, name)</code></li>
+    </ul>
+    Example from the '<code>Rafe Kettler - A Guide to Python's Magic Methods</code>' link:
+    <code class="code-block python rounded">
+        class AccessCounter(object): <br>
+        &*'''A class that contains a value and implements an access counter.<br>
+        &*The counter increments each time the value is changed.'''<br>
+        <br>
+        &*def __init__(self, val):<br>
+        &*&*super(AccessCounter, self).__setattr__('counter', 0)<br>
+        &*&*super(AccessCounter, self).__setattr__('value', val)<br>
+        <br>
+        &*def __setattr__(self, name, value):<br>
+        &*&*if name == 'value':<br>
+        &*&*&*super(AccessCounter, self).__setattr__('counter', self.counter + 1)<br>
+        &*&*# Make this unconditional.<br>
+        &*&*# If you want to prevent other attributes to be set, raise AttributeError(name)<br>
+        &*&*super(AccessCounter, self).__setattr__(name, value)<br>
+        <br>
+        &*def __delattr__(self, name):<br>
+        &*&*if name == 'value':<br>
+        &*&*&*super(AccessCounter, self).__setattr__('counter', self.counter + 1)<br>
+        &*&*super(AccessCounter, self).__delattr__(name)<br>
+    </code>
+</div>
+
+<h5>Table of magic methods</h5>
+<div class="text-section">
+    Here is a table from the '<code>Rafe Kettler - A Guide to Python's Magic Methods</code>' link:
+</div>
+<table class="table table-striped table-bordered">
+    <thead>
+    <tr>
+        <th>Magic Method</th>
+        <th>When it gets invoked (example)</th>
+        <th>Explanation</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td><code>__new__(cls [,...])</code></td>
+        <td><code>instance = MyClass(arg1, arg2)</code></td>
+        <td><code>__new__</code> is called on instance creation</td>
+    </tr>
+    <tr>
+        <td><code>__init__(self [,...])</code></td>
+        <td><code>instance = MyClass(arg1, arg2)</code></td>
+        <td><code>__init__</code> is called on instance creation</td>
+    </tr>
+    <tr>
+        <td><code>__cmp__(self, other)</code></td>
+        <td><code>self == other</code>, <code>self &gt; other</code>, etc.</td>
+        <td>Called for any comparison</td>
+    </tr>
+    <tr>
+        <td><code>__pos__(self)</code></td>
+        <td><code>+self</code></td>
+        <td>Unary plus sign</td>
+    </tr>
+    <tr>
+        <td><code>__neg__(self)</code></td>
+        <td><code>-self</code></td>
+        <td>Unary minus sign</td>
+    </tr>
+    <tr>
+        <td><code>__invert__(self)</code></td>
+        <td><code>~self</code></td>
+        <td>Bitwise inversion</td>
+    </tr>
+    <tr>
+        <td><code>__index__(self)</code></td>
+        <td><code>x[self]</code></td>
+        <td>Conversion when object is used as index</td>
+    </tr>
+    <tr>
+        <td><code>__nonzero__(self)</code></td>
+        <td><code>bool(self)</code></td>
+        <td>Boolean value of the object</td>
+    </tr>
+    <tr>
+        <td><code>__getattr__(self, name)</code></td>
+        <td><code>self.name # name doesn't exist</code></td>
+        <td>Accessing nonexistent attribute</td>
+    </tr>
+    <tr>
+        <td><code>__setattr__(self, name, val)</code></td>
+        <td><code>self.name = val</code></td>
+        <td>Assigning to an attribute</td>
+    </tr>
+    <tr>
+        <td><code>__delattr__(self, name)</code></td>
+        <td><code>del self.name</code></td>
+        <td>Deleting an attribute</td>
+    </tr>
+    <tr>
+        <td><code>__getattribute__(self, name)</code></td>
+        <td><code>self.name</code></td>
+        <td>Accessing any attribute</td>
+    </tr>
+    <tr>
+        <td><code>__getitem__(self, key)</code></td>
+        <td><code>self[key]</code></td>
+        <td>Accessing an item using an index</td>
+    </tr>
+    <tr>
+        <td><code>__setitem__(self, key, val)</code></td>
+        <td><code>self[key] = val</code></td>
+        <td>Assigning to an item using an index</td>
+    </tr>
+    <tr>
+        <td><code>__delitem__(self, key)</code></td>
+        <td><code>del self[key]</code></td>
+        <td>Deleting an item using an index</td>
+    </tr>
+    <tr>
+        <td><code>__iter__(self)</code></td>
+        <td><code>for x in self</code></td>
+        <td>Iteration</td>
+    </tr>
+    <tr>
+        <td><code>__contains__(self, value)</code></td>
+        <td><code>value in self</code>, <code>value not in self</code></td>
+        <td>Membership tests using <code>in</code></td>
+    </tr>
+    <tr>
+        <td><code>__call__(self [,...])</code></td>
+        <td><code>self(args)</code></td>
+        <td>"Calling" an instance</td>
+    </tr>
+    <tr>
+        <td><code>__enter__(self)</code></td>
+        <td><code>with self as x:</code></td>
+        <td><code>with</code> statement context managers</td>
+    </tr>
+    <tr>
+        <td><code>__exit__(self, exc, val, trace)</code></td>
+        <td><code>with self as x:</code></td>
+        <td><code>with</code> statement context managers</td>
+    </tr>
+    <tr>
+        <td><code>__getstate__(self)</code></td>
+        <td><code>pickle.dump(pkl_file, self)</code></td>
+        <td>Pickling</td>
+    </tr>
+    <tr>
+        <td><code>__setstate__(self)</code></td>
+        <td><code>data = pickle.load(pkl_file)</code></td>
+        <td>Pickling</td>
+    </tr>
+    </tbody>
+</table>

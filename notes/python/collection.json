@@ -133,5 +133,17 @@
     ],
     "searchTerms": ["pip", "packages", "modules"],
     "enabled": false
+  },
+  {
+    "title" : "Python Data Model",
+    "fileName" : "datamodel.html",
+    "links" : [
+      {
+        "description" : "Rafe Kettler - A Guide to Python's Magic Methods",
+        "link" : "https://rszalski.github.io/magicmethods/"
+      }
+    ],
+    "searchTerms": ["data model"],
+    "enabled": true
   }
 ]
