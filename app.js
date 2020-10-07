@@ -58,11 +58,13 @@ app.get('/api/searchTerms/:id', (req, res) => {
     const id = req.params.id;
 
     const collection = require('./notes/' + req.params.id + '/collection.json');
-    const terms = collection.map(item => {
-        const terms = item.searchTerms.map(term => {
-            return term;
-        });
-        return { page : item.title, terms: terms };
+    const terms = collection.filter(item => {
+        if(item.enabled){
+            const terms = item.searchTerms.map(term => {
+                return term;
+            });
+            return { page : item.title, terms: terms, fileName: item.fileName };
+        }
     });
 
     return res.send( { data : terms });

@@ -13,8 +13,9 @@ function toggleDark(){
     button.html('<i class="fas fa-sun"></i>');
     button.attr('onclick', 'toggleLight()');
     $('#style').attr('href', 'style/style-dark.css');
-    $('#code-style').attr('href', '//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/styles/solarized-dark.min.css');
-    $('#front-page-link').prop('href', ip + '#dark');
+    $('#code-style').attr('href', '//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/styles/gruvbox-dark.min.css');
+    $('.front-page-link').prop('href', ip + '#dark');
+    $('#navbar').attr('class','navbar navbar-dark bg-dark sticky-top justify-content-between');
 
     const links = $('.color-link');
     for(let i = 0; i < links.length; i++){
@@ -29,7 +30,8 @@ function toggleLight(){
     button.attr('onclick', 'toggleDark()');
     $('#style').attr('href', 'style/style-light.css');
     $('#code-style').attr('href', '//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/styles/gruvbox-dark.min.css');
-    $('#front-page-link').prop('href', ip);
+    $('.front-page-link').prop('href', ip);
+    $('#navbar').attr('class','navbar navbar-light bg-light sticky-top justify-content-between');
 
     const links = $('.color-link');
     for(let i = 0; i < links.length; i++){

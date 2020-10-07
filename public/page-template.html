@@ -8,22 +8,23 @@
     <link id="code-style" rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/styles/gruvbox-dark.min.css">
 </head>
 <body>
+    <nav id="navbar" class="">
+        <a id="site-logo" class="front-page-link link-holder navbar-brand">
+            <img src="images/portal.png" width="30" height="30" alt="Logo">
+            KnowledgePortal
+        </a>
+        <div class="form-inline">
+            <div id="searchBoxHolder"><input id="searchBox" type="text" placeholder="Search" class="form-control" oninput="searchUpdate()" onfocus="searchUpdate()" onblur="clearSearchResults()"></div>
+            <a id="color-mode" onclick="toggleDark()"><i class="fas fa-moon"></i></a>
+        </div>
+    </nav>
     <div class="container">
-        <a id="color-mode" onclick="toggleDark()"><i class="fas fa-moon"></i></a>
-
-        <!-- TODO https://getbootstrap.com/docs/4.5/components/scrollspy -->
-
         <div id="logo-holder" class="row">
             <img id="logo" src="" alt="Page logo"> <br>
-            <a href="#" id="front-page-link" class="h1 font-weight-bold link-holder">Knowledge</a>
+            <a href="#" class="h1 font-weight-bold link-holder front-page-link">Knowledge</a>
         </div>
         <div class="row">
             <div class="col-4">
-                <div id="searchBoxHolder">
-                    <input id="searchBox" type="text" placeholder="Search" class="form-control" oninput="searchUpdate()">
-                </div>
-                <ul class="list-group" id="searchResults"></ul>
-
                 <ul class="list-group" id="notesList"></ul>
             </div>
             <div class="col-8 rounded info-holder">
@@ -41,6 +42,8 @@
             <h5><a class="link-holder bottom-logo" target="_blank" href="https://github.com/lucaryholt/knowledge_portal"><i class="fab fa-github"></i></a></h5>
         </div>
     </div>
+
+    <ul class="list-group" id="searchResults"></ul>
 
     <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/highlight.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

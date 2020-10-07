@@ -23,11 +23,12 @@ fetch(ip + '/api/notes/' + pageId)
 fetch(ip + "/api/searchTerms/" + pageId)
     .then(response => response.json())
     .then(response => {
+        console.log(response);
         searchTerms = response.data;
     });
 
 function getSpecificNote(id, index){
-    if(currentNoteIndex !== index){
+    if(index === -1 || currentNoteIndex !== index){
         $('#note-' + index).toggleClass('active');
         $('#note-' + currentNoteIndex).toggleClass('active');
         currentNoteIndex = index;
@@ -71,7 +72,7 @@ function searchUpdate(){
 
     if (term !== '') {
         const pageResults = searchTerms.filter(pageResult => {
-            const termResults = pageResult.terms.find(termResult => {
+            const termResults = pageResult.searchTerms.find(termResult => {
                 if(termResult.toLowerCase().includes(term.toLowerCase())){
                     return termResult;
                 }
@@ -82,11 +83,17 @@ function searchUpdate(){
         });
         if (pageResults.length !== 0) {
             for(let i = 0; i < pageResults.length; i++){
-                $div.append('<div><span class="list-group-item list-group-item-action search-result" onclick="getSpecificNote(' + "'" + pageResults[i].page + "'" + ')">' + pageResults[i].page + '</span></div>');
+                $div.append('<div><span class="list-group-item list-group-item-action search-result" onclick="getSpecificNote(' + "'" + pageResults[i].fileName + "', -1" + ')">' + pageResults[i].title + '</span></div>');
             }
             searchResults.append($div);
         }
     }
+}
+
+function clearSearchResults(){
+    setTimeout(() => {
+        $('#searchResults').html('');
+    }, 100);
 }
 
 function appendNote(note, index){

@@ -15,10 +15,8 @@
 }
 
 #color-mode{
-    position: fixed;
-    top: 5px;
-    right: 8px;
     font-size: 1.5em;
+    padding-left: 15px;
 }
 
 .custom-btn-group{
@@ -26,8 +24,8 @@
     width: 10%;
 }
 
-#notesList{
-    padding-top: 25px;
+.navbar{
+    opacity: 0.95;
 }
 
 .note-logo{
@@ -66,16 +64,25 @@
     text-align: center;
 }
 
-#searchBoxHolder{
-    padding-bottom: 10px;
-}
-
 #searchResults{
     z-index: 1;
-    position: absolute;
+    position: fixed;
+    top: 60px;
+    right: 40px;
     background: darkgray;
     box-shadow: 1px 1px 3px grey;
     width: 350px;
+}
+
+#site-logo{
+    font-family: Bahnschrift;
+    font-size: 1.5em;
+    display: flex;
+    height: 40px;
+}
+
+#site-logo img{
+    height: 30px;
 }
 
 .sub-title{

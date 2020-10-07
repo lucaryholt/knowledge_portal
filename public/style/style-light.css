@@ -1,5 +1,5 @@
-.code-block{
-    box-shadow: 1px 1px 3px grey;
+body{
+    background-color: #fafafa!important;
 }
 
 #color-mode{
@@ -7,7 +7,7 @@
 }
 
 .info-holder{
-    background: ghostwhite;
+    background: #e8f1f5;
 }
 
 .link-holder{

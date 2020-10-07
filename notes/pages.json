@@ -2,7 +2,7 @@
   {
     "name" : "Node.JS",
     "link" : "/nodejs",
-    "imageFile" : "/images/nodejs.svg",
+    "imageFile" : "/images/nodejs-logo.png",
     "enabled" : true
   },
   {
