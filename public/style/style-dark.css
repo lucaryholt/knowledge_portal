@@ -1,5 +1,5 @@
 body {
-    background-color: #313131!important;
+    background-color: #18191A!important;
 }
 
 #color-mode{
@@ -7,12 +7,12 @@ body {
 }
 
 .note-item{
-    background: #4f4f4f!important;
+    background: #242526!important;
     color: ghostwhite!important;
 }
 
 .info-holder{
-    background: #414141;
+    background: #242526;
     color: ghostwhite;
 }
 
@@ -21,13 +21,25 @@ body {
     color: ghostwhite;
 }
 
+#navbar{
+    background-color: #242526!important;
+}
+
 #searchBox{
-    background: #525252;
+    background: #242526;
     color: #313131;
 }
 
+.search-result{
+    background: #18191A!important;
+}
+
+#searchResults{
+    background: #242526;
+}
+
 .page-card-body{
-    background: #414141;
+    background: #242526;
     color: ghostwhite;
 }
 

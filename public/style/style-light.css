@@ -15,6 +15,14 @@ body{
     color: black;
 }
 
+#navbar{
+    background-color: #e8f1f5!important;
+}
+
+#searchResults{
+    background: #e8f1f5;
+}
+
 .page-card-body{
     background: ghostwhite;
 }
