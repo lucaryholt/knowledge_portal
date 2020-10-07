@@ -7,16 +7,16 @@
 <h4>General</h4>
 <div class="text-section">
     Syntax for defining a <code>JS</code> object: <br>
-    <code class="code-block javascript rounded">
-            const objectDemo = { type : 'Demo', isThisEnoughDemoData : true, demoFunc : function () { console.log('404') } };
-    </code>
+    <pre><code class="code-block javascript rounded">
+    const objectDemo = { type : 'Demo', isThisEnoughDemoData : true, demoFunc : function () { console.log('404') } };
+    </code></pre>
     Spaces and line breaks are not important, the above example, could also be written like this: <br>
-    <code class="code-block javascript rounded">
-            const objectDemo = { <br>
-            &*type : 'Demo', <br>
-            &*isThisEnoughDemoData : true <br>
-            };
-    </code>
+    <pre><code class="code-block javascript rounded">
+    const objectDemo = {
+        type : 'Demo',
+        isThisEnoughDemoData : true
+    };
+    </code></pre>
 </div>
 <div class="text-section">
     The KeyValuePairs in <code>JS</code> objects are called properties. You can save every data type as a property in an object. <br>
@@ -27,18 +27,18 @@
 <div class="text-section">
     There are two methods for accessing a <code>JS</code> Object property. <br>
     The dot-notation: <br>
-    <code class="code-block javascript rounded">
-            objectDemo.type;
-    </code>
+    <pre><code class="code-block javascript rounded">
+    objectDemo.type;
+    </code></pre>
     and the square brackets-notation: <br>
-    <code class="code-block javascript rounded">
-            objectDemo["isThisEnoughDemoData"];
-    </code>
+    <pre><code class="code-block javascript rounded">
+    objectDemo["isThisEnoughDemoData"];
+    </code></pre>
     The norm is to use dot-notation.
 </div>
 <div class="text-section">
     If you need to call a method in an object, you can do the following:
-    <code class="code-block javascript rounded">
-            objectDemo.demoFunc();
-    </code>
+    <pre><code class="code-block javascript rounded">
+    objectDemo.demoFunc();
+    </code></pre>
 </div>

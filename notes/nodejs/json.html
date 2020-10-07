@@ -10,23 +10,23 @@
     A JSON file is a text file written in JavaScript object notation. <br>
     To define a JSON object we use square brackets <code>{}</code>. <br>
     A JSON object consists of KeyValuePairs and is written: <br>
-    <code class="code-block json rounded">
-            { <br>
-            &*"key" : "value", <br>
-            &*"anotherKey" : "anotherValue" <br>
-            }
-    </code>
+    <pre><code class="code-block json rounded">
+    {
+        "key" : "value",
+        "anotherKey" : "anotherValue"
+    }
+    </code></pre>
     A JSON file can also be a list of JSON objects: <br>
-    <code class="code-block json rounded">
-            [ <br>
-            &*{ <br>
-            &*&*"key" : "value" <br>
-            &*}, <br>
-            &*{ <br>
-            &*&*"key" : "value" <br>
-            &*} <br>
-            ]
-    </code>
+    <pre><code class="code-block json rounded">
+    [
+        {
+            "key" : "value"
+        },
+        {
+            "key" : "value"
+        }
+    ]
+    </code></pre>
     In order for a <code>.json</code> file to actually be considered <code>JSON</code> it needs to start with either
     <code>{</code> or <code>[</code> and end with <code>}</code> or <code>]</code>.
 </div>
@@ -55,9 +55,9 @@
 <div class="text-section">
     To use an '.json' file in JS, we need to import/include (or whatever you want to call it) in the JS script. <br>
     In Node.JS we use the function <code>require()</code>: <br>
-    <code class="code-block javascript rounded">
-            const jsonObject = require('./object.json');
-    </code>
+    <pre><code class="code-block javascript rounded">
+    const jsonObject = require('./object.json');
+    </code></pre>
     This looks for a JSON file in the same folder as the script called 'object.json'.
     It then saves the file in the 'jsonObject' constant. <br>
     This enables us to use dot notation to access the KeyValuePairs in the file (just like JS objects).

@@ -6,18 +6,16 @@
 
 <h4>General</h4>
 <div class="text-section">
-    Define a value in <code>JS</code>: <br>
-    <code class="code-block javascript rounded">
-            const x = 5; <br>
-            const y = 6; <br>
-            const z = x + y; <br>
-        </code>
-    </div>
-    If you need to define several values at the same time, you can do so in the same statement: <br>
-    <code class="code-block javascript rounded">
-            const name = 'Jens Jensen', age = 44, cpr = '123456-7890';
-        </code> <br>
-    </div>
+    Define a value in <code>JS</code>:
+    <pre><code class="code-block javascript rounded">
+    const x = 5;
+    const y = 6;
+    const z = x + y;
+    </code></pre>
+    If you need to define several values at the same time, you can do so in the same statement:
+    <pre><code class="code-block javascript rounded">
+    const name = 'Jens Jensen', age = 44, cpr = '123456-7890';
+    </code></pre>
 </div>
 
 <hr>
@@ -31,24 +29,21 @@
     <code>const</code> is used for variables that cannot be reassigned. <br>
     This does not mean that you can make changes to the value, but that you can not assign a new value to the const.
     <br>
-    <code class="code-block javascript rounded">
-            const jsObject = {}; <br>
-            jsObject.name = 'JavaScript Object';
-        </code> <br>
-    </div>
+    <pre><code class="code-block javascript rounded">
+    const jsObject = {};
+    jsObject.name = 'JavaScript Object';
+    </code></pre>
     The object <code>jsObject</code> now contains a KeyValuePair <code>name : 'JavaScript Object'</code>. <br>
     But if you were to do the following: <br>
-    <code class="code-block javascript rounded">
-            jsObject = 2;
-        </code> <br>
-    </div>
+    <pre><code class="code-block javascript rounded">
+    jsObject = 2;
+    </code></pre>
     The result would be <code>Uncaught TypeError: Assignment to constant variable.</code>. <br>
     You also can not do the following: <br>
-    <code class="code-block javascript rounded">
-            const s = 'This is the s string'; <br>
-            s = 'This is now the s string';
-        </code> <br>
-    </div>
+    <pre><code class="code-block javascript rounded">
+    const s = 'This is the s string';
+    s = 'This is now the s string';
+    </code></pre>
     This would result in the same error. This happens because in the first example, where we changed the JS object,
     we did not change where the constant was pointing to, but simply changed the object itself. In the example with the
     string we tried to change the string, or rather we tried to change which string the <code>const</code> was pointing to.

@@ -7,23 +7,23 @@
 <h4>General syntax</h4>
 <div class="text-section">
     Instantiate array: <br>
-    <code class="code-block javascript rounded">
-            const array = ['Item one', 'Item two', 'Item three']
-    </code>
+    <pre><code class="code-block javascript rounded">
+    const array = ['Item one', 'Item two', 'Item three']
+    </code></pre>
 </div>
 
 <div class="text-section">
     You can also instantiate an array using the JS 'new' keyword: <br>
-    <code class="code-block javascript rounded">
-        const array = new Array('Item one', 'Item two', 'Item three')
-    </code>
+    <pre><code class="code-block javascript rounded">
+    const array = new Array('Item one', 'Item two', 'Item three')
+    </code></pre>
 </div>
 
 <div class="text-section">
     Getting item from array: <br>
-    <code class="code-block javascript rounded">
-        array[1]
-    </code>
+    <pre><code class="code-block javascript rounded">
+    array[1]
+    </code></pre>
     returns <code>'Item two'</code> as arrays are zero indexed.
     <br>
     You can access the last element in an array with: <code>array[-1]</code>.
@@ -32,23 +32,23 @@
 <div class="text-section">
     Updating item in array: <br>
     We can change <code>'Item three'</code> to <code>'Item 3'</code> with: <br>
-    <code class="code-block javascript rounded">
-        array[2] = 'Item 3'
-    </code>
+    <pre><code class="code-block javascript rounded">
+    array[2] = 'Item 3'
+    </code></pre>
 </div>
 
 <div class="text-section">
     Adding item to array: <br>
-    <code class="code-block javascript rounded">
-        array.push('Item four')
-    </code>
+    <pre><code class="code-block javascript rounded">
+    array.push('Item four')
+    </code></pre>
 </div>
 
 <div class="text-section">
     Removing last item in array: <br>
-    <code class="code-block javascript rounded">
-        array.pop()
-    </code>
+    <pre><code class="code-block javascript rounded">
+    array.pop()
+    </code></pre>
 </div>
 
 <hr>
@@ -56,9 +56,9 @@
 <h4>Types</h4>
 <div class="text-section">
     As said earlier, arrays can contain different types, so you could have an array like this: <br>
-    <code class="code-block javascript rounded">
-        const misc = ['this is a string', 80, function(){console.log('Print statement')}]
-    </code>
+    <pre><code class="code-block javascript rounded">
+    const misc = ['this is a string', 80, function(){console.log('Print statement')}]
+    </code></pre>
 
     You could then call <code>misc[2]()</code> and <code>'Print statement'</code> would be printed to the console.
 </div>
@@ -75,21 +75,21 @@
 </div>
 <div class="text-section">
     Get the length of an array (useful in for loops): <br>
-    <code class="code-block javascript rounded">
-        array.length
-    </code>
+    <pre><code class="code-block javascript rounded">
+    array.length
+    </code></pre>
     Sort an array: <br>
-    <code class="code-block javascript rounded">
-        array.sort()
-    </code>
+    <pre><code class="code-block javascript rounded">
+    array.sort()
+    </code></pre>
     (See also 'Sorting JSON by specific value'). <br>
     The sort method sorts the original array.
 </div>
 <div class="text-section">
     Get index of specific element in array: <br>
-    <code class="code-block javascript rounded">
-        array.indexOf('Item two')
-    </code>
+    <pre><code class="code-block javascript rounded">
+    array.indexOf('Item two')
+    </code></pre>
     would return 1.
 </div>
 <div class="text-section">
@@ -102,9 +102,9 @@
     <br>
     <code>'items'</code> is the items you want to insert. <br>
     Example: <br>
-    <code class="code-block javascript rounded">
-        array.splice(1, 0, 'Inserted item', 'Another')
-    </code>
+    <pre><code class="code-block javascript rounded">
+    array.splice(1, 0, 'Inserted item', 'Another')
+    </code></pre>
     would return an empty array, but <code>'array'</code> would now look like this: <code>['Item one', 'Inserted item', 'Another', 'Item two', 'Item three']</code>.
     <br>
     This can also be used to delete items. <br>
@@ -116,11 +116,11 @@
 <h4>Looping through array elements</h4>
 <div class="text-section">
     Syntax for a for-loop that prints out all elements in <code>array</code>:<br>
-    <code class="code-block javascript rounded">
-        for(let i = 0; i < array.length; i++){ <br>
-        &*console.log(array[i]); <br>
-        }
-    </code>
+    <pre><code class="code-block javascript rounded">
+    for(let i = 0; i < array.length; i++){
+        console.log(array[i]);
+    }
+    </code></pre>
 </div>
 
 <hr>
@@ -130,7 +130,7 @@
     If you want to copy an array, you can not just do <code>copyArray = array</code>,
     as this will copy the reference and both <code>'copyArray'</code> and <code>'array'</code> will point to the same array. <br>
     Here you can use the <code>slice()</code> method, as this copies the value of the array instead of the reference: <br>
-    <code class="code-block javascript rounded">
-        copyArray = array.slice()
-    </code>
+    <pre><code class="code-block javascript rounded">
+    copyArray = array.slice()
+    </code></pre>
 </div>

@@ -19,15 +19,15 @@
 <div class="text-section">
     To actually refer to a <code>@State</code> variable, we use the <code>$</code> symbol.
     If we have the variable:
-    <code class="code-block swift rounded">
-            @State var isPresented:Bool = false
-    </code>
+    <pre><code class="code-block swift rounded">
+    @State var isPresented:Bool = false
+    </code></pre>
     We could refer to it like this:
-    <code class="code-block swift rounded">
-            .sheet(isPresented: $isPresented, onDismiss: saveNote, content: { <br>
-            &*NewNoteView(repo: self.repo) <br>
-            })
-    </code>
+    <pre><code class="code-block swift rounded">
+    .sheet(isPresented: $isPresented, onDismiss: saveNote, content: {
+        NewNoteView(repo: self.repo)
+    })
+    </code></pre>
     This particular code snippet is a <code>sheet</code> that covers the screen with another <code>View</code>,
     whenever the <code>isPresented</code> bool is true. To do this without <code>@State</code>,
     we would have to manually update the view, when the bool changes.
@@ -69,19 +69,19 @@
 <div class="text-section">
     To use the wrapper, we need to make the class, containing the published variable, conform to the
     <code>ObservableObject</code> protocol:
-    <code class="code-block swift rounded">
-            class Repo:ObservableObject{ <br>
-            &*@Published var notes:[Note] = [] <br>
-            }
-    </code>
+    <pre><code class="code-block swift rounded">
+    class Repo:ObservableObject{
+        @Published var notes:[Note] = []
+    }
+    </code></pre>
     In the class you can add the <code>@Published</code> wrapper to the variables you want the app
     to listen for.
 </div>
 <div class="text-section">
     Then in the class/struct where you want to use the <code>ObservableObject</code>, you need
     to use the <code>@ObservedObject</code> wrapper:
-    <code class="code-block swift rounded">
-            @ObservedObject var repo = Repo()
-    </code>
+    <pre><code class="code-block swift rounded">
+    @ObservedObject var repo = Repo()
+    </code></pre>
     Without this wrapper, the changes from <code>repo</code> would be sent, but ignored.
 </div>

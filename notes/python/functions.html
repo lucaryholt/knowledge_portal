@@ -9,14 +9,14 @@
 <h4>Syntax</h4>
 <div class="text-section">
     To define a function in <code>python</code> you use the <code>def</code> keyword:
-    <code class="code-block python rounded">
-            def hello_world(): <br>
-            &*print('Hello!!')
-    </code>
+    <pre><code class="code-block python rounded">
+    def hello_world():
+        print('Hello!!')
+    </code></pre>
     To call it you would then write:
-    <code class="code-block python rounded">
-            hello_world()
-    </code>
+    <pre><code class="code-block python rounded">
+    hello_world()
+    </code></pre>
     which would print <code>Hello!!</code>.
 </div>
 
@@ -25,24 +25,24 @@
 <h4>Arguments</h4>
 <div class="text-section">
     You can pass information to a function with <code>arguments</code>:
-    <code class="code-block python rounded">
-            def hello(name): <br>
-            &*print('Hello ' + name + '!!')
-    </code>
+    <pre><code class="code-block python rounded">
+    def hello(name):
+        print('Hello ' + name + '!!')
+    </code></pre>
     and then pass information to it:
-    <code class="code-block python rounded">
-            hello('Bob')
-    </code>
+    <pre><code class="code-block python rounded">
+    hello('Bob')
+    </code></pre>
     which would print <code>Hello Bob!!</code>.
 </div>
 <div class="text-section">
     You can only pass as many arguments as is specified in the function definition,
     but you can specify an unknown number of arguments in the definition. <br>
     To do this you add a <code>*</code> before the parameter name:
-    <code class="code-block python rounded">
-            def hello(*names): <br>
-            &*print('Hello ' + str(names) + '!!')
-    </code>
+    <pre><code class="code-block python rounded">
+    def hello(*names):
+        print('Hello ' + str(names) + '!!')
+    </code></pre>
     This would not produce a very pretty result as converting a <code>tuple</code> to <code>string</code>
     does not come out clean. But now you can write an undefined number of parameters to the
     <code>hello()</code> function.
@@ -50,37 +50,37 @@
 <div class="text-section">
     When passing arguments to a function you can also name the arguments.
     So if we had a function as this:
-    <code class="code-block python rounded">
-            def hello(name1, name2): <br>
-            &*print('Hello ' + name1 + ' and ' + name2)
-    </code>
+    <pre><code class="code-block python rounded">
+    def hello(name1, name2):
+        print('Hello ' + name1 + ' and ' + name2)
+    </code></pre>
     You could call it like this:
-    <code class="code-block python rounded">
-            hello(name2 = 'Torp', name1 = 'Sko')
-    </code>
+    <pre><code class="code-block python rounded">
+    hello(name2 = 'Torp', name1 = 'Sko')
+    </code></pre>
     and it would print: <code>Hello Sko and Torp</code>.
 </div>
 <div class="text-section">
     Just as you can define an unknown number of unnamed arguments, you can also define an unknows number
     of named arguments. To do this we use <code>**</code>:
-    <code class="code-block python rounded">
-            def hello(**names): <br>
-            &*print('Hello ' + names["best_name"] + '!!')
-    </code>
+    <pre><code class="code-block python rounded">
+    def hello(**names):
+        print('Hello ' + names["best_name"] + '!!')
+    </code></pre>
     This will pass a <code>dictionary</code> to the function, which then can be used to extract the named arguments:
-    <code class="code-block python rounded">
-            hello(worst_name = 'Torp', best_name = 'Sko')
-    </code>
+    <pre><code class="code-block python rounded">
+    hello(worst_name = 'Torp', best_name = 'Sko')
+    </code></pre>
     Here we pass two arguments called <code>worst_name</code> and <code>best_name</code>. In the function body we only
     use the <code>best_name</code> argument, but as we defined <code>**names</code>, then we are allowed to do this and
     as a result <code>Hello Sko!!</code> is printed.
 </div>
 <div class="text-section">
     You can also define a function with an argument, but have that argument have an default value:
-    <code class="code-block python rounded">
-            def hello(name = "Arnold"): <br>
-            &*print('Hello ' + name + '!!')
-    </code>
+    <pre><code class="code-block python rounded">
+    def hello(name = "Arnold"):
+        print('Hello ' + name + '!!')
+    </code></pre>
     This means that if someone where to call <code>hello()</code> without a name argument
     <code>Arnold</code> will be used instead.
 </div>
@@ -94,10 +94,10 @@
 <h4>Return value</h4>
 <div class="text-section">
     To define a return value you simply use the <code>return</code> keyword:
-    <code class="code-block python rounded">
-            def hello(name): <br>
-            &*return 'Hello ' + name + '!!'
-    </code>
+    <pre><code class="code-block python rounded">
+    def hello(name):
+        return 'Hello ' + name + '!!'
+    </code></pre>
     This would now instead of printing the string, return it.
 </div>
 
@@ -107,10 +107,10 @@
 <div class="text-section">
     If you for some reason have a function without a body, <code>python</code> will not allow
     your script to compile. To combat this, you can use the <code>pass</code> keyword:
-    <code class="code-block python rounded">
-            def hello(name): <br>
-            &*pass
-    </code>
+    <pre><code class="code-block python rounded">
+    def hello(name):
+        pass
+    </code></pre>
 </div>
 
 <hr>

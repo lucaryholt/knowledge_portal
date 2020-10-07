@@ -48,8 +48,7 @@ function getSpecificNote(id, index){
                     linkList.append('<li><a target="_blank" href="' + link.link + '">' + link.description + '</a></li>');
                 }
 
-                const body = $("#noteBody");
-                body.html(response.body.replaceAll('&*', '&nbsp;&nbsp;&nbsp;&nbsp;'));
+                $("#noteBody").html(response.body);
 
                 const codeblocks = $('.code-block');
                 for(let i = 0; i < codeblocks.length; i++){

@@ -7,11 +7,11 @@
 <h4>Syntax</h4>
 <div class="text-section">
     The syntax for defining a function:
-    <code class="code-block swift rounded">
-            func greet(person: String) -> String { <br>
-            &*return "Hello, " + person + "!" <br>
-            }
-    </code>
+    <pre><code class="code-block swift rounded">
+    func greet(person: String) -> String {
+        return "Hello, " + person + "!"
+    }
+    </code></pre>
     The keyword <code>func</code> is used to define a function.
 </div>
 <div class="text-section">
@@ -26,41 +26,41 @@
 <div class="text-section">
     If the entire body of a function is a single expression defining the return value, the <code>return</code>
     keyword can be left out:
-    <code class="code-block swift rounded">
-            func greet(person: String) -> String { <br>
-            &*"Hello, " + person + "!" <br>
-            }
-    </code>
+    <pre><code class="code-block swift rounded">
+    func greet(person: String) -> String {
+        "Hello, " + person + "!"
+    }
+    </code></pre>
 </div>
 <div class="text-section">
     Additionally we have defined a parameter <code>person</code> with the type <code>String</code>. <br>
     Multiple parameters can be defined using a comma to separate them:
-    <code class="code-block swift rounded">
-            func greet(personOne: String, personTwo: String) -> String { <br>
-            &*return "Hello, " + personOne + " and " + personTwo + "!" <br>
-            }
-    </code>
+    <pre><code class="code-block swift rounded">
+    func greet(personOne: String, personTwo: String) -> String {
+        return "Hello, " + personOne + " and " + personTwo + "!"
+    }
+    </code></pre>
 </div>
 <div class="text-section">
     The syntax to call a function:
-    <code class="code-block swift rounded">
-            print(greet(person: "Bob"))
-    </code>
+    <pre><code class="code-block swift rounded">
+    print(greet(person: "Bob"))
+    </code></pre>
     Here we call the function inside a call to the <code>print()</code> function. <br>
     One thing to note, when calling functions, is that, unless defined otherwise, you need to name
     the parameters.
 </div>
 <div class="text-section">
     If you do not want to have an argument label you can state so with an <code>_</code>:
-    <code class="code-block swift rounded">
-            func greet(_ person: String) -> String { <br>
-            &*"Hello, " + person + "!" <br>
-            }
-    </code>
+    <pre><code class="code-block swift rounded">
+    func greet(_ person: String) -> String {
+        "Hello, " + person + "!"
+    }
+    </code></pre>
     Then you can call it:
-    <code class="code-block swift rounded">
-            print(greet("Bob"))
-    </code>
+    <pre><code class="code-block swift rounded">
+    print(greet("Bob"))
+    </code></pre>
 </div>
 
 
@@ -76,25 +76,25 @@
     A common use-case for a <code>closure</code>, would be to define a way to sort an array with the
     <code>sorted(by: )</code> function. <br>
     We could define the function, that we would pass as an argument like this:
-    <code class="code-block swift rounded">
-            func backward(_ s1: String, _ s2: String) -> Bool { <br>
-            &*return s1 > s2 <br>
-            }
-    </code>
+    <pre><code class="code-block swift rounded">
+    func backward(_ s1: String, _ s2: String) -> Bool {
+        return s1 > s2
+    }
+    </code></pre>
     And then pass it:
-    <code class="code-block swift rounded">
-            var reversedNames = names.sorted(by: backward)
-    </code>
+    <pre><code class="code-block swift rounded">
+    var reversedNames = names.sorted(by: backward)
+    </code></pre>
     A <code>closure</code> does not need to return anything, just like a function.
 </div>
 <div class="text-section">
     You could also skip the step of defining the <code>backward</code> function beforehand and simply
     defining it using the <code>Closure Expression Syntax</code> inside the call to <code>sorted(by: )</code>:
-    <code class="code-block swift rounded">
-            reversedNames = names.sorted(by: { (s1: String, s2: String) -> Bool in <br>
-            &*return s1 > s2 <br>
-            })
-    </code>
+    <pre><code class="code-block swift rounded">
+    reversedNames = names.sorted(by: { (s1: String, s2: String) -> Bool in
+        return s1 > s2
+    })
+    </code></pre>
     This is comparable to the <code>arrow syntax</code> in <code>JavaScript</code>.
 </div>
 <div class="text-section">
@@ -103,9 +103,9 @@
     type of arguments needed by the function and it needs a <code>Bool</code> returned,
     so it knows that the function must be of type: <code>(String, String) -> Bool</code>. <br>
     This allows us to write the above code snippet as:
-    <code class="code-block swift rounded">
-            reversedNames = names.sorted(by: { s1, s2 in return s1 > s2 } )
-    </code>
+    <pre><code class="code-block swift rounded">
+    reversedNames = names.sorted(by: { s1, s2 in return s1 > s2 } )
+    </code></pre>
     Here we only write the names of the two arguments <code>s1</code> and <code>s2</code> and
     what is returned.
 </div>

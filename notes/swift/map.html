@@ -38,14 +38,15 @@
     After the <code>MapView</code> struct has been made, we can add it like any other <code>SwiftUI</code> view.
     To properly instantiate it, it needs a <code>centerCoordinate</code> of type <code>CLLocationCoordinate2D</code>.
     I have done this here:
-    <code class="code-block swift rounded">
-            @State var centerCoordinate:CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 55.618024, longitude: 12.650763)
-    </code>
+    <pre><code class="code-block swift rounded">
+    @State var centerCoordinate:CLLocationCoordinate2D =
+        CLLocationCoordinate2D(latitude: 55.618024, longitude: 12.650763)
+    </code></pre>
     This is done in the view, where you would like to display the map. In my case <code>ContentView</code>. <br>
     Then we can insert it like this:
-    <code class="code-block swift rounded">
-            MapView(centerCoordinate: $centerCoordinate)
-    </code>
+    <pre><code class="code-block swift rounded">
+    MapView(centerCoordinate: $centerCoordinate)
+    </code></pre>
     And voila: <br>
     <img class="image-large" src="/images/map_iphone_ss.png" alt="Map on iPhone Image"> <br>
     We have a beautiful map in our view.
@@ -58,9 +59,9 @@
     A thing we can do is to enable the user to place <code>markers</code> (or <code>annotations</code>) on the map.
     To do this we need a <code>@State</code> variable in <code>ContentView</code>.
     This variable needs to be an array of the type <code>MKPointAnnotation</code> like so:
-    <code class="code-block swift rounded">
-            @State var annotations = [MKPointAnnotation]()
-    </code>
+    <pre><code class="code-block swift rounded">
+    @State var annotations = [MKPointAnnotation]()
+    </code></pre>
     Then we need a <code>Button</code>, with the <code>action</code> of adding a <code>MKPointAnnotation</code>,
     with the coordinates of our <code>centerCoordinate</code>.
 </div>
@@ -68,12 +69,12 @@
     Then in the <code>MapView</code> struct in the <code>updateUIView</code> function, we check if the built-in
     annotations <code>.count</code> is the same as the <code>.count</code> of our annotations.
     If not we remove all the annotations of the built-in annotations, and replace them with our annotations:
-    <code class="code-block swift rounded">
-            if annotations.count != uiView.annotations.count { <br>
-            &*uiView.removeAnnotations(uiView.annotations) <br>
-            &*uiView.addAnnotations(self.annotations) <br>
-            }
-    </code>
+    <pre><code class="code-block swift rounded">
+    if annotations.count != uiView.annotations.count {
+        uiView.removeAnnotations(uiView.annotations)
+        uiView.addAnnotations(self.annotations)
+    }
+    </code></pre>
     <img class="image-large" src="/images/map_iphone_annotations_ss.png" alt="Map with Annotations on iPhone Image">
 </div>
 

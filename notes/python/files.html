@@ -9,16 +9,16 @@
     Reading and writing data to files in <code>python</code> are quite easy to do.
     You use the <code>open()</code> method. This method takes to arguments, a file name and a flag
     specifying which mode to open the file in.
-    <code class="code-block python rounded">
-            with open('data.txt', 'r') as f: <br>
-            &*data = f.read()
-    </code>
+    <pre><code class="code-block python rounded">
+    with open('data.txt', 'r') as f:
+        data = f.read()
+    </code></pre>
     Here we open the file <code>data.txt</code> and save the contents in the variable <code>data</code>. <br>
     We passed the <code>r</code> flag to open the file in read only mode.
-    <code class="code-block python rounded">
-            with open('data.txt', 'w') as f: <br>
-            &*f.write(data)
-    </code>
+    <pre><code class="code-block python rounded">
+    with open('data.txt', 'w') as f:
+        f.write(data)
+    </code></pre>
     Here we instead passed the <code>w</code> flag, which opens the file in write mode.
 </div>
 <div class="text-section">
@@ -30,13 +30,13 @@
 <h4>Directories</h4>
 <div class="text-section">
     You can use the <code>os</code> module to scan directories and get the result returned:
-    <code class="code-block python rounded">
-            import os <br>
-            <br>
-            with os.scandir('my_directory/') as entries: <br>
-            &*for entry in entries: <br>
-            &*&*print(entry.name)
-    </code>
+    <pre><code class="code-block python rounded">
+    import os
+
+    with os.scandir('my_directory/') as entries:
+        for entry in entries:
+            print(entry.name)
+    </code></pre>
     There are different methods and modules that can scan directories, some are <code>os.scandir()</code>,
     <code>os.listdir()</code> and <code>pathlib.Path.iterdir()</code>. They each do slightly different
     things.
@@ -48,9 +48,9 @@
 <div class="text-section">
     To make multiple directories you can use <code>os.makedirs()</code>, which can be used to make directory
     trees.
-    <code class="code-block python rounded">
-            os.makedirs('trunk/branch/leave')
-    </code>
+    <pre><code class="code-block python rounded">
+    os.makedirs('trunk/branch/leave')
+    </code></pre>
     This function call would make a <code>leave</code> directory, inside a <code>trunk</code> directory, inside
     a <code>trunk</code> directory. <br>
     This function also takes an optional <code>mode</code> argument,

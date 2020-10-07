@@ -77,14 +77,14 @@
 </div>
 <div class="text-section">
     Syntax: <br>
-    <code class="code-block json rounded">
-            { <br>
-            &*"dependencies" : { <br>
-            &*&*"express" : "^4.17.1", <br>
-            &*&*"ejs": "^3.1.5" <br>
-            &*} <br>
-            }
-    </code>
+    <pre><code class="code-block json rounded">
+    {
+        "dependencies" : {
+            "express" : "^4.17.1",
+            "ejs": "^3.1.5"
+        }
+    }
+    </code></pre>
     The file is built as an JSON object, where the key we use here <code>"dependencies"</code>
     refers to a list of KeyValuePairs noting the package and version number:
     the key being the package name and value being the version number
@@ -104,12 +104,12 @@
 </div>
 <div class="text-section">
     An example of this can be seen here: <br>
-    <code class="code-block json rounded">
-            "scripts": { <br>
-            &*"start-dev": "cross-env PORT=8080 nodemon app.js", <br>
-            &*"start-prod": "node app.js" <br>
-            }
-    </code>
+    <pre><code class="code-block json rounded">
+    "scripts": {
+        "start-dev": "cross-env PORT=8080 nodemon app.js",
+        "start-prod": "node app.js"
+    }
+    </code></pre>
     In these lines of JSON we define two different scripts: <code>start-dev</code> and <code>start-prod</code>. <br>
     The <code>start-dev</code> script uses the two npm modules <code>cross-env</code> and <code>nodemon</code>,
     to provide a development port number and to continuously restart the app when changes have been made. <br>
@@ -149,15 +149,15 @@
 </div>
 <div class="text-section">
     The syntax to import a Node.JS, third-party and self written module is as follows in that order: <br>
-    <code class="code-block javascript rounded">
-            const fs = require('fs');
-    </code>
+    <pre><code class="code-block javascript rounded">
+    const fs = require('fs');
+    </code></pre>
     <br>
-    <code class="code-block javascript rounded">
-            const express = require('express');
-    </code>
+    <pre><code class="code-block javascript rounded">
+    const express = require('express');
+    </code></pre>
     <br>
-    <code class="code-block javascript rounded">
-            const selfWrittenModule = ('./path/to/script');
-    </code>
+    <pre><code class="code-block javascript rounded">
+    const selfWrittenModule = ('./path/to/script');
+    </code></pre>
 </div>

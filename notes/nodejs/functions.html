@@ -13,32 +13,32 @@
 
 <h4>Syntax</h4>
 <div class="text-section">
-    To define a method the basic syntax is: <br>
-    <code class="code-block javascript rounded">
-            function helloWorld(){ <br>
-            &*console.log('Hello world'); <br>
-            }
-        </code>
-    To define a anonymous function as a variable: <br>
-    <code class="code-block javascript rounded">
-            const helloWorld = function (){ <br>
-            &*console.log('Hello world'); <br>
-            }
-        </code>
-    Another quicker way to define a function is the <code>arrow syntax</code>: <br>
-    <code class="code-block javascript rounded">
-            const helloWorld = () => { <br>
-            &*console.log('Hello world'); <br>
-            }
-        </code>
+    To define a method the basic syntax is:
+    <pre><code class="code-block javascript rounded">
+    function helloWorld(){
+        console.log('Hello world');
+    }
+    </code></pre>
+    To define a anonymous function as a variable:
+    <pre><code class="code-block javascript rounded">
+    const helloWorld = function (){
+        console.log('Hello world');
+    }
+    </code></pre>
+    Another quicker way to define a function is the <code>arrow syntax</code>:
+    <pre><code class="code-block javascript rounded">
+    const helloWorld = () => {
+        console.log('Hello world');
+    }
+    </code></pre>
 </div>
 <div class="text-section">
-  To have a function return a value, you type in <code>return</code> and then the value: <br>
-    <code class="code-block javascript rounded">
-            function multiplyBy2(number){ <br>
-            &*return number * 2; <br>
-            }
-        </code>
+  To have a function return a value, you type in <code>return</code> and then the value:
+    <pre><code class="code-block javascript rounded">
+    function multiplyBy2(number){
+        return number * 2;
+    }
+    </code></pre>
 </div>
 
 <hr>
@@ -51,15 +51,15 @@
 </div>
 <div class="text-section">
     To declare an anonymous function we can do it by referencing it from a variable:
-    <code class="code-block javascript rounded">
-            const anon-function = function () { <br>
-            &*console.log('I am an anonymous functions'); <br>
-            }
-        </code>
+    <pre><code class="code-block javascript rounded">
+    const anon-function = function () {
+        console.log('I am an anonymous functions');
+    }
+    </code></pre>
     We could then call the function by using the variable name and <code>()</code>:
-    <code class="code-block javascript rounded">
-            anon-function();
-        </code>
+    <pre><code class="code-block javascript rounded">
+    anon-function();
+    </code></pre>
 </div>
 <div class="text-section">
     You can also define an anonymous function with the <code>arrow syntax</code>.
@@ -70,13 +70,13 @@
 <h4>Passing a function</h4>
 <div class="text-section">
     Functions can be passed like a variable. To pass a function you simply write it without the parentheses:
-    <code class="code-block javascript rounded">
-            executeOtherFunction(helloWorld); <br>
-            <br>
-            function executeOtherFunction(function){ <br>
-            &*function(); <br>
-            }
-        </code>
+    <pre><code class="code-block javascript rounded">
+    executeOtherFunction(helloWorld);
+
+    function executeOtherFunction(function){
+        function();
+    }
+    </code></pre>
     This would pass the <code>helloWorld</code> function and then the <code>executeOtherFunction</code> function
     would execute it, resulting in <code>Hello World</code> being printet to the console.
 </div>
@@ -85,25 +85,25 @@
 
 <h4>Callbacks</h4>
 <div class="text-section">
-    Callbacks make it easy to perform actions asynchronous. <br>
+    Callbacks make it easy to perform actions asynchronous.
 </div>
 <div class="text-section">
-    Syntax: <br>
-    <code class="code-block javascript rounded">
-            const poke = (name) => "poke " + name; <br>
-            function interact(name, interactingFunction){ <br>
-            &*console.log(interactingFunction(name)); <br>
-            }
-        </code>
-    You could then call this: <br>
-    <code class="code-block javascript rounded">
-            interact("Bob", poke);
-        </code>
-    This would print <code>poke Bob</code> <br>
-    But you could also define another function when calling <code>interact</code>: <br>
-    <code class="code-block javascript rounded">
-            interact("Jens", (name) => "hug " + name);
-        </code>
+    Syntax:
+    <pre><code class="code-block javascript rounded">
+    const poke = (name) => "poke " + name;
+    function interact(name, interactingFunction){
+        console.log(interactingFunction(name));
+    }
+    </code></pre>
+    You could then call this:
+    <pre><code class="code-block javascript rounded">
+    interact("Bob", poke);
+    </code></pre>
+    This would print <code>poke Bob</code>. <br>
+    But you could also define another function when calling <code>interact</code>:
+    <pre><code class="code-block javascript rounded">
+    interact("Jens", (name) => "hug " + name);
+    </code></pre>
     Which would print <code>hug Jens</code>.
 </div>
 <div class="text-section">
@@ -117,7 +117,7 @@
     Lambda expressions are not functions, but I choose to mention them here as they are expressions that create
     functions. <br>
     This is very important in <code>JS</code>, where functions are first-class citizens
-    and are passed as arguments to other functions etc. <br>
+    and are passed as arguments to other functions etc.
 </div>
 <div class="text-section">
     To make an lambda expression (and create a function) we use the arrow notation from before.
@@ -128,17 +128,17 @@
 <h4>Ternary</h4>
 <div class="text-section">
     The <code>ternary</code> conditional operator is not a function either (like lambda expressions),
-    but I felt this was the best place to mention it. <br>
+    but I felt this was the best place to mention it.
 </div>
 <div class="text-section">
     It can be compared to a quick way of writing a <code>for else</code> with return values. <br>
     You set a condition and return one value if true and another if false.
 </div>
 <div class="text-section">
-    Syntax: <br>
-    <code class="code-block javascript rounded">
-            const umbrellaMessage = isRaining ? 'Bring it!' : 'Nah, leave it.';
-        </code>
+    Syntax:
+    <pre><code class="code-block javascript rounded">
+    const umbrellaMessage = isRaining ? 'Bring it!' : 'Nah, leave it.';
+    </code></pre>
     The above expression evaluates if <code>isRaining</code> is true or false and returns one of the two strings.
 </div>
 
@@ -164,29 +164,29 @@
 
 <h4>filter(), find() & map()</h4>
 <div class="text-section">
-    The <code>filter()</code>, <code>find()</code> and <code>map()</code> functions are array functions. <br>
+    The <code>filter()</code>, <code>find()</code> and <code>map()</code> functions are array functions.
 </div>
 <h5>filter()</h5>
 <div class="text-section">
     <code>filter()</code> returns an array filled with elements that pass a test. This test is provided to
-    <code>filter()</code> as a function. It calls said function once for each element in the array. Example: <br>
-    <code class="code-block javascript rounded">
-            const ages = [32, 33, 16, 40]; <br>
-            function checkAdult(age) { <br>
-            &*return age >= 18; <br>
-            } <br>
-            const adults = ages.filter(checkAdult);
-        </code>
+    <code>filter()</code> as a function. It calls said function once for each element in the array. Example:
+    <pre><code class="code-block javascript rounded">
+    const ages = [32, 33, 16, 40];
+    function checkAdult(age) {
+        return age >= 18;
+    }
+    const adults = ages.filter(checkAdult);
+    </code></pre>
     In the above code we have an array of ages, then a function that returns true if age is equal or greater than 18.
     Then we instantiate an adults constant with the value, from <code>filter()</code> called on the ages array,
     with <code>checkAdult(age)</code> as parameter. <br>
-    The above code can be written shorter using an lambda expression: <br>
-    <code class="code-block javascript rounded">
-            const ages = [32, 33, 16, 40]; <br>
-            const adults = ages.filter(age => { <br>
-            &*return age >= 18; <br>
-            });
-        </code>
+    The above code can be written shorter using an lambda expression:
+    <pre><code class="code-block javascript rounded">
+    const ages = [32, 33, 16, 40];
+    const adults = ages.filter(age => {
+        return age >= 18;
+    });
+    </code></pre>
 </div>
 <div class="text-section">
     <code>filter()</code> does not change the original array, but returns a new array. <br>
@@ -196,7 +196,7 @@
 <div class="text-section">
     Like <code>filter()</code>, <code>find()</code> checks elements in an array with a test provided by a function.
     Unlike <code>filter()</code> it only returns the first value it finds.
-    It it written in the exact same way ('find' instead of 'filter'). <br>
+    It it written in the exact same way ('find' instead of 'filter').
 </div>
 <div class="text-section">
     <code>find()</code> does not change the original array. <br>

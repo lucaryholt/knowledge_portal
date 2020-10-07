@@ -1,5 +1,5 @@
 <div class="sub-title">
-    //Needs sub-title
+    <i class="text-danger"><b>//Needs sub-title</b></i>
 </div>
 
 <hr>
@@ -22,20 +22,20 @@
 </div>
 <div class="text-section">
     An example from the '<code>Rafe Kettler - A Guide to Python's Magic Methods</code>' link:
-    <code class="code-block python rounded">
-        from os.path import join <br>
-        <br>
-        class FileObject: <br>
-        &*'''Wrapper for file objects to make sure the file gets closed on deletion.''' <br>
-        <br>
-        &*&*def __init__(self, filepath='~', filename='sample.txt'): <br>
-        &*&*&*# open a file filename in filepath in read and write mode <br>
-        &*&*&*self.file = open(join(filepath, filename), 'r+') <br>
-        <br>
-        &*&*def __del__(self): <br>
-        &*&*&*self.file.close() <br>
-        &*&*&*del self.file <br>
-    </code>
+    <pre><code class="code-block python rounded">
+    from os.path import join
+
+    class FileObject:
+        '''Wrapper for file objects to make sure the file gets closed on deletion.'''
+
+            def __init__(self, filepath='~', filename='sample.txt'):
+                # open a file filename in filepath in read and write mode
+                self.file = open(join(filepath, filename), 'r+')
+
+            def __del__(self):
+                self.file.close()
+                del self.file
+    </code></pre>
     In this example we see a FileWrapper object, which holds a file. The <code>__init__</code> method
     opens the file and the <code>__del__</code> closes the file and removes it from memory.
 </div>
@@ -59,27 +59,27 @@
 </div>
 <div class="text-section">
     Another example from the link:
-    <code class="code-block python rounded">
-        class Word(str): <br>
-        &*'''Class for words, defining comparison based on word length.''' <br>
-        <br>
-        &*def __new__(cls, word): <br>
-        &*&*# Note that we have to use __new__. This is because str is an immutable <br>
-        &*&*# type, so we have to initialize it early (at creation) <br>
-        &*&*if ' ' in word: <br>
-        &*&*&*print "Value contains spaces. Truncating to first space." <br>
-        &*&*&*word = word[:word.index(' ')] # Word is now all chars before first space <br>
-        &*&*return str.__new__(cls, word) <br>
-        <br>
-        &*def __gt__(self, other): <br>
-        &*&*return len(self) > len(other) <br>
-        &*def __lt__(self, other): <br>
-        &*&*return len(self) < len(other) <br>
-        &*def __ge__(self, other): <br>
-        &*&*return len(self) >= len(other) <br>
-        &*def __le__(self, other): <br>
-        &*&*return len(self) <= len(other) <br>
-    </code>
+    <pre><code class="code-block python rounded">
+    class Word(str):
+        '''Class for words, defining comparison based on word length.'''
+
+        def __new__(cls, word):
+            # Note that we have to use __new__. This is because str is an immutable
+            # type, so we have to initialize it early (at creation)
+            if ' ' in word:
+                print "Value contains spaces. Truncating to first space."
+                word = word[:word.index(' ')] # Word is now all chars before first space
+            return str.__new__(cls, word)
+
+        def __gt__(self, other):
+            return len(self) > len(other)
+        def __lt__(self, other):
+            return len(self) < len(other)
+        def __ge__(self, other):
+            return len(self) >= len(other)
+        def __le__(self, other):
+            return len(self) <= len(other)
+    </code></pre>
 </div>
 
 <h5>Numeric magic methods</h5>
@@ -94,9 +94,9 @@
     In <code>Python</code> you can call <code>str()</code> on any class, to get a string
     representation of that class. If you do this on a class that does not have <code>__str__</code>
     implemented, you will get something like this:
-    <code class="code-block python rounded">
-        &lt;__main__.A object at 0x0000026D9F016E80&gt;
-    </code>
+    <pre><code class="code-block python rounded">
+    &lt;__main__.A object at 0x0000026D9F016E80&gt;
+    </code></pre>
     This does not help that much to figure out what this class/object is. <br>
     But if you implemented <code>__str__(self)</code>, you can define what string is returned and
     provide the user of your class with useful information. <br>
@@ -128,27 +128,27 @@
         <li><code>__getattribute__(self, name)</code></li>
     </ul>
     Example from the '<code>Rafe Kettler - A Guide to Python's Magic Methods</code>' link:
-    <code class="code-block python rounded">
-        class AccessCounter(object): <br>
-        &*'''A class that contains a value and implements an access counter.<br>
-        &*The counter increments each time the value is changed.'''<br>
-        <br>
-        &*def __init__(self, val):<br>
-        &*&*super(AccessCounter, self).__setattr__('counter', 0)<br>
-        &*&*super(AccessCounter, self).__setattr__('value', val)<br>
-        <br>
-        &*def __setattr__(self, name, value):<br>
-        &*&*if name == 'value':<br>
-        &*&*&*super(AccessCounter, self).__setattr__('counter', self.counter + 1)<br>
-        &*&*# Make this unconditional.<br>
-        &*&*# If you want to prevent other attributes to be set, raise AttributeError(name)<br>
-        &*&*super(AccessCounter, self).__setattr__(name, value)<br>
-        <br>
-        &*def __delattr__(self, name):<br>
-        &*&*if name == 'value':<br>
-        &*&*&*super(AccessCounter, self).__setattr__('counter', self.counter + 1)<br>
-        &*&*super(AccessCounter, self).__delattr__(name)<br>
-    </code>
+    <pre><code class="code-block python rounded">
+    class AccessCounter(object):
+        '''A class that contains a value and implements an access counter.
+        The counter increments each time the value is changed.'''
+
+        def __init__(self, val):
+            super(AccessCounter, self).__setattr__('counter', 0)
+            super(AccessCounter, self).__setattr__('value', val)
+
+        def __setattr__(self, name, value):
+            if name == 'value':
+                super(AccessCounter, self).__setattr__('counter', self.counter + 1)
+            # Make this unconditional.
+            # If you want to prevent other attributes to be set, raise AttributeError(name)
+            super(AccessCounter, self).__setattr__(name, value)
+
+        def __delattr__(self, name):
+            if name == 'value':
+                super(AccessCounter, self).__setattr__('counter', self.counter + 1)
+            super(AccessCounter, self).__delattr__(name)
+    </code></pre>
 </div>
 
 <h5>Table of magic methods</h5>
