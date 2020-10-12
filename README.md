@@ -8,6 +8,16 @@ A site containing documentation for things I have learned in Node JS Elective. C
  - Search Function
  - Code Highlight
  - Multiple notebooks
+ 
+## Tools/libraries used
+
+ - Node.JS
+ - Express
+ - jQuery
+ - highlight.js
+ - Bootstrap
+ - cross-env
+ - FontAwesome
 
 ## Page format
 

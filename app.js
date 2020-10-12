@@ -1,16 +1,14 @@
 const express = require('express');
-const fs = require('fs');
-
-const pages = require('./notes/pages.json');
-
 const app = express();
+
 app.use(express.static('public'));
 
-// TODO Comment complicated code areas
-
-app.get('/api/notes/:id', (req, res) => {
-    const collectionName = req.params.id;
-    const collection = require('./notes/' + collectionName + '/collection.json').sort( (a, b) => {
+app.get('/api/notes/:pageId', (req, res) => {
+    const collection = require('./notes/' + req.params.pageId + '/collection.json').filter(note => {
+        if (note.enabled) {
+            return note;
+        }
+    }).sort( (a, b) => {
         return a.title.localeCompare(b.title);
     });
 
@@ -18,23 +16,16 @@ app.get('/api/notes/:id', (req, res) => {
         return res.status(404).send({ error: 'No notes. Come back later.' });
     }
     return res.status(200).send({
-        data: collection.filter(note => {
-            if (note.enabled) {
-                return note;
-            }
-        })
+        data: collection
     });
 });
 
-app.get('/api/notes/:id/:file', (req, res) => {
-    const collectionName = req.params.id;
-    const fileName = req.params.file;
-
-    return res.sendFile(__dirname + '/notes/' + collectionName + '/' + fileName);
+app.get('/api/notes/:pageId/:fileName', (req, res) => {
+    return res.sendFile(__dirname + '/notes/' + req.params.pageId + '/' + req.params.fileName);
 });
 
-app.get('/api/notebooks', (req, res) => {
-    const enabledPages = pages.filter(page => {
+app.get('/api/pages', (req, res) => {
+    const enabledPages = require('./notes/pages.json').filter(page => {
         if (page.enabled === true) {
             return page;
         }
@@ -43,21 +34,21 @@ app.get('/api/notebooks', (req, res) => {
 });
 
 app.get('/api/pages/:id', (req, res) => {
-    const id = req.params.id;
-
     return res.send({
-        data : pages.find(page => {
-            if (page.link === '/' + id && page.enabled) {
+        data : require('./notes/pages.json').find(page => {
+            if (page.link === '/' + req.params.id && page.enabled) {
                 return page;
             }
         })
     });
 });
 
-app.get(pages.map(page => { return page.link; }), (req, res) => {
+// Makes request handler for each page in pages.json
+app.get(require('./notes/pages.json').map(page => { return page.link; }), (req, res) => {
     return res.sendFile(__dirname + '/public/page-template.html');
 });
 
+// Request handler that handles all GET requests, that are not specifically handled
 app.get('*', (req, res) => {
     return res.redirect('/');
 });

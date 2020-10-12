@@ -1,6 +1,7 @@
 let currentNoteIndex = null;
 let notes = null;
 
+// To enable dynamic IP's we extract the IP from the browser
 const ip = window.location.origin;
 const pageId = window.location.toString().split('/')[3].split('#')[0];
 
@@ -8,6 +9,7 @@ fetch(ip + '/api/pages/' + pageId)
     .then(response => response.json())
     .then(response => {
         $('#logo').attr('src', '..' + response.data.imageFile);
+        $('#site-title').text(response.data.name);
     });
 
 fetch(ip + '/api/notes/' + pageId)
@@ -77,7 +79,7 @@ function searchUpdate(){
     if (term !== '') {
         const pageResults = notes.filter(pageResult => {
             const termResults = pageResult.searchTerms.find(termResult => {
-                if(termResult.toLowerCase().includes(term.toLowerCase())){
+                if (termResult.toLowerCase().includes(term.toLowerCase())) {
                     return termResult;
                 }
             });
@@ -85,7 +87,6 @@ function searchUpdate(){
                 return pageResult;
             }
         });
-        console.log(pageResults);
         if (pageResults.length !== 0) {
             for(let i = 0; i < pageResults.length; i++){
                 $div.append('<div><span class="list-group-item list-group-item-action search-result" onclick="getSpecificNote(' + "'" + pageResults[i].fileName + "'" + ')">' + pageResults[i].title + '</span></div>');
