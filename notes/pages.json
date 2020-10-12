@@ -21,6 +21,6 @@
     "name" : "Android",
     "link" : "/android",
     "imageFile" : "/images/android-logo.png",
-    "enabled" : false
+    "enabled" : true
   }
 ]

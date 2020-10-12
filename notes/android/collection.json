@@ -1,0 +1,146 @@
+[
+  {
+    "title" : "Placeholder",
+    "fileName" : "placeholder.html",
+    "links" : [
+      {
+        "description" : "Placeholder",
+        "link" : "placeholder"
+      }
+    ],
+    "searchTerms": ["placeholder"],
+    "enabled": false
+  },
+  {
+    "title" : "Layout + Resources",
+    "fileName" : "layoutresources.html",
+    "links" : [
+      {
+        "description" : "Layout resource - Android developer",
+        "link" : "https://developer.android.com/guide/topics/resources/layout-resource"
+      }
+    ],
+    "searchTerms": ["layout", "resource"],
+    "enabled": true
+  },
+  {
+    "title" : "Event-handling",
+    "fileName" : "eventhandling.html",
+    "links" : [
+      {
+        "description" : "Placeholder",
+        "link" : "placeholder"
+      }
+    ],
+    "searchTerms": ["placeholder"],
+    "enabled": false
+  },
+  {
+    "title" : "Lambda expression",
+    "fileName" : "lambda.html",
+    "links" : [
+      {
+        "description" : "Placeholder",
+        "link" : "placeholder"
+      }
+    ],
+    "searchTerms": ["placeholder"],
+    "enabled": false
+  },
+  {
+    "title" : "Intent",
+    "fileName" : "intent.html",
+    "links" : [
+      {
+        "description" : "Placeholder",
+        "link" : "placeholder"
+      }
+    ],
+    "searchTerms": ["placeholder"],
+    "enabled": true
+  },
+  {
+    "title" : "List of items",
+    "fileName" : "placeholder.html",
+    "links" : [
+      {
+        "description" : "Placeholder",
+        "link" : "placeholder"
+      }
+    ],
+    "searchTerms": ["placeholder"],
+    "enabled": false
+  },
+  {
+    "title" : "Manifest file",
+    "fileName" : "placeholder.html",
+    "links" : [
+      {
+        "description" : "Placeholder",
+        "link" : "placeholder"
+      }
+    ],
+    "searchTerms": ["placeholder"],
+    "enabled": false
+  },
+  {
+    "title" : "Gradle",
+    "fileName" : "gradle.html",
+    "links" : [
+      {
+        "description" : "Placeholder",
+        "link" : "placeholder"
+      }
+    ],
+    "searchTerms": ["gradle"],
+    "enabled": false
+  },
+  {
+    "title" : "Storage",
+    "fileName" : "placeholder.html",
+    "links" : [
+      {
+        "description" : "Placeholder",
+        "link" : "placeholder"
+      }
+    ],
+    "searchTerms": ["placeholder"],
+    "enabled": false
+  },
+  {
+    "title" : "Image / Camera",
+    "fileName" : "placeholder.html",
+    "links" : [
+      {
+        "description" : "Placeholder",
+        "link" : "placeholder"
+      }
+    ],
+    "searchTerms": ["placeholder"],
+    "enabled": false
+  },
+  {
+    "title" : "Map",
+    "fileName" : "placeholder.html",
+    "links" : [
+      {
+        "description" : "Placeholder",
+        "link" : "placeholder"
+      }
+    ],
+    "searchTerms": ["placeholder"],
+    "enabled": false
+  },
+  {
+    "title" : "App lifecycle",
+    "fileName" : "placeholder.html",
+    "links" : [
+      {
+        "description" : "Activity lifecycle - Android Developer",
+        "link" : "https://developer.android.com/guide/components/activities/activity-lifecycle"
+      }
+    ],
+    "searchTerms": ["placeholder"],
+    "enabled": false
+  }
+]

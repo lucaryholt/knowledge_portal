@@ -1,0 +1,27 @@
+<div class="sub-title">
+
+</div>
+
+<hr>
+
+<h4>General</h4>
+<div class="text-section">
+    To navigate between <code>Activities</code> in <code>Android</code> we use <code>Intent</code>.
+</div>
+
+<hr>
+
+<h4>Syntax</h4>
+<div class="text-section">
+    A basic <code>intent</code> that just redirects to other <code>Activity</code>:
+    <pre><code class="code-block java rounded">
+    Intent intent = new Intent(this, Activity2.class);
+    startActivity(intent);
+    </code></pre>
+    To go back to the previous <code>Activity</code> we simply use the <code>finish()</code> method:
+    <pre><code class="code-block java rounded">
+    public void home(View view){
+        finish();
+    }
+    </code></pre>
+</div>

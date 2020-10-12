@@ -13,7 +13,7 @@ function toggleDark(){
     button.html('<i class="fas fa-sun"></i>');
     button.attr('onclick', 'toggleLight()');
     $('#style').attr('href', 'style/style-dark.css');
-    $('#code-style').attr('href', '//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/styles/gruvbox-dark.min.css');
+    $('#code-style').attr('href', '//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/styles/atom-one-dark-reasonable.min.css');
     $('.front-page-link').prop('href', ip + '#dark');
     $('#navbar').attr('class','navbar navbar-dark bg-dark sticky-top justify-content-between');
 
@@ -37,5 +37,5 @@ function toggleLight(){
     for(let i = 0; i < links.length; i++){
         links[i].href = links[i].href.replace('#dark', '');
     }
-    window.location.hash = '';
+    window.location.hash = '#light';
 }

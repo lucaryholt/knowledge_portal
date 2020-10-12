@@ -1,0 +1,48 @@
+<div class="sub-title">
+    Layout and resources are the component of our <code>GUI</code>
+</div>
+
+<hr>
+
+<h4>General</h4>
+<div class="text-section">
+    <code>Android Studio</code> uses a drag-and-drop style interface to edit <code>.xml</code> files.
+    You can also edit these files directly in the <code>.xml</code> format.
+</div>
+<div class="text-section">
+    In <code>Android Studio</code> it is recommended to not hard-code string in <code>Java</code>, but
+    define them in the <code>res/values/strings.xml</code> file. This is done to enable you to edit
+    strings and not have to recompile the <code>Java</code> code.
+</div>
+
+<hr>
+
+<h4>Resources</h4>
+<div class="text-section">
+    Everything in the <code>res</code> folder, <code>Android Studio</code> compiles into a Java class.
+    You can access the ressources with <code>R</code>, example:
+    <pre><code class="code-block java rounded">
+    R.layout.activity_main;
+    </code></pre>
+</div>
+<div class="text-section">
+    To find an element in the <code>GUI</code> in <code>Java</code> code, you also use the <code>R</code> class
+    and the <code>findViewById()</code> function. You then save that to a new instance of the particular View
+    class:
+    <pre><code class="code-block java rounded">
+    TextView textView = findViewById(R.id.myTextView);
+    </code></pre>
+    When you have the reference you can call methods on it, like <code>.getText()</code>, <code>.setText()</code> and so on.
+</div>
+<div class="text-section">
+    To call a <code>Java</code> method in the <code>GUI</code>, with fx a <code>Button</code>, you just define a method in <code>Java</code>:
+    <pre><code class="code-block java rounded">
+    public void pressMe(View view){
+        System.out.println("Pressed!");
+    }
+    </code></pre>
+    In this method we need to pass the parameter <code>view</code> of type <code>View</code>. This is because all the elements in <code>UI</code>
+    is of type <code>View</code>.
+    Then in the <code>GUI</code> we fill out the property <code>onClick</code> with the function name: <br>
+    <img class="image-large rounded" src="../images/android_onclick.png" alt="Android onClick Image">
+</div>

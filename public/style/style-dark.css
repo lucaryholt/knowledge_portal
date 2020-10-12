@@ -6,6 +6,10 @@ body {
     color: ghostwhite;
 }
 
+hr{
+    background: ghostwhite;
+}
+
 .note-item{
     background: #242526!important;
     color: ghostwhite!important;
@@ -46,5 +50,9 @@ body {
 .title-holder{
     justify-content: center;
     padding: 30px;
+    color: ghostwhite;
+}
+
+tr{
     color: ghostwhite;
 }
