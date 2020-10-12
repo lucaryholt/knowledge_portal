@@ -1,5 +1,5 @@
-let searchTerms = null;
 let currentNoteIndex = null;
+let notes = null;
 
 const ip = window.location.origin;
 const pageId = window.location.toString().split('/')[3].split('#')[0];
@@ -13,49 +13,53 @@ fetch(ip + '/api/pages/' + pageId)
 fetch(ip + '/api/notes/' + pageId)
     .then(response => response.json())
     .then(response => {
-        for (let i = 0; i < response.data.length; i++) {
-            appendNote(response.data[i], i);
+        notes = response.data;
+        for (let i = 0; i < notes.length; i++) {
+            appendNote(notes[i], i);
         }
-        getSpecificNote(response.data[0].fileName, 0);
+        updateSpecificNote(0);
         checkForMode();
     });
 
-fetch(ip + "/api/searchTerms/" + pageId)
-    .then(response => response.json())
-    .then(response => {
-        console.log(response);
-        searchTerms = response.data;
-    });
-
-function getSpecificNote(id, index){
+function updateSpecificNote(index){
     if(index === -1 || currentNoteIndex !== index){
         $('#note-' + index).toggleClass('active');
         $('#note-' + currentNoteIndex).toggleClass('active');
         currentNoteIndex = index;
+        const note = notes[index];
 
-        fetch(ip + "/api/notes/" + pageId + "/" + id)
-            .then(response => response.json())
+        $(document).prop('title', note.title + ' - Knowledge Portal');
+
+        $("#noteTitle").text(note.title);
+
+        $("#searchResults").html('');
+
+        const linkList = $("#noteLinkList");
+        linkList.html('');
+        for(let i = 0; i < note.links.length; i++){
+            const link = note.links[i];
+            linkList.append('<li><a target="_blank" href="' + link.link + '">' + link.description + '</a></li>');
+        }
+
+        fetch(ip + "/api/notes/" + pageId + "/" + note.fileName)
+            .then(response => response.text())
             .then(response => {
-                $(document).prop('title', response.title + ' - Knowledge Portal');
 
-                $("#noteTitle").text(response.title);
-
-                $("#searchResults").html('');
-
-                const linkList = $("#noteLinkList");
-                linkList.html('');
-                for(let i = 0; i < response.links.length; i++){
-                    const link = response.links[i];
-                    linkList.append('<li><a target="_blank" href="' + link.link + '">' + link.description + '</a></li>');
-                }
-
-                $("#noteBody").html(response.body);
+                $("#noteBody").html(response);
 
                 const codeblocks = $('.code-block');
                 for(let i = 0; i < codeblocks.length; i++){
                     hljs.highlightBlock(codeblocks[i]);
                 }
             });
+    }
+}
+
+function getSpecificNote(fileName){
+    for(let i = 0; i < notes.length; i++){
+        if (notes[i].fileName === fileName) {
+            updateSpecificNote(i);
+        }
     }
 }
 
@@ -71,7 +75,7 @@ function searchUpdate(){
     $div.html('');
 
     if (term !== '') {
-        const pageResults = searchTerms.filter(pageResult => {
+        const pageResults = notes.filter(pageResult => {
             const termResults = pageResult.searchTerms.find(termResult => {
                 if(termResult.toLowerCase().includes(term.toLowerCase())){
                     return termResult;
@@ -81,9 +85,10 @@ function searchUpdate(){
                 return pageResult;
             }
         });
+        console.log(pageResults);
         if (pageResults.length !== 0) {
             for(let i = 0; i < pageResults.length; i++){
-                $div.append('<div><span class="list-group-item list-group-item-action search-result" onclick="getSpecificNote(' + "'" + pageResults[i].fileName + "', -1" + ')">' + pageResults[i].title + '</span></div>');
+                $div.append('<div><span class="list-group-item list-group-item-action search-result" onclick="getSpecificNote(' + "'" + pageResults[i].fileName + "'" + ')">' + pageResults[i].title + '</span></div>');
             }
             searchResults.append($div);
         }
@@ -97,5 +102,5 @@ function clearSearchResults(){
 }
 
 function appendNote(note, index){
-    $("#notesList").append('<div><span id="note-' + index + '" class="list-group-item list-group-item-action note-item" onclick="getSpecificNote(' + "'" + note.fileName + "'" + ', ' + index + ')">' + note.title + '</span></div>');
+    $("#notesList").append('<div><span id="note-' + index + '" class="list-group-item list-group-item-action note-item" onclick="getSpecificNote(' + "'" + note.fileName + "'" + ')">' + note.title + '</span></div>');
 }

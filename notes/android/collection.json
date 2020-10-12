@@ -28,35 +28,35 @@
     "fileName" : "eventhandling.html",
     "links" : [
       {
-        "description" : "Placeholder",
-        "link" : "placeholder"
+        "description" : "Android Event Handling - TutorialsPoint",
+        "link" : "https://www.tutorialspoint.com/android/android_event_handling.htm"
       }
     ],
-    "searchTerms": ["placeholder"],
-    "enabled": false
+    "searchTerms": ["event handling"],
+    "enabled": true
   },
   {
     "title" : "Lambda expression",
     "fileName" : "lambda.html",
     "links" : [
       {
-        "description" : "Placeholder",
-        "link" : "placeholder"
+        "description" : "Java 8 for Android: Cleaner Code With Lambda Expressions - EnvatoTuts+",
+        "link" : "https://code.tutsplus.com/tutorials/java-8-for-android-cleaner-code-with-lambda-expressions--cms-29661"
       }
     ],
     "searchTerms": ["placeholder"],
-    "enabled": false
+    "enabled": true
   },
   {
     "title" : "Intent",
     "fileName" : "intent.html",
     "links" : [
       {
-        "description" : "Placeholder",
-        "link" : "placeholder"
+        "description" : "Intent - Android Developers",
+        "link" : "https://developer.android.com/reference/android/content/Intent"
       }
     ],
-    "searchTerms": ["placeholder"],
+    "searchTerms": ["intent"],
     "enabled": true
   },
   {

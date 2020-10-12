@@ -3,11 +3,36 @@ A site containing documentation for things I have learned in Node JS Elective. C
 
 ## Features
 
-The app uses jQuery to dynamically show content to the user. This content is served by Express via GET requests.
+ - The app uses jQuery to dynamically show content to the user. This content is served by Express via GET requests.
+ - Dark Mode
+ - Search Function
+ - Code Highlight
+ - Multiple notebooks
+
+## Page format
+
+The different pages are stored as JSON objects in the **pages.json** file. They have the following syntax:
+
+```json
+{
+    "name" : "Node.JS",
+    "link" : "/nodejs",
+    "imageFile" : "/images/nodejs-logo.png",
+    "enabled" : true
+}
+```
+
+**name**: They name displayed on the front page.
+
+**link**: The name of the directory holding the notes, in the **notes** directory.
+
+**imageFile**: Path for the logo of the notebook.
+
+**enabled**: Whether the page is shown on the frontpage.
 
 ## Note format
 
-Meta data about the notes are stored as JSON objects in the **collection.json** files. They follow the following syntax:
+Meta data about the notes are stored as JSON objects in the **collection.json** files. They have the following syntax:
 
 ```json
 {
@@ -33,16 +58,16 @@ Meta data about the notes are stored as JSON objects in the **collection.json** 
     ],
     "searchTerms": ["restful web services", "insomnia", "postman", "http request methods"],
     "enabled": true
-  }
+}
 ```
 
-The JSON object contain 4 properties: **title**, **fileName**, **links** and **searchTerms**.
-**links** are a list of other JSON object, each containing 2 properties: **description** and **link**.
-**searchTerms** are a list of strings.
+**links**: List of other JSON object, each containing 2 properties: **description** and **link**.
 
-The **fileName** property refers to a html file. This html file contains the **note** body text and is written in html.
+**searchTerms**: List of strings, that the user can search for and find the note.
 
-The **enabled** property is whether to show the note in the app. 
+**fileName**: Refers to a html file. This html file contains the **note** body text and is written in html.
+
+**enabled**: Whether to show the note in the app. 
 
 ## Future development
 #### Remote storage of notes

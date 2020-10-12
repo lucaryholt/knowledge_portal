@@ -24,5 +24,3 @@ function appendPage(data){
             '</div>' +
         '</a>');
 }
-
-$('#editor-page-link').attr('href', ip + '/editing');

@@ -14,7 +14,7 @@ app.get('/api/notes/:id', (req, res) => {
         return a.title.localeCompare(b.title);
     });
 
-    if(collection.length === 0){
+    if (collection.length === 0) {
         return res.status(404).send({ error: 'No notes. Come back later.' });
     }
     return res.status(200).send({
@@ -30,44 +30,7 @@ app.get('/api/notes/:id/:file', (req, res) => {
     const collectionName = req.params.id;
     const fileName = req.params.file;
 
-    const note = require('./notes/' + collectionName + '/collection.json').find(note => {
-        if (note.fileName === fileName) {
-            return note;
-        }
-    });
-
-    let body;
-    try {
-        const file = fs.readFileSync('./notes/' + collectionName + '/' + fileName);
-        body = file.toString();
-    } catch (error) {
-        console.log('Error reading file:', fileName, 'in collection', collectionName);
-        body = 'Internal error reading this file.';
-    }
-
-    return res.send({
-        title: note.title,
-        body: body,
-        links: note.links.sort( (a, b) =>{
-            return a.description.localeCompare(b.description);
-        })
-    });
-});
-
-app.get('/api/searchTerms/:id', (req, res) => {
-    const id = req.params.id;
-
-    const collection = require('./notes/' + req.params.id + '/collection.json');
-    const terms = collection.filter(item => {
-        if(item.enabled){
-            const terms = item.searchTerms.map(term => {
-                return term;
-            });
-            return { page : item.title, terms: terms, fileName: item.fileName };
-        }
-    });
-
-    return res.send( { data : terms });
+    return res.sendFile(__dirname + '/notes/' + collectionName + '/' + fileName);
 });
 
 app.get('/api/notebooks', (req, res) => {
