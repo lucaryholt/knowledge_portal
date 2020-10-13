@@ -19,6 +19,19 @@
     padding-left: 15px;
 }
 
+/*#content-list{
+    text-align: right;
+}*/
+
+.content-list-item{
+    padding-left: 2px;
+    text-decoration: none;
+}
+
+#content-collapse{
+    text-align: right!important;
+}
+
 .custom-btn-group{
     display: block;
     width: 10%;
@@ -30,6 +43,10 @@
 
 .note-logo{
     font-size: 2em;
+}
+
+html{
+    scroll-behavior: smooth;
 }
 
 .image-large{
@@ -95,6 +112,13 @@
 
 .text-section{
     padding-bottom: 10px;
+}
+
+#top-scroll-button{
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    font-size: 1.4em;
 }
 
 .page-card{

@@ -18,9 +18,21 @@
       {
         "description" : "npm - ejs",
         "link" : "https://www.npmjs.com/package/ejs"
+      },
+      {
+        "description" : "GeeksForGeeks - express.json() function",
+        "link" : "https://www.geeksforgeeks.org/express-js-express-json-function/"
+      },
+      {
+        "description" : "GeeksForGeeks - express.urlencoded() function",
+        "link" : "https://www.geeksforgeeks.org/express-js-express-urlencoded-function/"
+      },
+      {
+        "description" : "Wikipedia - Percent-encoding",
+        "link" : "https://en.wikipedia.org/wiki/Percent-encoding"
       }
     ],
-    "searchTerms": ["express", "ejs", "express-fileupload", "express fileupload", "__dirname", "sendFile()", "redirect()"],
+    "searchTerms": ["express", "ejs", "express-fileupload", "express fileupload", "__dirname", "sendFile()", "redirect()", "bodyparser", "json()", "urlencoded()"],
     "enabled": true
   },
   {
@@ -116,7 +128,7 @@
     "enabled": true
   },
   {
-    "title" : "RESTful Web services",
+    "title" : "REST & HTTP Requests",
     "fileName" : "rest.html",
     "links" : [
       {
@@ -134,9 +146,13 @@
       {
         "description" : "MDN - HTTP request methods",
         "link" : "https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods"
+      },
+      {
+        "description" : "MDN - Using Fetch",
+        "link" : "https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch"
       }
     ],
-    "searchTerms": ["restful web services", "insomnia", "postman", "http request methods"],
+    "searchTerms": ["restful web services", "insomnia", "postman", "http request methods", "fetch", "ajax"],
     "enabled": true
   },
   {
@@ -322,9 +338,13 @@
       {
         "description" : "Bootstrap - The most popular HTML, CSS and JS library in the world",
         "link" : "https://getbootstrap.com/"
+      },
+      {
+        "description" : "W3Schools - HTML Event Attributes",
+        "link" : "https://www.w3schools.com/tags/ref_eventattributes.asp"
       }
     ],
-    "searchTerms": ["html", "dom", "document object model", "css", "bootstrap"],
+    "searchTerms": ["html", "dom", "document object model", "css", "bootstrap", "event attributes"],
     "enabled": true
   },
   {

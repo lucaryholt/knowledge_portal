@@ -24,6 +24,22 @@
         </div>
         <div class="row">
             <div class="col-4">
+                <div class="card">
+                    <div id="content-card" class="card-body">
+                        <div class="row">
+                            <div class="col">
+                                <h5 id="content-list-title card-title">On this page</h5>
+                            </div>
+                            <div id="content-collapse" class="col">
+                                <a id="content-collapse-toggle" onclick="toggleContentListCollapse('collapse')"><i class="fas fa-chevron-up"></i></a>
+                            </div>
+                        </div>
+                        <div id="content-list"></div>
+                    </div>
+                </div>
+
+                <hr>
+
                 <ul class="list-group" id="notesList"></ul>
             </div>
             <div class="col-8 rounded info-holder">
@@ -43,6 +59,7 @@
     </div>
 
     <ul class="list-group" id="searchResults"></ul>
+    <div id="top-scroll-button" onclick="scrollToTop()"><i class="fas fa-chevron-up"></i></div>
 
     <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/highlight.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

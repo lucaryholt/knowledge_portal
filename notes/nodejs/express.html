@@ -154,4 +154,23 @@
     With this you can create a directory called <code>public</code>. All files in this directory are now publicly available.
 </div>
 
-<!-- TODO static (public), bodyparser (express.json() & express.urlencoded( { extended: true })) -->
+<hr>
+
+<h4>Parsing body</h4>
+<div class="text-section">
+    When receiving a <code>HTTP</code> request, you can read the body in the request handler.
+    By default <code>Express</code> does not know how to read/parse the body. For this
+    we use <code>bodyparser</code>, which used to be a separate package, but now is included
+    in <code>Express</code>. All we have to do is tell <code>Express</code> to use it:
+    <pre><code class="code-block javascript rounded">
+    app.use(express.json());
+    app.use(express.urlencoded( { extended: true }));
+    </code></pre>
+    We do this with the <code>json()</code> and <code>urlencoded()</code> methods.
+</div>
+<div class="text-section">
+    <code>json()</code> parses the body of the incoming request with <code>JSON</code> payload.
+</div>
+<div class="text-section">
+    <code>urlencoded()</code> parses urlencoded (or percent-encoded) payloads to normal text.
+</div>

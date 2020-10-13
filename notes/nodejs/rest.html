@@ -1,5 +1,5 @@
 <div class="text-section sub-title">
-    REST: Representational State Transfer
+    REST: Representational State Transfer.
 </div>
 
 <hr>
@@ -28,4 +28,94 @@
     This allows for quick debugging of REST services without writing the software requesting and receiving.
 </div>
 
-<!-- TODO fetch, ajax, send data in GET, query string, path variable -->
+<hr>
+
+<h4>Send HTTP requests to REST-API</h4>
+<div class="text-section">
+    When working with an <code>REST-API</code>, there are multiple ways to send requests.
+    This can happen server and/or client side. Client side this is often done with <code>fetch</code>
+    or <code>ajax</code>. <br>
+    <code>fetch</code> is installed in browsers, while <code>ajax</code> is included in <code>jQuery</code>.
+</div>
+<div class="text-section">
+    A <code>GET</code> request send in <code>fetch</code> and <code>ajax</code> respectively:
+    <pre><code class="code-block javascript rounded">
+    fetch('http://someurl.xyz/api/cars')
+    .then(response => response.json())
+    .then(response => {
+        console.log(response);
+    });
+    </code></pre>
+    <pre><code class="code-block javascript rounded">
+    $.get('http://someurl.xyz/api/cars', (response) => {
+        console.log(response);
+    });
+    </code></pre>
+    The two examples do the same thing.
+</div>
+<div class="text-section">
+    The above <code>ajax</code> code is the short-form, the long-form would be:
+    <pre><code class="code-block javascript rounded">
+    $.ajax({
+        type: 'GET',
+        url: 'http://someurl.xyz/api/cars'
+    }).done((response) => {
+        console.log(response);
+    });
+    </code></pre>
+</div>
+
+<hr>
+
+<h4>Send data with HTTP request</h4>
+<div class="text-section">
+    When sending with a <code>HTTP</code> request, you can do it several different ways.
+    You can utilize the <code>HTTP</code> body, use query strings and path variables among others.
+</div>
+<div class="text-section">
+    Sending data in the body is commonly used for sending large amounts of data. This could be
+    whole <code>HTML</code> documents, form-data and so on. <br>
+    An example of sending data in the body using ajax (short and long hand):
+    <pre><code class="code-block javascript rounded">
+    $.get('http://someurl.xyz/api/cars', {
+            brand: 'VW',
+            model: 'Golf'
+        }, (response) => {
+        console.log(response);
+    });
+    </code></pre>
+    <pre><code class="code-block javascript rounded">
+    $.ajax({
+        type: 'POST',
+        url: 'http://someurl.xyz/api/cars',
+        data: {
+            brand: 'VW',
+            model: 'Golf'
+        }
+    }).done((response) => {
+        console.log(response);
+    });
+    </code></pre>
+    This could be an example of adding an car element to the api.
+</div>
+<div class="text-section">
+    If you then wanted to send data in a <code>GET</code> request, you could not use the body,
+    as a <code>GET</code> request does not include a body. <br>
+    In this case you could use query strings. Query strings are strings that are send in the url.
+    An example:
+    <pre><code class="code-block http rounded">
+    http://someurl.xyz/api/cars?brand=VW&model=Golf
+    </code></pre>
+    In this example we send the same data as the previous examples, but completely in the url.
+    The query strings are defined by <code>?</code>, key, <code>=</code> and value. The strings
+    are separated by ampersand (<code>&</code>). <br>
+    To access these values in the back-end, we use the <code>request</code> object:
+    <pre><code class="code-block javascript rounded">
+    app.get('/api/cars', (req, res) => {
+        console.log(req.query.brand, req.query.model);
+    });
+    </code></pre>
+</div>
+<div class="text-section">
+    Path variables are explained in the <code>Express</code> note.
+</div>

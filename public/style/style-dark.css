@@ -6,6 +6,11 @@ body {
     color: ghostwhite;
 }
 
+#content-card{
+    color: ghostwhite;
+    background: #242526;
+}
+
 hr{
     background: ghostwhite;
 }
@@ -53,10 +58,15 @@ hr{
     color: ghostwhite;
 }
 
+#top-scroll-button{
+    color: ghostwhite;
+}
+
 tr{
     color: ghostwhite;
 }
 
 .active{
     background: #4E4F50!important;
+    border-color: #484848!important;
 }

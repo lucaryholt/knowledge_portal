@@ -53,6 +53,15 @@ function updateSpecificNote(index){
                 for(let i = 0; i < codeblocks.length; i++){
                     hljs.highlightBlock(codeblocks[i]);
                 }
+
+                const titles = $('h4');
+                const contentList = $('#content-list');
+                contentList.html('');
+                for(let i = 0; i < titles.length; i++){
+                    const title = titles[i].textContent;
+                    titles[i].id = title;
+                    contentList.append('<a class="content-list-item" onclick="scrollToElement(' + "'" + title + "'" + ')">' + title + '</a> <br>');
+                }
             });
     }
 }
@@ -104,4 +113,27 @@ function clearSearchResults(){
 
 function appendNote(note, index){
     $("#notesList").append('<div><span id="note-' + index + '" class="list-group-item list-group-item-action note-item" onclick="getSpecificNote(' + "'" + note.fileName + "'" + ')">' + note.title + '</span></div>');
+}
+
+function scrollToElement(id){
+    document.getElementById(id).scrollIntoView({ block: "center" });
+}
+
+function scrollToTop(){
+    window.scrollTo(0, 0);
+}
+
+function toggleContentListCollapse(option){
+    const toggle = $('#content-collapse-toggle');
+    const list = $('#content-list');
+
+    if(option === 'collapse'){
+        toggle.html('<i class="fas fa-chevron-down"></i>');
+        toggle.attr('onclick', 'toggleContentListCollapse("uncollapse")');
+        list.hide();
+    } else {
+        toggle.html('<i class="fas fa-chevron-up"></i>');
+        toggle.attr('onclick', 'toggleContentListCollapse("collapse")');
+        list.show();
+    }
 }
