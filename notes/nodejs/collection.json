@@ -326,5 +326,17 @@
     ],
     "searchTerms": ["html", "dom", "document object model", "css", "bootstrap"],
     "enabled": true
+  },
+  {
+    "title" : "Server Side Rendering",
+    "fileName" : "ssr.html",
+    "links" : [
+      {
+        "description" : "Placeholder",
+        "link" : "placeholder"
+      }
+    ],
+    "searchTerms": ["placeholder"],
+    "enabled": false
   }
 ]

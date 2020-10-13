@@ -56,3 +56,7 @@ hr{
 tr{
     color: ghostwhite;
 }
+
+.active{
+    background: #4E4F50!important;
+}

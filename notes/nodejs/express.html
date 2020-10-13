@@ -138,3 +138,20 @@
     We do this by setting the path to '*' and then returning <code>res.redirect('/')</code>.
     This redirects the users request to the handler, handling '/' requests. Thereby avoiding the ugly error page.
 </div>
+
+<hr>
+
+<h4>Static</h4>
+<div class="text-section">
+    When making webapps, it is useful to make a folder publicly available. This could be to host <code>.js</code>, <code>.css</code>
+    and <code>image</code> files.
+</div>
+<div class="text-section">
+    To do this you use the <code>.static()</code> method in <code>Express</code>:
+    <pre><code class="code-block javascript rounded">
+    app.use(express.static('public'));
+    </code></pre>
+    With this you can create a directory called <code>public</code>. All files in this directory are now publicly available.
+</div>
+
+<!-- TODO static (public), bodyparser (express.json() & express.urlencoded( { extended: true })) -->
