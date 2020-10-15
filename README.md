@@ -1,5 +1,5 @@
-# Note Knowledge
-A site containing documentation for things I have learned in Node JS Elective. Created as a mandatory assignment.
+# Knowledge Portal
+A site containing documentation I have learned in select subjects. 
 
 ## Running the application
 After cloning the project, run **npm install** in the project directory to install dependencies. Then run either 

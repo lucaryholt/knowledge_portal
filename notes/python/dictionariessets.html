@@ -1,0 +1,167 @@
+<div class="sub-title">
+    Dictionaries and Sets are collections in <code>Python</code>
+</div>
+
+<hr>
+
+<h4>Dictionary</h4>
+<div class="text-section">
+    Unordered, changeable and indexed.
+</div>
+<div class="text-section">
+    To define a <code>dictionary</code> we use the following syntax:
+    <pre><code class="code-block python rounded">
+    my_dict =	{
+        "brand": "Ford",
+        "model": "Mustang",
+        "year": 1964
+    }
+    </code></pre>
+</div>
+<div class="text-section">
+    Accessing element in a <code>dictionary</code>:
+    <pre><code class="code-block python rounded">
+    x = my_dict["brand"]
+    </code></pre>
+</div>
+<div class="text-section">
+    To change value you do:
+    <pre><code class="code-block python rounded">
+    my_dict["brand"] = "Mazda"
+    </code></pre>
+</div>
+<div class="text-section">
+    You can easily loop through a <code>dictionary</code>, like you would a <code>list</code>:
+    <pre><code class="code-block python rounded">
+    for x in my_dict:
+        print(x)
+    </code></pre>
+</div>
+<div class="text-section">
+    You can use the <code>in</code> keyword, to check for keys in a <code>dictionary</code>:
+    <pre><code class="code-block python rounded">
+    if "brand" in my_dict:
+        print("it contains brand!")
+    </code></pre>
+</div>
+<div class="text-section">
+    The built-in <code>Python</code> function <code>len()</code> also works on <code>dictionaries</code>.
+</div>
+<div class="text-section">
+    To add an item, you use the same syntax as when changing a value:
+    <pre><code class="code-block python rounded">
+    my_dict["hp"] = 200
+    </code></pre>
+</div>
+<div class="text-section">
+    To delete an item you use the <code>pop()</code> method:
+    <pre><code class="code-block python rounded">
+    my_dict.pop("hp")
+    </code></pre>
+    You can also use <code>popitem()</code>, which removes the last inserted item. <br>
+    The <code>del</code> keyword can also be used:
+    <pre><code class="code-block python rounded">
+    del my_dict["hp"]
+    </code></pre>
+</div>
+<div class="text-section">
+    To copy a <code>dictionary</code> you can use the <code>copy()</code> method. This
+    will copy the value, and not the reference.
+</div>
+<div class="text-section">
+    Nested <code>dictionaries</code> can be done easily:
+    <pre><code class="code-block python rounded">
+    cars = {
+        "car_0" : {
+            "brand": "Ford",
+            "model": "Mustang",
+            "year": 1964
+        },
+        "car_1" : {
+            "brand": "VW",
+            "model": "Golf",
+            "year": 2019
+        }
+    }
+    </code></pre>
+</div>
+
+<hr>
+
+<h4>Set</h4>
+<div class="text-section">
+    Unordered and unindexed.
+</div>
+<div class="text-section">
+    Define a <code>set</code>:
+    <pre><code class="code-block python rounded">
+        my_set = {"pengu", "donald", "gurli"}
+    </code></pre>
+</div>
+<div class="text-section">
+    You can not access items in a <code>set</code>, by referencing a key or index,
+    but you can loop through it or ask if a value is present:
+    <pre><code class="code-block python rounded">
+    for x in my_set:
+        print(x)
+
+    if "pengu" in my_set:
+        print("pengu is here!")
+    </code></pre>
+</div>
+<div class="text-section">
+    You can not change items in a <code>set</code>, but you can add them using the <code>add()</code>
+    or <code>update()</code> (to add more than one item) methods:
+    <pre><code class="code-block python rounded">
+    my_set.add("goofy")
+
+    my_set.update(["tintin", "haddock", "terry"])
+    </code></pre>
+</div>
+<div class="text-section">
+    The built-in <code>Python</code> function <code>len()</code> also works on <code>sets</code>.
+</div>
+<div class="text-section">
+    To remove items in a <code>set</code>, you use the <code>discard()</code> method:
+    <pre><code class="code-block python rounded">
+    my_set.discard("goofy")
+    </code></pre>
+    If the specified item does not exist, <code>discard()</code> will not raise an error. <br>
+    You can also use the <code>pop()</code> method. This removes the last item, but as <code>sets</code>
+    are unordered, you can not know which item will be removed. <code>pop()</code> returns the
+    removed item. <br>
+    To clear the <code>set</code> itself, you can use <code>clear()</code> and to delete it, use
+    the <code>del</code> keyword.
+</div>
+<div class="text-section">
+    You can join two <code>sets</code> with the <code>union()</code> method:
+    <pre><code class="code-block python rounded">
+    set1 = {"a", "b" , "c"}
+    set2 = {1, 2, 3}
+
+    set3 = set1.union(set2)
+    </code></pre>
+</div>
+<div class="text-section">
+    The <code>intersection()</code> method can be used to find the elements that exist in two
+    or more <code>sets</code>:
+    <pre><code class="code-block python rounded">
+    x = {"apple", "banana", "cherry"}
+    y = {"google", "microsoft", "apple"}
+
+    z = x.intersection(y)
+    </code></pre>
+    Here <code>z</code> will reference a <code>set</code> containing the element <code>apple</code>.
+</div>
+<div class="text-section">
+    On the other hand, the <code>difference()</code> method finds the elements that exist in one
+    <code>set</code> and not another:
+    <pre><code class="code-block python rounded">
+    x = {"apple", "banana", "cherry"}
+    y = {"google", "microsoft", "apple"}
+
+    z = x.difference(y)
+    </code></pre>
+    Here <code>z</code> will reference a <code>set</code> containing the elements
+    <code>banana</code> and <code>cherry</code>.
+</div>

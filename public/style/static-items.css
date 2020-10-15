@@ -6,6 +6,7 @@
     background-color: #e8f1f5;
     border: solid;
     opacity: 0.95;
+    z-index: 2;
 }
 
 #info-button{

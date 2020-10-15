@@ -145,5 +145,29 @@
     ],
     "searchTerms": ["data model"],
     "enabled": true
+  },
+  {
+    "title" : "Dictionaries & Sets",
+    "fileName" : "dictionariessets.html",
+    "links" : [
+      {
+        "description" : "W3Schools - Python Dictionaries",
+        "link" : "https://www.w3schools.com/python/python_dictionaries.asp"
+      },
+      {
+        "description" : "W3Schools - Python Sets",
+        "link" : "https://www.w3schools.com/python/python_sets.asp"
+      },
+      {
+        "description" : "W3Schools - Python Set difference() method",
+        "link" : "https://www.w3schools.com/python/ref_set_difference.asp"
+      },
+      {
+        "description" : "W3Schools - Python Set intersection() method",
+        "link" : "https://www.w3schools.com/python/ref_set_intersection.asp"
+      }
+    ],
+    "searchTerms": ["dictionary", "dictionaries", "dict", "sets", "union()", "intersection()", "difference()"],
+    "enabled": true
   }
 ]
