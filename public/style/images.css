@@ -1,0 +1,15 @@
+.image-large{
+    width: 250px;
+}
+
+.image-small{
+    width: 50px;
+}
+
+.image-xl{
+    height: 250px;
+}
+
+.image-xl-horizontal{
+    width: 100%;
+}

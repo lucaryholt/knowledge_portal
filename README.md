@@ -1,6 +1,13 @@
 # Note Knowledge
 A site containing documentation for things I have learned in Node JS Elective. Created as a mandatory assignment.
 
+## Running the application
+After cloning the project, run **npm install** in the project directory to install dependencies. Then run either 
+**npm run start-dev** or **npm run start-prod**.
+
+**start-dev** starts the application using **Nodemon** on port **8080** and **start-prod** starts it using **Node**
+on port **80**.
+
 ## Features
 
  - The app uses jQuery to dynamically show content to the user. This content is served by Express via GET requests.
@@ -91,7 +98,6 @@ Editing the files in an input field in the browser, takes away some convenience.
 Some possible solutions for this could be:
  - An embedded html IDE in the app (out of scope for this project).
  - A html preview site, that you could point to a local html file and then edit that file in your IDE of choice (with jQuery updating the preview at intervals).
- - Or using the already existing live-preview editor on **/editing** (the only drawback is that this does not have autocompletion).
  
 #### Own formatting
 

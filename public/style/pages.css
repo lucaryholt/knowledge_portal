@@ -1,0 +1,26 @@
+.page-card{
+    width: 300px;
+    text-align: center;
+}
+
+.page-card-body{
+    background: ghostwhite;
+}
+
+.page-image{
+    padding-top: 10px;
+    height: 100px;
+}
+
+.page-holder{
+    padding: 5px;
+}
+
+#pages-holder{
+    justify-content: center;
+}
+
+.page-title{
+    font-weight: bold;
+    padding-top: 5px;
+}

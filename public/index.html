@@ -4,30 +4,52 @@
     <meta charset="UTF-8">
     <title>Knowledge Portal</title>
 
-    <link id="style" rel="stylesheet" href="style/style-light.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/static-items.css">
+    <link rel="stylesheet" href="style/pages.css">
+    <link id="style" rel="stylesheet" href="">
 </head>
 <body>
-    <nav id="navbar" class="">
-        <a id="site-logo" class="front-page-link link-holder navbar-brand">
+    <nav id="navbar">
+        <a id="site-logo" class="front-page-link link-holder navbar-brand color-change">
             <img src="images/portal.png" width="30" height="30" alt="Logo">
         </a>
         <div class="form-inline">
-            <a id="color-mode" onclick="toggleDark()"><i class="fas fa-moon"></i></a>
+            <a id="color-mode" class="color-change" onclick="toggleDark()"><i class="fas fa-moon"></i></a>
         </div>
     </nav>
     <div class="container">
-        <div class="row title-holder">
+        <div class="row title-holder color-change">
             <h1 class="page-title">Notebooks</h1>
         </div>
         <div class="row" id="pages-holder"></div>
     </div>
 
+    <div id="info-button"><i class="fas fa-info-circle color-change" onclick="toggleInfoBox()"></i></div>
+    <div id="info-box" class="rounded color-change">
+        <h2>Knowledge Portal</h2>
+        <div class="text-section">
+            This application contains notes for electives this semester. <br>
+            It is written in <code>JavaScript</code> and executed with <code>Node.JS</code>.
+        </div>
+        <div class="text-section">
+            Features include (but not limited to):
+            <ul>
+                <li>Dark mode (icon top right)</li>
+                <li>Multiple notebooks</li>
+                <li>Code highlighting</li>
+                <li>Page overview (with auto scroll)</li>
+                <li>Search</li>
+            </ul>
+        </div>
+    </div>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/af932a1361.js" crossorigin="anonymous"></script>
     <script src="js/index.js"></script>
     <script src="js/colorMode.js"></script>
+    <script src="js/info.js"></script>
 </body>
 </html>

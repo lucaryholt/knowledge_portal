@@ -1,4 +1,5 @@
-const mode = window.location.toString().split('/')[3].split('#')[1] ? window.location.toString().split('/')[3].split('#')[1] : 'light';
+const hash = window.location.toString().split('/')[3].split('#')[1];
+const mode = hash ? hash : 'light';
 
 function checkForMode(){
     if (mode === 'dark') {
@@ -15,7 +16,7 @@ function toggleDark(){
     $('#style').attr('href', 'style/style-dark.css');
     $('#code-style').attr('href', '//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/styles/atom-one-dark-reasonable.min.css');
     $('.front-page-link').prop('href', ip + '#dark');
-    $('#navbar').attr('class','navbar navbar-dark bg-dark sticky-top justify-content-between');
+    $('#navbar').attr('class','navbar sticky-top justify-content-between');
 
     const links = $('.color-link');
     for(let i = 0; i < links.length; i++){
@@ -28,10 +29,10 @@ function toggleLight(){
     const button = $('#color-mode');
     button.html('<i class="fas fa-moon"></i>');
     button.attr('onclick', 'toggleDark()');
-    $('#style').attr('href', 'style/style-light.css');
+    $('#style').attr('href', '');
     $('#code-style').attr('href', '//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/styles/gruvbox-dark.min.css');
     $('.front-page-link').prop('href', ip);
-    $('#navbar').attr('class','navbar navbar-light bg-light sticky-top justify-content-between');
+    $('#navbar').attr('class','navbar sticky-top justify-content-between');
 
     const links = $('.color-link');
     for(let i = 0; i < links.length; i++){

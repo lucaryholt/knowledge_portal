@@ -1,0 +1,16 @@
+.note-content-list-item{
+    padding-left: 2px;
+    text-decoration: none;
+}
+
+#note-content-card{
+    border-style: none;
+}
+
+#note-content-card-body{
+    background: #e8f1f5;
+}
+
+#note-content-collapse{
+    text-align: right;
+}

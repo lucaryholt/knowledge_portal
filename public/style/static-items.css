@@ -1,0 +1,33 @@
+#info-box{
+    position: fixed;
+    bottom: 43px;
+    left: 6px;
+    padding: 4px;
+    background-color: #e8f1f5;
+    border: solid;
+    opacity: 0.95;
+}
+
+#info-button{
+    position: fixed;
+    bottom: 0;
+    left: 6px;
+    font-size: 2em;
+    opacity: 0.8;
+}
+
+#searchResults{
+    z-index: 1;
+    position: fixed;
+    top: 60px;
+    right: 40px;
+    width: 350px;
+    background: #e8f1f5;
+}
+
+#top-scroll-button{
+    position: fixed;
+    right: 10px;
+    bottom: 5px;
+    font-size: 1.4em;
+}

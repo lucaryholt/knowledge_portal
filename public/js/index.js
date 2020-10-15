@@ -13,12 +13,12 @@ function appendPage(data){
     const pageHolder = $('#pages-holder');
 
     pageHolder.append(
-        '<a href="' + ip + data.link + '" class="link-holder color-link"' +
+        '<a href="' + ip + data.link + '" class="link-holder color-link color-change"' +
             '<div class="page-holder">' +
                 '<div class="card page-card">' +
-                    '<div class="card-body page-card-body">' +
+                    '<div class="card-body page-card-body color-change">' +
                         '<img class="page-image" src="' + data.imageFile + '" alt="' + data.title + '">' +
-                        '<h3 class="title">' + data.name + '</h3>' +
+                        '<h3 class="page-title">' + data.name + '</h3>' +
                     '</div>' +
                 '</div>' +
             '</div>' +

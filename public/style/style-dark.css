@@ -1,13 +1,12 @@
 body {
-    background-color: #18191A!important;
+    background-color: #18191A;
 }
 
-#color-mode{
-    color: ghostwhite;
+.color-change{
+    color: ghostwhite!important;
 }
 
-#content-card{
-    color: ghostwhite;
+#note-content-card-body{
     background: #242526;
 }
 
@@ -16,22 +15,20 @@ hr{
 }
 
 .note-item{
-    background: #242526!important;
-    color: ghostwhite!important;
-}
-
-.info-holder{
     background: #242526;
-    color: ghostwhite;
 }
 
-.link-holder{
-    text-decoration: none!important;
-    color: ghostwhite;
+.note-holder{
+    background: #242526;
+}
+
+#info-box{
+    background-color: #4E4F50;
+    border: solid #242526;
 }
 
 #navbar{
-    background-color: #242526!important;
+    background-color: #242526;
 }
 
 #searchBox{
@@ -40,7 +37,7 @@ hr{
 }
 
 .search-result{
-    background: #18191A!important;
+    background: #18191A;
 }
 
 #searchResults{
@@ -49,17 +46,11 @@ hr{
 
 .page-card-body{
     background: #242526;
-    color: ghostwhite;
 }
 
 .title-holder{
     justify-content: center;
     padding: 30px;
-    color: ghostwhite;
-}
-
-#top-scroll-button{
-    color: ghostwhite;
 }
 
 tr{

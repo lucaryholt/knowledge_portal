@@ -3,35 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <title>Knowledge</title>
-    <link id="style" rel="stylesheet" type="text/css" href="../style/style-light.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="../style/style.css">
+    <link rel="stylesheet" type="text/css" href="../style/static-items.css">
+    <link rel="stylesheet" type="text/css" href="../style/notes.css">
+    <link rel="stylesheet" type="text/css" href="../style/images.css">
+    <link rel="stylesheet" type="text/css" href="../style/note-content.css">
+    <link id="style" rel="stylesheet" type="text/css" href="">
     <link id="code-style" rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/styles/gruvbox-dark.min.css">
 </head>
 <body>
-    <nav id="navbar" class="">
-        <a id="site-logo" class="front-page-link link-holder navbar-brand">
+    <nav id="navbar">
+        <a id="site-logo" class="front-page-link link-holder color-change navbar-brand">
             <img src="images/portal.png" width="30" height="30" alt="Logo">
         </a>
         <div class="form-inline">
             <div id="searchBoxHolder"><input id="searchBox" type="text" placeholder="Search" class="form-control" oninput="searchUpdate()" onfocus="searchUpdate()" onblur="clearSearchResults()"></div>
-            <a id="color-mode" onclick="toggleDark()"><i class="fas fa-moon"></i></a>
+            <a id="color-mode" class="color-change" onclick="toggleDark()"><i class="fas fa-moon"></i></a>
         </div>
     </nav>
     <div class="container">
         <div id="logo-holder" class="row">
             <img id="logo" src="" alt="Page logo"> <br>
-            <a id="site-title" href="#" class="h1 font-weight-bold link-holder front-page-link"></a>
+            <a id="site-title" href="#" class="h1 font-weight-bold link-holder color-change front-page-link"></a>
         </div>
         <div class="row">
             <div class="col-4">
-                <div class="card">
-                    <div id="content-card" class="card-body">
-                        <div class="row">
+                <div id="note-content-card" class="card">
+                    <div id="note-content-card-body" class="card-body color-change">
+                        <div class="row" onclick="toggleContentListCollapse()">
                             <div class="col">
                                 <h5 id="content-list-title card-title">On this page</h5>
                             </div>
-                            <div id="content-collapse" class="col">
-                                <a id="content-collapse-toggle" onclick="toggleContentListCollapse('collapse')"><i class="fas fa-chevron-up"></i></a>
+                            <div id="note-content-collapse" class="col">
+                                <a id="note-content-collapse-toggle"><i class="fas fa-chevron-down"></i></a>
                             </div>
                         </div>
                         <div id="content-list"></div>
@@ -40,33 +45,55 @@
 
                 <hr>
 
-                <ul class="list-group" id="notesList"></ul>
+                <ul class="list-group" id="notes-list"></ul>
             </div>
-            <div class="col-8 rounded info-holder">
-                <h2 class="title" id="noteTitle"></h2>
-                <p id="noteBody"></p>
+            <div class="col-8 note-holder color-change">
+                <h2 class="note-title" id="note-title"></h2>
+                <p id="note-body"></p>
 
                 <hr>
 
                 <h5>Links:</h5>
-                <ul id="noteLinkList"></ul>
+                <ul id="note-link-list"></ul>
             </div>
         </div>
 
         <div class="text-center" id="bottom">
-            <h5><a class="link-holder bottom-logo" target="_blank" href="https://github.com/lucaryholt/knowledge_portal"><i class="fab fa-github"></i></a></h5>
+            <h5><a class="link-holder color-change bottom-logo" target="_blank" href="https://github.com/lucaryholt/knowledge_portal"><i class="fab fa-github"></i></a></h5>
+        </div>
+    </div>
+
+    <div id="info-button"><i class="fas fa-info-circle color-change" onclick="toggleInfoBox()"></i></div>
+    <div id="info-box" class="rounded color-change">
+        <h2>Knowledge Portal</h2>
+        <div class="text-section">
+            This application contains notes for electives this semester. <br>
+            It is written in <code>JavaScript</code> and executed with <code>Node.JS</code>.
+        </div>
+        <div class="text-section">
+            Features include (but not limited to):
+            <ul>
+                <li>Dark mode (icon top right)</li>
+                <li>Multiple notebooks</li>
+                <li>Code highlighting</li>
+                <li>Page overview (with auto scroll)</li>
+                <li>Search</li>
+            </ul>
         </div>
     </div>
 
     <ul class="list-group" id="searchResults"></ul>
-    <div id="top-scroll-button" onclick="scrollToTop()"><i class="fas fa-chevron-up"></i></div>
+    <div id="top-scroll-button" class="color-change" onclick="scrollToTop()"><i class="fas fa-chevron-up"></i></div>
 
     <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/highlight.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/af932a1361.js" crossorigin="anonymous"></script>
-    <script src="../js/pages.js"></script>
+    <script src="../js/notes.js"></script>
+    <script src="../js/search.js"></script>
     <script src="../js/colorMode.js"></script>
+    <script src="../js/scroll.js"></script>
+    <script src="../js/info.js"></script>
+    <script src="../js/contentList.js"></script>
 </body>
 </html>

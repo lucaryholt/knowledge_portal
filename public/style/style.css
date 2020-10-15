@@ -1,5 +1,9 @@
+body{
+    background-color: #fafafa;
+}
+
 .active{
-    z-index: 0!important;
+    z-index: 0;
 }
 
 .bottom-logo{
@@ -17,19 +21,7 @@
 #color-mode{
     font-size: 1.5em;
     padding-left: 15px;
-}
-
-/*#content-list{
-    text-align: right;
-}*/
-
-.content-list-item{
-    padding-left: 2px;
-    text-decoration: none;
-}
-
-#content-collapse{
-    text-align: right!important;
+    color: black;
 }
 
 .custom-btn-group{
@@ -37,36 +29,19 @@
     width: 10%;
 }
 
-.navbar{
+#navbar{
     opacity: 0.95;
-}
-
-.note-logo{
-    font-size: 2em;
+    background-color: #e8f1f5;
 }
 
 html{
     scroll-behavior: smooth;
 }
 
-.image-large{
-    width: 250px;
-}
-
-.image-small{
-    width: 50px;
-}
-
-.image-xl{
-    height: 250px;
-}
-
-.image-xl-horizontal{
-    width: 100%;
-}
-
 .link-holder{
     padding: 5px;
+    text-decoration: none!important;
+    color: black;
 }
 
 #logo{
@@ -79,14 +54,6 @@ html{
     margin: auto;
     display: block;
     text-align: center;
-}
-
-#searchResults{
-    z-index: 1;
-    position: fixed;
-    top: 60px;
-    right: 40px;
-    width: 350px;
 }
 
 #site-logo{
@@ -114,32 +81,7 @@ html{
     padding-bottom: 10px;
 }
 
-#top-scroll-button{
-    position: fixed;
-    right: 10px;
-    bottom: 10px;
-    font-size: 1.4em;
-}
-
-.page-card{
-    width: 300px;
-    text-align: center;
-}
-
-.page-image{
-    padding-top: 10px;
-    height: 100px;
-}
-
-.page-holder{
-    padding: 5px;
-}
-
-#pages-holder{
+.title-holder{
     justify-content: center;
-}
-
-.title{
-    font-weight: bold;
-    padding-top: 5px;
+    padding: 30px;
 }
