@@ -29,3 +29,21 @@
 <hr>
 
 <h4>Passing data with Intent</h4>
+<div class="text-section">
+    To pass data with <code>intent</code>, we inject data as <code>KeyValuePairs</code>:
+    <pre><code class="code-block java rounded">
+    Intent intent = new Intent(this, Activity2.class);
+
+    intent.putExtra("message", "Hey you!");
+
+    startActivity(intent);
+    </code></pre>
+    This code snippet, would store the value <code>Hey you!</code> with the key <code>message</code>. <br>
+    To extract it in the target <code>activity</code>:
+    <pre><code class="code-block java rounded">
+    String content = getIntent().getStringExtra("message");
+    </code></pre>
+    Here we use the key to extract the value. Now the String <code>content</code>, will contain <code>Hey you!</code>.
+    We use the method <code>getIntent()</code> and on that <code>getStringExtra(key)</code>. The exists a whole list
+    of other methods to extract other data types.
+</div>

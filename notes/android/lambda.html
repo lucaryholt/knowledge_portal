@@ -4,4 +4,34 @@
 
 <hr>
 
-<h4></h4>
+<h4>General</h4>
+<div class="text-section">
+    Lambda expressions are like <code>closures</code> in <code>Swift</code> and <code>callbacks</code> in <code>JavaScript</code>.
+</div>
+<div class="text-section">
+    They allow us to define functions in a simple syntax and pass them as parameters.
+    This is often used to perform <code>asynchronous</code> actions.
+</div>
+
+<hr>
+
+<h4>Syntax</h4>
+<div class="text-section">
+    The syntax for defining a <code>lambda</code> expression is:
+    <pre><code class="code-block java rounded">
+    (parameter1, parameter2) -> { code to be executed }
+    </code></pre>
+</div>
+<div class="text-section">
+    If you want to pass a function before passing it, you can use a short-hand:
+    <pre><code class="code-block java rounded">
+    TodoAdapter todoAdapter = new TodoAdapter(this, toDoRepo.getItems(), this::onResume);
+    </code></pre>
+    In this example the last parameter is a reference to a function defined in the class that we instantiate
+    the <code>TodoAdapter</code>. This could also have been written like this:
+    <pre><code class="code-block java rounded">
+    TodoAdapter todoAdapter = new TodoAdapter(this, toDoRepo.getItems(), () -> {
+        onResume();
+    });
+    </code></pre>
+</div>

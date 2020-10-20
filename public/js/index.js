@@ -9,7 +9,7 @@ fetch(ip + '/api/pages')
         checkForMode();
     });
 
-function appendPage(data){
+function appendPage(data) {
     const pageHolder = $('#pages-holder');
 
     pageHolder.append(

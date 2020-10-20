@@ -20,7 +20,7 @@
         "link" : "https://developer.android.com/guide/topics/resources/layout-resource"
       }
     ],
-    "searchTerms": ["layout", "resource"],
+    "searchTerms": ["layout", "resource", "adapter", "listview", "arrayadapter"],
     "enabled": true
   },
   {
@@ -32,7 +32,7 @@
         "link" : "https://www.tutorialspoint.com/android/android_event_handling.htm"
       }
     ],
-    "searchTerms": ["event handling"],
+    "searchTerms": ["event handling", "onclick", "listener"],
     "enabled": true
   },
   {
@@ -44,7 +44,7 @@
         "link" : "https://code.tutsplus.com/tutorials/java-8-for-android-cleaner-code-with-lambda-expressions--cms-29661"
       }
     ],
-    "searchTerms": ["placeholder"],
+    "searchTerms": ["lambda"],
     "enabled": true
   },
   {

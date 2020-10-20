@@ -174,3 +174,36 @@
 <div class="text-section">
     <code>urlencoded()</code> parses urlencoded (or percent-encoded) payloads to normal text.
 </div>
+
+<hr>
+
+<h4>Routes</h4>
+<div class="text-section">
+    When making a webapp with <code>Express</code>, you can end up with a lot and long request handlers.
+    This normally goes in the <code>app.js</code> file, but can make it quite hard to read and find what you need.
+    To solve this you can make external <code>JavaScript</code> files, which you then refer to from <code>app.js</code>.
+</div>
+<div class="text-section">
+    These files can be anywhere, but the convention is to put them in a directory called <code>routes</code> or something
+    similar. Here you simply make a new <code>.js</code> file. For this example it will handle the <code>/about</code>
+    GET request.
+    <pre><code class="code-block javascript rounded">
+    const router = require('express').Router;
+
+    router.get('/about', (req, res) => {
+        return res.sendFile({ data: 'About info here' });
+    });
+
+    module.exports = router;
+    </code></pre>
+    In this code we start by defining a constant from the Router property in <code>Express</code>.
+    This creates a dummy router, which practically means that it is not as smart as <code>Express</code> itself.
+    Then we define a request handler, exactly as we normally would. <br>
+    Lastly we export the <code>router</code> object.
+</div>
+<div class="text-section">
+    In <code>app.js</code> we must then import it and inject it into <code>Express</code> (<code>app</code>):
+    <pre><code class="code-block javescript rounded">
+    app.use(require('./routes/about.js'));
+    </code></pre>
+</div>

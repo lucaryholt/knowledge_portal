@@ -1,7 +1,7 @@
 const hash = window.location.toString().split('/')[3].split('#')[1];
 const mode = hash ? hash : 'light';
 
-function checkForMode(){
+function checkForMode() {
     if (mode === 'dark') {
         toggleDark();
     } else {
@@ -9,7 +9,7 @@ function checkForMode(){
     }
 }
 
-function toggleDark(){
+function toggleDark() {
     const button = $('#color-mode');
     button.html('<i class="fas fa-sun"></i>');
     button.attr('onclick', 'toggleLight()');
@@ -25,7 +25,7 @@ function toggleDark(){
     window.location.hash = '#dark';
 }
 
-function toggleLight(){
+function toggleLight() {
     const button = $('#color-mode');
     button.html('<i class="fas fa-moon"></i>');
     button.attr('onclick', 'toggleDark()');

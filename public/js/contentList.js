@@ -3,7 +3,7 @@ const toggle = $('#note-content-collapse-toggle');
 let contentListCollapsed = true;
 list.hide();
 
-function toggleContentListCollapse(){
+function toggleContentListCollapse() {
     if(contentListCollapsed){
         toggle.html('<i class="fas fa-chevron-up"></i>');
         list.show();

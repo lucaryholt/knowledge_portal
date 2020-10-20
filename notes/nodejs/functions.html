@@ -157,6 +157,12 @@
     and <code>parseInt()</code>.
 </div>
 <div class="text-section">
+    A much used built-in/global function is called <code>setTimeout</code>. This function, takes a
+    function as parameter and a int, representing milliseconds before it executes aforementioned
+    function parameter. <br>
+    <code>setInterval</code> works the same way, but repeats functions with a interval.
+</div>
+<div class="text-section">
     Global functions can be called from anywhere in <code>JS</code>.
 </div>
 
@@ -213,4 +219,23 @@
 <div class="text-section">
     <code>map()</code> does not run the function for elements without values. <br>
     <code>map()</code> does not change the original array.
+</div>
+
+<hr>
+
+<h4>IFFE</h4>
+<div class="text-section">
+    An <code>IFFE</code> or <code>Immediately invoked function expression</code> is a way to define a
+    function (in its own scope) and call it immediately. It is very similar to normal function syntax,
+    but is encased in brackets <code>( )</code> and then called like a normal function, also with brackets:
+    <pre><code class="code-block javascript rounded">
+    (function () {
+        console.log('IFFE');
+    })();
+    </code></pre>
+    This would define and immediately call the function.
+</div>
+<div class="text-section">
+    The function could also be named, but can not be called after execution, as it is only defined in it's own scope.
+    Every function syntax also works this way.
 </div>

@@ -161,3 +161,16 @@
     const selfWrittenModule = ('./path/to/script');
     </code></pre>
 </div>
+<div class="text-section">
+    Just like we can import modules and files in <code>Node.JS</code> with <code>require()</code>, we can
+    export objects from modules with <code>module.exports</code>:
+    <pre><code class="code-block javascript rounded">
+    module.exports = {
+        message = "This is a message exported from module"
+        count = 12
+    }
+    </code></pre>
+    This is setup like a <code>JSON</code> object. <br>
+    Then in the file where you want to use the module, you import it with <code>require()</code> and use
+    dot notation to access properties.
+</div>

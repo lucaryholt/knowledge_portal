@@ -202,9 +202,17 @@
       {
         "description" : "JavaScript Anonymous Functions",
         "link" : "https://www.javascripttutorial.net/javascript-anonymous-functions/"
+      },
+      {
+        "description" : "Wikipedia - Immediately invoked function expression",
+        "link" : "https://en.wikipedia.org/wiki/Immediately_invoked_function_expression"
+      },
+      {
+        "description" : "W3Schools - setTimeout() method",
+        "link" : "https://www.w3schools.com/jsref/met_win_settimeout.asp"
       }
     ],
-    "searchTerms": ["arrow functions", "callbacks", "lambda", "ternary", "global functions", "filter()", "find()", "map()", "anonymous functions"],
+    "searchTerms": ["arrow functions", "callbacks", "lambda", "ternary", "global functions", "filter()", "find()", "map()", "anonymous functions", "setTimeout", "setInterval", "IFFE"],
     "enabled": true
   },
   {
@@ -357,6 +365,18 @@
       }
     ],
     "searchTerms": ["placeholder"],
-    "enabled": false
+    "enabled": true
+  },
+  {
+    "title" : "Asynchronous",
+    "fileName" : "async.html",
+    "links" : [
+      {
+        "description" : "MDN - Promise",
+        "link" : "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise"
+      }
+    ],
+    "searchTerms": ["asynchronous", "await", "async", "promises"],
+    "enabled": true
   }
 ]

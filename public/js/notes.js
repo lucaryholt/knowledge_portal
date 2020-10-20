@@ -23,7 +23,7 @@ fetch(ip + '/api/notes/' + pageId)
         checkForMode();
     });
 
-function updateSpecificNote(index){
+function updateSpecificNote(index) {
     if(index === -1 || currentNoteIndex !== index){
         $('#note-' + index).toggleClass('active');
         $('#note-' + currentNoteIndex).toggleClass('active');
@@ -66,7 +66,7 @@ function updateSpecificNote(index){
     }
 }
 
-function getSpecificNote(fileName){
+function getSpecificNote(fileName) {
     for(let i = 0; i < notes.length; i++){
         if (notes[i].fileName === fileName) {
             updateSpecificNote(i);
@@ -74,6 +74,6 @@ function getSpecificNote(fileName){
     }
 }
 
-function appendNote(note, index){
+function appendNote(note, index) {
     $("#notes-list").append('<div><span id="note-' + index + '" class="list-group-item list-group-item note-item color-change" onclick="getSpecificNote(' + "'" + note.fileName + "'" + ')">' + note.title + '</span></div>');
 }

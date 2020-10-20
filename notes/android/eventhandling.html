@@ -4,4 +4,37 @@
 
 <hr>
 
-<h4></h4>
+<h4>onClick</h4>
+<div class="text-section">
+    On all <code>GUI</code> elements you can set a property called <code>onClick</code>.
+    This can be filled out with a <code>Java</code> function, following a certain pattern.
+    It needs to be a <code>public void</code> method, with a parameter <code>View view</code>:
+    <pre><code class="code-block java rounded">
+    public void click(View view){
+        System.out.println("Clicked!");
+    }
+    </code></pre>
+    <code>Android Studio</code> automatically detects these and presents them in the onClick property.
+</div>
+
+<hr>
+
+<h4>ListView Item Click Listener</h4>
+<div class="text-section">
+    When using a <code>ListView</code> element, you can set a <code>click</code> action.
+    To do this we use the <code>setOnItemClickListener</code> method on the <code>ListView</code>.
+    This method accepts a lambda expression with four parameters:
+    <ul>
+        <li><code>_listView</code></li>
+        <li><code>linearLayout</code></li>
+        <li><code>adapterPos</code></li>
+        <li><code>arrPos</code></li>
+    </ul>
+    The <code>arrPos</code> is the index of the item the user clicks/presses in the <code>GUI</code>.
+    We can use this to access the element and process it. A simple console print example:
+    <pre><code class="code-block java rounded">
+    listView.setOnItemClickListener((_listView, linearLayout, adapterPos, arrPos) -> {
+        System.out.println("Clicked element on row: " + arrPos);
+    });
+    </code></pre>
+</div>

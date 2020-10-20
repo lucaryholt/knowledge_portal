@@ -1,4 +1,4 @@
-function searchUpdate(){
+function searchUpdate() {
     const term = $('#searchBox').val();
     const searchResults = $('#searchResults');
     const $div = $("<div>", {
@@ -29,7 +29,7 @@ function searchUpdate(){
     }
 }
 
-function clearSearchResults(){
+function clearSearchResults() {
     setTimeout(() => {
         $('#searchResults').html('');
     }, 100);

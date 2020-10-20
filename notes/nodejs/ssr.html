@@ -1,0 +1,26 @@
+<div class="sub-title">
+    Generating HTML server-side and serving it to the users
+</div>
+
+<hr>
+
+<h4>General</h4>
+<div class="text-section">
+    <code>Server-Side-Rendering</code> is where we render the <code>HTML</code> file server-side and then
+    serve the generated <code>HTML</code> to the user. <br>
+    The alternative is to generate the <code>HTML</code> in the browser, with something like <code>jQuery</code>.
+</div>
+<div class="text-section">
+    A way to do this is to load in <code>HTML</code> files as strings and then combine those strings, before
+    sending them with <code>res.send()</code>:
+    <pre><code class="code-block javascript rounded">
+    const uploadPage = fs.readFileSync(path.join(__dirname + '/../public/upload/upload.html')).toString();
+    const footer = fs.readFileSync(path.join(__dirname + "/../public/footer/footer.html")).toString();
+
+    router.get('/', (req, res) => {
+        return res.send(uploadPage + footer);
+    });
+    </code></pre>
+    Here we load in two <code>HTML</code> files and then send them together. <br>
+    This ensures, that when we need to edit the footer, we only have to do it in one file.
+</div>
