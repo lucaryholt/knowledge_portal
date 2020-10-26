@@ -1,0 +1,114 @@
+<div class="sub-title">
+    A comprehensive app development platform
+</div>
+
+<hr>
+
+<h4>Initializing</h4>
+<div class="text-section">
+    To setup your project with <code>Firebase</code> you need to follow the
+    <a target="_blank" href="https://firebase.google.com/docs/android/setup">setup guide</a>.
+</div>
+<div class="text-section">
+    This will focus primarily on <code>Firestore</code>.
+</div>
+
+<hr>
+
+<h4>Get data</h4>
+<div class="text-section">
+    When you get data from <code>Firestore</code>, you can get it once. This means that you get the data only
+    one time and only as it is at that time. <br>
+    You can also set up a listener, that listens for any changes to that data and enables the app to update
+    using the changed data. <br>
+</div>
+<div class="text-section">
+    First how to get data once:
+    <pre><code class="code-block java rounded">
+    DocumentReference docRef = db.collection("cities").document("SF");
+    docRef.get().addOnCompleteListener(new OnCompleteListener&lt;DocumentSnapshot&gt;() {
+        @Override
+        public void onComplete(@NonNull Task&lt;DocumentSnapshot&gt; task) {
+            if (task.isSuccessful()) {
+                DocumentSnapshot document = task.getResult();
+                if (document.exists()) {
+                    Log.d(TAG, "DocumentSnapshot data: " + document.getData());
+                } else {
+                    Log.d(TAG, "No such document");
+                }
+            } else {
+                Log.d(TAG, "get failed with ", task.getException());
+            }
+        }
+    });
+    </code></pre>
+</div>
+<div class="text-section">
+    If you want your app to live update from data changes, you can use a listener:
+    <pre><code class="code-block java rounded">
+    col.addSnapshotListener((values, error) -> {
+        items.clear();
+        for(DocumentSnapshot snap : values.getDocuments()){
+            items.add(new ToDoItem(snap.getId(), (String) snap.get(TITLE), (String) snap.get(TEXT), Boolean.parseBoolean((String) snap.get(DONE))));
+        }
+        if(activity != null){
+            activity.update();
+        }
+    });
+    </code></pre>
+    Here <code>col</code> is a reference to the <code>CollectionReference</code>. <br>
+    The method <code>addSnapShotListener()</code> is used. This takes a <code>EventListener</code> as parameter,
+    but we can just fill in a <code>lambda</code> expression. This expression takes to arguments
+    <code>values</code> and <code>error</code>. The <code>values</code> argument is where the data is passed through,
+    while the <code>error</code> argument is <code>null</code> unless an error has occurred in getting the data.
+    In this example we don't check for errors.
+    The body of the expression runs everytime there is a change to the data. <br>
+    In this example we update an <code>List</code> called <code>items</code> and then call an update method in an activity
+    to update the view.
+</div>
+
+<hr>
+
+<h4>Add (and update) data</h4>
+<div class="text-section">
+    To add data to <code>Firestore</code>, we start by creating a reference to a document and then adding data to this document:
+    <pre><code class="code-block java rounded">
+    public void addItem(ToDoItem item){
+        DocumentReference ref = col.document(item.getId());
+        Map&lt;String, String&gt; map = new HashMap&lt;&gt;();
+        map.put(TITLE, item.getTitle());
+        map.put(TEXT, item.getText());
+        map.put(DONE, item.isDone() + "");
+
+        ref.set(map).addOnCompleteListener(task -> {
+            if(!task.isSuccessful()){
+                System.out.println("Could not save item.");
+            }
+        });
+
+        toastable.showToast("Item " + item.getTitle() + " is added");
+    }
+    </code></pre>
+    We create a <code>DocumentReference</code> by calling the <code>document()</code> method on the collection.
+    Then we add data to a <code>Map</code> and then finally use the <code>set()</code> method on the
+    reference to add the data. The <code>set()</code> method returns a <code>Task</code> object, which we can
+    use the <code>addOnCompleteListener()</code> method on to find out if the document was adding successfully.
+</div>
+<div class="text-section">
+    To update data you simply add the data (with <code>set()</code>) you want to the <code>DocumentReference</code>
+    you want to update.
+</div>
+
+<hr>
+
+<h4>Delete data</h4>
+<div class="text-section">
+    To delete data from <code>Firestore</code> we simply need to call the <code>delete()</code> method on
+    a <code>DocumentReference</code>:
+    <pre><code class="code-block java rounded">
+    public void deleteItem(String id){
+        col.document(id).delete();
+    }
+    </code></pre>
+</div>
+

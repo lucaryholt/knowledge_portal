@@ -20,7 +20,7 @@
         "link" : "https://developer.android.com/guide/topics/resources/layout-resource"
       }
     ],
-    "searchTerms": ["layout", "resource", "adapter", "listview", "arrayadapter"],
+    "searchTerms": ["layout", "resource", "adapter", "listview", "arrayadapter", "toast", "alert"],
     "enabled": true
   },
   {
@@ -142,5 +142,17 @@
     ],
     "searchTerms": ["placeholder"],
     "enabled": false
+  },
+  {
+    "title" : "Firebase",
+    "fileName" : "firebase.html",
+    "links" : [
+      {
+        "description" : "Cloud Firestore - Firebase",
+        "link" : "https://firebase.google.com/docs/firestore"
+      }
+    ],
+    "searchTerms": ["firestore", "firebase", "listener", "crud"],
+    "enabled": true
   }
 ]

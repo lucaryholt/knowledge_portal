@@ -80,7 +80,67 @@
     }
     </code></pre>
 </div>
-<!-- setOnItemClickListener med lambda -->
+<div class="text-section">
+    When using a <code>ListView</code> you can define behavior that happens when you click
+    on an item in that list. You do this with the <code>setOnItemClickListener()</code> method.
+    This method can be used with a <code>lambda</code> expression, that takes four parameters:
+    <code>_listView</code>, <code>linearLayout</code>, <code>adapterPos</code> and <code>arrPos</code>.
+    The <code>arrPos</code> contains the index value of the item clicked and can be used to figure out
+    what was actually clicked:
+    <pre><code class="code-block java rounded">
+    listView.setOnItemClickListener((_listView, linearLayout, adapterPos, arrPos) -> {
+        Intent intent = new Intent(this, DetailView.class);
+
+        intent.putExtra("id", Repo.r().getItem(arrPos).getId());
+        intent.putExtra("title", Repo.r().getItem(arrPos).getTitle());
+        intent.putExtra("text", Repo.r().getItem(arrPos).getText());
+        intent.putExtra("done", Repo.r().getItem(arrPos).isDone());
+
+        startActivity(intent);
+    });
+    </code></pre>
+    Here we instantiate an <code>intent</code>, add data to it and then start it.
+</div>
+
+<h5>Alert</h5>
+<div class="text-section">
+    It can be useful to ask if a user really wants to do, the thing they are trying to do. When they
+    are trying to delete something for example. Here <code>Alerts</code> come in handy.
+    We make <code>Alerts</code> in <code>Android</code> by using an <code>AlertDialog.Builder</code> class:
+    <pre><code class="code-block java rounded">
+    public void delete(View view){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this)
+                .setMessage("Do you want to delete " + titleString + "?")
+                .setPositiveButton("Yes", (dialog, id) -> {
+                    Repo.r().deleteItem(this.id);
+                    finish();
+                })
+                .setNegativeButton("No", (dialog, id) -> {
+                    dialog.cancel();
+                });
+
+        AlertDialog alert = builder.create();
+        alert.setTitle("Delete");
+        alert.show();
+    }
+    </code></pre>
+    First the <code>builder</code> is instantiated with a number of trailing methods, where the dialog and behavior is set up.
+    Then we create it, set the title and show it. <br>
+    <img class="image-xl rounded" src="../images/android_alert_popup.png" alt="Alert Popup"> <br>
+</div>
+
+<h5>Toast</h5>
+<div class="text-section">
+    To show quick messages to the user, we can use <code>Toast</code> in <code>Android</code>.
+    <pre><code class="code-block java rounded">
+    public void showToast(String text){
+        Toast.makeText(this, text, Toast.LENGTH_SHORT).show();
+    }
+    </code></pre>
+    The result is this: <br>
+    <img class="rounded" src="../images/android_toast_popup.png" alt="Toast Popup"> <br>
+    This is displayed for about a second, after this it disappears.
+</div>
 
 <hr>
 
