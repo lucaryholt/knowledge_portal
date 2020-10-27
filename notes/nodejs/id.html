@@ -1,0 +1,42 @@
+<div class="sub-title">
+    Generating ID's are a essential part of many apps
+</div>
+
+<hr>
+
+<h4>UUID</h4>
+<div class="text-section">
+    <code>UUID</code> is short for Universally Unique Identifier. <br>
+    It is a unique 128-bit number. It is generated using an assortment of variables and some randomness.
+    It is not generated using a central registration authority but on the machine itself.
+</div>
+<div class="text-section">
+    An example of a generated <code>UUID</code>:
+    <pre><code class="code-block text rounded">
+    435422ed-9126-4d55-aa56-2e1e6c6a4af4
+    </code></pre>
+</div>
+<div class="text-section">
+    <code>UUID</code> is implemented in most languages and environments.
+</div>
+<div class="text-section">
+    In <code>Node.JS</code> there exists the <code>NPM</code> package <code>uuid</code>.
+    In this package there exists several methods, but <code>uuid.v4()</code> returns a
+    random <code>UUID</code>.
+</div>
+
+<hr>
+
+<h4>Crypto</h4>
+<div class="text-section">
+    <code>crypto</code> is a package included in <code>Node.JS</code> (that you still need to import using <code>require</code>).
+    This package can be used to generate random bytes, which can be a substitute for a unique ID in a smaller project.
+    <pre><code class="code-block javascript rounded">
+    const id = crypto.randomBytes(18).toString("hex");
+    </code></pre>
+    An example of what this returns:
+    <pre><code class="code-block text rounded">
+    ed2eee0b9ed5153ec61fd3b418f0627dc49e
+    </code></pre>
+    This is not truly unique, but is very unlikely to generate two identical ids, in a practical time frame.
+</div>
