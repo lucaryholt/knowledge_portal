@@ -1,0 +1,45 @@
+<div class="sub-title">
+    A function that takes another function and extends the behavior of the latter function without explicitly modifying it
+</div>
+
+<hr>
+
+<h4>General</h4>
+<div class="text-section">
+    An example of a decorator:
+    <pre><code class="code-block python rounded">
+    def my_decorator(func):
+        def wrapper():
+            print("Something is happening before the function is called.")
+            func()
+            print("Something is happening after the function is called.")
+        return wrapper
+
+    def say_whee():
+        print("Whee!")
+
+    say_whee = my_decorator(say_whee)
+    </code></pre>
+    The result of <code>say_whee()</code> being:
+    <pre><code class="code-block text rounded">
+    Something is happening before the function is called.
+    Whee!
+    Something is happening after the function is called.
+    </code></pre>
+</div>
+<div class="text-section">
+    There exists a simpler way to use decorators with the <code>@</code> symbol:
+    <pre><code class="code-block python rounded">
+    def my_decorator(func):
+        def wrapper():
+            print("Something is happening before the function is called.")
+            func()
+            print("Something is happening after the function is called.")
+        return wrapper
+
+    @my_decorator
+    def say_whee():
+        print("Whee!")
+    </code></pre>
+    This does the same thing as above, but without having to write <code>say_whee</code> three times.
+</div>

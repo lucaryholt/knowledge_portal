@@ -169,5 +169,29 @@
     ],
     "searchTerms": ["dictionary", "dictionaries", "dict", "sets", "union()", "intersection()", "difference()"],
     "enabled": true
+  },
+  {
+    "title" : "Jupyter Notebook",
+    "fileName" : "jupyter.html",
+    "links" : [
+      {
+        "description" : "Project Jupyter - Home",
+        "link" : "https://jupyter.org/"
+      }
+    ],
+    "searchTerms": ["jupyter"],
+    "enabled": true
+  },
+  {
+    "title" : "Decorators",
+    "fileName" : "decorators.html",
+    "links" : [
+      {
+        "description" : "Real Python - Primer on Python Decorators",
+        "link" : "https://realpython.com/primer-on-python-decorators/"
+      }
+    ],
+    "searchTerms": ["decorators"],
+    "enabled": true
   }
 ]
