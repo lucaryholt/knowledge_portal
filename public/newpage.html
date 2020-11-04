@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Knowledge Portal</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/static-items.css">
+    <link rel="stylesheet" href="style/pages.css">
+    <link id="style" rel="stylesheet" href="">
+</head>
+<body>
+    <nav id="navbar">
+        <a id="site-logo" class="front-page-link link-holder navbar-brand color-change">
+            <img src="images/portal.png" width="30" height="30" alt="Logo">
+        </a>
+        <div class="form-inline">
+            <a id="color-mode" class="color-change" onclick="toggleDark()"><i class="fas fa-moon"></i></a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row title-holder color-change">
+            <h1 class="page-title">Add a new page</h1>
+        </div>
+
+        <form id="page-form">
+            <div class="form-group">
+                <label for="page-name-input">Name</label>
+                <input type="text" class="form-control" id="page-name-input" placeholder="Enter name" name="name">
+            </div>
+            <div class="form-group">
+                <label for="page-link-input">Link</label>
+                <input type="text" class="form-control" id="page-link-input" placeholder="Enter link" name="link">
+            </div>
+            <div class="form-group">
+                <label for="page-image-input">Image</label>
+                <input type="text" class="form-control" id="page-image-input" placeholder="Enter image link" name="image">
+            </div>
+            <a class="btn btn-primary" onclick="submitPage()">Submit</a>
+        </form>
+
+        <div class="text-center" id="bottom">
+            <h5><a class="link-holder color-change bottom-logo" target="_blank" href="https://github.com/lucaryholt/knowledge_portal"><i class="fab fa-github"></i></a></h5>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/af932a1361.js" crossorigin="anonymous"></script>
+    <script src="js/colorMode.js"></script>
+    <script src="js/newpage.js"></script>
+</body>
+</html>

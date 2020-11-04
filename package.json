@@ -1,10 +1,12 @@
 {
   "dependencies": {
     "cross-env": "^7.0.2",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "mongodb": "^3.6.2"
   },
   "scripts": {
     "start-dev": "cross-env PORT=8080 nodemon app.js",
-    "start-prod": "node app.js"
+    "start-prod": "node app.js",
+    "repo-backup": "node repoBackup.js"
   }
 }
