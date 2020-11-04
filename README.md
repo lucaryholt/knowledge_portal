@@ -99,6 +99,19 @@ Some possible solutions for this could be:
  - An embedded html IDE in the app (out of scope for this project).
  - A html preview site, that you could point to a local html file and then edit that file in your IDE of choice (with jQuery updating the preview at intervals).
  
+##### UPDATE
+Now some information is stored in **MongoDB**, this includes the info normally stored in **pages.json** and the **collection.json**.
+
+The app now also needs a file called **credentials.json** with the following structure:
+
+```json
+{
+  "connectionString": "mongodb+srv://<your connection url>",
+  "collections": ["pages", "android", "nodejs", "python", "swift"]
+}
+```
+This file is, for obvious reasons, ignored by git.
+ 
 #### Own formatting
 
 Instead of writing the notes in HTML, which is cumbersome to do without an IDE with autocomplete, I could make a syntax (like Markdown).
