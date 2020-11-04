@@ -20,6 +20,10 @@
         "link" : "https://www.npmjs.com/package/ejs"
       },
       {
+        "description" : "npm - multer",
+        "link" : "https://www.npmjs.com/package/multer"
+      },
+      {
         "description" : "GeeksForGeeks - express.json() function",
         "link" : "https://www.geeksforgeeks.org/express-js-express-json-function/"
       },
@@ -288,7 +292,7 @@
     "enabled": true
   },
   {
-    "title" : "jQuery",
+    "title" : "jQuery & JS HTML Manipulation",
     "fileName" : "jquery.html",
     "links" : [
       {
@@ -318,9 +322,13 @@
       {
         "description" : "W3 Schools - jQuery Selectors",
         "link" : "https://www.w3schools.com/jquery/jquery_ref_selectors.asp"
+      },
+      {
+        "description" : "W3 Schools - JavaScript Window Location",
+        "link" : "https://www.w3schools.com/js/js_window_location.asp"
       }
     ],
-    "searchTerms": ["jquery", "cdn", "ajax"],
+    "searchTerms": ["jquery", "cdn", "ajax", "window.location.href", "redirect"],
     "enabled": true
   },
   {
@@ -397,6 +405,22 @@
       }
     ],
     "searchTerms": ["uuid", "crypto"],
+    "enabled": true
+  },
+  {
+    "title" : "Databases",
+    "fileName" : "databases.html",
+    "links" : [
+      {
+        "description" : "MongoDB",
+        "link" : "https://www.mongodb.com/"
+      },
+      {
+        "description" : "npm - mongodb",
+        "link" : "https://www.npmjs.com/package/mongodb"
+      }
+    ],
+    "searchTerms": ["databases", "mongodb", "nosql", "mysql", "relational"],
     "enabled": true
   }
 ]

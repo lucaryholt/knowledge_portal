@@ -4,7 +4,7 @@
 
 <hr>
 
-<h4>General</h4>
+<h4>Simple decorators</h4>
 <div class="text-section">
     An example of a decorator:
     <pre><code class="code-block python rounded">
@@ -27,6 +27,9 @@
     Something is happening after the function is called.
     </code></pre>
 </div>
+
+<h5>Syntactic sugar</h5>
+
 <div class="text-section">
     There exists a simpler way to use decorators with the <code>@</code> symbol:
     <pre><code class="code-block python rounded">
@@ -42,4 +45,16 @@
         print("Whee!")
     </code></pre>
     This does the same thing as above, but without having to write <code>say_whee</code> three times.
+</div>
+
+<h5>Using Arguments in Decorated functions</h5>
+<div class="text-section">
+    To use arguments in a decorated function, you can use <code>*args</code> and <code>*kwargs</code>:
+    <pre><code class="code-block python rounded">
+    def do_twice(func):
+        def wrapper_do_twice(*args, **kwargs):
+            func(*args, **kwargs)
+            func(*args, **kwargs)
+        return wrapper_do_twice
+    </code></pre>
 </div>

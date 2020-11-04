@@ -133,4 +133,17 @@
     result in the page loading quicker, though in reality (most cases), the difference will be unnoticeable.
 </div>
 
-<!-- TODO redirect (window.location.href) -->
+<hr>
+
+<h4>window.location</h4>
+<div class="text-section">
+    The <code>window.location</code> object is not <code>jQuery</code> related, but is an <code>JS</code> object
+    available in browsers. This object includes the current <code>URL</code> and it's components.
+</div>
+<div class="text-section">
+    This object can be used to redirect the user programmatically:
+    <pre><code class="code-block javascript rounded">
+    window.location.href = 'http://www.google.com';
+    </code></pre>
+    This would redirect the user to <code>Google</code>.
+</div>

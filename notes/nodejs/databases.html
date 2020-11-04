@@ -1,0 +1,116 @@
+<div class="sub-title">
+    Persistent data
+</div>
+
+<hr>
+
+<h4>NoSQL</h4>
+<div class="text-section">
+    A term for all non-sql databases. <br>
+    There are document (<code>MongoDB</code>), graph, object, key-value (<code>redis</code>) and other <code>NoSQL</code> databases.
+</div>
+
+<hr>
+
+<h4>MongoDB</h4>
+<div class="text-section">
+    Instead of saving data to <code>tables</code>, in <code>MongoDB</code> it is saved to <code>collections</code>.
+</div>
+<div class="text-section">
+    Does not (be default) check data on a database level. This is very useful for rapid prototypes.
+</div>
+<div class="text-section">
+    Data is saved in <code>JSON</code> format and commands are written in <code>JavaScript</code> like syntax.
+    Can be any datatype that <code>JS</code> and <code>JSON</code> has.
+</div>
+
+<h5>Commands</h5>
+<div class="text-section">
+    This is a basic command to show all databases in the <code>MongoDB</code> server.
+    <pre><code class="code-block javascript rounded">
+    show dbs
+    </code></pre>
+    It returns a list of the databases, along with how much disk space they consume.
+</div>
+<div class="text-section">
+    To create a database you can use <code>use cars</code>. This will instantiate the database, but not
+    save it to storage, before you add something to it.
+    <pre><code class="code-block javascript rounded">
+    use cars
+    </code></pre>
+    This instantiates a database called <code>cars</code> and set it to the current used database. <br>
+    This also makes the <code>db</code> reference <code>cars</code>.
+</div>
+<div class="text-section">
+    To add data to a database, you first need a <code>collection</code> to store it in.
+    <pre><code class="code-block javascript rounded">
+    db.createCollection("fastest")
+    </code></pre>
+    This will create a <code>collection</code> called <code>fastest</code> in <code>db</code>,
+    which references the <code>cars</code> database.
+    Now the database is saved to storage.
+</div>
+<div class="text-section">
+    Then to save actual data to the <code>collection</code>, we use the <code>insert</code> function.
+    <pre><code class="code-block javascript rounded">
+    db.fastest.insert({ brand: "Mazda", hp: 250 })
+    </code></pre>
+    This takes a <code>JSON</code> object.
+</div>
+<div class="text-section">
+    To find data, we use the <code>find</code> function.
+    <pre><code class="code-block javascript rounded">
+    db.fastest.find()
+    </code></pre>
+    Without any parameters it just returns all items in the <code>collection</code>.
+    To avoid this, we can give it a search query.
+    <pre><code class="code-block javascript rounded">
+    db.fastest.find({ brand: "Mazda" })
+    </code></pre>
+    This will return all items with the <code>key</code> and <code>value</code> of <code>brand</code> and <code>Mazda</code>.
+</div>
+<div class="text-section">
+    We can update by calling the <code>update</code> function. <br>
+    This will find all items that match the search query and replace those objects with the object provided.
+    <pre><code class="code-block javascript rounded">
+    db.fastest.update({ brand: "Mazda" }, { model: "3" })
+    </code></pre>
+    To only replace specific values and/or add new key-values, you can use <code>$set</code>:
+    <pre><code class="code-block javascript rounded">
+    db.fastest.update({ brand: "Mazda" }, { $set: { model: "3" } })
+    </code></pre>
+    Now it will just add the values to the objects, instead of overwriting them.
+</div>
+<div class="text-section">
+    To delete in <code>MongoDB</code>, you use either <code>deleteOne</code> or <code>deleteMany</code>. <br>
+    This deletes the first and only the first object it finds.
+    <pre><code class="code-block javascript rounded">
+    db.fastest.deleteOne({ find value })
+    </code></pre>
+    This deletes all items that match the search query.
+    <pre><code class="code-block javascript rounded">
+    db.fastest.deleteMany({ find value })
+    </code></pre>
+</div>
+
+<h5>Connect in Node.JS</h5>
+<div class="text-section">
+    In <code>Node.JS</code> we use the <code>mongodb</code> npm package.
+</div>
+
+<hr>
+
+<h4>Relational</h4>
+<div class="text-section">
+    <code>MySQL</code>, <code>MSSQL</code>, <code>PostGRES</code>,
+    <code>CouchDB</code>, <code>SqlLite</code> and many more.
+</div>
+
+<h5>MySQL</h5>
+<div class="text-section">
+    On of the most used forms of relational databases.
+</div>
+<div class="text-section">
+    <code>MySQL</code> is very useful for consistent data and gives a guaranty for data integrity.
+    It checks data on a database level.
+</div>
