@@ -1,12 +1,24 @@
-const router = require('express').Router();
+const express = require('express');
+const router = express.Router();
 const path = require('path');
+const fs = require('fs');
+
+router.use(express.json());
+router.use(express.urlencoded( { extended: true }));
 
 const repo = require('../repo.js');
+const formatter = require('../formatter.js');
 
 router.get('/api/notes/:pageId', (req, res) => {
     repo.find(req.params.pageId, { enabled: true })
         .then(result => {
-            const collection = result.sort((a, b) => {
+            const collection = result.map(result => {
+                if (result.body === undefined) {
+                    const file = fs.readFileSync(path.join(__dirname, '../notes', req.params.pageId, result.fileName));
+                    return { ...result, body: file.toString() };
+                }
+                return { ...result, body: formatter.toHTML(result.body) };
+            }).sort((a, b) => {
                 return a.title.localeCompare(b.title);
             });
 
@@ -19,8 +31,20 @@ router.get('/api/notes/:pageId', (req, res) => {
         });
 });
 
-router.get('/api/notes/:pageId/:fileName', (req, res) => {
-    return res.sendFile(path.join(__dirname, '../notes/', req.params.pageId, req.params.fileName));
+/*router.get('/api/notes/:pageId/:fileName', (req, res) => {
+    repo.find(req.params.pageId, { fileName: req.params.fileName, enabled: true })
+        .then(result => {
+            return res.status(200).send({
+                data: formatter.toHTML(result[0].body)
+            });
+        });
+});*/
+
+router.post('/api/notes/:pageId/:title', (req, res) => {
+    repo.update(req.params.pageId, { title: req.params.title }, { body: req.body })
+        .then(result => {
+            return res.send({ result });
+        });
 });
 
 module.exports = router;

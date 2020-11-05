@@ -5,7 +5,7 @@ const path = require('path');
 const credentials = require('./credentials.json');
 const collections = credentials.collections;
 const date = new Date();
-const dateString = date.getFullYear() + '-' + date.getMonth() + '-' + date.getDay() + '-' + date.getHours() + '-' + date.getMinutes() + '-' + date.getSeconds();
+const dateString = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + (date.getDay() + 1) + '-' + date.getHours() + '-' + date.getMinutes() + '-' + date.getSeconds();
 const directoryPath = path.join(__dirname, 'backup', dateString);
 
 console.log('Backing up repo.');

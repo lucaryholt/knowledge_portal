@@ -111,6 +111,8 @@ The app now also needs a file called **credentials.json** with the following str
 }
 ```
 This file is, for obvious reasons, ignored by git.
+
+There is also a new command **npm run repo-backup**, which takes a backup of the collections stated in **credentials.json**.
  
 #### Own formatting
 

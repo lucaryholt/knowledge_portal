@@ -43,11 +43,26 @@ function updateSpecificNote(index) {
             linkList.append('<li><a target="_blank" href="' + link.link + '">' + link.description + '</a></li>');
         }
 
-        fetch(ip + "/api/notes/" + pageId + "/" + note.fileName)
-            .then(response => response.text())
-            .then(response => {
+        $("#note-body").html(note.body);
 
-                $("#note-body").html(response);
+        const codeblocks = $('.code-block');
+        for(let i = 0; i < codeblocks.length; i++){
+            hljs.highlightBlock(codeblocks[i]);
+        }
+
+        const titles = $('h4');
+        const contentList = $('#content-list');
+        contentList.html('');
+        for(let i = 0; i < titles.length; i++){
+            const title = titles[i].textContent;
+            titles[i].id = title;
+            contentList.append('<a class="note-content-list-item" onclick="scrollToElement(' + "'" + title + "'" + ')">' + title + '</a> <br>');
+        }
+
+        /*fetch(ip + "/api/notes/" + pageId + "/" + note.fileName)
+            .then(response => response.json())
+            .then(response => {
+                $("#note-body").html(response.data);
 
                 const codeblocks = $('.code-block');
                 for(let i = 0; i < codeblocks.length; i++){
@@ -62,7 +77,7 @@ function updateSpecificNote(index) {
                     titles[i].id = title;
                     contentList.append('<a class="note-content-list-item" onclick="scrollToElement(' + "'" + title + "'" + ')">' + title + '</a> <br>');
                 }
-            });
+            }); */
     }
 }
 

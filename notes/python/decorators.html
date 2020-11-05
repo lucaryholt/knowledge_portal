@@ -58,3 +58,21 @@
         return wrapper_do_twice
     </code></pre>
 </div>
+
+<div class="sub-title">Asynchronous code execution</div><hr><h4>General</h4><div class="text-section"><code>JS</code> run in a single main-thread. <br>Use-Cases are things like server-requests, user-inputs, database and much more.</div><div class="text-section">In <code>Node.JS</code> we can define asynchronous behavior using <code>callbacks</code>.</div><hr><h4>Promises</h4><div class="text-section">Promises are wrappers for <code>callbacks</code>. <br>Promises make <code>callbacks</code> easier for us to write.</div><div class="text-section">Two different states: <code>pending</code> or <code>fulfilled</code>. In the <code>fulfilled</code> state, there are two states: <code>resolve</code> or <code>reject</code>.</div><div class="text-section">Definition</div><pre><code class="code-block rounded javascript">new Promise((resolve, reject) => {
+    // Here there are a lot of code,
+    // and as a result of this, we call resolve() or reject()
+
+    resolve("Some data here");
+})
+    .then(output => console.log(output))
+    .catch(output => console.log(output, "Something went wrong"));</code></pre><div class="text-section">A function that returns a promise and how to use it:</div><pre><code class="code-block rounded javascript">function returnPromise(){
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve("This data is important");
+            }, 5000);
+        });
+    }
+
+    returnPromise().then(output => console.log(output));</code></pre><hr><h4>async / await</h4><div class="text-section"><code>async</code> and <code>await</code> make <code>Promises</code> easier for us to write.</div><div class="text-section"><code>await</code> makes the code execution wait. To make <code>await</code> work
+    we need to have the above scope in <code>async</code>.</div>
