@@ -398,5 +398,17 @@
     ],
     "searchTerms": ["uuid", "crypto"],
     "enabled": true
+  },
+  {
+    "title" : "Auth",
+    "fileName" : "auth.html",
+    "links" : [
+      {
+        "description" : "Authentication vs Authorization - What's the difference?",
+        "link" : "https://aboutssl.org/authentication-vs-authorization/"
+      }
+    ],
+    "searchTerms": ["auth"],
+    "enabled": true
   }
 ]
