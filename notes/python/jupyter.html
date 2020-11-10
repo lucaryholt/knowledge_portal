@@ -1,0 +1,15 @@
+<div class="sub-title">
+
+</div>
+
+<hr>
+
+<h4>Running</h4>
+<div class="text-section">
+    Running <code>Jupyter</code> as <code>Docker</code> image:
+    <pre><code class="code-block bash rounded">
+    docker run --rm -p 8888:8888 -v ${PWD}:/home/jovyan/work jupyter/datascience-notebook
+    </code></pre>
+    This runs <code>Jupyter</code> with working directory of the parent directory, where the
+    command is run.
+</div>
