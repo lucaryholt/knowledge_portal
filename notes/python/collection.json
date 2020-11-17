@@ -193,5 +193,17 @@
     ],
     "searchTerms": ["decorators"],
     "enabled": true
+  },
+  {
+    "title" : "Generators",
+    "fileName" : "generators.html",
+    "links" : [
+      {
+        "description" : "Real Python - How to Use Generators and yield in Python",
+        "link" : "https://realpython.com/introduction-to-python-generators/"
+      }
+    ],
+    "searchTerms": ["generators"],
+    "enabled": true
   }
 ]
