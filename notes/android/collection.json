@@ -120,18 +120,6 @@
     "enabled": false
   },
   {
-    "title" : "Map",
-    "fileName" : "placeholder.html",
-    "links" : [
-      {
-        "description" : "Placeholder",
-        "link" : "placeholder"
-      }
-    ],
-    "searchTerms": ["placeholder"],
-    "enabled": false
-  },
-  {
     "title" : "App lifecycle",
     "fileName" : "placeholder.html",
     "links" : [
@@ -150,6 +138,30 @@
       {
         "description" : "Cloud Firestore - Firebase",
         "link" : "https://firebase.google.com/docs/firestore"
+      }
+    ],
+    "searchTerms": ["firestore", "firebase", "listener", "crud"],
+    "enabled": true
+  },
+  {
+    "title" : "Map",
+    "fileName" : "map.html",
+    "links" : [
+      {
+        "description" : "Tutorials Point - Android Fragments",
+        "link" : "https://www.tutorialspoint.com/android/android_fragments.htm"
+      },
+      {
+        "description" : "StackOverflow - Answer about Long Click on Maps Fragment",
+        "link" : "https://stackoverflow.com/a/16097168"
+      },
+      {
+        "description" : "CodeXpedia - Android LocationManager Code Example",
+        "link" : "https://www.codexpedia.com/android/android-locationmanager-code-example/"
+      },
+      {
+        "description" : "Android Tech Help – How to Geocode and Reverse Geocode in Android for creating Location Based Apps",
+        "link" : "https://www.rishabhsoft.com/blog/android-geocoding-and-reverse-geocoding"
       }
     ],
     "searchTerms": ["firestore", "firebase", "listener", "crud"],
