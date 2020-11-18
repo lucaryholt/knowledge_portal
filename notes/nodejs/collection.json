@@ -408,15 +408,39 @@
     "enabled": true
   },
   {
-    "title": "Auth",
-    "fileName": "auth.html",
+    "title": "Security",
+    "fileName": "security.html",
     "links": [
       {
         "description": "Authentication vs Authorization - What's the difference?",
         "link": "https://aboutssl.org/authentication-vs-authorization/"
+      },
+      {
+        "description": "JSON Web Tokens - jwt.io",
+        "link": "https://jwt.io/"
+      },
+      {
+        "description": "bcrypt - Wikipedia",
+        "link": "https://en.wikipedia.org/wiki/Bcrypt"
+      },
+      {
+        "description": "bcrypt - npm",
+        "link": "https://www.npmjs.com/package/bcrypt"
+      },
+      {
+        "description": "jsonwebtoken - npm",
+        "link": "https://www.npmjs.com/package/jsonwebtoken"
+      },
+      {
+        "description": "express-session - npm",
+        "link": "https://www.npmjs.com/package/express-session"
+      },
+      {
+        "description": "express-rate-limit - npm",
+        "link": "https://www.npmjs.com/package/express-rate-limit"
       }
     ],
-    "searchTerms": ["auth"],
+    "searchTerms": ["security", "authentication", "authorization", "jwt", "rate limiting", "cookies", "bcrypt", "sessions"],
     "enabled": true
   },
   {
@@ -434,5 +458,17 @@
     ],
     "searchTerms": ["databases", "mongodb", "nosql", "mysql", "relational"],
     "enabled": true
+  },
+  {
+    "title": "Storing data client side",
+    "fileName": "clientsidedata.html",
+    "links": [
+      {
+        "description": "placeholder",
+        "link": "placeholder"
+      }
+    ],
+    "searchTerms": ["client side", "data", "cookies", "localStorage", "sessionStorage"],
+    "enabled": "true"
   }
 ]

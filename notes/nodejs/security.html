@@ -1,0 +1,93 @@
+<div class="sub-title">
+    Authorization and Authentication, JWT, Sessions and Rate limiting
+</div>
+
+<hr>
+
+<h4>Authorization vs Authentication</h4>
+<div class="text-section">
+    <code>Authorization</code> is the process of allowing access to the system, while <code>authentication</code>
+    means confirming identities.
+</div>
+
+<hr>
+
+<h4>bcrypt</h4>
+<div class="text-section">
+    <code>bcrypt</code> is a password-hashing function, based on <code>Blowfish</code> cipher.
+    The <code>npm</code> module <code>bcrypt</code> is an implementation of <code>bcrypt</code> for
+    <code>Node</code> projects. <br>
+    It contains two main functions <code>bcrypt.hash</code> and <code>bcrypt.compare</code>.
+    The <code>hash</code> function hashes a plain text password for a given amount of rounds and returns the
+    hash asynchronously, either with callback, <code>.then()</code> or <code>await</code>.
+    <pre><code class="code-block javascript rounded">
+    const hashedPassword = await bcrypt.hash('plainTextPassword', 10);
+    </code></pre>
+    This takes the string <code>plainTextPassword</code> and hashes it <code>2^10</code> times (1024) and returns something like:
+    <pre><code class="code-block text rounded">
+    $2b$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy
+    \__/\/ \____________________/\_____________________________/
+     Al  Cost      Salt                        Hash
+    </code></pre>
+    The above is an example of a result of <code>bcrypt</code> hash. The first part, <code>Al</code>, is an indication of
+    what algorithm is used (<code>2a</code> or <code>2b</code>). <Code>Cost</Code> is the amount of rounds. <code>Salt</code>
+    is the salt used to hash this password and lastly <code>Hash</code> is the actual hashed password.
+</div>
+<div class="text-section">
+    The <code>bcrypt</code> hashing is very scalable as when computers get faster, password cracking becomes easier, but
+    then you can just increase the number of rounds.
+</div>
+
+<hr>
+
+<h4>JWT</h4>
+<div class="text-section">
+    <code>JsonWebToken</code> is a industry standard for encoding and decoding information.
+    It is used in many webapps to authenticate and authorize users and keep these users logged in.
+    The way is works is that you authenticate users by normal means (could be <code>bcrypt</code>),
+    <code>JWT</code> then sign (using the <code>sign</code> function) a token,
+    containing the information you want and then you send this token to the user.
+</div>
+<div class="text-section">
+    <code>Tokens</code> are signed using a <code>secret</code>, this secret is the key to decoding the <code>JWT token</code>.
+</div>
+<div class="text-section">
+    This token is then (most times) saved in the users browser and then everytime the user wants to make a
+    request (that is restricted from public use), the user needs to send this token along with the request.
+    The server then uses the <code>verify</code> function, with the token and <code>secret</code>, and returns
+    either <code>true</code> or <code>false</code>.
+</div>
+<div class="text-section">
+    Many systems that use <code>JWT</code> set an expiration date on tokens and then also send along a <code>refresh token</code>,
+    that the user can use to get a new <code>access token</code>.
+</div>
+
+<h5>Scalability</h5>
+<div class="text-section">
+    As long as every server has access to the same <code>secret</code>, they can all verify tokens, made by other servers.
+    This makes it easy to load balance a large number of servers, using a round-robin method.
+</div>
+
+<hr>
+
+<h4>Sessions</h4>
+<div class="text-section">
+    An alternative to using <code>JWT</code> is <code>sessions</code>, this is done server side.
+    In <code>Express</code> we can use the middleware module <code>express-session</code>.
+    This allows us to save data about users in the server memory - we can save states (logged in, logged out etc.)
+    and anything else we would want.
+</div>
+<div class="text-section">
+    This is easier to set up and use than <code>JWT</code> as we only have to handle it server side, but
+    it does come with disadvantages. You would not be able to keep users logged in across multiple servers,
+    as only the server has information about this.
+</div>
+
+<hr>
+
+<h4>Rate limiting</h4>
+<div class="text-section">
+    To protect the server (especially its resources) from attacks like DDOS, we can use something called
+    <code>rate limiting</code>.
+    What this does is to prevent users from making over a certain amounts of requests in a given time frame.
+</div>
