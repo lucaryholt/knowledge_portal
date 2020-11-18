@@ -408,17 +408,18 @@
     "enabled": true
   },
   {
-<<<<<<< HEAD
-    "title" : "Auth",
-    "fileName" : "auth.html",
-    "links" : [
+    "title": "Auth",
+    "fileName": "auth.html",
+    "links": [
       {
-        "description" : "Authentication vs Authorization - What's the difference?",
-        "link" : "https://aboutssl.org/authentication-vs-authorization/"
+        "description": "Authentication vs Authorization - What's the difference?",
+        "link": "https://aboutssl.org/authentication-vs-authorization/"
       }
     ],
     "searchTerms": ["auth"],
-=======
+    "enabled": true
+  },
+  {
     "title" : "Databases",
     "fileName" : "databases.html",
     "links" : [
@@ -432,7 +433,6 @@
       }
     ],
     "searchTerms": ["databases", "mongodb", "nosql", "mysql", "relational"],
->>>>>>> 30d4aaf8c3e8ec7fb5689c6dacab45f6ace7519d
     "enabled": true
   }
 ]

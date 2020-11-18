@@ -203,7 +203,7 @@
         "link" : "https://realpython.com/introduction-to-python-generators/"
       }
     ],
-    "searchTerms": ["generators"],
+    "searchTerms": ["generators", "yield", "generator expressions"],
     "enabled": true
   }
 ]

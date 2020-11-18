@@ -1,9 +1,106 @@
 <div class="sub-title">
-
+    Handle big data sets without killing computer memory and more
 </div>
 
 <hr>
 
-<h4>
+<h4>Using generators</h4>
+<div class="text-section">
+    A common use case for <code>generators</code> are working with data streams or large files.
+    A way to count all rows, in eg a <code>.csv</code> file, would be to read the file and split it on all <code>new lines (\n)</code>.
+    <pre><code class="code-block python rounded">
+    def csv_reader(file_name):
+        file = open(file_name)
+        result = file.read().split("\n")
+        return result
+    </code></pre>
+    Then we would have an array of all lines in the file. But if this were a very large file it would take
+    up a lot of computer memory and possibly crash.
+</div>
+<div class="text-section">
+    Here you could use a <code>generator</code> function.
+    <pre><code class="code-block python rounded">
+    def csv_reader(file_name):
+        for row in open(file_name, "r"):
+            yield row
+    </code></pre>
+    This just <code>yields</code> the row, instead of storing a reference or the value in the memory,
+    making it very quick and memory efficient.
+</div>
+<div class="text-section">
+    This could also be done using a <code>generator expression</code>.
+    <pre><code class="code-block python rounded">
+    csv_gen = (row for row in open(file_name))
+    </code></pre>
+    This is very similar syntax to <code>list comprehensions</code> and are also sometimes called <code>generator comprehensions</code>.
+</div>
+<div class="text-section">
+    When we use <code>yield</code> it results in a <code>generator</code> object.
+    We can then use <code>next(generatorObject)</code> on that <code>generator</code> object to get the next item.
+</div>
 
-</h4>
+<hr>
+
+<h4>What are they and how do they work?</h4>
+<div class="text-section">
+    A generator function can look like this:
+    <pre><code class="code-block python rounded">
+    def infinite_sequence():
+        num = 0
+        while True:
+            yield num
+            num += 1
+    </code></pre>
+    This looks like a normal <code>function</code> definition, but instead of using <code>return</code> we
+    use <code>yield</code>. While <code>return</code> ends the code execution and exits the function on that line,
+    <code>yield</code> indicates where a value is sent back to the caller and does not exit the function afterwards.
+</div>
+<div class="text-section">
+    The <code>state</code> of the function is remembered. That means that when we call <code>next()</code> on a generator
+    object the execution of the function resumes (from <code>yield</code>) and in the case above that means that <code>num</code> increments and the
+    loop runs again and waits for the next <code>next()</code> call.
+</div>
+
+<h5>Generator Expressions</h5>
+<div class="text-section">
+    <code>Generator expressions</code> are useful in the same scenarios where <code>list comprehensions</code> are.
+    But an advantage to <code>generator expressions</code> are that you can create them, without holding the entire object in
+    memory at instantiation, but instead first do that when you need to use it.
+    <pre><code class="code-block python rounded">
+    nums_squared_lc = [num**2 for num in range(5)]
+    nums_squared_ge = (num**2 for num in range(5))
+    </code></pre>
+    These two do practically the same thing, but the <code>list comprehension</code> executes when this line of code
+    is run, whereas the <code>generator expression</code> only creates the <code>generator object</code> and waits
+    for the first <code>next()</code> call.
+</div>
+<div class="text-section">
+    This can have huge performance advantages,
+    <a target="_blank" href="https://realpython.com/introduction-to-python-generators/#profiling-generator-performance">
+        when working with large datasets</a>.
+    Although if memory is no issue, but speed is, <code>list comprehensions</code> can be quicker.
+</div>
+
+<hr>
+
+<h4>Yield</h4>
+<div class="text-section">
+    As stated above, when using <code>yield</code> the first <code>next()</code> call executes the function up to the
+    first <code>yield</code> and then saves the state of the function, waiting for the next <code>next()</code> call,
+    where it will run until the next <code>yield</code>.
+    This can be in a loop, potentially making a 'infinite' <code>generator object</code>, but could also just be a
+    function that has a finite number of <code>yield</code> statements.
+</div>
+<div class="text-section">
+    If you call <code>next()</code> on a <code>generator object</code> that 'has no more <code>yield</code>s', the
+    <code>StopIteration</code> exception will be raised.
+</div>
+
+<hr>
+
+<h4>Advanced Generator Methods</h4>
+<div class="text-section">
+    There exists several
+    <a href="https://realpython.com/introduction-to-python-generators/#using-advanced-generator-methods">advanced <code>generator</code> methods</a>
+    (<code>send()</code>, <code>.throw()</code> and <code>.close()</code>).
+</div>
