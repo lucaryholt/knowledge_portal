@@ -464,8 +464,16 @@
     "fileName": "clientsidedata.html",
     "links": [
       {
-        "description": "placeholder",
-        "link": "placeholder"
+        "description": "html - Local Storage vs Cookies - StackOverflow",
+        "link": "https://stackoverflow.com/questions/3220660/local-storage-vs-cookies"
+      },
+      {
+        "description": "Download Cookie Consent - Osano",
+        "link": "https://www.osano.com/cookieconsent/download/"
+      },
+      {
+        "description": "Web Storage API - Web APIs - MDN",
+        "link": "https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API"
       }
     ],
     "searchTerms": ["client side", "data", "cookies", "localStorage", "sessionStorage"],
