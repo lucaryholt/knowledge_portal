@@ -24,6 +24,10 @@
         "link" : "https://www.npmjs.com/package/multer"
       },
       {
+        "description" : "npm - morgan",
+        "link" : "https://www.npmjs.com/package/morgan"
+      },
+      {
         "description" : "GeeksForGeeks - express.json() function",
         "link" : "https://www.geeksforgeeks.org/express-js-express-json-function/"
       },

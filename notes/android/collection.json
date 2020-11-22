@@ -108,8 +108,8 @@
     "enabled": true
   },
   {
-    "title" : "Image / Camera",
-    "fileName" : "imagecamera.html",
+    "title" : "Gallery / Camera",
+    "fileName" : "gallerycamera.html",
     "links" : [
       {
         "description" : "Tutorials Point - How to pick an image from image gallery in Android?",
