@@ -1,0 +1,83 @@
+<div class="sub-title">
+    Get images from gallery or camera
+</div>
+
+<hr>
+
+<h4>General</h4>
+<div class="text-section">
+    To get images from either gallery or camera, we need to instantiate an <code>Intent</code>,
+    to that specific activity with a <code>requestCode</code>, then that activity returns data to a
+    method which then handles the choices from there. <br>
+    The method that activities return data to is called <code>onActivityResult</code>:
+    <pre><code class="code-block java rounded">
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        // Here we can check which request code comes back and process the data accordingly
+    }
+    </code></pre>
+</div>
+
+<hr>
+
+<h4>Gallery</h4>
+<div class="text-section">
+    To allow the user to pick from the gallery we use the intent <code>Intent.ACTION_PICK</code>:
+    <pre><code class="code-block java rounded">
+    public void galleryBtnPressed(View view){
+        Intent intent = new Intent(Intent.ACTION_PICK);
+        intent.setType("image/*");
+        startActivityForResult(intent, 1);
+    }
+    </code></pre>
+    We also here set the type to <code>image/*</code>, which tells the picker, which type of items the user should
+    be able to pick from (the <code>1</code> is the <code>requestCode</code>).
+</div>
+<div class="text-section">
+    Then when the data is returned to <code>onActivityResult</code>, we can call the following method with the data:
+    <pre><code class="code-block java rounded">
+    private void backFromGallery(@Nullable Intent data){
+        assert data != null;
+        Uri imageUri = data.getData();
+        try {
+            InputStream is = getContentResolver().openInputStream(imageUri);
+            currentBitmap = BitmapFactory.decodeStream(is);
+            imageView.setImageBitmap(currentBitmap);
+        } catch (Exception e){
+            System.out.println(e);
+        }
+    }
+    </code></pre>
+    This saves the data in a <code>Uri</code> object, instantiates a <code>InputStream</code> and decodes
+    a <code>Bitmap</code> from that. We can then use that <code>Bitmap</code> however we want.
+</div>
+
+<hr>
+
+<h4>Camera</h4>
+<div class="text-section">
+    Just as when picking from gallery, we need to use an intent to take a picture with the camera:
+    <pre><code class="code-block java rounded">
+    public void cameraBtnPressed(View view){
+        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        startActivityForResult(intent, 2);
+    }
+    </code></pre>
+</div>
+<div class="text-section">
+    We handle that data like this:
+    <pre><code class="code-block java rounded">
+    private void backFromCamera(@Nullable Intent data){
+        try {
+            assert data != null;
+            System.out.println("here!");
+            currentBitmap = (Bitmap) data.getExtras().get("data");
+            imageView.setImageBitmap(currentBitmap);
+        } catch (Exception e){
+            System.out.println(e);
+        }
+    }
+    </code></pre>
+    Here we can simply cast a <code>Bitmap</code> from the data and use it.
+</div>

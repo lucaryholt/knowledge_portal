@@ -477,6 +477,6 @@
       }
     ],
     "searchTerms": ["client side", "data", "cookies", "localStorage", "sessionStorage"],
-    "enabled": "true"
+    "enabled": true
   }
 ]

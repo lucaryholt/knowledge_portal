@@ -130,5 +130,89 @@
     ],
     "searchTerms": ["map", "annotations", "markings"],
     "enabled": true
+  },
+  {
+    "title" : "Swift language",
+    "fileName" : "swiftlanguage.html",
+    "links" : [
+      {
+        "description" : "Placeholder",
+        "link" : "placeholder"
+      }
+    ],
+    "searchTerms": ["placeholder"],
+    "enabled": true
+  },
+  {
+    "title" : "Event handling with closures",
+    "fileName" : "eventclosures.html",
+    "links" : [
+      {
+        "description" : "Placeholder",
+        "link" : "placeholder"
+      }
+    ],
+    "searchTerms": ["placeholder"],
+    "enabled": true
+  },
+  {
+    "title" : "Navigate between Views",
+    "fileName" : "navigate.html",
+    "links" : [
+      {
+        "description" : "Placeholder",
+        "link" : "placeholder"
+      }
+    ],
+    "searchTerms": ["placeholder"],
+    "enabled": true
+  },
+  {
+    "title" : "List of items",
+    "fileName" : "listofitems.html",
+    "links" : [
+      {
+        "description" : "Placeholder",
+        "link" : "placeholder"
+      }
+    ],
+    "searchTerms": ["placeholder"],
+    "enabled": true
+  },
+  {
+    "title" : "Cocoapods",
+    "fileName" : "cocoapods.html",
+    "links" : [
+      {
+        "description" : "Placeholder",
+        "link" : "placeholder"
+      }
+    ],
+    "searchTerms": ["placeholder"],
+    "enabled": true
+  },
+  {
+    "title" : "Image",
+    "fileName" : "image.html",
+    "links" : [
+      {
+        "description" : "Placeholder",
+        "link" : "placeholder"
+      }
+    ],
+    "searchTerms": ["placeholder"],
+    "enabled": true
+  },
+  {
+    "title" : "App lifecycle",
+    "fileName" : "applifecycle.html",
+    "links" : [
+      {
+        "description" : "Placeholder",
+        "link" : "placeholder"
+      }
+    ],
+    "searchTerms": ["placeholder"],
+    "enabled": true
   }
 ]

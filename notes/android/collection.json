@@ -61,7 +61,7 @@
   },
   {
     "title" : "List of items",
-    "fileName" : "placeholder.html",
+    "fileName" : "listofitems.html",
     "links" : [
       {
         "description" : "Placeholder",
@@ -69,11 +69,11 @@
       }
     ],
     "searchTerms": ["placeholder"],
-    "enabled": false
+    "enabled": true
   },
   {
     "title" : "Manifest file",
-    "fileName" : "placeholder.html",
+    "fileName" : "manifestfile.html",
     "links" : [
       {
         "description" : "Placeholder",
@@ -81,7 +81,7 @@
       }
     ],
     "searchTerms": ["placeholder"],
-    "enabled": false
+    "enabled": true
   },
   {
     "title" : "Gradle",
@@ -93,11 +93,11 @@
       }
     ],
     "searchTerms": ["gradle"],
-    "enabled": false
+    "enabled": true
   },
   {
     "title" : "Storage",
-    "fileName" : "placeholder.html",
+    "fileName" : "storage.html",
     "links" : [
       {
         "description" : "Placeholder",
@@ -105,23 +105,27 @@
       }
     ],
     "searchTerms": ["placeholder"],
-    "enabled": false
+    "enabled": true
   },
   {
     "title" : "Image / Camera",
-    "fileName" : "placeholder.html",
+    "fileName" : "imagecamera.html",
     "links" : [
       {
-        "description" : "Placeholder",
-        "link" : "placeholder"
+        "description" : "Tutorials Point - How to pick an image from image gallery in Android?",
+        "link" : "https://www.tutorialspoint.com/how-to-pick-an-image-from-image-gallery-in-android"
+      },
+      {
+        "description" : "JournalDev - Android Capture Image from Camera and Gallery",
+        "link" : "https://www.journaldev.com/13270/android-capture-image-camera-gallery"
       }
     ],
-    "searchTerms": ["placeholder"],
-    "enabled": false
+    "searchTerms": ["gallery", "image", "camera", "intent", "requestcode", "bitmap"],
+    "enabled": true
   },
   {
     "title" : "App lifecycle",
-    "fileName" : "placeholder.html",
+    "fileName" : "applifecycle.html",
     "links" : [
       {
         "description" : "Activity lifecycle - Android Developer",
@@ -129,7 +133,7 @@
       }
     ],
     "searchTerms": ["placeholder"],
-    "enabled": false
+    "enabled": true
   },
   {
     "title" : "Firebase",

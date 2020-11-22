@@ -44,7 +44,7 @@
       }
     ],
     "searchTerms": ["for loops", "while loops"],
-    "enabled": false
+    "enabled": true
   },
   {
     "title" : "sorted() and sort()",
@@ -56,7 +56,7 @@
       }
     ],
     "searchTerms": ["sorted()", "sort()"],
-    "enabled": false
+    "enabled": true
   },
   {
     "title" : "Files",
@@ -80,7 +80,7 @@
       }
     ],
     "searchTerms": ["Functions"],
-    "enabled": false
+    "enabled": true
   },
   {
     "title" : "Requests",
@@ -92,7 +92,7 @@
       }
     ],
     "searchTerms": ["requests"],
-    "enabled": false
+    "enabled": true
   },
   {
     "title" : "OOP in Python",
@@ -104,7 +104,7 @@
       }
     ],
     "searchTerms": ["oop"],
-    "enabled": false
+    "enabled": true
   },
   {
     "title" : "Encapsulation",
@@ -132,7 +132,7 @@
       }
     ],
     "searchTerms": ["pip", "packages", "modules"],
-    "enabled": false
+    "enabled": true
   },
   {
     "title" : "Python Data Model",
@@ -204,6 +204,18 @@
       }
     ],
     "searchTerms": ["generators", "yield", "generator expressions"],
+    "enabled": true
+  },
+  {
+    "title" : "Context Managers",
+    "fileName" : "contextmanagers.html",
+    "links" : [
+      {
+        "description" : "Context Managers in Python — Go Beyond “with open() as file” | by Yong Cui, Ph.D. | Better Programming | Medium",
+        "link" : "https://medium.com/better-programming/context-managers-in-python-go-beyond-with-open-as-file-85a27e392114"
+      }
+    ],
+    "searchTerms": ["placeholder"],
     "enabled": true
   }
 ]

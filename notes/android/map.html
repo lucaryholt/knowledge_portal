@@ -4,20 +4,153 @@
 
 <hr>
 
+<h4>General</h4>
+<div class="text-section">
+    The easiest way to utilize Google Maps in an android app, is to
+    (in <code>Android Studio</code>) to create a <code>Maps Activity</code>.
+    This activity comes with a fullscreen layout of the map, a setup file
+    and some default code.
+</div>
+<div class="text-section">
+    The next step is to make sure that your app has access to the <code>Google Maps API</code>,
+    this can be done by following a link in the setup file (<code>google_maps_api.xml</code>
+    in the <code>values</code> directory). With this done you can run the app and see the map.
+</div>
+
+<hr>
+
 <h4>Fragments</h4>
+<div class="text-section">
+    Some points from the <code>Tutorials Point - Android Fragments</code> link:
+    <ul>
+        <li>A fragment has its own layout and its own behaviour with its own life cycle callbacks.</li>
+        <li>You can add or remove fragments in an activity while the activity is running.</li>
+        <li>You can combine multiple fragments in a single activity to build a multi-pane UI.</li>
+        <li>A fragment can be used in multiple activities.</li>
+        <li>
+            Fragment life cycle is closely related to the life cycle of its host activity which means
+            when the activity is paused, all the fragments available in the activity will also be stopped.
+        </li>
+        <li>A fragment can implement a behaviour that has no user interface component.</li>
+        <li>Fragments were added to the Android API in Honeycomb version of Android which API version 11.</li>
+    </ul>
+</div>
 
 <hr>
 
 <h4>LocationManager & LocationListener</h4>
+<div class="text-section">
+    When using maps it is most often useful to know where the user of the app is located.
+    To do this you can use the <code>LocationManager</code> and <code>LocationListener</code> classes.
+</div>
+<div class="text-section">
+    The manager is the class that handles the "larger aspects" of the location, while the listener,
+    is the more interesting part.
+</div>
+<div class="text-section">
+    The listener lets us receive the location of the user and do something with that.
+    If we were making a navigation app, this could be to update the focus of the map to the current
+    location of the user - in real time.
+    <pre><code class="code-block java rounded">
+    locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+    listener = new LocationListener() {
+        @Override
+        public void onLocationChanged(@NonNull Location location) {
+            Log.i("PlaceInfo", "Location: " + location);
+        }
+    };
+
+    locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, listener);
+    </code></pre>
+    Here we instantiate the manager and listener. The listener is an interface, which is why
+    we create an object from it and override the <code>onLocationChanged</code> method.
+    This method enables us to do something everytime the location changes. <br>
+    In the last line we actually set up that we get the location changes - here we can set
+    how often and how much the location needs to change before <code>onLocationChanged</code>
+    is called.
+</div>
 
 <hr>
 
 <h4>Markers</h4>
+<div class="text-section">
+    Markers can be added to the map, as a way to show different locations and
+    you can allow users to place markers as a way to choose specific locations.
+</div>
+<div class="text-section">
+    The way to add markers to a <code>GoogleMap</code> is to use the <code>addMarker()</code> method.
+    <pre><code class="code-block java rounded">
+    googleMap.addMarker(
+        new MarkerOptions()
+            .position(new LatLng(double latitude, double longitude))
+            .title("Title of marker")
+        );
+    </code></pre>
+    You can also add a custom icon to the marker. This is done by adding a
+    <code>BitmapDescriptor</code> from a <code>Bitmap</code>.
+    <pre><code class="code-block java rounded">
+    Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.resourceName);
+    Bitmap scaled = Bitmap.createScaledBitmap(bitmap, 100, 100, false);
+
+    googleMap.addMarker(
+        new MarkerOptions()
+            .position(currentPoint)
+            .title(textUri.toString())
+            .icon(BitmapDescriptorFactory.fromBitmap(scaled))
+        );
+    </code></pre>
+</div>
 
 <hr>
 
-<h4>Get address from GPS</h4>
+<h4>Long press on map</h4>
+<div class="text-section">
+    To be able to long press the map and do something with that location, you
+    need to set a <code>OnMapClickListener</code>:
+    <pre><code class="code-block java rounded">
+    googleMap.setOnMapLongClickListener(latLng -> {
+        // Here you can do whatever with the LatLng object passed in
+        // Eg. adding a marker
+    });
+    </code></pre>
+</div>
 
 <hr>
 
-<h4>Geocoder</h4>
+<h4>Get address from GPS - Geocoder</h4>
+<div class="text-section">
+    A common use case for Maps is to show a specific location for a address
+    (navigate to your favorite pizza place) or get an address for a location.
+    To do this we can use the <code>Geocoder</code> class.
+</div>
+<div class="text-section">
+    Instantiate the <code>Geocoder</code> object:
+    <pre><code class="code-block java rounded">
+    geocoder = new Geocoder(getApplicationContext(), Locale.getDefault());
+    </code></pre>
+    The <code>Locale.getDefault()</code> part is to get the countries customes for
+    addressing and so on.
+</div>
+<div class="text-section">
+    Then we can use it:
+    <pre><code class="code-block java rounded">
+    List&lt;Address&gt; list = geocoder.getFromLocation(location.getLatitude(), location.getLongitude(), 1);
+    </code></pre>
+    This returns the address for the location.
+</div>
+
+<hr>
+
+<h4>Permissions</h4>
+<div class="text-section">
+    To use location data of the user device, we need permissions.
+    This can be done this way:
+    <pre><code class="code-block java rounded">
+    if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+        ActivityCompat.requestPermissions((Activity) this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, REQUEST );
+        return;
+    }
+    </code></pre>
+    What this rather convoluted code example accomplishes, is that it checks
+    if we already have permission and if not, then asks for it.
+</div>

@@ -1,0 +1,71 @@
+<div class="sub-title">
+    Something that takes care of the related tasks of a specific task
+</div>
+
+<hr>
+
+<h4>File context managers</h4>
+<h5>Built in</h5>
+<div class="text-section">
+    A built in <code>context manager</code> that is frequently used is the <code>with open</code> pattern:
+    <pre><code class="code-block python rounded">
+    with open('testfiles/bohr.txt') as f:
+        print(f.read())
+    </code></pre>
+    Here we open a text file as <code>f</code> and when the indented code block is done running, the
+    context manager closes the file, so there is no memory being used unnecessarily.
+</div>
+<h5>Homemade</h5>
+<div class="text-section">
+    To define your own <code>context manager</code>, you need to implement the two methods
+    <code>__enter__</code> and <code>__exit__</code>. These two methods define what the
+    <code>context manager</code> returns when it is instantiated (and used) and what it does
+    when the <code>context</code> is done.
+</div>
+<div class="text-section">
+    An example which functions the same way as the built-in <code>context manager</code> above:
+    <pre><code class="code-block python rounded">
+    class OpenFile:
+        def __init__(self, filename, mode):
+            self.filename = filename
+            self.mode = mode
+
+        def readline(self):
+            pass
+
+        def __enter__(self):
+            self.file = open(self.filename, self.mode)
+            return self.file
+
+        def __exit__(self, *args):
+            self.file.close()
+    </code></pre>
+    This can then be used just like above:
+    <pre><code class="code-block python rounded">
+    with OpenFile('testfiles/bohr.txt', 'r') as f:
+        print(f.read())
+    </code></pre>
+</div>
+<div class="text-section">
+    This example does not make a lot of sense, but this context manager could also open a connection to a database and
+    then close it, when the <code>context</code> was done.
+</div>
+<h5>contextlib</h5>
+<div class="text-section">
+    There also exists a <code>module</code> that contains a <code>Decorator</code> to quickly define
+    <code>context managers</code>.
+    <pre><code class="code-block python rounded">
+    from contextlib import contextmanager
+
+    @contextmanager
+    def open_file(filename, mode):
+        try:
+            f = open(filename, mode)
+            yield f
+        finally:
+            f.close()
+
+    with open_file('testfiles/bohr.txt', 'r') as f:
+        print(f.read())
+    </code></pre>
+</div>
