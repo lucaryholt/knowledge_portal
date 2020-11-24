@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const express = require('express');
 const app = express();
 
@@ -53,13 +55,11 @@ app.get('*', (req, res) => {
     return res.redirect('/');
 });
 
-const port = process.env.PORT ? process.env.PORT : 80;
-
-app.listen(port, (error) => {
+app.listen(process.env.PORT, (error) => {
     if (error) {
         console.log(error);
         console.log('Error starting server.');
     } else {
-        console.log('Server started on port', Number(port));
+        console.log('Server started on port', Number(process.env.PORT));
     }
 });
