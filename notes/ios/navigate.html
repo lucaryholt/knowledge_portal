@@ -1,1 +1,44 @@
-<!-- TODO -->
+<div class="sub-title">
+    Show the user different views
+</div>
+
+<hr>
+
+<h4>Navigation</h4>
+<div class="text-section">
+    A key part of almost every app, is the ability to show different information and screens,
+    depending of the needs of the user.
+</div>
+<div class="text-section">
+    A way to do this in <code>SwiftUI</code> is by using <code>NavigationView</code> and
+    <code>NavigationLink</code> components.
+    <pre><code class="code-block swift rounded">
+    import SwiftUI
+
+    struct ContentView: View {
+        var body: some View {
+            NavigationView{
+                VStack{
+                    NavigationLink(
+                        destination: DetailView(image: Image("image0")),
+                        label: {
+                            Text("Show image 0")
+                        })
+                    NavigationLink(
+                        destination: DetailView(image: Image("image1")),
+                        label: {
+                            Text("Show image 1")
+                        })
+                    NavigationLink(
+                        destination: DetailView(image: Image("image2")),
+                        label: {
+                            Text("Show image 2")
+                        })
+                }
+            }
+        }
+    }
+    </code></pre>
+    This would show three buttons (in a <code>VStack</code>) that would go to <code>DetailView</code>,
+    displaying each of these images.
+</div>

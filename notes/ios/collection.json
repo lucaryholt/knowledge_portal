@@ -148,11 +148,11 @@
     "fileName" : "navigate.html",
     "links" : [
       {
-        "description" : "Placeholder",
-        "link" : "placeholder"
+        "description" : "The Complete Guide to NavigationView in SwiftUI - Hacking with Swift",
+        "link" : "https://www.hackingwithswift.com/articles/216/complete-guide-to-navigationview-in-swiftui"
       }
     ],
-    "searchTerms": ["placeholder"],
+    "searchTerms": ["navigationview", "navigationlink"],
     "enabled": true
   },
   {
