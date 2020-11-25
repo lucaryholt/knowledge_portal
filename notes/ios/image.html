@@ -1,1 +1,58 @@
-<!-- TODO -->
+<div class="sub-title">
+    Working with images in <code>iOS</code> apps
+</div>
+
+<hr>
+
+<h4>Image Picker</h4>
+<div class="text-section">
+    As <code>SwiftUI</code> is a relatively new invention, not all elements are implemented yet and you need to borrow/adapt
+    from the older <code>UIKit</code>, like an image picker. Below we have an example of such an adaption.
+    The example has comments, explaining some of the parts.
+    <pre><code class="code-block swift rounded">
+    import SwiftUI
+
+    struct MyImagePicker : UIViewControllerRepresentable {
+        @Binding var image: UIImage?
+        @Binding var isPresented:Bool
+
+        // You need to implement makeUIViewController & updateUIViewController when you use UIViewControllerRepresentable
+        func makeUIViewController(context: UIViewControllerRepresentableContext&lt;MyImagePicker>) -> UIImagePickerController {
+            let picker = UIImagePickerController() //Indbygget funktion i iOS som henter billede fra camera eller bibliotek
+            picker.delegate = context.coordinator //pickeren skal have en deleget
+            return picker
+        }
+
+        // In this case, this does not need logic, but simply to be callable
+        func updateUIViewController(_ uiViewController:UIImagePickerController, context:  UIViewControllerRepresentableContext&lt;MyImagePicker>) {
+
+        }
+
+        // This method must be called 'makeCoordinator()'
+        func makeCoordinator() -> Coordinator {
+               Coordinator(self)
+        }
+
+        class Coordinator: NSObject, UINavigationControllerDelegate, UIImagePickerControllerDelegate{
+            let parent: MyImagePicker
+            init(_ parent: MyImagePicker) {
+                self.parent = parent
+            }
+
+            func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+                // If there is an image in the info array
+                if let uiImage = info[.originalImage] as? UIImage {
+                    // Then we set the image, from the parant to the choosen image
+                    parent.image = uiImage
+                    print("Setting image")
+                } else {
+                    print("Did not set image")
+                }
+                parent.isPresented = false // This is to tell a 'sheet' element in the former view, that is should not present the picker anymore
+            }
+
+        }
+
+    }
+    </code></pre>
+</div>
