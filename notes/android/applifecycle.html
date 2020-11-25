@@ -1,1 +1,58 @@
-<!-- TODO -->
+<div class="sub-title">
+    The different states an app and it's activities goes through
+</div>
+
+<hr>
+
+<h4>Activity Lifecycle</h4>
+<div class="text-section">
+    The <code>Activity</code> class has a number of callbacks, that allow the activity to know
+    that a state has changed - essentially what the system is doing to the process where
+    the activity resides.
+</div>
+<img class="image-xxl" src="../images/android_activity_lifecycle.png" alt="Activity lifecycle">
+
+<h5>onCreate()</h5>
+<div class="text-section">
+    This must be implemented and should contain logic that only needs to happen once in the
+    lifespan of this activity.
+</div>
+
+<h5>onStart()</h5>
+<div class="text-section">
+    This callback is invoked when the app prepares the activity to enter the foreground
+    and become interactive.
+</div>
+
+<h5>onResume()</h5>
+<div class="text-section">
+    This is invoked when the activity enters the foreground and enters the <code>Resumed</code> state.
+    This callback is invoked every time the user, for instance, receives a phone call or navigates to another
+    app and comes back.
+</div>
+
+<h5>onPause()</h5>
+<div class="text-section">
+    Invoked when the activity is no longer in the foreground. The execution of <code>onPause()</code>
+    is very brief and is then transitioned to <code>onStop()</code>.
+</div>
+
+<h5>onStop()</h5>
+<div class="text-section">
+    When the activity is no longer visible to the user, this is invoked.
+</div>
+
+<h5>onDestroy()</h5>
+<div class="text-section">
+    <code>onDestroy()</code> is invoked because of either of two reasons:
+    <ol>
+        <li>
+            the activity is finishing (due to the user completely dismissing the activity
+            or due to <code>finish()</code> being called on the activity), or
+        </li>
+        <li>
+            the system is temporarily destroying the activity due to a configuration change
+            (such as device rotation or multi-window mode)
+        </li>
+    </ol>
+</div>

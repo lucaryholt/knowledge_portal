@@ -130,6 +130,10 @@
       {
         "description" : "npm - cross-env",
         "link" : "https://www.npmjs.com/package/cross-env"
+      },
+      {
+        "description" : "npm - forever",
+        "link" : "https://www.npmjs.com/package/forever"
       }
     ],
     "searchTerms": ["node js", "nodejs", "npm", "v8", "chrome v8", "repl", "nodemon", "budo", "cross-env", "environmental variables", "scripts", "dev prod"],
@@ -481,6 +485,46 @@
       }
     ],
     "searchTerms": ["client side", "data", "cookies", "localStorage", "sessionStorage"],
+    "enabled": true
+  },
+  {
+    "title": "Socket.io",
+    "fileName": "socketio.html",
+    "links": [
+      {
+        "description": "socket.io - npm",
+        "link": "https://www.npmjs.com/package/socket.io"
+      },
+      {
+        "description": "Namespaces - Socket.IO",
+        "link": "https://socket.io/docs/v3/namespaces/index.html"
+      },
+      {
+        "description": "Rooms - Socket.IO",
+        "link": "https://socket.io/docs/v3/rooms/"
+      }
+    ],
+    "searchTerms": ["socket.io", "sockets", "namespaces", "rooms"],
+    "enabled": true
+  },
+  {
+    "title": "PM2",
+    "fileName": "pm2.html",
+    "links": [
+      {
+        "description": "pm2 - npm",
+        "link": "https://www.npmjs.com/package/pm2"
+      },
+      {
+        "description": "Future Studio - PM2 — Restart Processes After System Reboot",
+        "link": "https://futurestud.io/tutorials/pm2-restart-processes-after-system-reboot"
+      },
+      {
+        "description": "PM2 - Home",
+        "link": "https://pm2.keymetrics.io/"
+      }
+    ],
+    "searchTerms": ["pm2", "monit"],
     "enabled": true
   }
 ]
