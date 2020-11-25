@@ -1,1 +1,73 @@
-<!-- TODO -->
+<div class="sub-title">
+    Contains essential information to the Android build tools, the Android operating system and Google Play.
+</div>
+
+<hr>
+
+<h4>File structure</h4>
+<div class="text-section">
+    An example of a <code>manifest</code> file could be:
+    <pre><code class="code-block rounded">
+    &lt;?xml version="1.0" encoding="utf-8"?>
+    &lt;manifest xmlns:android="http://schemas.android.com/apk/res/android"
+              package="com.lucaryholt.mytodoapp">
+
+        &lt;application
+                android:allowBackup="true"
+                android:icon="@mipmap/ic_launcher"
+                android:label="@string/app_name"
+                android:roundIcon="@mipmap/ic_launcher_round"
+                android:supportsRtl="true"
+                android:theme="@style/Theme.MyToDoApp">
+            &lt;activity android:name=".EditActivity">&lt;/activity>
+            &lt;activity android:name=".NewItemActivity" />
+            &lt;activity android:name=".DetailView" />
+            &lt;activity android:name=".MainActivity">
+                &lt;intent-filter>
+                    &lt;action android:name="android.intent.action.MAIN" />
+
+                    &lt;category android:name="android.intent.category.LAUNCHER" />
+                &lt;/intent-filter>
+            &lt;/activity>
+        &lt;/application>
+
+    &lt;/manifest>
+    </code></pre>
+</div>
+
+<hr>
+
+<h4>Information</h4>
+<h5>Package name and application ID</h5>
+<div class="text-section">
+    The package name is used for two things when building the app: namespace for <code>R.java</code> and to resolve
+    any relative class names declared in the manifest file (like <code>.MainActivity</code>).
+</div>
+
+<h5>App components</h5>
+<div class="text-section">
+    For each <code>app component</code> in the app, there must be declared a <code>XML</code> element as well.
+    For instance the <code>activity</code> elements in the above example.
+</div>
+<div class="text-section">
+    In these <code>app components</code> we can also define <code>intent filters</code> like the one in the
+    <code>.MainActivity</code> component above. This <code>intent filter</code> defines which <code>activity</code>
+    the app shows on launch. <br>
+    You can also have <code>intent filters</code> that define something that the app can do, which means that when
+    a user launches an intent, that more than one app can handle, the user can select which app to use.
+</div>
+
+<h5>Permissions</h5>
+<div class="text-section">
+    All Android apps must request permission to access sensitive data. Each of these permissions
+    has a unique label and can be defined in the
+    <a target="_blank" href="https://developer.android.com/guide/topics/manifest/manifest-intro#perms"><code>manifest file</code></a>.
+    Permissions can also (in <code>Android 6.0</code> and above) be requested at runtime.
+</div>
+
+<h5>Device compatibility</h5>
+<div class="text-section">
+    You can define what hardware or software features you app
+    <a target="_blank" href="https://developer.android.com/guide/topics/manifest/manifest-intro#compatibility">requires</a>.
+    Google Play Store does not allow your app to be installed on devices that do not meet those requirements.
+</div>

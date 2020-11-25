@@ -60,27 +60,15 @@
     "enabled": true
   },
   {
-    "title" : "List of items",
-    "fileName" : "listofitems.html",
-    "links" : [
-      {
-        "description" : "Placeholder",
-        "link" : "placeholder"
-      }
-    ],
-    "searchTerms": ["placeholder"],
-    "enabled": true
-  },
-  {
     "title" : "Manifest file",
     "fileName" : "manifestfile.html",
     "links" : [
       {
-        "description" : "Placeholder",
-        "link" : "placeholder"
+        "description" : "App Manifest Overview - Android Developers",
+        "link" : "https://developer.android.com/guide/topics/manifest/manifest-intro"
       }
     ],
-    "searchTerms": ["placeholder"],
+    "searchTerms": ["manifest file"],
     "enabled": true
   },
   {

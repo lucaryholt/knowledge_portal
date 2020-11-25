@@ -101,6 +101,14 @@
     </code></pre>
     Here we instantiate an <code>intent</code>, add data to it and then start it.
 </div>
+<div class="text-section">
+    When using an adapter along with a <code>ListView</code>, you can notify the adapter that the
+    content of the list has changed and that the view therefore should update to reflect
+    that change.
+    <pre><code class="code-block java rounded">
+    myAdapter.notifyDataSetChanged();
+    </code></pre>
+</div>
 
 <h5>Alert</h5>
 <div class="text-section">
