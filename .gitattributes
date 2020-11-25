@@ -1,3 +1,4 @@
 notes/nodejs/* linguist-vendored
 notes/python/* linguist-vendored
-notes/swift/* linguist-vendored
+notes/ios/* linguist-vendored
+notes/android/* linguist-vendored

@@ -144,18 +144,6 @@
     "enabled": true
   },
   {
-    "title" : "Event handling with closures",
-    "fileName" : "eventclosures.html",
-    "links" : [
-      {
-        "description" : "Placeholder",
-        "link" : "placeholder"
-      }
-    ],
-    "searchTerms": ["placeholder"],
-    "enabled": true
-  },
-  {
     "title" : "Navigate between Views",
     "fileName" : "navigate.html",
     "links" : [
@@ -200,7 +188,7 @@
         "link" : "placeholder"
       }
     ],
-    "searchTerms": ["placeholder"],
+    "searchTerms": ["image"],
     "enabled": true
   },
   {
