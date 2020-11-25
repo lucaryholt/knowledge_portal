@@ -12,9 +12,9 @@
     "enabled" : true
   },
   {
-    "name" : "Swift",
-    "link" : "/swift",
-    "imageFile" : "/images/swift-logo.png",
+    "name" : "iOS",
+    "link" : "/ios",
+    "imageFile" : "/images/ios-logo.png",
     "enabled" : true
   },
   {

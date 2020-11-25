@@ -1,0 +1,42 @@
+<div class="sub-title">
+    Methods that are called at different points in the app lifecycle
+</div>
+
+<hr>
+
+<h4>Launch</h4>
+<h5>application: didFinishLaunchingWithOptions: -> Bool</h5>
+<div class="text-section">
+    This callback method is called when the application has finished launching and
+    restored state and can do final initialization such as creating UI.
+</div>
+
+<h5>application: applicationWillEnterForeground: </h5>
+<div class="text-section">
+    This is called after <code>application: didFinishLaunchingWithOptions:</code>
+    or if your app becomes active again after receiving a phone call or other system interruption.
+</div>
+
+<h5>applicationDidBecomeActive:</h5>
+<div class="text-section"></div>
+    This is called after <code>applicationWillEnterForeground:</code> to finish up the transition to the foreground.
+<hr>
+
+<h4>Termination</h4>
+<h5>applicationWillResignActive:</h5>
+<div class="text-section">
+    This is called when the app is about to become inactive
+    (for example, when the phone receives a call or the user hits the Home button).
+</div>
+
+<h5>applicationDidEnterBackground:</h5>
+<div class="text-section">
+    This is called when your app enters a background state after becoming inactive.
+    You have approximately five seconds to run any tasks you need to back things up
+    in case the app gets terminated later or right after that.
+</div>
+
+<h5>applicationWillTerminate:</h5>
+<div class="text-section">
+    This is called when your app is about to be purged from memory. Call any final cleanups here.
+</div>
