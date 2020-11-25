@@ -69,3 +69,26 @@
         </li>
     </ul>
 </div>
+
+<hr>
+
+<h4>List of items</h4>
+<div class="text-section">
+    In <code>SwiftUI</code> it is very easy to make a list of items.
+    You can simply use the <code>ForEach</code> method on an array of items,
+    and then fill it with, for instance, a <code>NavigationLink</code> for each item.
+    <pre><code class="code-block swift rounded">
+    List{
+        ForEach(repo.noteCollection){ note in
+            NavigationLink(destination: DetailView(repo: self.repo, note: note)){
+                Text(note.title)
+            }
+            .navigationBarTitle("Notes 📋")
+        }
+        .onDelete(perform: repo.deleteNote)
+        .lineLimit(1)
+    }
+    </code></pre>
+    If this array is annotated with the property wrapper <code>@Published</code>,
+    then the list automatically updates whenever a change occurs (like a <code>Firestore</code> update).
+</div>

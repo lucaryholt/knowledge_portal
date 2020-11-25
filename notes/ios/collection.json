@@ -36,7 +36,7 @@
         "link" : "https://steelkiwi.com/blog/swiftui-vs-uikit/"
       }
     ],
-    "searchTerms": ["swiftui", "uikit", "declarative", "imperative"],
+    "searchTerms": ["swiftui", "uikit", "declarative", "imperative", "list of items"],
     "enabled": true
   },
   {
@@ -132,18 +132,6 @@
     "enabled": true
   },
   {
-    "title" : "Swift language",
-    "fileName" : "swiftlanguage.html",
-    "links" : [
-      {
-        "description" : "Placeholder",
-        "link" : "placeholder"
-      }
-    ],
-    "searchTerms": ["placeholder"],
-    "enabled": true
-  },
-  {
     "title" : "Navigate between Views",
     "fileName" : "navigate.html",
     "links" : [
@@ -153,18 +141,6 @@
       }
     ],
     "searchTerms": ["navigationview", "navigationlink"],
-    "enabled": true
-  },
-  {
-    "title" : "List of items",
-    "fileName" : "listofitems.html",
-    "links" : [
-      {
-        "description" : "Placeholder",
-        "link" : "placeholder"
-      }
-    ],
-    "searchTerms": ["placeholder"],
     "enabled": true
   },
   {
