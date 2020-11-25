@@ -144,18 +144,6 @@
     "enabled": true
   },
   {
-    "title" : "Event handling with closures",
-    "fileName" : "eventclosures.html",
-    "links" : [
-      {
-        "description" : "Placeholder",
-        "link" : "placeholder"
-      }
-    ],
-    "searchTerms": ["placeholder"],
-    "enabled": true
-  },
-  {
     "title" : "Navigate between Views",
     "fileName" : "navigate.html",
     "links" : [
@@ -188,7 +176,7 @@
         "link" : "https://cocoapods.org/"
       }
     ],
-    "searchTerms": ["placeholder"],
+    "searchTerms": ["cocoapods", "podfile", "firebase"],
     "enabled": true
   },
   {
@@ -196,11 +184,11 @@
     "fileName" : "image.html",
     "links" : [
       {
-        "description" : "Placeholder",
-        "link" : "placeholder"
+        "description" : "Using an Image Picker in SwiftUI - Augmented Code",
+        "link" : "https://augmentedcode.io/2020/11/22/using-an-image-picker-in-swiftui/"
       }
     ],
-    "searchTerms": ["placeholder"],
+    "searchTerms": ["image", "image picker"],
     "enabled": true
   },
   {
@@ -212,7 +200,7 @@
         "link" : "https://medium.com/@ansujain/ios-application-life-cycle-d517a3c44e7e"
       }
     ],
-    "searchTerms": ["placeholder"],
+    "searchTerms": ["app lifecycle"],
     "enabled": true
   }
 ]

@@ -120,7 +120,7 @@
         "link" : "https://developer.android.com/guide/components/activities/activity-lifecycle"
       }
     ],
-    "searchTerms": ["placeholder"],
+    "searchTerms": ["app lifecycle", "oncreate", "onresume", "ondestroy", "onstop"],
     "enabled": true
   },
   {
