@@ -1,1 +1,33 @@
-<!-- TODO -->
+<div class="sub-title">
+    <code>CocoaPods</code> is a dependency manager for <code>Swift</code> and <code>Objective-C</code> projects.
+</div>
+
+<hr>
+
+<h4>Usage</h4>
+<div class="text-section">
+    If you want to work with, for instance, <code>Google Firebase</code> in an <code>iOS</code> app,
+    you could use <code>CocoaPods</code> to install those dependencies.
+</div>
+
+<hr>
+
+<h4>Podfile</h4>
+<div class="text-section">
+    To define what <code>pods</code> to install, you need to create a file simply called <code>Podfile</code>.
+    This file contains what pods you want to install with the <code>pod install</code> command.
+    <pre><code class="code-block rounded">
+    # Uncomment the next line to define a global platform for your project
+    # platform :ios, '9.0'
+
+    target 'MyNotes' do
+      # Comment the next line if you don't want to use dynamic frameworks
+      use_frameworks!
+
+      # Pods for MyNotebook
+      pod 'Firebase/Analytics'
+      pod 'Firebase/Firestore'
+      pod 'Firebase/Storage'
+    end
+    </code></pre>
+</div>

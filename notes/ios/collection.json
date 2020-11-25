@@ -184,8 +184,8 @@
     "fileName" : "cocoapods.html",
     "links" : [
       {
-        "description" : "Placeholder",
-        "link" : "placeholder"
+        "description" : "CocoaPods.org",
+        "link" : "https://cocoapods.org/"
       }
     ],
     "searchTerms": ["placeholder"],
