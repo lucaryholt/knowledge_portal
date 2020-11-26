@@ -1,1 +1,94 @@
-<!-- TODO -->
+<div class="sub-title">
+    Loop through data
+</div>
+
+<hr>
+
+<h4>For loops</h4>
+<div class="text-section">
+    For loops in Python function like <code>for each</code> loops in something like Java -
+    <code>collection-based iteration</code>.
+    A Python for loop looks like this:
+    <pre><code class="code-block python rounded">
+    for &lt;var> in &lt;iterable>:
+        &lt;statement(s)>
+    </code></pre>
+    A use example:
+    <pre><code class="code-block python rounded">
+    a = ['foo', 'bar', 'baz']
+    for i in a:
+        print(i)
+    </code></pre>
+    This would print the three values in <code>a</code>.
+</div>
+<div class="text-section">
+    To emulate a <code>for i</code> loop, you can use the <code>range()</code> built in function.
+    <pre><code class="code-block python rounded">
+    for i in range(10):
+        print(i)
+    </code></pre>
+</div>
+
+<h5><code>break</code> and <code>continue</code></h5>
+<div class="text-section">
+    You can use the keywords <code>break</code> and <code>continue</code> in loops.
+    <code>break</code> terminates the loop completely, while <code>continue</code> terminates the
+    current iteration and proceeds to the next.
+</div>
+
+<h5><code>else</code></h5>
+<div class="text-section">
+    The <code>else</code> clause can also be used with loops. This clause
+    will be executed if the iterable is exhausted, but not if the loop is
+    broken by a <code>break</code> statement.
+    <pre><code class="code-block python rounded">
+    for i in ['foo', 'bar', 'baz', 'qux']:
+        if i == 'bar':
+            break
+        print(i)
+    else:
+        print('Done') # Will not execute
+    </code></pre>
+</div>
+
+<hr>
+
+<h4>While loops</h4>
+<div class="text-section">
+    A <code>while</code> loop in Python:
+    <pre><code class="code-block python rounded">
+    while &lt;expr>:
+        &lt;statement(s)>
+    </code></pre>
+    A use example:
+    <pre><code class="code-block python rounded">
+    n = 5
+    while n > 0:
+        n -= 1
+        print(n)
+    </code></pre>
+</div>
+
+<h5><code>break</code> and <code>continue</code></h5>
+<div class="text-section">
+    The two keywords have the same functionalities as in the <code>for loop</code>,
+    but while <code>continue</code> simply runs the next iteration in a <code>for loop</code>,
+    here it evaluates the statement again (as does every iteration in a <code>while loop</code>).
+</div>
+
+<h5><code>else</code></h5>
+<div class="text-section">
+    The <code>else</code> clause functions the exact same way as with <code>for loops</code>.
+</div>
+
+<h5>Infinite loops</h5>
+<div class="text-section">
+    You could write a infinite while loop like this:
+    <pre><code class="code-block python rounded">
+    while True:
+        print('Still true')
+    </code></pre>
+    Could be used to run a service that, for instance, continually checks for some condition
+    - maybe with a <code>sleep</code> function to run it at intervals. <br>
+    An infinite loop can still be broken with a <code>break</code> keyword.
+</div>
