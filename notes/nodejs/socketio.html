@@ -1,1 +1,128 @@
-<!-- TODO -->
+<div class="sub-title">
+    Socket between front and back end
+</div>
+
+<hr>
+
+<h4>General</h4>
+<div class="text-section">
+    <code>Socket.io</code> enables creating a socket client-side in the browser,
+    that connects to a socket server-side. This enables the server to push data
+    to the clients.
+</div>
+
+<hr>
+
+<h4>Usage</h4>
+<div class="text-section">
+    The <code>socket.io</code> make use of two main functions called <code>on</code> and <code>emit</code>. <br>
+    <code>on</code> listens for <code>events</code> and handles these. <br>
+    <code>emit</code> sends data to connected sockets, either all of them or to specific namespaces/rooms.
+</div>
+
+<h5>Server-side</h5>
+<div class="text-section">
+    You simply need to import it using <code>require</code> and use a server object, created
+    from an <code>express app</code>:
+    <pre><code class="code-block javascript rounded">
+    const express = require('express');
+    const app = express();
+    const server = require('http').createServer(app);
+    const io = require('socket.io')(server);
+    </code></pre>
+</div>
+<div class="text-section">
+    To accept connection you use the <code>on</code> method and listen for the <code>connection</code>
+    event:
+    <pre><code class="code-block javascript rounded">
+    io.on('connection', (socket) => {
+        console.log('Socket connected!');
+    });
+    </code></pre>
+    Inside this callback you can then handle events for each connected <code>socket</code>:
+    <pre><code class="code-block javascript rounded">
+    io.on('connection', (socket) => {
+        console.log('Socket connected!');
+
+        socket.on('client enter chatroom', ({ data }) => {
+            socket.join(data.chatroom);
+            io.to(data.chatroom).emit('server send message',
+                    { data:
+                        {
+                            username: 'server',
+                            message: 'user ' + data.username + ' has joined the chatroom'
+                        }
+                    });
+        });
+
+        socket.on('client send message', ({ data }) => {
+            io.to(data.chatroom).emit('server send message',
+                    { data:
+                        {
+                            username: data.username,
+                            message: escape(data.message)
+                        }
+                    });
+        });
+    });
+    </code></pre>
+    This is an example from a very rudimentary chat application.
+    It listens for the two events <code>client enter chatroom</code> and
+    <code>client send message</code> and then sends appropriate messages to the appropriate
+    clients accordingly. <br>
+    The <code>client enter chatroom</code> also adds that socket to a
+    <a class="text-primary" onclick="scrollToElement('Rooms')">room</a>.
+</div>
+
+<h5>Client-side</h5>
+<div class="text-section">
+    The <code>socket.io</code> package exposes the client-side library on <code>./socket.io/socket.io.js</code>.
+    This means that you can simply import in your <code>HTML</code> document:
+    <pre><code class="code-block html rounded">
+    &lt;script src="/socket.io/socket.io.js">&lt;/script>
+    </code></pre>
+    And then instantiate in your script with:
+    <pre><code class="code-block javascript rounded">
+    const socket = io();
+    </code></pre>
+</div>
+<div class="text-section">
+    Sending and receiving data on the client side, uses the same methods as server-side,
+    but with one key difference, here we only have access to the one socket (to the server).
+    Any internal communication between clients, needs to be managed through the server.
+</div>
+
+<hr>
+
+<h4>Namespaces</h4>
+<div class="text-section">
+    <code>Socket.io namespaces</code> allows you to, for instance, make some events that only
+    admins can 'access'.
+    An example from the <code>Namespaces - Socket.IO</code> link:
+    <pre><code class="code-block javascript rounded">
+    const adminNamespace = io.of('/admin');
+
+    adminNamespace.use((socket, next) => {
+      // ensure the user has sufficient rights
+      next();
+    });
+
+    adminNamespace.on('connection', socket => {
+      socket.on('delete user', () => {
+        // ...
+      });
+    });
+    </code></pre>
+    In the above example, an <code>socket.io</code> middleware is used, where we can
+    authenticate whether or not a user actually has admin rights, through whatever method
+    we want.
+</div>
+
+<hr>
+
+<h4>Rooms</h4>
+<div class="text-section">
+    <code>Socket.io rooms</code> allow us to, server-side, split up sockets into various rooms
+    and then send data to all sockets in those rooms. <br>
+    An obvious use-case for this is a chat application, like the example in the <code>Usage</code> section.
+</div>
