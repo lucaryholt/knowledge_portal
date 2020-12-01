@@ -1,1 +1,39 @@
-<!-- TODO -->
+<div class="sub-title">
+    Managing applications on servers
+</div>
+
+<hr>
+
+<h4>Purpose</h4>
+<div class="text-section">
+    When running a <code>webapp</code>, <code>REST-API</code> or something similar, it is important
+    that the service has as little downtime as possible and while you can prevent many crashes
+    with error handling, there is always the risk of a crash.
+    This coupled with the fact that running an application over SSH without closing on disconnect
+    isn't as easy creates a problem.
+</div>
+<div class="text-section">
+    <code>PM2</code> comes in handy here. It manages all the applications you want to have running
+    while restarting them, if they for some reason crash. <br>
+    <code>PM2</code> also offers different overviews for the running processes.
+</div>
+
+<hr>
+
+<h4>Start after reboot</h4>
+<div class="text-section">
+    A problem that <code>PM2</code> does not solve out of the box, is that if the server
+    itself crashes and reboots, it does not restart the processes and you will need to set up
+    <code>PM2</code> again.
+</div>
+<div class="text-section">
+    To solve this you can run a command when you have your processes running.
+    <pre><code class="code-block bash rounded">
+    pm2 save
+    </code></pre>
+    This will save the current configuration to a file, that <code>PM2</code> reads on
+    start-up and then launches that saved configuration.
+</div>
+<div class="text-section">
+    This makes the downtime minimal even in the event of a temporary power failure.
+</div>
