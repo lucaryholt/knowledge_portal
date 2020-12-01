@@ -446,9 +446,17 @@
       {
         "description": "express-rate-limit - npm",
         "link": "https://www.npmjs.com/package/express-rate-limit"
+      },
+      {
+        "description": "escape-html - npm",
+        "link": "https://www.npmjs.com/package/escape-html"
+      },
+      {
+        "description": "Cross Site Scripting (XSS) Software Attack | OWASP Foundation",
+        "link": "https://owasp.org/www-community/attacks/xss/"
       }
     ],
-    "searchTerms": ["security", "authentication", "authorization", "jwt", "rate limiting", "cookies", "bcrypt", "sessions"],
+    "searchTerms": ["security", "authentication", "authorization", "jwt", "rate limiting", "cookies", "bcrypt", "sessions", "xss", "escape-html"],
     "enabled": true
   },
   {

@@ -91,3 +91,17 @@
     <code>rate limiting</code>.
     What this does is to prevent users from making over a certain amounts of requests in a given time frame.
 </div>
+
+<hr>
+
+<h4>XSS</h4>
+<div class="text-section">
+    When you work with user typed data and display this on a webpage, you run a risk of being
+    vulnerable to <code>XSS</code> or <code>Cross Site Scripting</code>, where users can "inject" their own
+    <code>HTML</code> elements, such as a <code>script</code> element. This could enable a
+    user with malicious intent to run custom scripts on all clients using the webpage.
+</div>
+<div class="text-section">
+    A way to combat this is the <code>escape-html</code> npm package. This package replaces symbols with
+    characters that is interpreted as the same symbol, but does not allow it to be treated as
+    normal <code>HTML</code> elements.</div>
