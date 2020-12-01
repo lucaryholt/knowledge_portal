@@ -76,23 +76,11 @@
     "fileName" : "gradle.html",
     "links" : [
       {
-        "description" : "Placeholder",
-        "link" : "placeholder"
+        "description" : "Gradle Build Tool",
+        "link" : "https://gradle.org/"
       }
     ],
     "searchTerms": ["gradle"],
-    "enabled": true
-  },
-  {
-    "title" : "Storage",
-    "fileName" : "storage.html",
-    "links" : [
-      {
-        "description" : "Placeholder",
-        "link" : "placeholder"
-      }
-    ],
-    "searchTerms": ["placeholder"],
     "enabled": true
   },
   {

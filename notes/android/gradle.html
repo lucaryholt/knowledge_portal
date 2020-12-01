@@ -1,1 +1,51 @@
-<!-- TODO -->
+<div class="sub-title">
+    Gradle Build Tool
+</div>
+
+<hr>
+
+<h4>build.gradle</h4>
+<div class="text-section">
+    When developing Android apps, we use <code>gradle</code> as a build tool.
+</div>
+<div class="text-section">
+    <code>Gradle</code> uses files like <code>build.gradle</code> to know how
+    to build the app, what files to include and so on. Therefore it is also here
+    that we include whatever dependencies we need for the app, for instance,
+    <code>Firebase</code> libraries.
+</div>
+<div class="text-section">
+    There are two <code>build.gradle</code> files in an Android app project:
+    app level and project level. These two serve different purposes, but the
+    one where we inject dependencies, like <code>Firebase</code>, is the app
+    level file.
+</div>
+<div class="text-section">
+    To inject the dependencies, we need to make sure we have the right
+    repositories in the <code>plugins</code> part of the file:
+    <pre><code class="code-block rounded">
+    plugins {
+        id 'com.android.application'
+        id 'com.google.gms.google-services'
+    }
+    </code></pre>
+    And then the right dependencies in the <code>dependencies</code> part:
+    <pre><code class="code-block rounded">
+    dependencies {
+        implementation 'androidx.appcompat:appcompat:1.2.0'
+        implementation 'com.google.android.material:material:1.2.1'
+        implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+        implementation 'com.google.android.gms:play-services-maps:17.0.0'
+        implementation 'com.google.firebase:firebase-storage:19.2.0'
+        testImplementation 'junit:junit:4.+'
+        androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+        androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+        implementation platform('com.google.firebase:firebase-bom:26.1.0')
+        implementation 'com.google.firebase:firebase-analytics'
+        implementation 'com.google.firebase:firebase-firestore'
+    }
+    </code></pre>
+    These are just examples, every dependency will likely have a guide,
+    as to what to put where in these files.
+</div>
