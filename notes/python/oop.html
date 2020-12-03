@@ -1,1 +1,53 @@
-<!-- TODO -->
+<div class="sub-title">
+    Object-Oriented Programming in Python
+</div>
+
+<hr>
+
+<h4>Define a class</h4>
+<div class="text-section">
+    To define a class in python we use the <code>class</code> keyword and this needs a
+    initialisation method:
+    <pre><code class="code-block python rounded">
+    class Dog:
+        def __init__(self, name, age):
+            self.name = name
+            self.age = age
+    </code></pre>
+    This takes two arguments and sets them as <code>instance attributes</code> for this class.
+    The <code>self</code> argument is needed in any method that is called outside
+    of the class.
+</div>
+
+<hr>
+
+<h4>Instantiate an object</h4>
+<div class="text-section">
+    Instantiate a object from a class:
+    <pre><code class="code-block python rounded">
+    buddy = Dog('Alfred', 7)
+    </code></pre>
+    Now we can access the values with dot notation, for instance <code>buddy.name</code>
+    returns <code>Alfred</code>.
+</div>
+
+<hr>
+
+<h4>Inherit from other classes</h4>
+<div class="text-section">
+    You can make <code>child classes</code> from <code>parent classes</code>:
+    <pre><code class="code-block python rounded">
+    class Dog:
+        def __init__(self, name, age):
+            self.name = name
+            self.age = age
+
+    class Bulldog(Dog):
+        pass
+
+    bully = Bulldog('Jim', 1)
+    </code></pre>
+    This makes the <code>Bulldog</code> class inherit the properties from the
+    <code>Dog</code> class. You can also add or overwrite properties and
+    behavior in <code>child classes</code>.
+</div>
