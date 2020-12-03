@@ -1,1 +1,79 @@
-<!-- TODO -->
+<div class="sub-title">
+    Sort data
+</div>
+
+<hr>
+
+<h4>sorted()</h4>
+<h5>Sorting numbers</h5>
+<div class="text-section">
+    A simple way to sort an list of numbers:
+    <pre><code class="code-block python rounded">
+    numbers = [6, 9, 3, 1]
+    sorted(numbers)
+    </code></pre>
+    This would result in a new, sorted list.
+    The original list is unchanged.
+</div>
+<div class="text-section">
+    This can also be used on <code>tuples</code> and <code>sets</code>.
+</div>
+
+<h5>Sorting strings</h5>
+<div class="text-section">
+    If you use <code>sorted()</code> on a string, it treats
+    it like a list of characters and returns a new list of
+    the characters sorted.
+    <pre><code class="code-block python rounded">
+    string_value = 'I like to sort'
+    sorted_string = sorted(string_value)
+    </code></pre>
+</div>
+
+<h5>Non-Comparable Data Types</h5>
+<div class="text-section">
+    If you try to sort a list containing Non-Comparable types,
+    it throws a <code>TypeError</code>.
+</div>
+
+<h5><code>reverse</code> argument</h5>
+<div class="text-section">
+    You can use the <code>reverse</code> argument, to get the values
+    sorted in reverse:
+    <pre><code class="code-block python rounded">
+    numbers = [6, 9, 3, 1]
+    sorted(numbers, reverse=True)
+    </code></pre>
+</div>
+
+<h5><code>key</code> argument</h5>
+<div class="text-section">
+    This argument expects a function being passed. That function will
+    then be used on every value in the list, to determine how to sort it.
+</div>
+<div class="text-section">
+    A basic example of this is to use <code>len</code>:
+    <pre><code class="code-block python rounded">
+    words = ['banana', 'pie', 'Washington', 'book']
+    sorted(words, key=len)
+    </code></pre>
+    This now sorts the list, not alphabetically, but according to the length
+    of each string.
+</div>
+<div class="text-section">
+    This can be any function, that returns a value.
+</div>
+
+<hr>
+
+<h4>sort()</h4>
+<div class="text-section">
+    <code>sort()</code> is a method of the <code>list</code> class and
+    can only be used with lists.
+</div>
+<div class="text-section">
+    <code>sort()</code> does not return anything, but modifies the values in place.
+</div>
+<div class="text-section">
+    You don't pass a list to <code>sort()</code>, but simply call it on a list.
+</div>
