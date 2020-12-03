@@ -1,0 +1,82 @@
+<div class="sub-title">
+    Two mechanisms that facilitate modular programming
+</div>
+
+<hr>
+
+<h4>Modular programming</h4>
+<div class="text-section">
+    The process of breaking a large, unwieldy programming task into separate, smaller and more
+    manageable subtasks or <code>modules</code>.
+    These individual <code>modules</code> can then be cobbled together to create a larger application.
+</div>
+
+<hr>
+
+<h4>Modules</h4>
+<div class="text-section">
+    There are three different ways to define a <code>module</code> in Python:
+    <ul>
+        <li>Written in Python</li>
+        <li>Written in C</li>
+        <li>built-in</li>
+    </ul>
+    The modules contents are accessed in the same way, with the <code>import</code>
+    statement.
+</div>
+
+<h5><code>import</code></h5>
+<div class="text-section">
+    When using the <code>import</code> statement, the interpreter looks for the module.
+    For instance:
+    <pre><code class="code-block python rounded">
+    import mod
+    </code></pre>
+    When the interpreter executes this line, it will search for a file called
+    <code>mod.py</code>. It will search in these places:
+    <ul>
+        <li>
+            The directory where the script was run or current directory if
+            the interpreter is being run interactively
+        </li>
+        <li>
+            The list of directories in the <code>PYTHONPATH</code> environment variable,
+            if it is set.
+        </li>
+        <li>
+            Installation-dependent list of directories configured at time of Python install
+        </li>
+    </ul>
+</div>
+<div class="text-section">
+    You can also import a specific part of a module:
+    <pre><code class="code-block python rounded">
+    from mod import modElement
+    </code></pre>
+</div>
+<div class="text-section">
+    You can also import with alternative names (also works with entire modules):
+    <pre><code class="code-block python rounded">
+    from mod import modElement as otherModElement
+    </code></pre>
+</div>
+
+<hr>
+
+<h4>Packages</h4>
+<div class="text-section">
+    If an application consists of many modules, it can get difficult to keep track
+    of them all.
+</div>
+<div class="text-section">
+    <code>Packages</code> allow us to structure modules hierarchical using
+    <code>dot notation</code>.
+</div>
+<img src="https://files.realpython.com/media/pkg1.9af1c7aea48f.png" alt="Python package Image">
+<div class="text-section">
+    This is the basic structure of a package, with <code>modules</code> in directories.
+    You can then import them using the <code>dot notation</code>:
+    <pre><code class="code-block python rounded">
+    import pkg.mod1, pkg.mod2
+    </code></pre>
+</div>

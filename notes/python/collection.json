@@ -71,8 +71,8 @@
     "enabled": true
   },
   {
-    "title" : "Modules",
-    "fileName" : "modules.html",
+    "title" : "Modules and Packages",
+    "fileName" : "modulespackages.html",
     "links" : [
       {
         "description" : "Real Python - Python Modules and Packages – An Introduction",
