@@ -1,1 +1,61 @@
-<!-- TODO -->
+<div class="sub-title">
+    The <code>requests</code> library is the de facto standard for making HTTP requests in Python
+</div>
+
+<hr>
+
+<h4>General</h4>
+<div class="text-section">
+    The <code>requests</code> package is installed with <code>pip</code> and imported like any other package.
+</div>
+
+<hr>
+
+<h4>GET Request</h4>
+<div class="text-section">
+    To get data via a HTTP request, we use the GET method.
+    <pre><code class="code-block python rounded">
+    response = requests.get('https://api.github.com')
+    </code></pre>
+    This method returns the response from the GET request to the specified URL.
+</div>
+<div class="text-section">
+    You can then access the content of the response, simply by accessing
+    <code>.content</code> on the response object. This gives you the content
+    as <code>bytes</code>, but you can get it as a string, by accessing
+    <code>.text</code> instead. You can also use <code>.json()</code>, that
+    returns a dictionary.
+</div>
+
+<h5>Query Strings</h5>
+<div class="text-section">
+    You can also specify query strings:
+    <pre><code class="code-block python rounded">
+    response = requests.get(
+        'https://api.github.com/search/repositories',
+        params={'q': 'requests+language:python'},
+    )
+    </code></pre>
+</div>
+
+<h5>Headers</h5>
+<div class="text-section">
+    And headers:
+    <pre><code class="code-block python rounded">
+    response = requests.get(
+        'https://api.github.com/search/repositories',
+        params={'q': 'requests+language:python'},
+        headers={'Accept': 'application/vnd.github.v3.text-match+json'},
+    )
+    </code></pre>
+</div>
+
+<hr>
+
+<h4>POST, PUT, PATCH and others</h4>
+<div class="text-section">
+    To use methods, where you need to pass data (like <code>POST</code>), you use the <code>data</code> argument:
+    <pre><code class="code-block python rounded">
+    requests.post('https://httpbin.org/post', data={'key':'value'})
+    </code></pre>
+</div>
