@@ -127,8 +127,8 @@
     "fileName" : "pip.html",
     "links" : [
       {
-        "description" : "link",
-        "link" : ""
+        "description" : "What is Pip? A Guide for New Pythonistas",
+        "link" : "https://realpython.com/what-is-pip/"
       }
     ],
     "searchTerms": ["pip", "packages", "modules"],

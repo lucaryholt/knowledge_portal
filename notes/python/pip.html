@@ -1,1 +1,45 @@
-<!-- TODO -->
+<div class="sub-title">
+    Package Manager for Python
+</div>
+
+<hr>
+
+<h4>Usage</h4>
+<div class="text-section">
+    The most important use-case for <code>pip</code> is to install
+    packages, that are used in python scripts. <br>
+    An example of this is to install the <code>requests</code> package
+    (used to make HTTP requests):
+    <pre><code class="code-block rounded">
+    pip install requests
+    </code></pre>
+    You can then <code>import</code> the <code>requests</code> package
+    in a script and use it.
+</div>
+
+<hr>
+
+<h4>Requirements file</h4>
+<div class="text-section">
+    If you have made a python script, that takes advantage of a lot of
+    pip installed packages and what to install use this script on
+    another machine, the pip packages needs to be installed on that
+    machine. <br>
+    You could simply go through the packages and manually install each,
+    but that would be trivial and could possibly take a long time (for
+    instance, if it were not just one other machine, but many).
+</div>
+<div class="text-section">
+    <code>Pip</code> allows us to make a document containing the packages,
+    or requirements, and simply use this document to install the needed
+    packages on the other machine(s).
+    <pre><code class="code-block rounded">
+    pip freeze > requirements.txt
+    </code></pre>
+    Then you can simply transfer your script and the <code>requirements.txt</code>,
+    to the other machine and run:
+    <pre><code class="code-block rounded">
+    pip install -r requirements.txt
+    </code></pre>
+    Then the packages will be installed and you can run the script.
+</div>
