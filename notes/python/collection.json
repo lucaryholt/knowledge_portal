@@ -215,7 +215,55 @@
         "link" : "https://medium.com/better-programming/context-managers-in-python-go-beyond-with-open-as-file-85a27e392114"
       }
     ],
-    "searchTerms": ["placeholder"],
+    "searchTerms": ["context managers"],
+    "enabled": true
+  },
+  {
+    "title" : "Data types",
+    "fileName" : "datatypes.html",
+    "links" : [
+      {
+        "description" : "W3Schools - Python Data Types",
+        "link" : "https://www.w3schools.com/python/python_datatypes.asp"
+      },
+      {
+        "description" : "W3Schools - Python Strings",
+        "link" : "https://www.w3schools.com/python/python_strings.asp"
+      },
+      {
+        "description" : "W3Schools - Python Strings Methods",
+        "link" : "https://www.w3schools.com/python/python_strings_methods.asp"
+      },
+      {
+        "description" : "W3Schools - Python Numbers",
+        "link" : "https://www.w3schools.com/python/python_numbers.asp"
+      },
+      {
+        "description" : "W3Schools - Python Booleans",
+        "link" : "https://www.w3schools.com/python/python_booleans.asp"
+      },
+      {
+        "description" : "W3Schools - Python range() Function",
+        "link" : "https://www.w3schools.com/python/ref_func_range.asp"
+      },
+      {
+        "description" : "W3Schools - Python frozenset() Function",
+        "link" : "https://www.w3schools.com/python/ref_func_frozenset.asp"
+      },
+      {
+        "description" : "Programiz - Python bytes()",
+        "link" : "https://www.programiz.com/python-programming/methods/built-in/bytes"
+      },
+      {
+        "description" : "Programiz - Python bytearray()",
+        "link" : "https://www.programiz.com/python-programming/methods/built-in/bytearray"
+      },
+      {
+        "description" : "Programiz - Python memoryview()",
+        "link" : "https://www.programiz.com/python-programming/methods/built-in/memoryview"
+      }
+    ],
+    "searchTerms": ["data types", "string", "integer", "float", "complex", "list", "tuple", "range", "dict", "set", "frozenset", "boolean", "bytes", "bytearray", "memoryview", "python buffer protocol"],
     "enabled": true
   }
 ]

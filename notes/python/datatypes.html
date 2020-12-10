@@ -1,0 +1,227 @@
+<div class="sub-title">
+    Python has a number of built-in data types
+</div>
+
+<hr>
+
+<h4>Categories</h4>
+<div class="text-section">
+    There are a number of different categories of data types:
+    <ul>
+        <li>
+            Text type:
+            <ul>
+                <li onclick="scrollToElement('String')"><code>str</code></li>
+            </ul>
+        </li>
+        <li>
+            Numeric types:
+            <ul>
+                <li onclick="scrollToElement('Integer')"><code>int</code></li>
+                <li onclick="scrollToElement('Float')"><code>float</code></li>
+                <li onclick="scrollToElement('Complex')"><code>complex</code></li>
+            </ul>
+        </li>
+        <li>
+            Sequence types:
+            <ul>
+                <li onclick="getSpecificNote('liststuples.html')"><code>list</code></li>
+                <li onclick="getSpecificNote('liststuples.html')"><code>tuple</code></li>
+                <li onclick="scrollToElement('range')"><code>range</code></li>
+            </ul>
+        </li>
+        <li>
+            Mapping type:
+            <ul>
+                <li onclick="getSpecificNote('dictionariessets.html')"><code>dict</code></li>
+            </ul>
+        </li>
+        <li>
+            Set types:
+            <ul>
+                <li onclick="getSpecificNote('dictionariessets.html')"><code>set</code></li>
+                <li onclick="scrollToElement('frozenset')"><code>frozenset</code></li>
+            </ul>
+        </li>
+        <li>
+            Boolean type:
+            <ul>
+                <li onclick="scrollToElement('Boolean')"><code>bool</code></li>
+            </ul>
+        </li>
+        <li>
+            Binary types:
+            <ul>
+                <li onclick="scrollToElement('Bytes')"><code>bytes</code></li>
+                <li onclick="scrollToElement('Bytearray')"><code>bytearray</code></li>
+                <li onclick="scrollToElement('Memoryview')"><code>memoryview</code></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+<hr>
+
+<h4>Getting the data type</h4>
+<div class="text-section">
+    You can use the built-in function <code>type()</code> to get the data type.
+    <pre><code class="code-block python rounded">
+    x = 5
+    print(type(x))
+    </code></pre>
+    This would print <code>&lt;class 'int'></code>.
+</div>
+
+<hr>
+
+<h4>String</h4>
+<div class="text-section">
+    Strings in python are surrounded by either single or double quotation marks
+    <code>"hello"</code> and <code>'hello'</code> are the same thing.
+</div>
+<div class="text-section">
+    You can make multiline strings by using three quotation marks:
+    <pre><code class="code-block python rounded">
+    a = """Lorem ipsum dolor sit amet,
+    consectetur adipiscing elit,
+    sed do eiusmod tempor incididunt
+    ut labore et dolore magna aliqua."""
+    </code></pre>
+</div>
+<div class="text-section">
+    In Python strings are arrays of bytes, representing unicode characters
+    (Python does not have a character type, a single character is simply a string
+    with the length of 1).
+    This means that we can treat a string like an array and access characters in
+    the string with brackets:
+    <pre><code class="code-block python rounded">
+    a = "Hello, World!"
+    print(a[1])
+    </code></pre>
+    This would print <code>e</code>.
+    We can also loop through a string exactly like we would an array.
+</div>
+
+<h5>Built in methods</h5>
+<div class="text-section">
+    Strings have a number of built in methods
+    <ul>
+        <li><code>upper()</code> returns the string in upper case</li>
+        <li><code>lower()</code> returns the string in lower case</li>
+        <li><code>strip()</code> removes whitespace before and after the text</li>
+        <li>
+            <code>replace()</code> takes two strings as argument and replaces the first string
+            with the second
+        </li>
+        <li>
+            <code>split()</code> takes a string, and returns a list of substrings, if it
+            finds the separator
+        </li>
+    </ul>
+</div>
+
+<hr>
+
+<h4>Integer</h4>
+<div class="text-section">
+    Int, or integer, is a whole number, positive or negative, without decimals, of unlimited length.
+</div>
+
+<hr>
+
+<h4>Float</h4>
+<div class="text-section">
+    Float, or "floating point number" is a number, positive or negative, containing one or more decimals.
+</div>
+<div class="text-section">
+    Float can also be scientific numbers with an "e" to indicate the power of 10.
+</div>
+
+<hr>
+
+<h4>Complex</h4>
+<div class="text-section">
+    Complex numbers are written with a "j" as the imaginary part.
+</div>
+
+<hr>
+
+<h4>Boolean</h4>
+<div class="text-section">
+    Booleans represent one of two values: <code>True</code> or <code>False</code>.
+</div>
+
+<hr>
+
+<h4>range</h4>
+<h5>Built-in function or data type?</h5>
+<div class="text-section">
+    In Python 2, if you wrote <code>type(range)</code> you would get the result <code>&lt;type 'builtin_function_or_method'></code>,
+    where in Python 3 you get <code>&lt;class 'type'></code>, which suggests that <code>range</code> has been
+    classified as a type in Python 3. <br>
+    Furthermore, if you check the type when you actually use <code>range</code>, like this in Python 2 <code>type(range(10))</code>
+    you get <code>&lt;type 'list'></code> and in Python 3 <code>&lt;class 'range'></code>.
+</div>
+
+<hr>
+
+<h4>frozenset</h4>
+<div class="text-section">
+    <code>frozenset()</code> is a function that returns an unchangeable <code>frozenset</code> object, which behaves like a
+    <code>set</code> object, only unchangeable.
+    It takes an <code>iterable</code> as parameter.
+</div>
+
+<hr>
+
+<h4>Bytes</h4>
+<div class="text-section">
+    The bytes() method returns a immutable bytes object initialized with the given size and data.
+</div>
+<div class="text-section">
+    It takes three optional parameters:
+    <ul>
+        <li><code>source</code> - source to initialize the array of bytes</li>
+        <li><code>encoding</code> - if the source is a string, the encoding of the string</li>
+        <li><code>errors</code> - if the source is a string, the action to take when the encoding conversion fails</li>
+    </ul>
+</div>
+
+<hr>
+
+<h4>Bytearray</h4>
+<div class="text-section">
+    The bytearray() method returns a bytearray object which is an array of the given bytes.
+    This is mutable.
+</div>
+<div class="text-section">
+    It takes three optional parameters:
+    <ul>
+        <li><code>source</code> - source to initialize the array of bytes</li>
+        <li><code>encoding</code> - if the source is a string, the encoding of the string</li>
+        <li><code>errors</code> - if the source is a string, the action to take when the encoding conversion fails</li>
+    </ul>
+</div>
+
+<hr>
+
+<h4>Memoryview</h4>
+<div class="text-section">
+    The memoryview() function returns a memory view object of the given argument.
+</div>
+
+<h5>Python Buffer Protocol</h5>
+<div class="text-section">
+    The buffer protocol provides a way to access the internal data of an object.
+    This internal data is a memory array or a buffer. <br>
+    The buffer protocol allows one object to expose its internal data (buffers)
+    and the other to access those buffers without intermediate copying. <br>
+    This protocol is not accessible in our normal codebase. In order to expose
+    this protocol to the normal Python codebase, memory views are present.
+</div>
+
+<h5>What is a memoryview?</h5>
+<div class="text-section">
+    A memory view is a safe way to expose the buffer protocol in Python.
+    It allows you to access the internal buffers of an object by creating a memory view object.
+</div>
