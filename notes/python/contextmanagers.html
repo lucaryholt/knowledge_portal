@@ -30,9 +30,6 @@
             self.filename = filename
             self.mode = mode
 
-        def readline(self):
-            pass
-
         def __enter__(self):
             self.file = open(self.filename, self.mode)
             return self.file
