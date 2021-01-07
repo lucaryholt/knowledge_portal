@@ -77,7 +77,7 @@
     whole <code>HTML</code> documents, form-data and so on. <br>
     An example of sending data in the body using ajax (short and long hand):
     <pre><code class="code-block javascript rounded">
-    $.get('http://someurl.xyz/api/cars', {
+    $.post('http://someurl.xyz/api/cars', {
             brand: 'VW',
             model: 'Golf'
         }, (response) => {
@@ -109,7 +109,7 @@
     In this example we send the same data as the previous examples, but completely in the url.
     The query strings are defined by <code>?</code>, key, <code>=</code> and value. The strings
     are separated by ampersand (<code>&</code>). <br>
-    To access these values in the back-end, we use the <code>request</code> object:
+    To access these values in the back-end, we use the <code>request</code> object (in an <code>express</code> request handler):
     <pre><code class="code-block javascript rounded">
     app.get('/api/cars', (req, res) => {
         console.log(req.query.brand, req.query.model);

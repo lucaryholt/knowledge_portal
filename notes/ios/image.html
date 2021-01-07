@@ -18,8 +18,8 @@
 
         // You need to implement makeUIViewController & updateUIViewController when you use UIViewControllerRepresentable
         func makeUIViewController(context: UIViewControllerRepresentableContext&lt;MyImagePicker>) -> UIImagePickerController {
-            let picker = UIImagePickerController() //Indbygget funktion i iOS som henter billede fra camera eller bibliotek
-            picker.delegate = context.coordinator //pickeren skal have en deleget
+            let picker = UIImagePickerController() //Built in function in iOS that retrieves a picture from camera or library
+            picker.delegate = context.coordinator //The picker needs a delegate
             return picker
         }
 

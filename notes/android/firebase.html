@@ -58,7 +58,7 @@
     </code></pre>
     Here <code>col</code> is a reference to the <code>CollectionReference</code>. <br>
     The method <code>addSnapShotListener()</code> is used. This takes a <code>EventListener</code> as parameter,
-    but we can just fill in a <code>lambda</code> expression. This expression takes to arguments
+    but we can just fill in a <code>lambda</code> expression. This expression takes two arguments
     <code>values</code> and <code>error</code>. The <code>values</code> argument is where the data is passed through,
     while the <code>error</code> argument is <code>null</code> unless an error has occurred in getting the data.
     In this example we don't check for errors.
@@ -92,7 +92,7 @@
     We create a <code>DocumentReference</code> by calling the <code>document()</code> method on the collection.
     Then we add data to a <code>Map</code> and then finally use the <code>set()</code> method on the
     reference to add the data. The <code>set()</code> method returns a <code>Task</code> object, which we can
-    use the <code>addOnCompleteListener()</code> method on to find out if the document was adding successfully.
+    use the <code>addOnCompleteListener()</code> method on to find out if the document was added successfully.
 </div>
 <div class="text-section">
     To update data you simply add the data (with <code>set()</code>) you want to the <code>DocumentReference</code>

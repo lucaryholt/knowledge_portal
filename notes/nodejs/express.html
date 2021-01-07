@@ -199,7 +199,7 @@
     similar. Here you simply make a new <code>.js</code> file. For this example it will handle the <code>/about</code>
     GET request.
     <pre><code class="code-block javascript rounded">
-    const router = require('express').Router;
+    const router = require('express').Router();
 
     router.get('/about', (req, res) => {
         return res.sendFile({ data: 'About info here' });

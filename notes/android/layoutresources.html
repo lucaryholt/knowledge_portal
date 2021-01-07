@@ -20,7 +20,7 @@
 <h4>Layout</h4>
 <div class="text-section">
     The <code>UI</code> layout is designed in the drag-and-drop interface or directly in the <code>.xml</code> files.
-    It is done by using constraints - tethering the elements either to each other or to the edges of the screens. <br>
+    It is done by using constraints (in the constraint layout, there are other layout types) - tethering the elements either to each other or to the edges of the screens. <br>
     The various objects have a number of properties that can be set in the interface and dynamically changed in
     the <code>Java</code> code.
 </div>
@@ -34,7 +34,7 @@
 <div class="text-section">
     To make our data work with the <code>ListView</code>, we have to have an <code>adapter</code> object.
     We can use the already made <code>ArrayAdapter</code> or make our own, extending <code>Base Adapter</code>.
-    When extending <code>Base Adapter</code>, there are a number of different method to implement. <br>
+    When extending <code>Base Adapter</code>, there are a number of different methods to implement. <br>
     The most noticeable being <code>getView(int, View, ViewGroup)</code>. This method defines how your data
     should be converted to the <code>view</code> discussed above.
     Below we have an example of a custom <code>adapter</code> class:
@@ -57,12 +57,12 @@
         }
 
         @Override
-        public Object getItem(int i) { // bliver ikke kaldt
+        public Object getItem(int i) {
             return null;
         }
 
         @Override
-        public long getItemId(int i) { // bliver kaldt 2 gange i starten
+        public long getItemId(int i) {
             return i;
         }
 
